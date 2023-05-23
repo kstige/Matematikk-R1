@@ -7,6 +7,21 @@ options:
   numbered: true
 
 parts:
-- caption: Oppstart
+- caption: Algebra og likninger
   chapters:
-  - file: docs/test
+  - file: docs/algebralikninger/potensrot
+- caption: Grenseverdier og derivasjon
+  chapters:
+  - file: docs/grenserderivasjon/grenseverdier
+- caption: Funksjonsdrøfting
+  chapters:
+  - file: docs/brukderivasjon/ekstremalverdier
+- caption: Omvendte funksjoner
+  chapters:
+  - file: docs/omvendtefunksjoner/omvendtefunksjoner
+- caption: Vektorer
+  chapters:
+  - file: docs/vektorer/vektorer
+- caption: Modellering
+  chapters:
+  - file: docs/modellering/modellering
