@@ -3,7 +3,12 @@
 
 format: jb-book
 root: docs\intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+options:
+  numbered: true
+
+parts:
+- caption: Oppstart
+  chapters:
+  - file: markdown
+  - file: notebooks
+  - file: markdown-notebooks
