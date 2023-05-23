@@ -9,6 +9,4 @@ options:
 parts:
 - caption: Oppstart
   chapters:
-  - file: docs/markdown
-  - file: docs/notebooks
-  - file: docs/markdown-notebooks
+  - file: docs/test
