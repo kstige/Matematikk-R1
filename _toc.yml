@@ -11,6 +11,7 @@ parts:
   chapters:
   - file: docs/algebralikninger/potensrot
   - file: docs/algebralikninger/logaritmer
+  - file: docs/algebralikninger/naturliglogaritme
 - caption: Grenseverdier og derivasjon
   chapters:
   - file: docs/grenserderivasjon/grenseverdier
