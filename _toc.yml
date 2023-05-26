@@ -10,6 +10,7 @@ parts:
 - caption: Algebra og likninger
   chapters:
   - file: docs/algebralikninger/potensrot
+  - file: docs/algebralikninger/logaritmer
 - caption: Grenseverdier og derivasjon
   chapters:
   - file: docs/grenserderivasjon/grenseverdier
