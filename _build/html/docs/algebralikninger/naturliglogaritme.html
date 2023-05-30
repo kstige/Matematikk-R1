@@ -331,6 +331,11 @@ title="Print to PDF"
    Den naturlige logaritmen
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logaritmesetningene">
+   Logaritmesetningene
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -358,6 +363,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
    Den naturlige logaritmen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logaritmesetningene">
+   Logaritmesetningene
   </a>
  </li>
 </ul>
@@ -483,6 +493,38 @@ f) <span class="math notranslate nohighlight">\(1\cdot 1,00011416^{365\cdot 24}\
 <a class="reference internal image-reference" href="../../_images/ln5python.png"><img alt="../../_images/ln5python.png" src="../../_images/ln5python.png" style="width: 250.5px; height: 131.5px;" /></a>
 </figure>
 <p>Merk at programmeringsspråket python bruker skrivemåten log for den naturlige logaritmen.</p>
+</div>
+</section>
+<section id="logaritmesetningene">
+<h2>Logaritmesetningene<a class="headerlink" href="#logaritmesetningene" title="Permalink to this headline">#</a></h2>
+<p>Logaritmesetningene som vi beviste for tierlogaritmen gjelder også for den naturlige logaritmen. Bevisene er også helt tilsvarende, så her oppgir vi kun resultat og noen eksempler.</p>
+<div class="admonition-logaritmesetningene admonition">
+<p class="admonition-title">Logaritmesetningene</p>
+<p><strong>Første logaritmesetning</strong><br />
+For <span class="math notranslate nohighlight">\(a, b &gt; 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\ln ab = \ln a + \ln b\)</span></p>
+<p><strong>Andre logaritmesetning</strong><br />
+For <span class="math notranslate nohighlight">\(a, b &gt; 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\ln \frac{a}{b}= \ln a - \ln b\)</span></p>
+<p><strong>Tredje logaritmesetning</strong><br />
+For <span class="math notranslate nohighlight">\(a&gt;0\)</span> og <span class="math notranslate nohighlight">\(b\in \mathbf{R}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\ln a^b = b\ln a\)</span></p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 1</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\ln (5 e^2)-3\ln \frac{5}{e^3} &amp;= \ln 5 + \ln e^2 -3(\ln 5-\ln e^3) \\
+&amp;= \ln 5 + 2 -3\ln 5 + 3\cdot 3 \\
+&amp;= 11 - 2\ln 5
+\end{align}\)</span></p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 2</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\ln (a^{-2}\cdot e^4)-2\ln \frac{a}{a^2\cdot e^{-2}} &amp;= \ln a^{-2} + \ln e^4 - 2(\ln a-\ln a^2 -\ln e^{-2}) \\
+&amp;= -2\ln a + 4 - 2\ln a -2\cdot (-2)\ln a -2\cdot(-1)\cdot(-2) \\
+&amp;= 0
+\end{align}\)</span></p>
 </div>
 </section>
 </section>
