@@ -14,6 +14,7 @@ parts:
   - file: docs/algebralikninger/naturliglogaritme
   - file: docs/algebralikninger/loglikninger
   - file: docs/algebralikninger/eksponentiallikninger
+  - file: docs/algebralikninger/numerisklosning
 - caption: Grenseverdier og derivasjon
   chapters:
   - file: docs/grenserderivasjon/grenseverdier
