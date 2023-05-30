@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Logaritmer &#8212; Matematikk R1</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myadmonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Den naturlige logaritmen" href="naturliglogaritme.html" />
+    <link rel="prev" title="Potenser og røtter" href="potensrot.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Matematikk R1</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algebra og likninger
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="potensrot.html">
+   Potenser og røtter
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Logaritmer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="naturliglogaritme.html">
+   Den naturlige logaritmen
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Grenseverdier og derivasjon
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../grenserderivasjon/grenseverdier.html">
+   Grenseverdier
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Funksjonsdrøfting
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../brukderivasjon/ekstremalverdier.html">
+   Ekstremalverdier
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Omvendte funksjoner
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../omvendtefunksjoner/omvendtefunksjoner.html">
+   Omvendte funksjoner
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Vektorer
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vektorer/vektorer.html">
+   Vektorer
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modellering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modellering/modellering.html">
+   Modellering
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/docs/algebralikninger/logaritmer.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logaritmesetningene">
+   Logaritmesetningene
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#forste-logaritmesetning">
+     Første logaritmesetning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#andre-logaritmesetning">
+     Andre logaritmesetning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tredje-logaritmesetning">
+     Tredje logaritmesetning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bruk-av-logaritmer">
+   Bruk av logaritmer
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Logaritmer</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logaritmesetningene">
+   Logaritmesetningene
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#forste-logaritmesetning">
+     Første logaritmesetning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#andre-logaritmesetning">
+     Andre logaritmesetning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tredje-logaritmesetning">
+     Tredje logaritmesetning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bruk-av-logaritmer">
+   Bruk av logaritmer
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="logaritmer">
+<h1>Logaritmer<a class="headerlink" href="#logaritmer" title="Permalink to this headline">#</a></h1>
+<p>I 1T lærte vi mye om ulike funksjonstyper. En av funksjonstypene var eksponentialfunksjoner. Det er funksjoner på formen <span class="math notranslate nohighlight">\(f(x)=a\cdot b^x\)</span>, der <span class="math notranslate nohighlight">\(a,b\in\mathbf{R} \backslash \{0\}\)</span>. Vi husker at funksjonen representerte en størrelse med startverdi <span class="math notranslate nohighlight">\(a\)</span> som økte med en fast prosentstørrelse når <span class="math notranslate nohighlight">\(x\)</span> økte med 1. Denne prosenten kommer inn gjennom tallet <span class="math notranslate nohighlight">\(b\)</span> som er en vekstfaktor.</p>
+<p>I grafen under er eksponentialfunksjonen <span class="math notranslate nohighlight">\(f(x)=10^x\)</span> tegnet inn.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/10x.png"><img alt="../../_images/10x.png" src="../../_images/10x.png" style="width: 802.8px; height: 543.6px;" /></a>
+</figure>
+<p>Fra grafen kan vi lese av ting som at:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(10^{-0,2}\approx 0.6\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(10^0 = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(10^{0,3} \approx 2\)</span></p></li>
+</ul>
+<p>Vi kan også lese av den andre veien for å finne at:</p>
+<ul class="simple">
+<li><p>For å få ut 0,5 må vi opphøye 10 i omtrent 0,3</p></li>
+<li><p>For å få ut 4 må vi opphøye 10 i omtrent 0.6</p></li>
+</ul>
+<p>Det vil si at vi kan bruke grafen til å løse likninger av typen <span class="math notranslate nohighlight">\(10^x=a\)</span>, der <span class="math notranslate nohighlight">\(a\in\mathbf{R}\)</span>. Om vi skal løse likninga <span class="math notranslate nohighlight">\(10^x=5\)</span> kan vi for eksempel lage oss ei linje ut fra y=5. Den skjærer grafen for <span class="math notranslate nohighlight">\(x\approx 0,7\)</span> som blir løsninga på likninga.</p>
+<p>Tallsystemet vi bruker kalles titallsystemet. Potenser med 10 som grunntall dukker derfor ofte opp. Likninger av typen over er derfor en type likninger som vil være relvant å se på. <span class="math notranslate nohighlight">\(x\)</span>-verdien i likninga har derfor fått et eget navn som vi kaller den tierlogartimen (eller den briggske logaritmen). Vi starter med å definere dette begrepet.</p>
+<div class="admonition-definisjon-av-tierlogaritmen admonition">
+<p class="admonition-title">Definisjon av tierlogaritmen</p>
+<p>Tierlogaritmen, <span class="math notranslate nohighlight">\(\lg p\)</span>, til et tall <span class="math notranslate nohighlight">\(p\)</span> er det tallet vi må opphøye 10 i for å få <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(10^{\lg p} = p\)</span> der <span class="math notranslate nohighlight">\(p &gt;0\)</span></p>
+<p>Skrivemåten <em>log</em> brukes av mange og betyr det samme som <em>lg</em>.</p>
+</div>
+<p>Tierlogaritmen kalles ofte for den <strong>briggske logaritmen</strong> etter matematikeren Henry Briggs som i 1617 ga ut en tabell med tierlogaritmen for de 1000 første naturlige tallene med en nøyaktighet på 14 desimaler. I dag bruker vi digitale hjelpemidler for å finne de aller fleste logaritmeverdier.</p>
+<div class="admonition">
+<p class="admonition-title">Eksempel på logaritmeverdier</p>
+<p><span class="math notranslate nohighlight">\(\lg(100)=2\)</span> siden <span class="math notranslate nohighlight">\(10^2=100\)</span></p>
+<p><span class="math notranslate nohighlight">\(\lg(10000) = 4\)</span> siden <span class="math notranslate nohighlight">\(10^4=10000\)</span></p>
+<p><span class="math notranslate nohighlight">\(\lg(0,01)=-2\)</span> siden <span class="math notranslate nohighlight">\(10^{-2}=0,01\)</span></p>
+<p><span class="math notranslate nohighlight">\(\lg(5) \approx 0,69897\)</span> siden <span class="math notranslate nohighlight">\(10^{0,69897}\approx 5\)</span></p>
+<p>De tre første kan vi finne uten hjelpemidler, men for de fleste (som den siste) kan vi bruke digitale hjelpemidler. Her er det vist med CAS og programmering i Python</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/lg5.png"><img alt="../../_images/lg5.png" src="../../_images/lg5.png" style="width: 176.5px; height: 57.5px;" /></a>
+</figure>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/lg5python.png"><img alt="../../_images/lg5python.png" src="../../_images/lg5python.png" style="width: 238.0px; height: 135.5px;" /></a>
+</figure>
+<p>Merk at programmeringsspråket python bruker skrivemåten log10 for den briggske logaritmen.</p>
+</div>
+<p>Fra eksempelet over ser vi kanskje at det er noen logaritmer som er enkle å se uten hjelpemiddel.</p>
+<div class="admonition-enkle-logaritmer admonition">
+<p class="admonition-title">Enkle logaritmer</p>
+<p>Vi kan enkelt ta logaritmen til potenser med grunntall 10.</p>
+<p><span class="math notranslate nohighlight">\(\lg 10^k=k\)</span></p>
+<p>Det er også verdt å merke seg at</p>
+<p><span class="math notranslate nohighlight">\(\lg 1 = 0\)</span> siden <span class="math notranslate nohighlight">\(10^0=1\)</span></p>
+<p><span class="math notranslate nohighlight">\(\lg 10 = 1\)</span> sden <span class="math notranslate nohighlight">\(10^1=10\)</span></p>
+</div>
+<section id="logaritmesetningene">
+<h2>Logaritmesetningene<a class="headerlink" href="#logaritmesetningene" title="Permalink to this headline">#</a></h2>
+<p>Vi skal lære tre regneregler for logaritmer som vi av mangel på bedre navn har valgt å kalle første, andre og tredje logaritmesetning. Alle regnereglene beviser vi med utgangspunkt i sammenhengen mellom logaritmer og potenser.</p>
+<section id="forste-logaritmesetning">
+<h3>Første logaritmesetning<a class="headerlink" href="#forste-logaritmesetning" title="Permalink to this headline">#</a></h3>
+<div class="admonition-forste-logaritmesetning admonition">
+<p class="admonition-title">Første logaritmesetning</p>
+<p>La <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> være positive tall. Da er</p>
+<p><span class="math notranslate nohighlight">\(\lg ab = \lg a + \lg b\)</span></p>
+<p>Logaritmer gjør altså multiplikasjon om til addisjon.</p>
+<p><em>Det er viktig å merke seg denne setningen. En vanlig feil er å si at <span class="math notranslate nohighlight">\(\lg(a+b)=\lg a + \lg b\)</span>.</em></p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Bevis for første logaritmesetning</p>
+<p>Utgangspunktet for beviset er definisjonen av logaritmer og regnereglene for potenser.</p>
+<p><span class="math notranslate nohighlight">\(ab=10^{\lg ab}\)</span>
+<span class="math notranslate nohighlight">\(ab=a\cdot b = 10^{\lg a}\cdot 10^{\lg b}=10^{\lg a + \lg b}\)</span></p>
+<p>Begge resultatene våre er lik <span class="math notranslate nohighlight">\(ab\)</span>. De må derfor også være lik hverandre.</p>
+<p><span class="math notranslate nohighlight">\(10^{\lg ab}=10^{\lg a + \lg b}\)</span></p>
+<p>For at to potenser med samme grunntall skal være like, så må eksponentene være like. Altså vil</p>
+<p><span class="math notranslate nohighlight">\(\lg ab = \lg a + \lg b\)</span></p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 1: Første logaritmesetning</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{align}
+\lg (1000x) + \lg (10x) &amp;= \lg (10^3\cdot x) + \lg (10\cdot x) \\
+&amp;=\lg 10^3+\lg x + \lg 10 + \lg x \\
+&amp;= 3+\lg x + 1 + \lg x \\
+&amp; = 4 +2\lg x
+\end{align}\)</span></p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 2: Første logaritmesetning</p>
+<p>Du får vite at <span class="math notranslate nohighlight">\(\lg 30 = 1,48\)</span> og at <span class="math notranslate nohighlight">\(\lg 6 = 0,78\)</span>. Finn <span class="math notranslate nohighlight">\(\lg 180\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\lg 180 = \lg (6\cdot 30) = \lg 6 + \lg 30 = 0,78+1,48=2,26\)</span></p>
+</div>
+<p>Andre logaritmesetning er ganske tilsvarende den første, men gjør om divisjon til subtraksjon.</p>
+</section>
+<section id="andre-logaritmesetning">
+<h3>Andre logaritmesetning<a class="headerlink" href="#andre-logaritmesetning" title="Permalink to this headline">#</a></h3>
+<div class="admonition-andre-logartimesetning admonition">
+<p class="admonition-title">Andre logartimesetning</p>
+<p>La <span class="math notranslate nohighlight">\(a\)</span> være et positivt tall og <span class="math notranslate nohighlight">\(b\in\mathbf{R}\)</span>. Da er</p>
+<p><span class="math notranslate nohighlight">\(\lg \frac{a}{b} = \lg a - \lg b\)</span></p>
+</div>
+<p>Beviset er helt tilsvarende som beviset for første logaritmesetning og overlates til leseren.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 1: Andre logaritmesetning</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{align}
+\lg \frac{1000}{x} + 3\lg \frac{x}{100} &amp;= \lg \frac{10^3}{x} + 3\lg \frac{x}{10^2} \\
+&amp;=\lg 10^3-\lg x +3(\lg x-\lg 10^2) \\
+&amp;= 3-\lg x+3\lg x - 3\cdot 2 \\
+&amp; = 2\lg x -3
+\end{align}\)</span></p>
+</div>
+</section>
+<section id="tredje-logaritmesetning">
+<h3>Tredje logaritmesetning<a class="headerlink" href="#tredje-logaritmesetning" title="Permalink to this headline">#</a></h3>
+<div class="admonition-tredje-logaritmesetning admonition">
+<p class="admonition-title">Tredje logaritmesetning</p>
+<p>La <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> være positive tall. Da er</p>
+<p><span class="math notranslate nohighlight">\(\lg a^b = b\cdot lg a\)</span></p>
+</div>
+<p>En vanlig feil ved bruk av tredje logaritmesetning er å ikke skille mellom uttrykkene <span class="math notranslate nohighlight">\(\lg x^2\)</span> og <span class="math notranslate nohighlight">\(\left(lg x\right)^2\)</span>. Tredje logaritmesetning an brukes på den første, men ikke den andre.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Bevis for tredje logaritmesetning</p>
+<p>Vi tar utgangspunkt i definisjonen av logaritmer og av potensreglene.</p>
+<p><span class="math notranslate nohighlight">\(a^b=10^{\lg a^b}\)</span>
+<span class="math notranslate nohighlight">\(a^b= \left(10^{\lg a}\right)^b=10^{b\cdot \lg a}\)</span></p>
+<p>Uttrykkene må være like hverandre slik at <span class="math notranslate nohighlight">\(10^{\lg a^b}=10^{b\cdot \lg a}\)</span>.</p>
+<p>For at to potenser med samme grunntall skal være like, så må eksponentene være like. Altså vil</p>
+<p><span class="math notranslate nohighlight">\(\lg a^b = b\cdot \lg a\)</span></p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 1: Tredje logaritmesetning</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{align}
+2\lg x^4 +3\lg \sqrt[3]{x^4} &amp;= 2\lg x^4+3\lg x^{\frac{4}{3}} \\
+&amp;=2\cdot 4\lg x+ 3\cdot \frac{4}{3}\lg{x} \\
+&amp;= 8\lg x +4\lg x \\
+&amp;= 12\lg x
+\end{align}\)</span></p>
+</div>
+<p>Vi avslutter med et sammensatt eksempel på bruk av logaritmesetningene.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Sammensatt bruk av logaritmesetningene</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+3\lg(x^2\cdot y)-\frac{1}{3}\lg \left(\frac{(10\cdot y)^9}{x^3}\right) &amp;= 3(\lg x^2 + \lg y) -\frac{1}{3}(\lg 10^9 +\lg y^9 -\lg x^3) \\
+&amp;= 3\cdot 2\lg x +3\lg y -\frac{1}{3}(9+9\lg y -3\lg x) \\
+&amp;= 6\lg x +3\lg y -3 -3\lg y +\lg x \\
+&amp;= 7\lg x -3
+\end{align}
+\)</span></p>
+</div>
+</section>
+</section>
+<section id="bruk-av-logaritmer">
+<h2>Bruk av logaritmer<a class="headerlink" href="#bruk-av-logaritmer" title="Permalink to this headline">#</a></h2>
+<p>Logaritmer har færre bruksområder i dag enn det har hatt før. Regnereglene vi har sett på viser at logaritmer kan gjøre multiplikasjon om til addisjon og divisjon om til subtraksjon. Dette har historisk vært til stor hjelp før kalkulatorer og datamaskiner kunne utføre beregningene.</p>
+<p>Logartimer er nødvendig for å løse liknigner der den ukjente befinner seg i eksponenten i en potens. Slike likninger kalles eksponentiallikninger og vi vil komme tilbake til de senere.</p>
+<p>Logaritmer brukes til å definere en del størrelser i kjemi og fysikk:</p>
+<ul class="simple">
+<li><p>pH er en skala i kjemi som forteller om et stoff er surt eller basisk. pH-skalaen går fra 1 til 14. En blanding med pH på 1 er 10 ganger så sur som en blanding med pH2. Dette defineres med logaritmer.</p></li>
+<li><p>Richters skala for jordskjelv fungerer tilsvarende</p></li>
+<li><p>dB-skalaen for lydstyrke er logaritmisk</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs\algebralikninger"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="potensrot.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Potenser og røtter</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="naturliglogaritme.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Den naturlige logaritmen</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Kristoffer Stige<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
