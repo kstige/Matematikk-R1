@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Eksponentiallikninger" href="eksponentiallikninger.html" />
@@ -338,7 +340,150 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="logaritmelikninger">
 <h1>Logaritmelikninger<a class="headerlink" href="#logaritmelikninger" title="Permalink to this headline">#</a></h1>
-<p>En logaritme</p>
+<p>I ei logaritmelikning er den ukjente en del av et logaritmeuttrykk. Noen eksempler på logaritmelikninger er</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lg x^2 = 9\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2\ln(x-3)=4\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((\ln x)^2-\ln x - 6 = 0\)</span></p></li>
+</ul>
+<p>Vi kommer til å få bruk for mange av de teknikkene som vi har lært om “vanlige” likninger tidligere. I tillegg kommer vi til å lære oss noen nye triks som baserer seg på blant annet logaritmesetningene.</p>
+<p>En viktig ting vi må merke oss før vi fortsetter er at logaritmer kun er definert for positive tall. Det vil si at vi allerede fra start må sette en del begrensninger på hva den ukjente kan være. Eksempelvis vil vi i likningen <span class="math notranslate nohighlight">\(2\ln(x-3)=4\)</span> måtte ha som et krav at <span class="math notranslate nohighlight">\(x&gt;3\)</span> siden en løsning som gir <span class="math notranslate nohighlight">\(x&lt;3\)</span> ikke kan brukes i den opprinnelige likningen.</p>
+<p>For å lære oss å løse logaritmelikninger tar vi mange eksempel, der vi starter med det helt enkle og bygger oss opp til logaritmelikninger av høyere grad. Om logaritmelikningene inneholder <span class="math notranslate nohighlight">\(\lg\)</span> eller <span class="math notranslate nohighlight">\(\ln\)</span> har lite å si. Løsningsmetodene er helt lik, men i avsluttende steg må vi bruke riktig versjon av ekvivalensene som er oppgitt under. De er en versjon av definisjonen av logaritmene og blir nødvendig i løsningen av de fleste logaritmelikninger.</p>
+<div class="math notranslate nohighlight">
+\[\lg x = a \quad \Leftrightarrow \quad x = 10^a\]</div>
+<div class="math notranslate nohighlight">
+\[\ln x = a \quad \Leftrightarrow \quad x = e^a\]</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 1</p>
+<p>I begge likningene under må <span class="math notranslate nohighlight">\(x&gt;0\)</span> siden vi tar henholdsvis <span class="math notranslate nohighlight">\(\lg x\)</span> og <span class="math notranslate nohighlight">\(\ln x\)</span>. Om vi får et svar som gir <span class="math notranslate nohighlight">\(x&lt;0\)</span>, så vil ikke svaret være gyldig.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\lg x &amp;= 3 \\
+x &amp;= 10^3 \\
+x &amp;= 1000
+\end{align}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\ln x &amp;= 3 \\
+x &amp;= e^3 
+\end{align}\)</span></p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 2</p>
+<p>Skal løse <span class="math notranslate nohighlight">\(3\ln x - 2 = 1\)</span>. Her må <span class="math notranslate nohighlight">\(x&gt;0\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+3\ln x - 2 &amp;= 1 \\
+3\ln x &amp;= 3 \\
+\ln x &amp;= 1 \\
+x &amp;= e^1 \\
+x &amp;= e
+\end{align}\)</span></p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 2</p>
+<p>Skal løse <span class="math notranslate nohighlight">\(2\lg x^2 - 2 = 2\)</span>. Her er eneste begrensning at <span class="math notranslate nohighlight">\(x\neq 0\)</span> siden både positive og negative verdier for <span class="math notranslate nohighlight">\(x\)</span> kan settes inn i likningen.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+2\lg x^2 - 2 &amp;= 2 \\
+2\lg x^2 &amp;= 4 \\
+\lg x^2 &amp;= 2 \\
+x^2 &amp;= 10^2 \\
+x &amp;= \pm \sqrt{10^2} \\
+x &amp;= \pm 10
+\end{align}\)</span></p>
+<p>Det kan være fristende å velge en annen løsningsstrategi for likninga som tar utgangspunkt i tredje kvadratsetning.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+2\lg x^2 - 2 &amp;= 2 \\
+2\cdot 2\lg x &amp;= 4 \\
+\lg x &amp;= 1 \\
+x &amp;= 10^1 \\
+x &amp;= 10
+\end{align}\)</span></p>
+<p>Her ser vi imidlertid at vi har mistet den negative løsningen. Grunnen til at dette skjer er at når vi tar logaritmen av <span class="math notranslate nohighlight">\(x^2\)</span> kan vi fint ha <span class="math notranslate nohighlight">\(x&lt;0\)</span>. Med en gang vi tar ned eksponenten ender vi imidlertid opp med å ta logaritmen av <span class="math notranslate nohighlight">\(x\)</span>. Da kan ikke <span class="math notranslate nohighlight">\(x\)</span> være negativ lenger. Overgangen er derfor kun en implikasjon og ikke en ekvivalens. Problemet oppstår kun om eksponenten er et partall. Kan du tenke deg hvorfor?</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 3</p>
+<p>Skal løse <span class="math notranslate nohighlight">\(\ln(2x-1)+\ln x = \ln 3\)</span>. Her ser vi at <span class="math notranslate nohighlight">\(2x-1&gt;0\)</span> og <span class="math notranslate nohighlight">\(x&gt;0\)</span>. Den første gir <span class="math notranslate nohighlight">\(x&gt;0,5\)</span>. Siden det er større enn 0 så blir det <span class="math notranslate nohighlight">\(x&gt;0\)</span> som gjelder.</p>
+<p>For å løse denne bruker vi først andre logaritmesetning baklengs på venstre side.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\ln(2x-1)+\ln x &amp;= \ln 3 \\
+\ln((2x-1)\cdot x) &amp;= \ln 3 \quad\quad \text{Tar e^ på begge sider} \\
+e^{\ln((2x-1)\cdot x)} &amp;= e^{\ln 3} \\
+(2x-1)\cdot x &amp;= 3 \\
+2x^-x-3&amp;=0
+\end{align}\)</span></p>
+<p>Løser andregradslikningen med abc-formelen. Får at <span class="math notranslate nohighlight">\(x=-1 \vee x= frac{3}{2}\)</span>. Den negative løsningen kan ikke brukes i den opprinnelige likningen. Endelig løsning blir <span class="math notranslate nohighlight">\(L=\{\frac{3}{2}\}\)</span>.</p>
+<p>I dette eksempelet ser vi at vi vi har fått innført en ekstra løsning som ikke stemmer. Det er fordi overgangen der vi fjerner logartimen kun er en implikasjon og ikke en ekvivalens.</p>
+</div>
+<p>I linje 2-3 kunne vi tatt en snarvei ved å observere at: <strong>Dersom logaritmen til to tall er like, så er tallene like</strong>. Altså kunne vi skrevet opp <span class="math notranslate nohighlight">\((2x-1)\cdot x=3\)</span> direkte. Generelt har vi at</p>
+<div class="admonition-like-logaritmer admonition">
+<p class="admonition-title">Like logaritmer</p>
+<p>Dersom <span class="math notranslate nohighlight">\(a\)</span> er et postivt tall, så vil</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\lg x &amp;= \lg a \\
+x &amp;= a
+\end{align}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\ln x &amp;= \ln a \\
+x &amp;= a
+\end{align}\)</span></p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 4</p>
+<p>Vi skal løse <span class="math notranslate nohighlight">\(2\lg x^3 + 2\lg x^2 &amp;= \lg 5\)</span>. Det kan vi gjøre på flere måter.</p>
+<p><strong>Metode 1</strong></p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+2\lg x^3 - 2\lg x^2 &amp;= \lg 5 \\
+6\lg x -4\lg x &amp;= \lg 5 \\
+2\lg x &amp;=  \lg 5 \\
+\lg x^2 &amp;= \lg 5 \\
+x^2 &amp;= 5 \\
+x &amp;= \pm \sqrt{5}
+\end{align}\)</span></p>
+<p>Her må vi imidlertid forkaste den negative løsningen siden <span class="math notranslate nohighlight">\(x^3&lt;0\)</span> når <span class="math notranslate nohighlight">\(x&lt;0\)</span>. Da blir <span class="math notranslate nohighlight">\(L=\{\sqrt{5}\}\)</span>.</p>
+<p><strong>Metode 2</strong></p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+2\lg x^3 - 2\lg x^2 &amp;= \lg 5 \\
+\lg x^6 - \lg x^4 &amp;= \lg 5 \\
+\lg \frac{x^6}{x^4} &amp;=  \lg 5 \\
+\lg x^2 &amp;= \lg 5 \\
+x^2 &amp;= 5 \\
+x &amp;= \pm \sqrt{5}
+\end{align}\)</span></p>
+<p>Og vi får samme svaret som over <span class="math notranslate nohighlight">\(L=\{\sqrt{5}\}\)</span>.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 5</p>
+<p>Vi skal løse <span class="math notranslate nohighlight">\(\ln(2-x)-\ln x = 2\)</span> med to forskjellige metoder. Her må <span class="math notranslate nohighlight">\(2-x&gt;0\)</span> og <span class="math notranslate nohighlight">\(x&gt;0\)</span>. Det betyr at vi må ha <span class="math notranslate nohighlight">\(0&lt;x&lt;2\)</span>.</p>
+<p><strong>Metode 1</strong> - med andre logaritmesetning</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\ln(2-x)-\ln x &amp;= 2 \\
+\ln \frac{2-x}{x} &amp;= 2 \\
+\frac{2-x}{x} &amp;=  e^2 \\
+2-x &amp;= x\cdot e^2 \\
+x(e^2+1) &amp;= 2 \\
+x &amp;= \frac{2}{e^2+1}
+\end{align}\)</span></p>
+<p>Finner vi et avrundet svar for <span class="math notranslate nohighlight">\(x\)</span>, så ser vi at det er en lovlig verdi, så <span class="math notranslate nohighlight">\(L=\{\frac{2}{e^2+1}\}\)</span>.<br />
+Fra linje 3 til linje 4 multipliserte vi begge sider med <span class="math notranslate nohighlight">\(x\)</span>. Det er kun lov om <span class="math notranslate nohighlight">\(x\neq 0\)</span>, men det har vi uansett satt som en betingelse fra start, så det er ikke noe problem.</p>
+<p><strong>Metode 2</strong> - ta <span class="math notranslate nohighlight">\(e\)</span> opphøyd i begge sider</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\ln(2-x)-\ln x &amp;= 2 \\
+e^{\ln(2-x)-\ln x} &amp;= e^2 \\
+\frac{e^{\ln(2-x)}}{e^{\ln x}} &amp;=  e^2 \\
+\frac{2-x}{x} &amp;=  e^2 
+\end{align}\)</span></p>
+<p>Resten løses likt som metode 1 og vi får samme svar.</p>
+</div>
+<p>Til slutt tar vi for oss et eksempel på en likning som er i andregrad av logaritmeuttrykket</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Andregradslikning</p>
+<p>Vi skal løse <span class="math notranslate nohighlight">\((\ln x)^2-2\ln x-8=0\)</span>. Her kan vi se for oss at dette er ei andregradslikning med <span class="math notranslate nohighlight">\(\ln x\)</span> som ukjent. Dersom vi innfører <span class="math notranslate nohighlight">\(u = \ln x\)</span> blir det kanskje enklere å se. Da blir likningen på formen <span class="math notranslate nohighlight">\(u^2-2u-8=0\)</span>.</p>
+<p>En slik likning løser vi greit med abc-formelen. Da får vi <span class="math notranslate nohighlight">\(u=2\vee u = -4\)</span>. Men så må vi sette inn igjen for <span class="math notranslate nohighlight">\(u\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+u &amp;=2 \quad &amp;\vee&amp; \quad u &amp;=-4 \\
+\ln x &amp;= 2 \quad &amp;\vee&amp; \quad \ln x &amp;= -4 \\
+x &amp;= e^2 \quad &amp;\vee&amp; \quad x &amp;= e^{-4}
+\end{align}\)</span></p>
+<p>Løsninga av likninga blir <span class="math notranslate nohighlight">\(L=\{e^{-4}, e^2\}\)</span>.</p>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
