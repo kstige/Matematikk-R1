@@ -421,7 +421,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="logaritmer">
 <h1>Logaritmer<a class="headerlink" href="#logaritmer" title="Permalink to this headline">#</a></h1>
-<div class="tip dropdown admonition">
+<div class="utbytte dropdown admonition">
 <p class="admonition-title">Læringsutbytte</p>
 <p>I dette temaet arbeider vi med kompetansemålet:</p>
 <ul class="simple">
@@ -429,7 +429,6 @@ title="Print to PDF"
 </ul>
 <p>Etter å ha arbeidet med temaet, skal du:</p>
 <ul class="simple">
-<li><p>ha repetert regnereglene for potenser</p></li>
 <li><p>kunne definisjonen av tierlogaritmen</p></li>
 <li><p>kunne regne ut enkle logaritmeverdier for hånd</p></li>
 <li><p>bruke digitale hjelpemidler til å regne ut logaritmeverdier</p></li>
@@ -454,7 +453,7 @@ title="Print to PDF"
 </ul>
 <p>Det vil si at vi kan bruke grafen til å løse likninger av typen <span class="math notranslate nohighlight">\(10^x=a\)</span>, der <span class="math notranslate nohighlight">\(a\in\mathbf{R}\)</span>. Om vi skal løse likninga <span class="math notranslate nohighlight">\(10^x=5\)</span> kan vi for eksempel lage oss ei linje ut fra y=5. Den skjærer grafen for <span class="math notranslate nohighlight">\(x\approx 0,7\)</span> som blir løsninga på likninga.</p>
 <p>Tallsystemet vi bruker kalles titallsystemet. Potenser med 10 som grunntall dukker derfor ofte opp. Likninger av typen over er derfor en type likninger som vil være relvant å se på. <span class="math notranslate nohighlight">\(x\)</span>-verdien i likninga har derfor fått et eget navn som vi kaller den tierlogartimen (eller den briggske logaritmen). Vi starter med å definere dette begrepet.</p>
-<div class="admonition-definisjon-av-tierlogaritmen admonition">
+<div class="def admonition">
 <p class="admonition-title">Definisjon av tierlogaritmen</p>
 <p>Tierlogaritmen, <span class="math notranslate nohighlight">\(\lg p\)</span>, til et tall <span class="math notranslate nohighlight">\(p\)</span> er det tallet vi må opphøye 10 i for å få <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(10^{\lg p} = p\)</span> der <span class="math notranslate nohighlight">\(p &gt;0\)</span></p>
@@ -477,7 +476,7 @@ title="Print to PDF"
 <p>Merk at programmeringsspråket python bruker skrivemåten log10 for den briggske logaritmen.</p>
 </div>
 <p>Fra eksempelet over ser vi kanskje at det er noen logaritmer som er enkle å se uten hjelpemiddel.</p>
-<div class="admonition-enkle-logaritmer admonition">
+<div class="def admonition">
 <p class="admonition-title">Enkle logaritmer</p>
 <p>Vi kan enkelt ta logaritmen til potenser med grunntall 10.</p>
 <p><span class="math notranslate nohighlight">\(\lg 10^k=k\)</span></p>
@@ -490,14 +489,14 @@ title="Print to PDF"
 <p>Vi skal lære tre regneregler for logaritmer som vi av mangel på bedre navn har valgt å kalle første, andre og tredje logaritmesetning. Alle regnereglene beviser vi med utgangspunkt i sammenhengen mellom logaritmer og potenser.</p>
 <section id="forste-logaritmesetning">
 <h3>Første logaritmesetning<a class="headerlink" href="#forste-logaritmesetning" title="Permalink to this headline">#</a></h3>
-<div class="admonition-forste-logaritmesetning admonition">
+<div class="def admonition">
 <p class="admonition-title">Første logaritmesetning</p>
 <p>La <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> være positive tall. Da er</p>
 <p><span class="math notranslate nohighlight">\(\lg ab = \lg a + \lg b\)</span></p>
 <p>Logaritmer gjør altså multiplikasjon om til addisjon.</p>
 <p><em>Det er viktig å merke seg denne setningen. En vanlig feil er å si at <span class="math notranslate nohighlight">\(\lg(a+b)=\lg a + \lg b\)</span>.</em></p>
 </div>
-<div class="dropdown admonition">
+<div class="def dropdown admonition">
 <p class="admonition-title">Bevis for første logaritmesetning</p>
 <p>Utgangspunktet for beviset er definisjonen av logaritmer og regnereglene for potenser.</p>
 <p><span class="math notranslate nohighlight">\(ab=10^{\lg ab}\)</span>
@@ -526,7 +525,7 @@ title="Print to PDF"
 </section>
 <section id="andre-logaritmesetning">
 <h3>Andre logaritmesetning<a class="headerlink" href="#andre-logaritmesetning" title="Permalink to this headline">#</a></h3>
-<div class="admonition-andre-logartimesetning admonition">
+<div class="def admonition">
 <p class="admonition-title">Andre logartimesetning</p>
 <p>La <span class="math notranslate nohighlight">\(a\)</span> være et positivt tall og <span class="math notranslate nohighlight">\(b\in\mathbf{R}\)</span>. Da er</p>
 <p><span class="math notranslate nohighlight">\(\lg \frac{a}{b} = \lg a - \lg b\)</span></p>
@@ -545,13 +544,13 @@ title="Print to PDF"
 </section>
 <section id="tredje-logaritmesetning">
 <h3>Tredje logaritmesetning<a class="headerlink" href="#tredje-logaritmesetning" title="Permalink to this headline">#</a></h3>
-<div class="admonition-tredje-logaritmesetning admonition">
+<div class="def admonition">
 <p class="admonition-title">Tredje logaritmesetning</p>
 <p>La <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> være positive tall. Da er</p>
 <p><span class="math notranslate nohighlight">\(\lg a^b = b\cdot lg a\)</span></p>
 </div>
 <p>En vanlig feil ved bruk av tredje logaritmesetning er å ikke skille mellom uttrykkene <span class="math notranslate nohighlight">\(\lg a^2=2\lg a\)</span> og <span class="math notranslate nohighlight">\(\left(lg a\right)^2=\lg a \cdot \lg a\)</span>. Tredje logaritmesetning kan brukes på den første, men ikke den andre.</p>
-<div class="dropdown admonition">
+<div class="def dropdown admonition">
 <p class="admonition-title">Bevis for tredje logaritmesetning</p>
 <p>Vi tar utgangspunkt i definisjonen av logaritmer og av potensreglene.</p>
 <p><span class="math notranslate nohighlight">\(a^b=10^{\lg a^b}\)</span>
