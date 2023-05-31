@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Numerisk løsning av likninger" href="numerisklosning.html" />
@@ -338,6 +340,109 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="eksponentiallikninger">
 <h1>Eksponentiallikninger<a class="headerlink" href="#eksponentiallikninger" title="Permalink to this headline">#</a></h1>
+<div class="utbytte dropdown admonition">
+<p class="admonition-title">Læringsutbytte</p>
+<p>I dette temaet arbeider vi med kompetansemålet:</p>
+<ul class="simple">
+<li><p>utforske og forstå regneregler for potenser og logaritmer, og bruke ulike strategier for å løse eksponentialligninger og logaritmeligninger</p></li>
+</ul>
+<p>Etter å ha arbeidet med temaet, skal du:</p>
+<ul class="simple">
+<li><p>forklare hva en eksponentiallikning er</p></li>
+<li><p>anvende ulike strategier for å løse eksponentiallikninger (blant annet ved hjelp av logaritmer)</p></li>
+<li><p>forklare ekvivalens og implikasjon i logaritmiske likninger</p></li>
+<li><p>bruke digitale hjelpemidler for å løse eksponentiallikninger</p></li>
+</ul>
+</div>
+<p>Eksponentiallikninger er likninger der den ukjente er i eksponenten i en potens. De enkleste eksponentiallikningene kan vi løse ved å gjøre høyre og venstre side om til en potens med samme grunntall. Da kan vi bruke følgende resultat som vi kjenner en tilsvarende form av fra logaritmelikninger.</p>
+<div class="def admonition">
+<p class="admonition-title">Like grunntall</p>
+<p>Dersom <span class="math notranslate nohighlight">\(a^x=a^b\)</span>, så må <span class="math notranslate nohighlight">\(x=b\)</span>.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 1</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+8^x &amp;= 512 \\
+8^x &amp;= 8^3 \\
+x &amp;= 3
+\end{align}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+e^{2x} &amp;= \sqrt[3]{e^4} \\
+e^{2x} &amp;= e^{\frac{4}{3}} \\
+2x &amp;= \frac{4}{3} \\
+x &amp;= \frac{2}{3}
+\end{align}\)</span></p>
+</div>
+<p>For de fleste eskponentiallikninger vil vi imidlertid være avhengig av logaritmer for å løse likningene for hånd. Logaritmen bruker vi for å ta den ukjente ned fra eksponenten. Dette fungerer siden <span class="math notranslate nohighlight">\(\ln 4^x=x\ln 4\)</span> i følge tredje logaritmesetning. Om ikke grunntallet i potensen tilsier at det er lurt å velge enten tierlogaritmen eller den naturlige logaritmen, så kan vi i utgangspunktet velge akkurat den logaritmen vi vil.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 2</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+3^x &amp;= 8 \\
+\lg 3^x &amp;= \lg 8 \\
+x\lg 3 &amp;= \lg 8 \\
+x &amp;= \frac{\lg 8}{\lg 3}
+\end{align}\)</span></p>
+<p>Oppgava kan også løses ved å bruke <span class="math notranslate nohighlight">\(\ln\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+3^x &amp;= 8 \\
+\ln 3^x &amp;= \ln 8 \\
+x\ln 3 &amp;= \ln 8 \\
+x &amp;= \frac{\ln 8}{\ln 3}
+\end{align}\)</span></p>
+<p>Vi ser at svaret ser ulikt ut, men om vi finner tilnærmet verdi for de to uttrykkene, så ser vi at <span class="math notranslate nohighlight">\(\frac{\lg 8}{\lg 3}=\frac{\ln 8}{\ln 3}\)</span>. Det her kan vi også vise ved å ta i bruk sammenhengen mellom logaritmene som vi viste på siden om den naturlige logaritmen.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 3</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+4^{2x+1} &amp;= e^2 \\
+\ln 4^{2x+1} &amp;= \ln e^2 \\
+(2x+1)\ln 4 &amp;= 2 \\
+2x+1 &amp;= \frac{2}{\ln 4} \\
+2x &amp;= \frac{2}{\ln 4} -1 \\
+x &amp;= \frac{1}{\ln 4} -\frac{1}{2} \\
+x &amp;= \frac{2-\ln 4}{2\ln{4}} = \frac{2-\ln 4}{\ln 16}
+\end{align}\)</span></p>
+</div>
+<p>I enkelte eksponentiallikninger må vi gjøre litt forarbeid for å få likningen på en form som gjør at vi kan få eksponenten ned ved hjelp av en logaritme. Dette forarbeidet kan ligge i å slå sammen ulike potenser for å få en potens med den ukjente i, faktorisere eller få uttrykket på form av en andregradslikning. Ofte kreves det litt kreativitet og/eller erfaring for å se hvordan vi kan skrive om likningen for å gjøre det lettere for oss. Vi tar noen eksempler på ulike triks vi kan bruke.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 4</p>
+<p>Vi skal løse likningen <span class="math notranslate nohighlight">\(e^{2x} -4e^x = 0\)</span>. Et triks vi kan bruke her er at <span class="math notranslate nohighlight">\(e^{2x}=(e^x)^2=e^x\cdot e^x\)</span>. Dette bruker vi for å faktorisere uttrykket på venstre side.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+e^{2x} -4e^x &amp;= 0 \\
+e^x\cdot e^x-4e^x &amp;= 0 \\
+e^x(e^x-4) &amp;= 0
+\end{align}\)</span></p>
+<p>Her kan vi videre benytte produktregelen vi lærte i 1T. For at <span class="math notranslate nohighlight">\(e^x(e^x-4)\)</span> skal bli null, så må en av faktorene være null. Den første faktoren <span class="math notranslate nohighlight">\(e^x\)</span> kan ikke bli null, så da går vi videre med</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+e^x -4 &amp;= 0 \\
+e^x &amp;= 4 \\
+\ln e^x &amp;= \ln 4 \\
+x &amp;= \ln 4
+\end{align}\)</span></p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 5</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+3^{3x}+3^{3x}+3^{3x} &amp;= 27 \\
+3\cdot 3^{3x} &amp;= 27 \\
+3^{3x} &amp;= 9 \\
+3^{3x} &amp;= 3^2 \\
+3x &amp;= 2 \\
+x &amp;= \frac{2}{3}
+\end{align}\)</span></p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 6</p>
+<p>Vi skal løse <span class="math notranslate nohighlight">\(3^x-4=12\cdot 3^{-x}\)</span>. Her vil vi først kvitte oss med potensen med negativ eksponent. Det gjør vi ved å multiplisere begge sider av likningen med <span class="math notranslate nohighlight">\(3^x\)</span>. Da får vi <span class="math notranslate nohighlight">\((3^x)^2-4\cdot 3^x=12\)</span>. Likningen virker fortsatt vanskelig, men om vi foreløpig setter <span class="math notranslate nohighlight">\(u=3^x\)</span> kan vi skrive den om til <span class="math notranslate nohighlight">\(u^2-4u = 12\)</span>. Det er ei standard andregradslikning som vi løser ved å flytte alt til venstre side og så bruke abc-formelen. Den gir <span class="math notranslate nohighlight">\(u=-2 \vee u=6\)</span>. Så setter vi inn for <span class="math notranslate nohighlight">\(u\)</span> og går videre med</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+u &amp;=-2 \quad &amp;\vee&amp; \quad u &amp;=6 \\
+3^x &amp;= -2 \quad &amp;\vee&amp; \quad 3^x &amp;= 6 \\
+\text{går ikke} &amp; \quad &amp;\vee&amp; \quad x &amp;= \frac{\ln 6}{\ln 3}
+\end{align}\)</span></p>
+<p>Det betyr at <span class="math notranslate nohighlight">\(L=\{\frac{\ln 6}{\ln 3}\}\)</span>.</p>
+</div>
+<p>Alle likningene her kan selvfølgelig også løses med CAS eller grafisk. Ved løsning med CAS vil vi kunne få svar som ser litt rare ut. Grunnen er at GeoGebra ønsker å skrive alle logaritmer uttrykt med <span class="math notranslate nohighlight">\(\ln\)</span>.</p>
+<p>På neste side skal vi se hvordan alle disse likningene også kan løses ved hjelp av programmering og numeriske metoder.</p>
 </section>
 
     <script type="text/x-thebe-config">

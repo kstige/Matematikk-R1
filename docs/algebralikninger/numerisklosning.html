@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Grenseverdier" href="../grenserderivasjon/grenseverdier.html" />
@@ -312,12 +314,58 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numeriske-metoder">
+   Numeriske metoder
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graftegning">
+     Graftegning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#forste-metode">
+     Første metode
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#halveringsmetoden">
+     Halveringsmetoden
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prov-selv">
+     Prøv selv
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -329,6 +377,41 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numeriske-metoder">
+   Numeriske metoder
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graftegning">
+     Graftegning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#forste-metode">
+     Første metode
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#halveringsmetoden">
+     Halveringsmetoden
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prov-selv">
+     Prøv selv
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -338,6 +421,163 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="numerisk-losning-av-likninger">
 <h1>Numerisk løsning av likninger<a class="headerlink" href="#numerisk-losning-av-likninger" title="Permalink to this headline">#</a></h1>
+<div class="utbytte dropdown admonition">
+<p class="admonition-title">Læringsutbytte</p>
+<p>I dette temaet arbeider vi med kompetansemålet:</p>
+<ul class="simple">
+<li><p>utforske og forstå regneregler for potenser og logaritmer, og bruke ulike strategier for å løse eksponentialligninger og logaritmeligninger</p></li>
+</ul>
+<p>Etter å ha arbeidet med temaet, skal du:</p>
+<ul class="simple">
+<li><p>forklare hva en numerisk metode er</p></li>
+<li><p>undersøke ulike numeriske metoder for å løse likninger</p></li>
+<li><p>lage et program som gir numerisk løsninger av likninger</p></li>
+<li><p>forklare hvordan metoden fungerer</p></li>
+</ul>
+</div>
+<p>De aller fleste likninger vi møter i matematikken på skolen kan løses med en eller annen lur metode. Dette er nyttig for blant annet forståelse og utledning av vktige resultater. I det “virkelige liv” vil imidlertid mange (de fleste) av likningne vi møter enten være veldig vanskelig eller umulig å løse. Vi trenger allikevel metoder for å løse likningene. Til det trenger vi numeriske metoder.</p>
+<section id="numeriske-metoder">
+<h2>Numeriske metoder<a class="headerlink" href="#numeriske-metoder" title="Permalink to this headline">#</a></h2>
+<p>Med en numerisk metode mener vi en metode der vi leter etter en tilnærmet løsning på likningen. Mange numeriske metoder kan utføre for hånd, men normalt sett involverer de mange utregninger og vil derfor enklest gjennomføres digitalt. Felles for de fleste metodene er at vi starter med en <em>gjetning</em> på hva løsningen vil være, og så prøver vi å forbedre gjetningen. Det vil derfor være en fordel dersom vi starter med en kvalifisert gjetning som er nærme løsningen. For å finne en slik kvalifisert gjetning hjelper det med en grafisk framstilling av likningen. Vi flytter derfor alt over til venstre side, tegner grafen og ser etter nullpunkt.</p>
+<section id="graftegning">
+<h3>Graftegning<a class="headerlink" href="#graftegning" title="Permalink to this headline">#</a></h3>
+<p>La oss som eksempel ta likningen <span class="math notranslate nohighlight">\(4\ln(x^3-8)=x^2-20\)</span>. Vi flytter alt over på venstre side og kaller uttrykket <span class="math notranslate nohighlight">\(f(x)\)</span> slik at vi skal løse likningen <span class="math notranslate nohighlight">\(f(x)=4\ln(x^3-8)-x^2+20=0\)</span>.</p>
+<p>For å tegne grafen til funksjonen, så må vi importere ekstra bibliotek inn i python. Vi har to muligheter:</p>
+<ul class="simple">
+<li><p>numpy og matplotlib</p></li>
+<li><p>pylab</p></li>
+</ul>
+<p>Det første alternativet er det foretrukne i <em>skikkelig</em> programmering, mens pylab er et enklere alternativ som inkluderer alt vi trenger (på bekostning av litt problemer i større programmer). Vi gir først den <em>enkle</em> varianten før vi bruker den første i veien videre.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>             <span class="c1"># x-verdier</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">8</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">20</span>     <span class="c1"># y-verdier</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">axhline</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>       <span class="c1"># tegner x-akse</span>
+<span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Så tar vi tilsvarende kode med numpy og matplotlib. Eneste forskjellen er at vi må putte på np. og plt. før noen av kommandoene. Dette kan virke unødvendig i forhold til løsningen over. I større program er det imidlertid en stor fordel siden det tydeliggjør hvor vi henter funksjonene fra. Vi kan støte på at flere bibliotek inneholder funksjoner/kommandoer med samme navn. Da vil vi ikke vite hvilken versjon programmet vårt velger å bruke, og resultatet kan bli feil.</p>
+<p>Videre vil vi kun bruke versjonen med numpy og matplotlib. Ønsker du å bruke den enkle versjonen vil endringen du må gjøre stort sett bestå i at du skriver inn riktig import i starten og at du fjerner np. og plt. alle steder i programmene.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>              <span class="c1"># x-verdier</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">8</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">20</span>      <span class="c1"># y-verdier</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>       <span class="c1"># tegner x-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/numerisklosning_1_0.png" src="../../_images/numerisklosning_1_0.png" />
+</div>
+</div>
+<p>Fra grafen over ser vi at nullpunktet vårt (som er løsningen av likningen) må ligge ved omtrent <span class="math notranslate nohighlight">\(x=6.5\)</span>. Vi kan nå gå videre til å se på algoritmer/metoder som kan finne dette nullpunktet for oss.</p>
+</section>
+<section id="forste-metode">
+<h3>Første metode<a class="headerlink" href="#forste-metode" title="Permalink to this headline">#</a></h3>
+<p>Den første metoden vi skal prøve er en metode som i liten grad brukes da den i større sammenhenger er langsom og kan feile. Imidlertid så er den ganske lett å forstå og er en fin intrduksjon til numeris løsning av likninger.</p>
+<p>Metoden går ut på at vi starter med en <span class="math notranslate nohighlight">\(x\)</span>-verdi som er mindre enn løsningen vi vil finne. Vi regner ut funksjonsverdien <span class="math notranslate nohighlight">\(f(x)\)</span>. Så øker vi <span class="math notranslate nohighlight">\(x\)</span> litt og regner ut ny funksjonsverdi. Slik fortsetter vi til <span class="math notranslate nohighlight">\(f(x)\)</span> skifter fortegn. Da vil nullpunktet ligge mellom de to siste <span class="math notranslate nohighlight">\(x\)</span>-verdiene, siden funksjonen har krysset <span class="math notranslate nohighlight">\(x\)</span>-aksen. Først gir vi en pseudokode for metoden.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>x = startverdi
+y = f(x)
+dx = steglengde
+
+mens f(x)*f(x_forrige) &gt; 0: # Når dette produktet blir negativt skifter funksjonen fortegn
+    x_forrige = x
+    x = x + dx
+
+nullpunkt = (x+x_forrige)/2
+skriv ut nullpunkt
+</pre></div>
+</div>
+<p>Vi prøver å implementere metoden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  <span class="c1"># Trengs ikke gjøres på nytt dersom dette er i samme</span>
+                    <span class="c1"># program som grafen over</span>
+
+<span class="n">x_start</span> <span class="o">=</span> <span class="mi">5</span>         <span class="c1"># Startpunkt</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="mf">1E-6</span>           <span class="c1"># Forskjellen mellom x-verdier 1*10^-6</span>
+
+<span class="c1"># Definerer funksjonen</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">8</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">20</span>
+
+<span class="n">x_1</span> <span class="o">=</span> <span class="n">x_start</span>                   <span class="c1"># Velger første x-verdi</span>
+<span class="n">x_2</span> <span class="o">=</span> <span class="n">x_1</span> <span class="o">+</span> <span class="n">dx</span>                  <span class="c1"># Velger andre x-verdi</span>
+
+<span class="k">while</span> <span class="n">f</span><span class="p">(</span><span class="n">x_1</span><span class="p">)</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x_2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>      
+    <span class="n">x_1</span> <span class="o">=</span> <span class="n">x_2</span>
+    <span class="n">x_2</span> <span class="o">=</span> <span class="n">x_2</span> <span class="o">+</span> <span class="n">dx</span>
+    
+<span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x_1</span> <span class="o">+</span> <span class="n">x_2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>      <span class="c1"># Finner midtpunktet de to siste x-verdiene</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Løsningen av likningen er x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Løsningen av likningen er x =  6.508405500210841
+</pre></div>
+</div>
+</div>
+</div>
+<p>Programmet over kan brukes til å finne nullpunkt til de aller fleste funksjoner. Tenk gjerne over om det er noen spesielle typer nullpunkt programmet ikke kan finne.</p>
+</section>
+<section id="halveringsmetoden">
+<h3>Halveringsmetoden<a class="headerlink" href="#halveringsmetoden" title="Permalink to this headline">#</a></h3>
+<p>Vi skal nå vise en metode som i de fleste tilfeller vil være raskere og bedre enn metoden over. Den kalles halveringsmetoden. I korte trekk går metoden ut på at vi velger oss et intervall <span class="math notranslate nohighlight">\([a, b]\)</span> rundt nullpunktet. Så finner vi midten av intervallet og kaller det <span class="math notranslate nohighlight">\(m\)</span>. Siste steg er at vi ved hjelp av fortegnene til funksjonsverdiene undersøker om nullpunktet ligger i <span class="math notranslate nohighlight">\([a, m]\)</span> eller <span class="math notranslate nohighlight">\([m, b]\)</span>. Dette blir det nye intervallet vårt og så gjentar vi metoden fram til intervallet er <em>lite nok</em>. Da vil en god tilnærmingsverdi for løsningen være midtpunktet i dette intervallet.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Definerer funksjonen</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">8</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">20</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">6</span>                               <span class="c1"># Startverdi for intervallet</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">7</span>                               <span class="c1"># Sluttverdi for intervallet</span>
+<span class="n">noyaktighet</span> <span class="o">=</span> <span class="mf">1E-8</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>                         <span class="c1"># Finner midtpunktet</span>
+<span class="k">while</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">))</span> <span class="o">&gt;=</span> <span class="n">noyaktighet</span><span class="p">:</span>  <span class="c1"># Sjekker om f(m) er nærme nok 0</span>
+    <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>               <span class="c1"># Dersom a og m har samme fortegn, så lar vi ny verdi av a være m.</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">m</span>                       
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">m</span>                       <span class="c1"># Ellers lar vi ny verdi av b være m</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>                     <span class="c1"># Finner nytt midtpunkt</span>
+        
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nullpunktet er ved x = &quot;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>                                           <span class="c1"># Tegner grafen til funksjonen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span>                         <span class="c1"># Tegner x-aksen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>                  <span class="c1"># Tegner inn nullpunktet</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nullpunktet er ved x =  6.508405747823417
+</pre></div>
+</div>
+<img alt="../../_images/numerisklosning_5_1.png" src="../../_images/numerisklosning_5_1.png" />
+</div>
+</div>
+<p>For vårt formål vil begge metodene over stort sett fungere bra nok. For større oppgaver der det skal løses mange likninger trengs det mer avanserte metoder som vi ikke går inn på her.</p>
+<p>For en mer utførlig introduksjon til numeriske løsning av likninger anbefales siden <a class="reference external" href="https://realprog.no/docs/tema4_numeriske_metoder/likninger.html">realprog.no</a>.</p>
+</section>
+<section id="prov-selv">
+<h3>Prøv selv<a class="headerlink" href="#prov-selv" title="Permalink to this headline">#</a></h3>
+<p>Lag eller finn ei likning som du vil løse. Prøv å lage egen kode for å tegne grafen og for å løse likningen med en av metodene over. Bruk enten editoren under eller i eget program på datamaskinen din.</p>
+<iframe src="https://trinket.io/embed/python3/efb8d17aa7" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
