@@ -11,7 +11,7 @@
 # 
 # Etter å ha arbeidet med temaet, skal du:
 #  
-#  * forklare hva en numerisk metode er
+#  * kunne forklare hva en numerisk metode er
 #  * undersøke ulike numeriske metoder for å løse likninger
 #  * lage et program som gir numerisk løsninger av likninger
 #  * forklare hvordan metoden fungerer
