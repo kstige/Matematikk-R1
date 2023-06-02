@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Ekstremalverdier" href="../brukderivasjon/ekstremalverdier.html" />
@@ -312,12 +314,54 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rasjonale-funksjoner">
+   Rasjonale funksjoner
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Grenseverdier
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ensidige-grenseverdier">
+   Ensidige grenseverdier
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grenseverdier-nar-x-to-pm-infty">
+   Grenseverdier når
+   <span class="math notranslate nohighlight">
+    \(x\to\pm\infty\)
+   </span>
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -329,6 +373,37 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rasjonale-funksjoner">
+   Rasjonale funksjoner
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Grenseverdier
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ensidige-grenseverdier">
+   Ensidige grenseverdier
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grenseverdier-nar-x-to-pm-infty">
+   Grenseverdier når
+   <span class="math notranslate nohighlight">
+    \(x\to\pm\infty\)
+   </span>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -338,6 +413,244 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="grenseverdier">
 <h1>Grenseverdier<a class="headerlink" href="#grenseverdier" title="Permalink to this headline">#</a></h1>
+<div class="utbytte dropdown admonition">
+<p class="admonition-title">Læringsutbytte</p>
+<p>I dette temaet arbeider vi med kompetansemålet:</p>
+<ul class="simple">
+<li><p>forstå begrepene vekstfart, grenseverdi, derivasjon og kontinuitet, og bruke disse for å løse praktiske problemer</p></li>
+<li><p>bruke ulike strategier for å utforske og bestemme grenseverdier til funksjoner, og utforske og argumentere for anvendelser av grenseverdier</p></li>
+</ul>
+<p>Etter å ha arbeidet med temaet, skal du:</p>
+<ul class="simple">
+<li><p>gjøre rede for hva vi mener med grenseverdier og når grenseverdien eksisterer</p></li>
+<li><p>finne grenseverdier for sammenhengende og ikke-sammenhengende funksjoner</p></li>
+<li><p>finne grenseverdien når <span class="math notranslate nohighlight">\(x\to\pm\infty\)</span></p></li>
+<li><p>anvende de enkleste regnereglene for grenseverdier</p></li>
+</ul>
+</div>
+<section id="rasjonale-funksjoner">
+<h2>Rasjonale funksjoner<a class="headerlink" href="#rasjonale-funksjoner" title="Permalink to this headline">#</a></h2>
+<p>Fra 1T husker vi at vi jobbet med <a class="reference external" href="https://kstige.github.io/Matematikk-1T/docs/funksjoner/rasjonalefunksjoner.html">rasjonale funksjoner</a> og asymptoter. Et eksempel på en rasjonal funksjon er <span class="math notranslate nohighlight">\(f(x)=\frac{2x+1}{x-3}\)</span> som er tegnet under. I forbindelse med rasjonale funksjoner arbeidet vi med å finne vertikale og horisontale asymptoter.</p>
+<ul class="simple">
+<li><p>horisontale asymptoter - det funksjonen gikk mot når <span class="math notranslate nohighlight">\(x\)</span> gikk mot <span class="math notranslate nohighlight">\(\pm \infty\)</span>.</p></li>
+<li><p>vertikale asymptoter - der nevneren var 0 - når <span class="math notranslate nohighlight">\(x\)</span> nærmet seg <span class="math notranslate nohighlight">\(x\)</span>-verdien for den vertikale asymptoten, så gikk funksjonsverdien mot <span class="math notranslate nohighlight">\(\pm \infty\)</span>.</p></li>
+</ul>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/rasjonalfunksjon.png"><img alt="../../_images/rasjonalfunksjon.png" src="../../_images/rasjonalfunksjon.png" style="width: 598.8000000000001px; height: 362.40000000000003px;" /></a>
+</figure>
+<p>I funksjonen over ser vi at den horisontale asymptoten er <span class="math notranslate nohighlight">\(y=2\)</span>. En matematisk skrivemåte for dette er at</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x\to \pm\infty}f(x)=2\]</div>
+<p>Vi leser det som at grenseverdien til <span class="math notranslate nohighlight">\(f(x)\)</span> når <span class="math notranslate nohighlight">\(x\)</span> går mot pluss/minus uendelig er 2.</p>
+<p>Tilsvarende har vi en vertikal asymptote ved <span class="math notranslate nohighlight">\(x=3\)</span>. Da kan vi skrive</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x\to 3}f(x)=\pm \infty\]</div>
+<p>Det leser vi som at grenseverdien til <span class="math notranslate nohighlight">\(f(x)\)</span> når <span class="math notranslate nohighlight">\(x\)</span> går mot 3 er pluss/minus uendelig. Siden grenseverdien går mot uendelig (og i tillegg med begge fortegn) skal vi senere definere som at grenseverdien ikke eksisterer.</p>
+</section>
+<section id="id1">
+<h2>Grenseverdier<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>Over så vi to eksempler på det vi i matematikk kaller grenseverdier.</p>
+<div class="def admonition">
+<p class="admonition-title">Grenseverdi</p>
+<p>La <span class="math notranslate nohighlight">\(f\)</span> være en funksjon. Dersom <span class="math notranslate nohighlight">\(f(x)\)</span> går mot en verdi <span class="math notranslate nohighlight">\(b\)</span> når <span class="math notranslate nohighlight">\(x\)</span> går mot <span class="math notranslate nohighlight">\(a\)</span>, så sier vi at <span class="math notranslate nohighlight">\(b\)</span> er grenseverdien til <span class="math notranslate nohighlight">\(f\)</span> når <span class="math notranslate nohighlight">\(x\)</span> går mot <span class="math notranslate nohighlight">\(a\)</span>. Vi skriver grenseverdien som</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to a} f(x)=b\)</span></p>
+<p>Funksjonen trenger ikke være definert for <span class="math notranslate nohighlight">\(x=a\)</span> for at grenseverdien skal eksistere.</p>
+<p>Dersom funksjonen er definert for <span class="math notranslate nohighlight">\(x=a\)</span> vil</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to a} f(x)=f(a)\)</span></p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Grenseverdi for andregradsfunksjon</p>
+<p>Vi ser på andregradsfunksjonen <span class="math notranslate nohighlight">\(f(x)=x^2+2x-3\)</span> og skal finne grenseverdien når <span class="math notranslate nohighlight">\(x\to 3\)</span>. Definisjonsmengden til funksjonen er alle reelle tall. Da vil</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3} f(x)=3^2+2\cdot 3-3=12=f(3)\)</span></p>
+<p>Resultatet betyr at når <span class="math notranslate nohighlight">\(x\)</span> nærmer seg 3, så vil <span class="math notranslate nohighlight">\(f\)</span> nærme seg 12. Vi kan komme så nærme 12 vi vil ved å la <span class="math notranslate nohighlight">\(x\)</span> gå nærme nok 3.</p>
+</div>
+<p>I eksempelet over kunne vi bare sette inn for <span class="math notranslate nohighlight">\(x\)</span> for å finne grenseverdien. Slike eksempel er stort sett kun interessante fra et teoretisk og innlæringsperspektiv. I praksis vil vi være interessert i grenseverdier for <span class="math notranslate nohighlight">\(x\)</span>-verdier der funksjonen ikke er definert.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Grenseverdi for rasjonal funksjon</p>
+<p>Vi ser på den rasjonale funksjonen <span class="math notranslate nohighlight">\(f(x)=\frac{2(x^2-9)}{x-3}\)</span>. Den har definisjonsmengde <span class="math notranslate nohighlight">\(D_f=\mathbf{R} \backslash \{3\}\)</span> som betyr at funksjonen er definert for alle <span class="math notranslate nohighlight">\(x\)</span>-verdier bortsett fra <span class="math notranslate nohighlight">\(x=3\)</span>. Ser vi på grafen finner vi imidlertid ikke  noen vertikal asymptote der.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/fjernbardiskontinuitet.png"><img alt="../../_images/fjernbardiskontinuitet.png" src="../../_images/fjernbardiskontinuitet.png" style="width: 394.8px; height: 255.20000000000002px;" /></a>
+</figure>
+<p>Det kan faktisk se ut som at <span class="math notranslate nohighlight">\(f(3)=12\)</span>, men om vi prøver å sette inn i funksjonsuttrykket får vi</p>
+<p><span class="math notranslate nohighlight">\(f(3)=\frac{2(3^2-9)}{3-3}=\frac{0}{0}\)</span></p>
+<p>som ikke gir noen mening. Hva er det som skjer her?</p>
+<p>For å svare på det må vi bruke grenseverdier. Vi starter først med å finne grenseverdien i CAS.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/grenseverdiCAS.png"><img alt="../../_images/grenseverdiCAS.png" src="../../_images/grenseverdiCAS.png" style="width: 198.8px; height: 117.60000000000001px;" /></a>
+</figure>
+<p>Vi ser at grenseverdien til funksjonen er 12. Matematisk skriver vi det som at</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3} f(x)= 12\)</span></p>
+<p>Det betyr at når <span class="math notranslate nohighlight">\(x\)</span> kommer nærmere og nærmere 3, så vil <span class="math notranslate nohighlight">\(f\)</span> komme nærmere og nærmere 12. Vi kan aldri sette inn <span class="math notranslate nohighlight">\(x=3\)</span>, men vi kan komme så nært vi vil. Så akkurat i punktet <span class="math notranslate nohighlight">\((3,12)\)</span> har vi et hull på grafen vår, men punktet <span class="math notranslate nohighlight">\((2.999, 11.998)\)</span> er der (og tilsvarende punkt enda nærmere). Vi kan markere det her på grafen med et lite kryss</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/fjernbardiskontinuitetkryss.png"><img alt="../../_images/fjernbardiskontinuitetkryss.png" src="../../_images/fjernbardiskontinuitetkryss.png" style="width: 394.8px; height: 255.20000000000002px;" /></a>
+</figure>
+</div>
+<p>Over fant vi grenseverdien ved å se på grafen og bruke CAS. Det vil også være nyttig å kunne finne grenseverdier uten hjelpemidler siden det vil hjelpe oss med å forstå blant annet hvorfor vi ikke får en vertikal asymptote i funksjonen i eksempelet. Grenseverdier blir også viktig for å få bedre forståelse for derivasjon som er kanskje det største temaet i R1.</p>
+<p>For å arbeide med grenseverdier trenger vi noen regneregler. Disse er i utgangspunktet ganske intuitive (selv om det kan være litt kronglete å bevise det), så i praksis vil vi sjelden tenke over at vi bruker noen bestemte regler.</p>
+<div class="def admonition">
+<p class="admonition-title">Regneregler for grenseverdier</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to a} x = a\)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to a} k = k\)</span>, der <span class="math notranslate nohighlight">\(k\in\mathbf{R}\)</span>. Grenseverdien til et tall er tallet.</p>
+<p>Videre antar vi at <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(g\)</span> er to funksjoner og at grenseverdiene <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to a}f(x)\)</span> og <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to a}g(x)\)</span> eksisterer.</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to a}\left(f(x)\pm g(x)\right)=\lim_{x\to a}f(x)\pm\lim_{x\to a}g(x)\)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to a}\left(f(x)\cdot g(x)\right)=\lim_{x\to a}f(x)\cdot\lim_{x\to a}g(x)\)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to a}\frac{f(x)}{g(x)}=\frac{\lim_{x\to a}f(x)}{\lim_{x\to a}g(x)}\)</span> når <span class="math notranslate nohighlight">\(\lim_{x\to a}g(x)\neq 0\)</span></p>
+</div>
+<p>For å illustrere regnereglene tar vi først et enkelt eksempel før vi prøver på den rasjonale funksjonen i forrige eksempel.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: bruke regnereglene</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\displaystyle\lim_{x\to 3}\frac{2x+3}{3x}&amp;=\displaystyle\frac{\lim_{x\to 3}(2x+3)}{\lim_{x \to 3}3x}\\
+&amp;=\displaystyle\frac{\lim_{x\to 3}2\cdot\lim_{x\to 3}x+\lim_{x\to 3}3}{\lim_{x\to 3}3\cdot\lim_{x\to 3}x}\\
+&amp;=\displaystyle\frac{2\cdot 3+3}{3\cdot 3}\\
+&amp;=\displaystyle\frac{9}{9}=1
+\end{align}\)</span></p>
+<p>Her har vi gjort mange unødvendige mellomregninger for å vise hvordan regnereglene i praksis brukes. Normalt vil vi føre som under.</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3}\frac{2x+3}{3x}=\frac{2\cdot 3+3}{3\cdot 3}=\frac{9}{9}=1\)</span></p>
+<p>I dette eksempelet var <span class="math notranslate nohighlight">\(x\)</span> i definisjonsmengden til uttrykket vi så på, så i praksis er dette bare det samme som å sette inn 3 for <span class="math notranslate nohighlight">\(x\)</span>.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: <span class="math notranslate nohighlight">\(\frac{0}{0}\)</span>-uttrykk</p>
+<p>Vi går nå tilbake til funksjonen <span class="math notranslate nohighlight">\(f(x)=\frac{2(x^2-9)}{x-3}\)</span> og skal se på <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3} f(x)\)</span>. Om vi hadde prøvd på framgangsmåten i forrige eksempel ville vi kommet til <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3} f(x)=\frac{0}{0}\)</span>. Det betyr at <span class="math notranslate nohighlight">\(x=3\)</span> er et nullpunkt både i teller og nevner. Hadde det kunne vært et nullpunkt i nevner ville vi fått en vertikal asymptote og grenseverdien ville blitt uendelig (ikke eksistert). Vi har imidlertid allerede sett at den skal bli 12 og må derfor bruke noen triks vi lærte om i 1T.</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3} f(x)=\lim_{x\to 3} \frac{2(x^2-9)}{x-3} = \lim_{x\to 3}\frac{2(x-3)(x+3)}{x-3}\)</span></p>
+<p>Uttrykket er ikke definert når <span class="math notranslate nohighlight">\(x=3\)</span>. Vi kan derfor sette <span class="math notranslate nohighlight">\(x\neq 3\)</span> slik at <span class="math notranslate nohighlight">\(x-3\neq 0\)</span> og da forkorte vekk den felles faktoren <span class="math notranslate nohighlight">\(x-3\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3}\frac{2(x-3)(x+3)}{x-3}=\lim_{x\to 3} 2(x+3)=\lim_{x\to 3} (2x+6)=2\cdot 3+6=12\)</span></p>
+<p>I den siste utrekninga kan det se ut som vi motsier oss selv litt ved å sette inn <span class="math notranslate nohighlight">\(x=3\)</span> etter å ha sagt at <span class="math notranslate nohighlight">\(x\neq 3\)</span>. Det vi imidlertid har gjort er å bruke regnereglene for grenseverdier til å si at det her er grenseverdien når <span class="math notranslate nohighlight">\(x\)</span> nærmer seg 3.</p>
+</div>
+<p>I eksempelet ser vi at <span class="math notranslate nohighlight">\(\frac{2(x^2-9)}{x-3}\)</span> forkortes til <span class="math notranslate nohighlight">\(2x+6\)</span>. Det vil si at funksjonen</p>
+<div class="math notranslate nohighlight">
+\[f(x)=\frac{2(x^2-9)}{x-3}\]</div>
+<p>er lik funksjonen</p>
+<div class="math notranslate nohighlight">
+\[g(x)=2x+6,\quad D_g=\mathbf{R}\backslash \{3\}\]</div>
+<p>Dette er et mønster vi vil kjenne igjen i andre <span class="math notranslate nohighlight">\(\frac{0}{0}\)</span>-uttrykk.</p>
+<div class="def admonition">
+<p class="admonition-title"><span class="math notranslate nohighlight">\(\frac{0}{0}\)</span>-uttrykk</p>
+<p>La funksjonen <span class="math notranslate nohighlight">\(f(x)\)</span> være en rasjonal funksjon gitt ved <span class="math notranslate nohighlight">\(f(x)=\frac{t(x)}{n(x)}\)</span> der <span class="math notranslate nohighlight">\(t(x)\)</span> og <span class="math notranslate nohighlight">\(n(x)\)</span> er polynomfunksjoner. Dersom <span class="math notranslate nohighlight">\(n(a)=0\)</span> kaller vi <span class="math notranslate nohighlight">\(x=a\)</span> et bruddpunkt for funksjonen <span class="math notranslate nohighlight">\(f\)</span>. I et bruddpunkt vil vi vanligvis ha en vertikal asymptote og grenseverdien <span class="math notranslate nohighlight">\(x\to a\)</span> vil ikke eksistere. Om vi samtidig har <span class="math notranslate nohighlight">\(t(a)=0\)</span> kan vi prøve å faktorisere ut en felles faktor <span class="math notranslate nohighlight">\(x-a\)</span> som vi forkorter vekk. Om den nye nevneren ikke lenger har nullpunkt for <span class="math notranslate nohighlight">\(x=a\)</span>, så vil grenseverdien eksistere.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: null i nevner</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 1}\frac{x^2-2}{x-1}\)</span> eksisterer ikke siden nevner blir 0, mens teller er ulik 0.</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim{x\to 1}\frac{x^2-1}{x-1}=\lim{x\to 1}\frac{(x-1)(x+1)}{x-1}=\lim{x\to 1}(x+1)=1+1=2\)</span></p>
+<p>Den siste grenseverdien eksisterer siden teller og nevner har et felles nullpunkt som vi kan forkorte vekk. Det er imidlertid viktig å merke seg at uttrykket allikevel ikke har en verdi for <span class="math notranslate nohighlight">\(x=1\)</span>, men at verdien til uttrykket nærmer seg 2 når <span class="math notranslate nohighlight">\(x\)</span> nærmer seg 1.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Vanskeligere uttrykk</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 9}\frac{3-\sqrt{x}}{9-x}=\lim_{x\to 9}\frac{3-\sqrt{x}}{(3-\sqrt{x})(3+\sqrt{x})}=\lim_{x\to 9}\frac{1}{3+\sqrt{x}}=\frac{1}{3+\sqrt{9}}=\frac{1}{6}\)</span></p>
+</div>
+</section>
+<section id="ensidige-grenseverdier">
+<h2>Ensidige grenseverdier<a class="headerlink" href="#ensidige-grenseverdier" title="Permalink to this headline">#</a></h2>
+<p>I noen tilfeller vil vi komme til å bruke det vi kaller ensidige grenseverdier.</p>
+<div class="def admonition">
+<p class="admonition-title">Ensidige grenseverdier</p>
+<p>Grenseverdien til <span class="math notranslate nohighlight">\(f(x)\)</span> når <span class="math notranslate nohighlight">\(x\)</span> nærmer seg <span class="math notranslate nohighlight">\(a\)</span> nedenfra (fra venstre) skrives</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x\to a^-} f(x)\]</div>
+<p>Grenseverdien til <span class="math notranslate nohighlight">\(f(x)\)</span> når <span class="math notranslate nohighlight">\(x\)</span> nærmer seg <span class="math notranslate nohighlight">\(a\)</span> ovenfra (fra høyre) skrives</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x\to a^+} f(x)\]</div>
+</div>
+<p>Et viktig resultat om ensidige grenseverdier er</p>
+<div class="def admonition">
+<p class="admonition-title">Eksistens av grenseverdi</p>
+<p>Dersom <span class="math notranslate nohighlight">\(\lim_{x\to a^-} f(x)= \lim_{x\to a^+} f(x)\)</span>, så vil grenseverdien <span class="math notranslate nohighlight">\(\lim_{x\to a} f(x)\)</span> eksistere og være lik verdien til de ensidige grenseverdiene.</p>
+<p>Dersom <span class="math notranslate nohighlight">\(\lim_{x\to a^-} f(x) \neq \lim_{x\to a^+} f(x)\)</span>, så vil grenseverdien <span class="math notranslate nohighlight">\(\lim_{x\to a} f(x)\)</span> ikke eksistere.</p>
+</div>
+<p>Vi ser på noen eksempler på det.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Rasjonal funksjon</p>
+<p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=\frac{2x+1}{x+2}\)</span> og vil se på de ensidige grenseverdiene når <span class="math notranslate nohighlight">\(x\)</span> går mot -2.</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to -2^-} f(x) = \infty\)</span> siden telleren er negativ og nevneren går mot null fra negativ side.</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to -2^+} f(x) = -\infty\)</span> siden telleren er negativ og nevneren går mot null fra positiv side.</p>
+<p>Siden <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to -2^-} f(x) \neq \displaystyle\lim_{x\to -2^+} f(x)\)</span>, så eksisterer ikke grenseverdien <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to -2} f(x)\)</span>.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Logaritmisk funksjon</p>
+<p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=\ln(x-3)\)</span> og grenseverdien når <span class="math notranslate nohighlight">\(x\to 3\)</span>. Fra definisjonene av logaritmer husker vi at vi kun ta logaritmen av positive tall. Her er det derfor umulig å la <span class="math notranslate nohighlight">\(x\to 3^-\)</span> siden vi ikke har noen funksjonsverdier på den negative siden av 3. Vi kan derfor skrive</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3^-} f(x)\)</span> eksisterer ikke.</p>
+<p>Dersom vi ser på grafen til funksjonen kan det se ut som at funksjonen har en vertikal asymptote for <span class="math notranslate nohighlight">\(x=3\)</span>.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/lnx-3.png"><img alt="../../_images/lnx-3.png" src="../../_images/lnx-3.png" style="width: 473.20000000000005px; height: 295.2px;" /></a>
+</figure>
+<p>Vi konkluderer derfor med at</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3^+} f(x)=-\infty\)</span></p>
+</div>
+<p>Resultatet i det siste eksempelet er generelt.</p>
+<div class="def admonition">
+<p class="admonition-title">Grenseverdier i logaritmer</p>
+<p>For funksjonen <span class="math notranslate nohighlight">\(f(x)=\ln(x-a)\)</span> vil</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to a^-} f(x)\)</span> eksisterer ikke.</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to a^+} f(x)=-\infty\)</span></p>
+</div>
+</section>
+<section id="grenseverdier-nar-x-to-pm-infty">
+<h2>Grenseverdier når <span class="math notranslate nohighlight">\(x\to\pm\infty\)</span><a class="headerlink" href="#grenseverdier-nar-x-to-pm-infty" title="Permalink to this headline">#</a></h2>
+<p>Til nå har vi sett på grenseverdier der <span class="math notranslate nohighlight">\(x\)</span> går mot et bestemt tall. I tillegg vil vi ofte være interessert i grenseverdien når <span class="math notranslate nohighlight">\(x\to\pm\infty\)</span>. Den sier oss hva som skjer med funksjonen når <span class="math notranslate nohighlight">\(x\)</span> blir veldig stor. Vil funksjonen vokse mot uendelig, eller vil den gå mot en bestemt verdi. Det første er tilfellet for funksjoner som <span class="math notranslate nohighlight">\(f(x)=x^2\)</span>, mens den rasjonale funksjonen vi så på øverst på siden nærmet seg den horisontale asymptoten <span class="math notranslate nohighlight">\(y=2\)</span>.</p>
+<p>Vi oppsummerer først noen resultater (uten bevis) som forhåpentligvis er ganske intuitive.</p>
+<div class="def admonition">
+<p class="admonition-title">Grenseverdier for eksponentialfunksjoner</p>
+<p>Vi lar <span class="math notranslate nohighlight">\(f(x)=a^x\)</span>.</p>
+<p><strong><span class="math notranslate nohighlight">\(0&lt;a&lt;1\)</span></strong><br />
+<span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to\infty} a^x =0\)</span><br />
+<span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to -\infty} a^x =\infty \quad \text{grenseverdien eksisterer ikke}\)</span></p>
+<p><strong><span class="math notranslate nohighlight">\(a=1\)</span></strong><br />
+<span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to\infty}=1^x=1\)</span><br />
+<span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to -\infty}=1^x=1\)</span></p>
+<p><strong><span class="math notranslate nohighlight">\(a&gt;1\)</span></strong><br />
+<span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to\infty}=a^x=\infty \quad \text{grenseverdien eksisterer ikke} \)</span><br />
+<span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to -\infty}=a^x=0\)</span></p>
+<p>Hvis du har en oversikt over hvordan grafen til en eksponentialfunksjon ser ut, så bør resultatene være greie å huske. Om du ikke har den oversikten, så bør du tegne opp noen eksponentialfunksjoner og sammenlikne med grenseverdiene over. Alternativt kan resultatene forklares med utgangspunkt i definisjonen av en potens.</p>
+</div>
+<div class="def admonition">
+<p class="admonition-title">Grenseverdier for logaritmefunksjoner</p>
+<p>Logaritmefunksjoner vokser veldig sakte, men de vil gå mot uendelig når <span class="math notranslate nohighlight">\(x\)</span> går mot uendelig.</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to\infty} \ln x = \infty \quad \text{grenseverdien eksisterer ikke.}\)</span></p>
+</div>
+<p>Til slutt skal vi se på rasjonale funksjoner.</p>
+<div class="def admonition">
+<p class="admonition-title">Grenseverdier for rasjonale funksjoner</p>
+<p>En rasjonal funksjon er på formen <span class="math notranslate nohighlight">\(f(x)=\frac{t(x)}{n(x)}\)</span>, der <span class="math notranslate nohighlight">\(t(x)\)</span> og <span class="math notranslate nohighlight">\(n(x)\)</span> er polynomfunksjoner. Vi har tre mulige tilfeller når vi ser på grenseverdien i grensen <span class="math notranslate nohighlight">\(x\to\pm\infty\)</span>.</p>
+<ul class="simple">
+<li><p>Dersom <span class="math notranslate nohighlight">\(t(x)\)</span> har høyere grad enn <span class="math notranslate nohighlight">\(n(x)\)</span>, så vil telleren vokse raskere enn nevneren og <span class="math notranslate nohighlight">\(f(x)\)</span> går mot uendelig i positiv eller negativ retning.</p></li>
+<li><p>Dersom <span class="math notranslate nohighlight">\(n(x)\)</span> har lavere grad enn <span class="math notranslate nohighlight">\(t(x)\)</span>, så vil nevneren vokse raskere enn telleren og <span class="math notranslate nohighlight">\(f(x)\)</span> går mot null.</p></li>
+<li><p>Dersom <span class="math notranslate nohighlight">\(t(x)\)</span> og <span class="math notranslate nohighlight">\(n(x)\)</span> har samme grad vil grenseverdien gå mot et tall gitt ved forholdet mellom de leddene med høyest grad.</p></li>
+</ul>
+</div>
+<p>Et triks vi kan bruke for å se alt dette lettere er å dele alle ledd i det rasjonale uttrykket på den høyeste potensen av <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 1: Grenseverdi for rasjonale funksjoner</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to\infty}\frac{x^2+2x-4}{2x^3-3x^2+5}=0\)</span> siden nevneren har høyere grad enn telleren.</p>
+<p>Det blir kanskje lettere å se det dersom vi deler alle ledd i funksjonen på den høyeste potensen av <span class="math notranslate nohighlight">\(x\)</span> som er <span class="math notranslate nohighlight">\(x^3\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\displaystyle\lim_{x\to\infty}\frac{x^2+2x-4}{2x^3-3x^2+5}&amp;=\lim_{x\to\infty}\frac{\frac{x^2}{x^3}+\frac{2x}{x^3}-\frac{4}{x^3}}{\frac{2x^3}{x^3}-\frac{3x^2}{x^3}+\frac{5}{x^3}} \\
+&amp;=\lim_{x\to\infty}\frac{\frac{1}{x}+\frac{2}{x^2}-\frac{4}{x^3}}{2-\frac{3}{x}+\frac{5}{x^3}}\\
+&amp;=\frac{0+0-0}{2+0+0}=0
+\end{align}\)</span></p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 2: Grenseverdi for rasjonale funksjoner</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to\infty}\frac{x^3+9}{4x^2-2x}=\infty\)</span> siden telleren har høyere grad enn nevneren.</p>
+<p>Det blir kanskje lettere å se det dersom vi deler alle ledd i funksjonen på den høyeste potensen av <span class="math notranslate nohighlight">\(x\)</span> som er <span class="math notranslate nohighlight">\(x^3\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\displaystyle\lim_{x\to\infty}\frac{x^3+9}{4x^2-2x}&amp;=\lim_{x\to\infty}\frac{\frac{x^3}{x^3}+\frac{9}{x^3}}{\frac{4x^2}{x^3}-\frac{2x}{x^3}} \\
+&amp;=\lim_{x\to\infty}\frac{1+\frac{9}{x^3}}{\frac{4}{x}-\frac{2}{x^2}}\\
+&amp;=\frac{1+0}{0-0}=\infty
+\end{align}\)</span></p>
+<p>siden vi prøver å dele på null.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 3: Grenseverdi for rasjonale funksjoner</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to\infty}\frac{x^3+9}{4x^2-2x}=\infty\)</span> siden telleren har høyere grad enn nevneren.</p>
+<p>Det blir kanskje lettere å se det dersom vi deler alle ledd i funksjonen på den høyeste potensen av <span class="math notranslate nohighlight">\(x\)</span> som er <span class="math notranslate nohighlight">\(x^2\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\displaystyle\lim_{x\to\infty}\frac{3x^2+4}{5x^2-2x+1}&amp;=\lim_{x\to\infty}\frac{\frac{3x^2}{x^2}+\frac{4}{x^2}}{\frac{5x^2}{x^2}-\frac{2x}{x^2}+\frac{1}{x^2}} \\
+&amp;=\lim_{x\to\infty}\frac{3+\frac{4}{x^2}}{5-\frac{2}{x}+\frac{1}{x^2}}\\
+&amp;=\frac{3+0}{5-0+0} \\
+&amp;=\frac{3}{5}
+\end{align}\)</span></p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
