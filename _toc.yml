@@ -18,15 +18,20 @@ parts:
 - caption: Grenseverdier og derivasjon
   chapters:
   - file: docs/grenserderivasjon/grenseverdier
-- caption: Funksjonsdrøfting
+  - file: docs/grenserderivasjon/asymptoter
+  - file: docs/grenserderivasjon/kontinuitet
+  - file: docs/grenserderivasjon/defderivert
+  - file: docs/grenserderivasjon/derivasjonsregler
+  - file: docs/grenserderivasjon/numeriskderivasjon
+- caption: Bruk av derivasjon
   chapters:
   - file: docs/brukderivasjon/ekstremalverdier
 - caption: Omvendte funksjoner
   chapters:
   - file: docs/omvendtefunksjoner/omvendtefunksjoner
-- caption: Vektorer
-  chapters:
-  - file: docs/vektorer/vektorer
 - caption: Modellering
   chapters:
   - file: docs/modellering/modellering
+- caption: Vektorer
+  chapters:
+  - file: docs/vektorer/vektorer
