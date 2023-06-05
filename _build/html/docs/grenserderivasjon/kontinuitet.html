@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Definisjon av den deriverte" href="defderivert.html" />
@@ -337,12 +339,46 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#delt-forskrift">
+   Delt forskrift
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Kontinuitet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#absoluttverdifunksjonen">
+   Absoluttverdifunksjonen
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -354,6 +390,29 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#delt-forskrift">
+   Delt forskrift
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Kontinuitet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#absoluttverdifunksjonen">
+   Absoluttverdifunksjonen
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -380,6 +439,160 @@ title="Print to PDF"
 <li><p>kjenne til absoluttverdifunksjonen</p></li>
 </ul>
 </div>
+<p>Vi har til nå stort sett på funksjoner som <em>oppfører seg fint</em>. Et unntak er de rasjonale funksjonene som gjerne gjør et plutselig hopp fra <span class="math notranslate nohighlight">\(-\infty\)</span> til <span class="math notranslate nohighlight">\(\infty\)</span> (eller motsatt) når vi passerer en vertikal asymptote. Vi har også sett på rasjonale funksjoner uten asymptoter, men som har et punkt der de ikke er definert. Allikevel vil vi si at disse funksjonene oppfører seg normalt innenfor det området der de er definert. Nå skal vi se på noen funksjoner som kan gjøre plutselige hopp eller ha <em>knekker</em> innenfor definisjonsområdet sitt.</p>
+<section id="delt-forskrift">
+<h2>Delt forskrift<a class="headerlink" href="#delt-forskrift" title="Permalink to this headline">#</a></h2>
+<p>Vi har brukt begrepet <em>definisjonsmengde</em> til å si noe om området der en funksjon er definert. Men hva skjer hvis vi gir funksjonen ulike funksjonsuttrykk innefor ulike deler av dette området?</p>
+<div class="def admonition">
+<p class="admonition-title">Delt forksrift</p>
+<p>En funksjon med delt forskrift har ulikt funksjonsuttrykk for ulike intervaller i definisjonsmengden.</p>
+<p>Punktene der funksjonsuttrykket endres kaller vi bruddpunkter til funksjonen.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Delt forskrift</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation*}
+    f(x) = \begin{cases} 
+      x^2+1 &amp; \text{når } \quad x &lt; 2 \\
+      -2x+9 &amp; \text{når } \quad x \geq 2
+   \end{cases}
+\end{equation*}\)</span></p>
+<p>Grafen ser slik ut</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/delt1.png"><img alt="../../_images/delt1.png" src="../../_images/delt1.png" style="width: 532.8000000000001px; height: 362.40000000000003px;" /></a>
+</figure>
+<p>For å skrive inn dette funksjonsuttrykket i GeoGebra, så kan vi skrive:
+Grafen ser slik ut</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/delt1skrivinn.png"><img alt="../../_images/delt1skrivinn.png" src="../../_images/delt1skrivinn.png" style="width: 273.6px; height: 38.400000000000006px;" /></a>
+</figure>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 2: Delt forskrift</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation*}
+    f(x) = \begin{cases} 
+      e^x &amp; \text{når } \quad x \leq 0 \\
+      x+2 &amp; \text{når } \quad x&gt; 0
+   \end{cases}
+\end{equation*}\)</span></p>
+<p>Grafen ser slik ut</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/delt2.png"><img alt="../../_images/delt2.png" src="../../_images/delt2.png" style="width: 555.6px; height: 362.40000000000003px;" /></a>
+</figure>
+<p>Merk at når vi tegner slike funksjoner kan det være lurt å tydeliggjøre på grafen om endepunktet er med eller ikke. Her er det gjort med ] og &lt; på samme måte som når vi skriver intervaller. GeoGebra har dessverre ingen mulighet for å gjøre dette.</p>
+<p>Prøv å tegne denne grafen i GeoGebra ved å bruke “Dersom” slik som i forrige eksempel.</p>
+</div>
+<p>Funksjoner med delt forskrift bruker vi for å beskrive fenomener, prosesser eller modeller der for eksempel betingelser kan endre seg underveis.</p>
+</section>
+<section id="id1">
+<h2>Kontinuitet<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>Det siste eksempelet over er et eksempel på noe vi kaller en diskontinuerlig funksjon. Den gjør et hopp midt inne i definisjonsmengden sin. Kontinuitet og diskontinuitet er viktige begreper dersom man skal gå videre med matematikk etter videregående. Her nøyer vi oss med en forholdsvis grunnleggende innføring.</p>
+<div class="def admonition">
+<p class="admonition-title">Kontinuerlige funksjoner</p>
+<p>En funksjon <span class="math notranslate nohighlight">\(f\)</span> er kontinuerlig i <span class="math notranslate nohighlight">\(x=a\)</span> dersom</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x\to a} f(x)= f(a)\]</div>
+<p>Ofte gir det mer mening å se på det med de ensidige grensene</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x\to a^-} f(x)=\lim_{x\to a^+} f(x)=f(a)\]</div>
+<p>Dersom funksjonen <span class="math notranslate nohighlight">\(f\)</span> er kontinuerlig for alle <span class="math notranslate nohighlight">\(x\in D_f\)</span>, så sier vi at funksjonen er en <strong>kontinuerlig funksjon</strong>.</p>
+</div>
+<div class="def admonition">
+<p class="admonition-title">Kjente kontinuerlige funksjoner</p>
+<p>Alle funksjoner som vi har jobbet med tidligere er kontinuerlige</p>
+<ul class="simple">
+<li><p>polynomfunksjoner</p></li>
+<li><p>eksponentialfunksjoner</p></li>
+<li><p>potensfunksjoner</p></li>
+<li><p>logaritmefunksjoner</p></li>
+</ul>
+<p>Og vi skal snart se at rasjonale funksjoner også regnes som kontinuerlige.</p>
+<p>I tillegg vil alle sammensetninger, summer, differanser, produkt og kvotienter av kontinuerlige funksjoner være kontinuerlig.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Ikke-kontinuerlig funksjon</p>
+<p>Funksjonen i eksempel 2 over er et eksempel på en ikke-koninuterlig (eller diskontinuerlig) funksjon. Definisjonsmengden er alle reelle tall, men vi ser at</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 0^-} f(x)= e^0=1 = f(0)\)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 0^+} f(x)= 0+2 = 2\)</span></p>
+<p>De ensidige grensene er ulike. Derfor er <span class="math notranslate nohighlight">\(f\)</span> ikke kontinuerlig i <span class="math notranslate nohighlight">\(x=0\)</span> og dermed er ikke <span class="math notranslate nohighlight">\(f\)</span> en kontinuerlig funksjon.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Rasjonale funksjoner er kontinuerlige</p>
+<p>Vi ser på en rasjonal funksjon <span class="math notranslate nohighlight">\(f(x)=\frac{2x+3}{x-1}\)</span>. Vi vet at grenseverdien <span class="math notranslate nohighlight">\(x\to 1\)</span> ikke eksisterer og at funksjonen gjør et hopp fra <span class="math notranslate nohighlight">\(-\infty\)</span> til <span class="math notranslate nohighlight">\(\infty\)</span> når v passer <span class="math notranslate nohighlight">\(x=1\)</span>. Funksjonen er derfor ikke kontinuerlig i <span class="math notranslate nohighlight">\(x=1\)</span>. Men siden <span class="math notranslate nohighlight">\(x=1\)</span> ikke er med i definisjonsmengden til funksjonen sier vi allikevel at <span class="math notranslate nohighlight">\(f\)</span> er en rasjonal funksjon. Begrunnelsen er at den er kontinuerlig i alle punkt i sin definisjonsmengde.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Gjør en funksjon kontinuerlig</p>
+<p>Bestem tallet <span class="math notranslate nohighlight">\(a\)</span> slik at funksjon <span class="math notranslate nohighlight">\(f(x)\)</span> er kontinuerlig:
+<span class="math notranslate nohighlight">\(
+\begin{equation*}
+    f(x) = \begin{cases} 
+      x^2+a &amp; \text{når } \quad x \leq 2 \\
+      2x+3 &amp; \text{når } \quad x&gt; 2
+   \end{cases}
+\end{equation*}
+\)</span></p>
+<p>For <span class="math notranslate nohighlight">\(x&lt;2\)</span> og <span class="math notranslate nohighlight">\(x&gt;2\)</span> er funksjonen “vanlige” polynomfunskjoner, så der er den kontinuerlig. For at hele funksjonen skal være kontinuerlig må vi få den til å være kontinuerlig også for <span class="math notranslate nohighlight">\(x=2\)</span>. Da må</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\displaystyle\lim_{x\to 2^-} f(x) &amp;= \displaystyle\lim_{x\to 2^+} f(x) \\
+\displaystyle\lim_{x\to 2^-} x^2+a &amp;= \displaystyle\lim_{x\to 2^+} 2x+3 \\
+4+a &amp;= 7 \\
+a &amp;= 3
+\end{align}\)</span></p>
+<p>Funksjonen blir kontinuerlig om <span class="math notranslate nohighlight">\(a=3\)</span>.</p>
+</div>
+</section>
+<section id="absoluttverdifunksjonen">
+<h2>Absoluttverdifunksjonen<a class="headerlink" href="#absoluttverdifunksjonen" title="Permalink to this headline">#</a></h2>
+<p>En spesiell kontinuerlig funksjon som kan være verdt å se ekstra på er absoluttfunksjonen.</p>
+<div class="admonition">
+<p class="admonition-title">Absoluttverdifunksjonen</p>
+<p>Absoluttverdifunksjonen <span class="math notranslate nohighlight">\(f(x)=|x|\)</span> defineres ved hjelp av å skrive den på delt forskrift. Funksjonen forteller oss hvor lang vi er fra null på tallinja.</p>
+<p><span class="math notranslate nohighlight">\(f(x)= |x| =\begin{cases} 
+      -x &amp; \text{når } \quad x&lt;0 \\
+      x &amp; \text{når } \quad x\geq 0
+   \end{cases}\)</span></p>
+<p>Grafen til absoluttverdifunksjonen ser slik ut</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/absoluttverdifunksjonen.png"><img alt="../../_images/absoluttverdifunksjonen.png" src="../../_images/absoluttverdifunksjonen.png" style="width: 555.6px; height: 362.40000000000003px;" /></a>
+</figure>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Absoluttverdifunksjonen</p>
+<p>Avgjør om funksjonen <span class="math notranslate nohighlight">\(f(x)=\frac{|x-2|}{x-2}\)</span> er en kontinuerlig funksjon.</p>
+<p>Vi vet at <span class="math notranslate nohighlight">\(|x-2|=\begin{cases} 
+      -(x-2) &amp; \text{når } \quad x&lt;2 \\
+      x-2 &amp; \text{når } \quad x\geq 2
+   \end{cases}\)</span></p>
+<p>Så da må vi få</p>
+<p><span class="math notranslate nohighlight">\(f(x)=\begin{cases} 
+      \frac{-(x-2)}{x-2} &amp;= -1 &amp; \text{når } \quad x&lt;2 \\
+      \frac{x-2}{x-2} &amp;= 1 &amp; \text{når } \quad x&gt;2
+   \end{cases}\)</span></p>
+<p>Merk at her er ikke <span class="math notranslate nohighlight">\(x=2\)</span> med siden det ikke er en del av definisjonsmengden.</p>
+<p>Videre får vi da at</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 2^-}f(x)=-1\)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 2^+}f(x)=1\)</span></p>
+<p>Grenseverdien når <span class="math notranslate nohighlight">\(x\to 2\)</span> eksisterer altså ikke. Det vil si at <span class="math notranslate nohighlight">\(f\)</span> ikke er kontinuerlig i <span class="math notranslate nohighlight">\(x=2\)</span>. Siden <span class="math notranslate nohighlight">\(x=2\)</span> ikke er en del av definisjonsmengden, så vil <span class="math notranslate nohighlight">\(f\)</span> allikevel være en kontinuerlig funksjon.</p>
+<p>En graf av funksjonen ser vi under</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/absoluttverdifunksjonen2.png"><img alt="../../_images/absoluttverdifunksjonen2.png" src="../../_images/absoluttverdifunksjonen2.png" style="width: 482.40000000000003px; height: 362.40000000000003px;" /></a>
+</figure>
+</div>
+<p>Følgende eksempel er litt i utkanten av læreplanen i R1, men vi tar det med som litt utfyllende informasjon rundt absoluttverdifunksjoner.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Likninger med absoluttverdi</p>
+<p>Vi skal løse likningen <span class="math notranslate nohighlight">\(|x-2|=4\)</span>.</p>
+<p>En måte å se på absoluttverdier på er avstand. Likningen over kan vi tenke på som hvilke tall har avstanden 4 fra 2. Da ser vi ganske raskt at <span class="math notranslate nohighlight">\(L=\{-2, 6\}\)</span>.</p>
+<p>Vi kan også løse det grafisk ved å tegne inn funksjonsuttrykkene <span class="math notranslate nohighlight">\(f(x)=|x-2|\)</span> og <span class="math notranslate nohighlight">\(g(x)=4\)</span> og finne skjæringspunktene. Ser at vi får samme løsning.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/absoluttverdilikning.png"><img alt="../../_images/absoluttverdilikning.png" src="../../_images/absoluttverdilikning.png" style="width: 482.40000000000003px; height: 362.40000000000003px;" /></a>
+</figure>
+<p>Enda et alternativ er å gjøre det algebraisk. Da ser vi at <span class="math notranslate nohighlight">\(|x-2|=4\)</span> tilsvarer de to likningene</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+x-2 &amp;=4 &amp;\vee  x-2&amp;=-4 \\
+x &amp;= 6 &amp;\vee x&amp;=-2
+\end{align}\)</span></p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
