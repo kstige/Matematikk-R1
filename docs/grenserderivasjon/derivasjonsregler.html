@@ -1,0 +1,643 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Grunnleggende derivasjonsregler &#8212; Matematikk R1</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myadmonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Produkt- og brøkregelen" href="produktbrokregel.html" />
+    <link rel="prev" title="Definisjon av den deriverte" href="defderivert.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Matematikk R1</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algebra og likninger
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algebralikninger/potensrot.html">
+   Potenser og røtter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algebralikninger/logaritmer.html">
+   Logaritmer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algebralikninger/naturliglogaritme.html">
+   Den naturlige logaritmen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algebralikninger/loglikninger.html">
+   Logaritmelikninger
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algebralikninger/eksponentiallikninger.html">
+   Eksponentiallikninger
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algebralikninger/numerisklosning.html">
+   Numerisk løsning av likninger
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Grenseverdier og derivasjon
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="grenseverdier.html">
+   Grenseverdier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="asymptoter.html">
+   Asymptoter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="kontinuitet.html">
+   Kontinuitet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defderivert.html">
+   Definisjon av den deriverte
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Grunnleggende derivasjonsregler
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="produktbrokregel.html">
+   Produkt- og brøkregelen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numeriskderivasjon.html">
+   Numerisk derivasjon
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bruk av derivasjon
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../brukderivasjon/ekstremalverdier.html">
+   Ekstremalverdier
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Omvendte funksjoner
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../omvendtefunksjoner/omvendtefunksjoner.html">
+   Omvendte funksjoner
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modellering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modellering/modellering.html">
+   Modellering
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Vektorer
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vektorer/vektorer.html">
+   Vektorer
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/docs/grenserderivasjon/derivasjonsregler.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kjerneregelen">
+   Kjerneregelen
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Grunnleggende derivasjonsregler</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kjerneregelen">
+   Kjerneregelen
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="grunnleggende-derivasjonsregler">
+<h1>Grunnleggende derivasjonsregler<a class="headerlink" href="#grunnleggende-derivasjonsregler" title="Permalink to this headline">#</a></h1>
+<div class="utbytte dropdown admonition">
+<p class="admonition-title">Læringsutbytte</p>
+<p>I dette temaet arbeider vi med kompetansemålet:</p>
+<ul class="simple">
+<li><p>forstå begrepene vekstfart, grenseverdi, derivasjon og kontinuitet, og bruke disse for å løse praktiske problemer</p></li>
+<li><p>bestemme den deriverte i et punkt geometrisk, algebraisk og ved numeriske metoder, og gi eksempler på funksjoner som ikke er deriverbare i gitte punkter</p></li>
+<li><p>utforske, analysere og derivere ulike funksjoner og deres omvendte funksjoner, og gjøre rede for egenskaper til og sammenhenger mellom slike funksjoner</p></li>
+</ul>
+<p>Etter å ha arbeidet med temaet, skal du:</p>
+<ul class="simple">
+<li><p>derivere polynomfunksjoner, logaritmefunksjoner, eksponentialfunksjoner og potensfunksjoner</p></li>
+<li><p>kunne bruke kjerneregelen, produktregelen og brøkregelen</p></li>
+<li><p>bruke CAS til å derivere en vilkårlig funksjon</p></li>
+</ul>
+</div>
+<p>På forrige side viste vi blant annet at den deriverte av <span class="math notranslate nohighlight">\(x^2\)</span> var <span class="math notranslate nohighlight">\(2x\)</span> og at den deriverte av en lineær funksjon var stigningstallet til funksjonen. De er spesialtilfeller av noen generelle derivasjonsregler som vi oppgir her.</p>
+<div class="def admonition">
+<p class="admonition-title">Grunnleggende derivasjonsregler</p>
+<p>Vi lar <span class="math notranslate nohighlight">\(k, n\in\mathbf{R}\)</span> og lar <span class="math notranslate nohighlight">\(u(x)\)</span> og <span class="math notranslate nohighlight">\(v(x)\)</span> være to funksjoner. Da er</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x)=k \quad \Rightarrow \quad f'(x)=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f(x)=x^n \quad \Rightarrow \quad f'(x)=n\cdot x^{n-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f(x)=k\cdot u(x) \quad \Rightarrow \quad f'(x)=k\cdot u'(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f(x)=u(x)+v(x) \quad \Rightarrow \quad f'(x)=u'(x)+v'(x)\)</span></p></li>
+</ol>
+</div>
+<p>Den første regelen over sier at den deriverte av et konstant tall er null. Det gir forhåpentligvis mening ut fra definisjonen som sier at den deriverte er stigningstallet til tangenten. Stigningstallet til et konstant tall er null, og derfor er den deriverte null.</p>
+<p>Disse fire reglene kommer vi til å bruke blant annet til å derivere polynomfunksjoner.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 1: Derivasjon av polynom</p>
+<p>Vi lar <span class="math notranslate nohighlight">\(f(x)=3x^4+2x^2-3\)</span>.</p>
+<p>Her viser vi grundig hvilke derivasjonsregler vi bruker. Normalt sett vil vi her nesten bare skrive opp svaret uten mellomregninger.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+f'(x)=(3x^4+2x^2-3)' &amp;\stackrel{4}{=} (3x^4)'+(2x^2)'-(3)' \\
+&amp;\stackrel{3}{=} 3(x^4)'+2(x^2)'-(3)' \\
+&amp;\stackrel{1, 2}{=} 3\cdot 4x^{4-1}+2\cdot x^{2-1}-0 \\
+&amp;=12x^3+2x
+\end{align}\)</span></p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 2: To viktige resultat</p>
+<p>Resultatene under er vel verdt å huske både utledning av og resultatet. Det vil spare deg for mye tid framover.</p>
+<p><span class="math notranslate nohighlight">\(g(x)=\frac{1}{x}=x^{-1} \quad \Rightarrow \quad g'(x)=-x^{-1-1}=-x^{-2}=-\frac{1}{x^2}\)</span></p>
+<p><span class="math notranslate nohighlight">\(h(x)=\sqrt{x}=x^{\frac{1}{2}} \quad \Rightarrow \quad h'(x)=\frac{1}{2}x^{\frac{1}{2}-1}=\frac{1}{2}x^{-\frac{1}{2}}=\frac{1}{2\sqrt{x}}\)</span></p>
+</div>
+<p>Reglene over hjelper oss til å derivere alle potens-, rot- og polynomfunksjoner. Det er en stor gruppe av funksjoner, men vi har også arbeidet med logaritme- og eksponentialfunksjoner.</p>
+<div class="def admonition">
+<p class="admonition-title">Derivert av den naturlige logaritmen og den naturlige eksponentialfunksjonen</p>
+<p><span class="math notranslate nohighlight">\(f(x)=\ln x \quad \Rightarrow \quad f'(x)=\frac{1}{x}\)</span></p>
+<p><span class="math notranslate nohighlight">\(f(x)=e^x \quad \Rightarrow \quad f'(x)= e^x\)</span></p>
+<p>Beviset for <span class="math notranslate nohighlight">\(\ln x\)</span> gir vi under. Bevis for <span class="math notranslate nohighlight">\(e^x\)</span> kommer etter at vi har sett på kjerneregelen.</p>
+<p>Den deriverte av tierlogaritmen og andre eksponentialfunksjoner er ikke like enkle. De kommer vi tilbake til senere.</p>
+</div>
+<div class="def dropdown admonition">
+<p class="admonition-title">Bevis for den deriverte av <span class="math notranslate nohighlight">\(\ln x\)</span></p>
+<p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=\ln x\)</span> og bruker definisjonen av den deriverte</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+f'(x)&amp;=\lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x} \\
+&amp;=\lim_{\Delta x\to 0}\frac{\ln(x+\Delta x)-\ln x}{\Delta x} \\
+&amp;=\lim_{\Delta x\to 0}\frac{\ln\left(\frac{x+\Delta x}{x}\right)}{\Delta x} \quad \text{andre logaritmesetning} \\
+&amp;=\lim_{\Delta x\to 0}\frac{1}{\Delta x}\ln\left(1\frac{\Delta x}{x}\right)
+\end{align}\)</span></p>
+<p>Vi lar nå <span class="math notranslate nohighlight">\(n=\frac{x}{\Delta x}\)</span> slik at <span class="math notranslate nohighlight">\(\frac{1}{\Delta x} =\frac{n}{x}\)</span> og <span class="math notranslate nohighlight">\(\frac{\Delta x}{x}=\frac{1}{n}\)</span>. I tillegg vil grensen endres til <span class="math notranslate nohighlight">\(n\to\infty\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+f'(x)&amp;=\lim_{n\to\infty}\frac{n}{x}\ln\left(1+\frac{1}{n}\right) \\
+&amp;=\lim_{n\to\infty}\frac{1}{x}\ln\left(1+\frac{1}{n}\right)^n \quad \text{tredje logaritmesetning} \\
+&amp;=\frac{1}{x}\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n \quad \text{trekker ut brøken uten n}\\
+&amp;=\frac{1}{x}\ln e \quad \text{grenseverdien var definisjonen av e} \\
+&amp;=\frac{1}{x}
+\end{align}\)</span></p>
+<p>I siste linje har vi brukt at <span class="math notranslate nohighlight">\(\ln e=1\)</span>.</p>
+</div>
+<p>Vi ser at den naturlige logaritmen har en forholdsvis enkel derivert som overraskende nok blir en potensfunksjon (<span class="math notranslate nohighlight">\(\frac{1}{x}=x^{-1}\)</span>).</p>
+<p>Enda mer overraskende er at den deriverte av <span class="math notranslate nohighlight">\(e^x\)</span> er <span class="math notranslate nohighlight">\(e^x\)</span>. Det viser seg at det er den eneste funksjonen vi kan lage (bortsett fra nullfunksjonen) som har en derivert som er lik seg selv. Og det er også begrunnelsen for at vi i det hele tatt valgte å innføre <span class="math notranslate nohighlight">\(e^x\)</span> og <span class="math notranslate nohighlight">\(\ln x\)</span>. Ved å formulere eksponentialfunksjoner ved hjelp av <span class="math notranslate nohighlight">\(e\)</span> vil derivasjon og analyse av vekstfart bli mye enklere.</p>
+<p>Stopp gjerne opp og tenk litt ekstra over hva resultatet <span class="math notranslate nohighlight">\((e^x)'=e^x\)</span> betyr. Vi husker at den deriverte i et punkt er lik stigningstallet til tangenten i punktet. Så dette betyr at tangenten til <span class="math notranslate nohighlight">\(e^x\)</span> for <span class="math notranslate nohighlight">\(x=2\)</span> har stigningstall <span class="math notranslate nohighlight">\(e^2\)</span>, tangenten for <span class="math notranslate nohighlight">\(x=5\)</span> har stigningstall <span class="math notranslate nohighlight">\(e^5\)</span> og tangenten for <span class="math notranslate nohighlight">\(x=\pi\)</span> har stigningstall <span class="math notranslate nohighlight">\(e^{\pi}\)</span>. Med tanke på at <span class="math notranslate nohighlight">\(e\)</span> er et tilsynelatende tilfeldig irrasjonalt tall er dette nærmest utrolig. Men det er også utrolig nyttig og tallet <span class="math notranslate nohighlight">\(e\)</span> er derfor kanskje viktigere enn <span class="math notranslate nohighlight">\(\pi\)</span> innenfor matematikken og naturvitenskapen.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Litt mer derivasjon</p>
+<p><span class="math notranslate nohighlight">\(f(x)=4e^x-2\ln x \quad \Rightarrow \quad f'(x)=4e^x-\frac{2}{x}\)</span></p>
+<p><span class="math notranslate nohighlight">\(g(x)=\sqrt{x}-3e^x+\frac{3}{2}\ln x \quad \Rightarrow \quad g'(x)=\frac{1}{2\sqrt{x}}-3e^x+\frac{3}{2x}\)</span></p>
+</div>
+<section id="kjerneregelen">
+<h2>Kjerneregelen<a class="headerlink" href="#kjerneregelen" title="Permalink to this headline">#</a></h2>
+<p>Med derivasjonsreglene vi har sett på til nå, så har vi grunnlaget for å derivere de aller fleste enkle funksjoner av typen:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x^n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sqrt{x}\)</span> og andre røtter</p></li>
+<li><p><span class="math notranslate nohighlight">\(e^x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\ln x\)</span></p></li>
+</ul>
+<p>Vi kan gjøre mye med disse, men vi stopper opp med en gang vi møter uttrykk som <span class="math notranslate nohighlight">\(e^4x\)</span>, <span class="math notranslate nohighlight">\(\sqrt{x^3+2}\)</span> eller <span class="math notranslate nohighlight">\(\ln(x^2+2)\)</span>. Dette er er eksempler på det vi kaller sammesatte funksjoner.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 1: Sammensatt funksjon <span class="math notranslate nohighlight">\(e^{4x}\)</span></p>
+<p><span class="math notranslate nohighlight">\(f(x)=e^{4x}\)</span> er funksjonen <span class="math notranslate nohighlight">\(u(x)=4x\)</span> satt inn i eksponentialfunksjonen <span class="math notranslate nohighlight">\(g(u)=e^u\)</span>. Vi kaller <span class="math notranslate nohighlight">\(u(x)\)</span> den indre funksjonen (eller kjernen) og <span class="math notranslate nohighlight">\(g(u)\)</span> den ytre funksjonen. Vi kan da skrive</p>
+<div class="math notranslate nohighlight">
+\[f(x)=g(u(x))=e^{u(x)}=e^{4x}\]</div>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 2: Sammensatt funksjon <span class="math notranslate nohighlight">\(\sqrt{x^3+2}\)</span></p>
+<p><span class="math notranslate nohighlight">\(f(x)=\sqrt{x^3+2}\)</span> er funksjonen <span class="math notranslate nohighlight">\(u(x)=x^3+2\)</span> satt inn i kvadratrotfunksjonen <span class="math notranslate nohighlight">\(g(u)=\sqrt{u}\)</span>. Vi kaller <span class="math notranslate nohighlight">\(u(x)\)</span> den indre funksjonen (eller kjernen) og <span class="math notranslate nohighlight">\(g(u)\)</span> den ytre funksjonen. Vi kan da skrive</p>
+<div class="math notranslate nohighlight">
+\[f(x)=g(u(x))=\sqrt{u(x)}=\sqrt{x^3+2}\]</div>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 3: Sammensatt funksjon <span class="math notranslate nohighlight">\(\ln(x^2+2)\)</span></p>
+<p><span class="math notranslate nohighlight">\(f(x)=\ln(x^2+2)\)</span> er funksjonen <span class="math notranslate nohighlight">\(u(x)=x^2+2\)</span> satt inn i logaritmefunksjonen <span class="math notranslate nohighlight">\(g(u)=\ln u\)</span>. Vi kaller <span class="math notranslate nohighlight">\(u(x)\)</span> den indre funksjonen (eller kjernen) og <span class="math notranslate nohighlight">\(g(u)\)</span> den ytre funksjonen. Vi kan da skrive</p>
+<div class="math notranslate nohighlight">
+\[f(x)=g(u(x))=\ln u(x)=\ln(x^2+2)\]</div>
+</div>
+<p>Slike sammensatte funksjoner utgjør en stor gruppe av funksjoner og vi trenger en metode for å derivere de. Denne metoden kalles kjerneregelen.</p>
+<div class="def admonition">
+<p class="admonition-title">Kjerneregelen</p>
+<p>La <span class="math notranslate nohighlight">\(f\)</span> være en sammensatt funksjon med <span class="math notranslate nohighlight">\(g(u)\)</span> som ytre funksjon og <span class="math notranslate nohighlight">\(u(x)\)</span> som kjerne (indre funksjon). Den deriverte av <span class="math notranslate nohighlight">\(f\)</span> er da:</p>
+<p><span class="math notranslate nohighlight">\(f(x)=g(u(x)) \quad \Rightarrow \quad f'(x)=g'(u(x))\cdot u'(x)\)</span></p>
+<p>Vi bruker kjerneregelen når den ytre funksjonen er en enkel funksjon som vi allerede kan å derivere med de grunnleggende reglene.</p>
+</div>
+<p>Kjerneregelen kan være vanskelig å forstå. Den sier at vi starter med å derivere den ytre funksjonen med hensyn på kjernen, før vi deriverer kjernen med hensyn på <span class="math notranslate nohighlight">\(x\)</span>. Forhåpentligvis vil noen eksempler gjøre det tydligere.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 1: Kjerneregelen på <span class="math notranslate nohighlight">\(e^{4x}\)</span></p>
+<p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=e^{4x}\)</span>.
+Kjernen er <span class="math notranslate nohighlight">\(u(x)=4x\)</span>, mens den ytre funksjonen er <span class="math notranslate nohighlight">\(g(u)=e^u\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(f'(x)=g'(u(x))\cdot u'(x)=(e^u)'\cdot (4x)' =e^u\cdot 4=4e^{4x} \)</span></p>
+<p>Når vi kan kjerneregelen godt vil vi ofte gå gjøre dette direkte uten alle mellomregningene, men det anbefales å følge disse stegene fram til du har kontroll.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 2: Kjerneregelen <span class="math notranslate nohighlight">\(\sqrt{x^3+2}\)</span></p>
+<p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=\sqrt{x^3+2}\)</span>.
+Kjernen er <span class="math notranslate nohighlight">\(u(x)=x^3+2\)</span>, mens den ytre funksjonen er <span class="math notranslate nohighlight">\(g(u)=\sqrt(u)\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(f'(x)=g'(u(x))\cdot u'(x)=(\sqrt{u})'\cdot (x^3+2)'=\frac{1}{2\sqrt{u}}\cdot 3x^2 =\frac{1}{2\sqrt{x^3+2}}\cdot 3x^2=\frac{3x^2}{2\sqrt{x^3+2}}\)</span></p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 3: Kjerneregelen på <span class="math notranslate nohighlight">\(\ln(x^2+2)\)</span></p>
+<p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=\ln(x^2+2)\)</span>.
+Kjernen er <span class="math notranslate nohighlight">\(u(x)=x^2+2\)</span>, mens den ytre funksjonen er <span class="math notranslate nohighlight">\(g(u)=\ln u\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(f'(x)=g'(u(x))\cdot u'(x)=(\ln u)'\cdot (x^2+2)' =\frac{1}{u}\cdot 2x = \frac{2x}{x^2+2}\)</span></p>
+</div>
+<p>Vi kan bruke kjerneregelen til å bevise derivasjonsregelen <span class="math notranslate nohighlight">\((e^x)'=e^x\)</span>.</p>
+<div class="def admonition">
+<p class="admonition-title">Bevis for <span class="math notranslate nohighlight">\((e^x)'=e^x\)</span></p>
+<p>Vi setter <span class="math notranslate nohighlight">\(e^x=u\)</span>. Da får vi at <span class="math notranslate nohighlight">\(x = \ln u\)</span>. Vi deriverer begge sider og får</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+(x)'&amp;=(\ln u)' \\
+1&amp;= \frac{1}{u}\cdot u' \\
+u' &amp;= u
+\end{align}\)</span></p>
+<p>som gir at <span class="math notranslate nohighlight">\((e^x)'=e^x\)</span>.</p>
+</div>
+<p>Videre vil vi vise en derivasjonsregel for en generell eksponentialfunksjon <span class="math notranslate nohighlight">\(a^x\)</span>.</p>
+<div class="def admonition">
+<p class="admonition-title">Derivasjonsregel for <span class="math notranslate nohighlight">\(a^x\)</span></p>
+<p>Den deriverte av den generelle eksponentialfunksjonen er</p>
+<p><span class="math notranslate nohighlight">\(f(x)=a^x \quad \Rightarrow \quad f'(x)=a^x\cdot \ln a\)</span></p>
+<p><strong>Bevis</strong></p>
+<p>Vi lar <span class="math notranslate nohighlight">\(f(x)=a^x\)</span>. Videre utnytter vi at <span class="math notranslate nohighlight">\(a^x=e^{\ln a \cdot x}\)</span>. <em>Kontroller dette selv ved å bruke definisjonen av <span class="math notranslate nohighlight">\(\ln\)</span></em>.</p>
+<p>Vi lar <span class="math notranslate nohighlight">\(u(x)=\ln a \cdot x\)</span> og <span class="math notranslate nohighlight">\(g(u)=e^u\)</span>. Det gir</p>
+<p><span class="math notranslate nohighlight">\(f'(x)=g'(u(x))\cdot u'(x)=e^u\cdot \ln a=e^{\ln a \cdot x}\cdot \ln a= a^x\cdot\ln a\)</span></p>
+</div>
+<p>Og til slutt en derivasjonsregel for tierlogaritmen.</p>
+<div class="admonition-derivasjonsregel-for-log-x admonition">
+<p class="admonition-title">Derivasjonsregel for <span class="math notranslate nohighlight">\(\log x\)</span></p>
+<p>Den deriverte av tierlogaritmen er</p>
+<p><span class="math notranslate nohighlight">\(f(x)=\log x \quad \Rightarrow \quad f'(x)=\frac{1}{x\ln 10}\)</span></p>
+<p><strong>Bevis</strong></p>
+<p>Vi husker at <span class="math notranslate nohighlight">\(\log x=\frac{1}{\ln 10}\ln x\)</span> og da kommer derivasjonsregelen over direkte.</p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs\grenserderivasjon"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="defderivert.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Definisjon av den deriverte</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="produktbrokregel.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Produkt- og brøkregelen</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Kristoffer Stige<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

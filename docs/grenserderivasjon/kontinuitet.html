@@ -1,0 +1,669 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Kontinuitet &#8212; Matematikk R1</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myadmonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Definisjon av den deriverte" href="defderivert.html" />
+    <link rel="prev" title="Asymptoter" href="asymptoter.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Matematikk R1</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algebra og likninger
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algebralikninger/potensrot.html">
+   Potenser og røtter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algebralikninger/logaritmer.html">
+   Logaritmer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algebralikninger/naturliglogaritme.html">
+   Den naturlige logaritmen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algebralikninger/loglikninger.html">
+   Logaritmelikninger
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algebralikninger/eksponentiallikninger.html">
+   Eksponentiallikninger
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algebralikninger/numerisklosning.html">
+   Numerisk løsning av likninger
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Grenseverdier og derivasjon
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="grenseverdier.html">
+   Grenseverdier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="asymptoter.html">
+   Asymptoter
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Kontinuitet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defderivert.html">
+   Definisjon av den deriverte
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="derivasjonsregler.html">
+   Grunnleggende derivasjonsregler
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="produktbrokregel.html">
+   Produkt- og brøkregelen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numeriskderivasjon.html">
+   Numerisk derivasjon
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bruk av derivasjon
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../brukderivasjon/ekstremalverdier.html">
+   Ekstremalverdier
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Omvendte funksjoner
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../omvendtefunksjoner/omvendtefunksjoner.html">
+   Omvendte funksjoner
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modellering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modellering/modellering.html">
+   Modellering
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Vektorer
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vektorer/vektorer.html">
+   Vektorer
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/docs/grenserderivasjon/kontinuitet.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#delt-forskrift">
+   Delt forskrift
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Kontinuitet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#absoluttverdifunksjonen">
+   Absoluttverdifunksjonen
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Kontinuitet</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#delt-forskrift">
+   Delt forskrift
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Kontinuitet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#absoluttverdifunksjonen">
+   Absoluttverdifunksjonen
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="kontinuitet">
+<h1>Kontinuitet<a class="headerlink" href="#kontinuitet" title="Permalink to this headline">#</a></h1>
+<div class="utbytte dropdown admonition">
+<p class="admonition-title">Læringsutbytte</p>
+<p>I dette temaet arbeider vi med kompetansemålet:</p>
+<ul class="simple">
+<li><p>forstå begrepene vekstfart, grenseverdi, derivasjon og kontinuitet, og bruke disse for å løse praktiske problemer</p></li>
+<li><p>bruke ulike strategier for å utforske og bestemme grenseverdier til funksjoner, og utforske og argumentere for anvendelser av grenseverdier</p></li>
+</ul>
+<p>Etter å ha arbeidet med temaet, skal du:</p>
+<ul class="simple">
+<li><p>kunne forklare hva vi mener med at en funksjon er kontinuerlig i et punkt og en kontinuerlig funksjon</p></li>
+<li><p>avgjøre om en funksjon er kontinuerlig i et punkt og om en funksjon er kontinuerlig</p></li>
+<li><p>bruke og forstå funksjonsuttrykk for funksjoner med delt forskrift</p></li>
+<li><p>kunne tegne funksjoner med delt forskrift digitalt</p></li>
+<li><p>forklare hva vi mener med et bruddpunkt</p></li>
+<li><p>kjenne til absoluttverdifunksjonen</p></li>
+</ul>
+</div>
+<p>Vi har til nå stort sett på funksjoner som <em>oppfører seg fint</em>. Et unntak er de rasjonale funksjonene som gjerne gjør et plutselig hopp fra <span class="math notranslate nohighlight">\(-\infty\)</span> til <span class="math notranslate nohighlight">\(\infty\)</span> (eller motsatt) når vi passerer en vertikal asymptote. Vi har også sett på rasjonale funksjoner uten asymptoter, men som har et punkt der de ikke er definert. Allikevel vil vi si at disse funksjonene oppfører seg normalt innenfor det området der de er definert. Nå skal vi se på noen funksjoner som kan gjøre plutselige hopp eller ha <em>knekker</em> innenfor definisjonsområdet sitt.</p>
+<section id="delt-forskrift">
+<h2>Delt forskrift<a class="headerlink" href="#delt-forskrift" title="Permalink to this headline">#</a></h2>
+<p>Vi har brukt begrepet <em>definisjonsmengde</em> til å si noe om området der en funksjon er definert. Men hva skjer hvis vi gir funksjonen ulike funksjonsuttrykk innefor ulike deler av dette området?</p>
+<div class="def admonition">
+<p class="admonition-title">Delt forksrift</p>
+<p>En funksjon med delt forskrift har ulikt funksjonsuttrykk for ulike intervaller i definisjonsmengden.</p>
+<p>Punktene der funksjonsuttrykket endres kaller vi bruddpunkter til funksjonen.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Delt forskrift</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation*}
+    f(x) = \begin{cases} 
+      x^2+1 &amp; \text{når } \quad x &lt; 2 \\
+      -2x+9 &amp; \text{når } \quad x \geq 2
+   \end{cases}
+\end{equation*}\)</span></p>
+<p>Grafen ser slik ut</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/delt1.png"><img alt="../../_images/delt1.png" src="../../_images/delt1.png" style="width: 532.8000000000001px; height: 362.40000000000003px;" /></a>
+</figure>
+<p>For å skrive inn dette funksjonsuttrykket i GeoGebra, så kan vi skrive:
+Grafen ser slik ut</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/delt1skrivinn.png"><img alt="../../_images/delt1skrivinn.png" src="../../_images/delt1skrivinn.png" style="width: 273.6px; height: 38.400000000000006px;" /></a>
+</figure>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 2: Delt forskrift</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation*}
+    f(x) = \begin{cases} 
+      e^x &amp; \text{når } \quad x \leq 0 \\
+      x+2 &amp; \text{når } \quad x&gt; 0
+   \end{cases}
+\end{equation*}\)</span></p>
+<p>Grafen ser slik ut</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/delt2.png"><img alt="../../_images/delt2.png" src="../../_images/delt2.png" style="width: 555.6px; height: 362.40000000000003px;" /></a>
+</figure>
+<p>Merk at når vi tegner slike funksjoner kan det være lurt å tydeliggjøre på grafen om endepunktet er med eller ikke. Her er det gjort med ] og &lt; på samme måte som når vi skriver intervaller. GeoGebra har dessverre ingen mulighet for å gjøre dette.</p>
+<p>Prøv å tegne denne grafen i GeoGebra ved å bruke “Dersom” slik som i forrige eksempel.</p>
+</div>
+<p>Funksjoner med delt forskrift bruker vi for å beskrive fenomener, prosesser eller modeller der for eksempel betingelser kan endre seg underveis.</p>
+</section>
+<section id="id1">
+<h2>Kontinuitet<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>Det siste eksempelet over er et eksempel på noe vi kaller en diskontinuerlig funksjon. Den gjør et hopp midt inne i definisjonsmengden sin. Kontinuitet og diskontinuitet er viktige begreper dersom man skal gå videre med matematikk etter videregående. Her nøyer vi oss med en forholdsvis grunnleggende innføring.</p>
+<div class="def admonition">
+<p class="admonition-title">Kontinuerlige funksjoner</p>
+<p>En funksjon <span class="math notranslate nohighlight">\(f\)</span> er kontinuerlig i <span class="math notranslate nohighlight">\(x=a\)</span> dersom</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x\to a} f(x)= f(a)\]</div>
+<p>Ofte gir det mer mening å se på det med de ensidige grensene</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x\to a^-} f(x)=\lim_{x\to a^+} f(x)=f(a)\]</div>
+<p>Dersom funksjonen <span class="math notranslate nohighlight">\(f\)</span> er kontinuerlig for alle <span class="math notranslate nohighlight">\(x\in D_f\)</span>, så sier vi at funksjonen er en <strong>kontinuerlig funksjon</strong>.</p>
+</div>
+<div class="def admonition">
+<p class="admonition-title">Kjente kontinuerlige funksjoner</p>
+<p>Alle funksjoner som vi har jobbet med tidligere er kontinuerlige</p>
+<ul class="simple">
+<li><p>polynomfunksjoner</p></li>
+<li><p>eksponentialfunksjoner</p></li>
+<li><p>potensfunksjoner</p></li>
+<li><p>logaritmefunksjoner</p></li>
+</ul>
+<p>Og vi skal snart se at rasjonale funksjoner også regnes som kontinuerlige.</p>
+<p>I tillegg vil alle sammensetninger, summer, differanser, produkt og kvotienter av kontinuerlige funksjoner være kontinuerlig.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Ikke-kontinuerlig funksjon</p>
+<p>Funksjonen i eksempel 2 over er et eksempel på en ikke-koninuterlig (eller diskontinuerlig) funksjon. Definisjonsmengden er alle reelle tall, men vi ser at</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 0^-} f(x)= e^0=1 = f(0)\)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 0^+} f(x)= 0+2 = 2\)</span></p>
+<p>De ensidige grensene er ulike. Derfor er <span class="math notranslate nohighlight">\(f\)</span> ikke kontinuerlig i <span class="math notranslate nohighlight">\(x=0\)</span> og dermed er ikke <span class="math notranslate nohighlight">\(f\)</span> en kontinuerlig funksjon.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Rasjonale funksjoner er kontinuerlige</p>
+<p>Vi ser på en rasjonal funksjon <span class="math notranslate nohighlight">\(f(x)=\frac{2x+3}{x-1}\)</span>. Vi vet at grenseverdien <span class="math notranslate nohighlight">\(x\to 1\)</span> ikke eksisterer og at funksjonen gjør et hopp fra <span class="math notranslate nohighlight">\(-\infty\)</span> til <span class="math notranslate nohighlight">\(\infty\)</span> når v passer <span class="math notranslate nohighlight">\(x=1\)</span>. Funksjonen er derfor ikke kontinuerlig i <span class="math notranslate nohighlight">\(x=1\)</span>. Men siden <span class="math notranslate nohighlight">\(x=1\)</span> ikke er med i definisjonsmengden til funksjonen sier vi allikevel at <span class="math notranslate nohighlight">\(f\)</span> er en rasjonal funksjon. Begrunnelsen er at den er kontinuerlig i alle punkt i sin definisjonsmengde.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Gjør en funksjon kontinuerlig</p>
+<p>Bestem tallet <span class="math notranslate nohighlight">\(a\)</span> slik at funksjon <span class="math notranslate nohighlight">\(f(x)\)</span> er kontinuerlig:
+<span class="math notranslate nohighlight">\(
+\begin{equation*}
+    f(x) = \begin{cases} 
+      x^2+a &amp; \text{når } \quad x \leq 2 \\
+      2x+3 &amp; \text{når } \quad x&gt; 2
+   \end{cases}
+\end{equation*}
+\)</span></p>
+<p>For <span class="math notranslate nohighlight">\(x&lt;2\)</span> og <span class="math notranslate nohighlight">\(x&gt;2\)</span> er funksjonen “vanlige” polynomfunskjoner, så der er den kontinuerlig. For at hele funksjonen skal være kontinuerlig må vi få den til å være kontinuerlig også for <span class="math notranslate nohighlight">\(x=2\)</span>. Da må</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\displaystyle\lim_{x\to 2^-} f(x) &amp;= \displaystyle\lim_{x\to 2^+} f(x) \\
+\displaystyle\lim_{x\to 2^-} x^2+a &amp;= \displaystyle\lim_{x\to 2^+} 2x+3 \\
+4+a &amp;= 7 \\
+a &amp;= 3
+\end{align}\)</span></p>
+<p>Funksjonen blir kontinuerlig om <span class="math notranslate nohighlight">\(a=3\)</span>.</p>
+</div>
+</section>
+<section id="absoluttverdifunksjonen">
+<h2>Absoluttverdifunksjonen<a class="headerlink" href="#absoluttverdifunksjonen" title="Permalink to this headline">#</a></h2>
+<p>En spesiell kontinuerlig funksjon som kan være verdt å se ekstra på er absoluttfunksjonen.</p>
+<div class="admonition">
+<p class="admonition-title">Absoluttverdifunksjonen</p>
+<p>Absoluttverdifunksjonen <span class="math notranslate nohighlight">\(f(x)=|x|\)</span> defineres ved hjelp av å skrive den på delt forskrift. Funksjonen forteller oss hvor lang vi er fra null på tallinja.</p>
+<p><span class="math notranslate nohighlight">\(f(x)= |x| =\begin{cases} 
+      -x &amp; \text{når } \quad x&lt;0 \\
+      x &amp; \text{når } \quad x\geq 0
+   \end{cases}\)</span></p>
+<p>Grafen til absoluttverdifunksjonen ser slik ut</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/absoluttverdifunksjonen.png"><img alt="../../_images/absoluttverdifunksjonen.png" src="../../_images/absoluttverdifunksjonen.png" style="width: 555.6px; height: 362.40000000000003px;" /></a>
+</figure>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Absoluttverdifunksjonen</p>
+<p>Avgjør om funksjonen <span class="math notranslate nohighlight">\(f(x)=\frac{|x-2|}{x-2}\)</span> er en kontinuerlig funksjon.</p>
+<p>Vi vet at <span class="math notranslate nohighlight">\(|x-2|=\begin{cases} 
+      -(x-2) &amp; \text{når } \quad x&lt;2 \\
+      x-2 &amp; \text{når } \quad x\geq 2
+   \end{cases}\)</span></p>
+<p>Så da må vi få</p>
+<p><span class="math notranslate nohighlight">\(f(x)=\begin{cases} 
+      \frac{-(x-2)}{x-2} &amp;= -1 &amp; \text{når } \quad x&lt;2 \\
+      \frac{x-2}{x-2} &amp;= 1 &amp; \text{når } \quad x&gt;2
+   \end{cases}\)</span></p>
+<p>Merk at her er ikke <span class="math notranslate nohighlight">\(x=2\)</span> med siden det ikke er en del av definisjonsmengden.</p>
+<p>Videre får vi da at</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 2^-}f(x)=-1\)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 2^+}f(x)=1\)</span></p>
+<p>Grenseverdien når <span class="math notranslate nohighlight">\(x\to 2\)</span> eksisterer altså ikke. Det vil si at <span class="math notranslate nohighlight">\(f\)</span> ikke er kontinuerlig i <span class="math notranslate nohighlight">\(x=2\)</span>. Siden <span class="math notranslate nohighlight">\(x=2\)</span> ikke er en del av definisjonsmengden, så vil <span class="math notranslate nohighlight">\(f\)</span> allikevel være en kontinuerlig funksjon.</p>
+<p>En graf av funksjonen ser vi under</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/absoluttverdifunksjonen2.png"><img alt="../../_images/absoluttverdifunksjonen2.png" src="../../_images/absoluttverdifunksjonen2.png" style="width: 482.40000000000003px; height: 362.40000000000003px;" /></a>
+</figure>
+</div>
+<p>Følgende eksempel er litt i utkanten av læreplanen i R1, men vi tar det med som litt utfyllende informasjon rundt absoluttverdifunksjoner.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Likninger med absoluttverdi</p>
+<p>Vi skal løse likningen <span class="math notranslate nohighlight">\(|x-2|=4\)</span>.</p>
+<p>En måte å se på absoluttverdier på er avstand. Likningen over kan vi tenke på som hvilke tall har avstanden 4 fra 2. Da ser vi ganske raskt at <span class="math notranslate nohighlight">\(L=\{-2, 6\}\)</span>.</p>
+<p>Vi kan også løse det grafisk ved å tegne inn funksjonsuttrykkene <span class="math notranslate nohighlight">\(f(x)=|x-2|\)</span> og <span class="math notranslate nohighlight">\(g(x)=4\)</span> og finne skjæringspunktene. Ser at vi får samme løsning.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/absoluttverdilikning.png"><img alt="../../_images/absoluttverdilikning.png" src="../../_images/absoluttverdilikning.png" style="width: 482.40000000000003px; height: 362.40000000000003px;" /></a>
+</figure>
+<p>Enda et alternativ er å gjøre det algebraisk. Da ser vi at <span class="math notranslate nohighlight">\(|x-2|=4\)</span> tilsvarer de to likningene</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+x-2 &amp;=4 &amp;\vee  x-2&amp;=-4 \\
+x &amp;= 6 &amp;\vee x&amp;=-2
+\end{align}\)</span></p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs\grenserderivasjon"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="asymptoter.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Asymptoter</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="defderivert.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Definisjon av den deriverte</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Kristoffer Stige<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
