@@ -70,4 +70,154 @@ get_ipython().run_cell_magic('html', '', '\n<meta name=viewport content="width=d
 # 
 # Den gjennomsnittlige vekstfarten er endring i funksjonsverdi dividert med endring i $x$-verdi. Den deriverte er akkurat det samme bare at vi lar endringen i $x$ gå mot null. Da finner vi stigningstallet til tangenten.
 # 
-# Den formelle definisjonen sier altså matematisk den den *uformelle* sa med ord. Fordelen med den formelle definisjonen er at den gir en matematisk skrivemåte. I tillegg vil vi kunne bruke den til å regne ut den deriverte funksjonen og etterhvert til å bevise generelle derivasjonsregler.
+# Den formelle definisjonen sier altså matematisk den den *uformelle* sa med ord. Så en fordel med den formelle definisjonen er at den gir oss en kompakt matematisk skrivemåte. I tillegg vil vi kunne bruke den til å regne ut den deriverte funksjonen og etterhvert til å bevise generelle derivasjonsregler.
+# 
+# 
+# ```{admonition} Eksempel: Derivert av $x^2$
+# :class: def
+# 
+# Vi skal bruke definisjonen av den deriverte til å utlede en derivasjonsregel for $f(x)=x^2$.
+# 
+# $\begin{align}
+# f'(x)&=\displaystyle\lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x} \\
+# &=\lim_{\Delta x\to 0}\frac{(x+\Delta x)^2-x^2}{\Delta x} \\
+# &=\lim_{\Delta x\to 0}\frac{x^2+2x\Delta x + (\Delta x)^2-x^2}{\Delta x} \\
+# &=\lim_{\Delta x\to 0}\frac{\Delta x (2x+\Delta x)}{\Delta x} \\
+# &=\lim_{\Delta x\to 0} (2x+\Delta x) \\
+# &= 2x
+# \end{align}$
+# 
+# Vi ser altså at når $f(x)=x^2$, så vil $f'(x)=2x$.
+# 
+# Så om vi trenger den momentane vekstfarten til $f(x)$ for $x=4$, så vil den være $f'(4)=2\cdot 4=8$.
+# ```
+# 
+# ```{admonition} Eksempel: Derivert av lineær funksjon
+# :class: def
+# 
+# Vi skal bruke definisjonen av den deriverte til å utlede en derivasjonsregel for $f(x)=a\cdot x + b$, der $a,b\in\mathbf{R}$.
+# 
+# $\begin{align}
+# f'(x)&=\displaystyle\lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x} \\
+# &=\lim_{\Delta x\to 0}\frac{a(x+\Delta x)+b-(ax+b)}{\Delta x} \\
+# &=\lim_{\Delta x\to 0}\frac{ax+a\Delta x + b -ax-b}{\Delta x} \\
+# &=\lim_{\Delta x\to 0}\frac{a\Delta x}{\Delta x} \\
+# &=\lim_{\Delta x\to 0} a \\
+# &= a
+# \end{align}$
+# 
+# Vi ser altså at når $f(x)=ax+b$, så vil $f'(x)=a$.
+# 
+# Den deriverte til en lineær funksjon er altså stigningstallet til funksjonen. Det gir mening siden vi har sagt at den deriverte er lik stigningstallet til tangenten i hvert punkt, og tangenten til en lineær funksjon er funksjonen selv.
+# ```
+
+# ## Deriverbarhet og kontinuitet
+# På neste side skal vi lære oss alt vi trenger av derivasjonsregler, men først vil vi ta for oss det som kanskje er den mest teoretiske delen av hele R1 faget. Det handler om sammenhengen mellom deriverbarhet og kontinuitet og forklarer på et dypere plan hvorfor mye av det vi gjør videre i faget vil fungere. Om det er vanskelig å forstå, så prøv og fokuser på bildene av grafene og ikke så mye på de matematiske uttrykkene. Det her er viktig for matematikken, men vi kan gjøre det aller meste videre uten å forstå det her.
+# 
+# Vi starter med å se på funksjonen i grafen under
+# 
+# ```{figure} ./bilder/deriverbarhet.png
+# ---
+# scale: 20%
+# ---
+# ```
+# 
+# Funksjonen har bruddpunkt i $x=-2$ og i $x=0$. I bruddpunktet i $x=-2$ ser vi at funksjonen er kontinuerlig, mens i $x=0$ er den ikke det. Det her ser vi tydelig fra grafen, men prøv gjerne å vise det også med grenseverdier. For analyse av funksjoner, så er det viktig å kunne si noe om kontinuitet. Like viktig er det å kunne si noe om funksjonen er deriverbar.
+# 
+# Vi vet at den deriverte er lik stigningstallet til tangenten i et punkt. En naturlig definisjon av deriverbarhet blir da:
+# 
+# ```{admonition} Deriverbarhet
+# :class: def
+# En funksjon $f(x)$ er deriverbar for $x=a$ dersom vi kan tegne inn en tangent i punktet $(a, f(a))$ på grafen til $f$.
+# 
+# Om vi ikke kan tegne inn en tangent, så er funksjonen ikke deriverbar i punktet.
+# ```
+# 
+# Fra grafen over ser vi at vi vil få problemer med å tegne inn tangenter i de to bruddpunktene. Funksjonen er altså ikke deriverbar i punktene.
+# 
+#  * I $x=-2$ går tangenten fra å ha stigningstall $-1$ til å ha stigningstall $1$. Et slikt punkt der grafen er kontinuerlig, men ikke deriverbar kaller vi et **knekkpunkt**.
+#  * I $x=0$ er ikke funksjonen kontinuerlig. En tangent som kommer fra venstre og en som kommer fra høyre vil ikke være lik hverandre i punktet og funksjonen er ikke deriverbar.
+# 
+# Stopp opp og gå gjennom de forrige avsnittene en gang til. Det forklarer med ord og grafer det vi nå skal formulere matematisk.
+# 
+# ```{admonition} Formell definisjon på deriverbarhet
+# :class:
+# 
+# En funksjon $f$ er deriverbar for $x=a$ dersom grenseverdien
+# 
+# $$\lim_{\Delta x\to 0}\frac{f(a+\Delta x)-f(a)}{\Delta x}$$ 
+# 
+# eksisterer. Dette er egentlig bare definisjonen av den deriverte for $x=a$.
+# 
+# For at grenseverdien over skal eksistere må de to ensidige grenseverdiene ($\Delta x \to 0^-$ og $\Delta x \to 0^+$) eksistere og være like.
+# 
+# I noen tilfeller vil det være enklere å omformulere definisjonen over ved å sette inn at $\Delta x = x-a$. Vi får da formen under, men vi skal prøve å holde oss til den definisjonen som minner mest om definisjonen på den deriverte.
+# 
+# $$\lim_{x\to a}\frac{f(x)-f(a)}{x-a}$$ 
+# ```
+# 
+# ```{admonition} Eksempel: Ikke-deriverbar funksjon
+# :class: eksempel
+# 
+# Vi ser på funksjonen $f(x)=\begin{cases} 
+#       |x+2| \text{når } \quad x\leq 0 \\
+#       4-x^2 \text{når } \quad x>0
+#    \end{cases}$ 
+# som vi innledet temaet med. Den har vi allerede sett at ikke er deriverbar for $x=-2$ go $x=0$. Det skal vi nå vise algebraisk.
+# 
+# **$x=-2$**
+# Vi ser på den venstresidige og den høyresidige grensen av den deriverte i punktet.
+# 
+# $\displaystyle\lim_{\Delta x\to 0^-}\frac{f(2+\Delta x)-f(2)}{\Delta x} =\lim_{\Delta x\to 0^-}\frac{-(-2+\Delta x +2)-0}{\Delta x}=\lim_{\Delta x\to 0^-}\frac{-\Delta x}{\Delta x}=-1$
+# 
+# $\displaystyle\lim_{\Delta x\to 0^+}\frac{f(2+\Delta x)-f(2)}{\Delta x} =\lim_{\Delta x\to 0^+}\frac{(-2+\Delta x +2)-0}{\Delta x}=\lim_{\Delta x\to 0^+}\frac{\Delta x}{\Delta x}=1$
+# 
+# Den venstresidige og høyresidige grenseverdien er ulik. Derfor er funksjonen ikke deriverbar for $x=-2$.\
+# *Over har vi brukt at $|x+2|=-(x+2)$ for $x<-2$ og $|x+2|=x+2$ for $x>-2$.*
+# 
+# **$x=0$**
+# Vi gjør tilsvarende
+# 
+# $\displaystyle\lim_{\Delta x\to 0^-}\frac{f(0+\Delta x)-f(0)}{\Delta x} =\lim_{\Delta x\to 0^-}\frac{(0+\Delta x +2)-2}{\Delta x}=\lim_{\Delta x\to 0^-}\frac{\Delta x}{\Delta x}=1$
+# 
+# $\displaystyle\lim_{\Delta x\to 0^+}\frac{f(0+\Delta x)-f(0)}{\Delta x} =\lim_{\Delta x\to 0^+}\frac{(4-(0+\Delta x)^2)-4}{\Delta x}=\lim_{\Delta x\to 0^+}\frac{(\Delta x)^2}{\Delta x}=0$
+# 
+# Den venstresidige og høyresidige grenseverdien er ulik. Derfor er funksjonen ikke deriverbar for $x=0$.
+# ```
+# 
+# Til slutt skal vi vise en viktig sammenheng mellom deriverbarhet og kontinuitet.
+# 
+# ```{admonition} Sammenheng mellom deriverbarhet og kontinuitet
+# :class: def
+# 
+# $f(x)$ er deriverbar i $x=a \quad \Rightarrow \quad f(x)$ er kontinuerlig i $x=a$.
+# 
+# $f(x)$ er ikke kontinuerlig i $x=a \quad \Rightarrow \quad f(x)$ er ikke deriverbar i $x=a$.
+# 
+# Merk at begge sammenhengene er implikasjoner og ikke ekvivalenser. Vi kan derfor **ikke** si
+# 
+#  * $f(x)$ er deriverbar dersom den er kontinuerlig
+#  * $f(x)$ er ikke kontinuerlig dersom der ikke er deriverbar
+# 
+# Punktet $x=-2$ er et eksempel på dette.
+# ```
+# 
+# ```{admonition} Bevis for sammenhengen
+# :class: def, dropdown
+# 
+# Vi har sett at en funksjon er deriverbar i $x=a$ dersom grenseverdien under eksisterer.
+# 
+# $$\lim_{\Delta x\to 0}\frac{f(a+\Delta x)-f(a)}{\Delta x}$$
+# 
+# I den grensa, så ser vi at nevneren går mot null. Om grenseverdien skal eksistere, så må samtidig telleren gå mot null (hvis ikke går grensa mot uendelig).
+# 
+# $\displaystyle\lim_{\Delta x\to 0}(f(a+\Delta x)-f(a))=\lim_{\Delta x\to 0}f(a+\Delta x)-\lim_{\Delta x\to 0}f(a)=\lim_{\Delta x\to 0}f(a+\Delta x) - f(a)=0$
+# 
+# Da må $\displaystyle\lim_{\Delta x\to 0} f(a+\Delta x)=f(a)$ som viser at funksjonen er kontinuerlig.
+# 
+# Vi har da vist
+# 
+# $f(x)$ er deriverbar i $x=a \quad \Rightarrow \quad f(x)$ er kontinuerlig i $x=a$
+# ```
+# 
+# 

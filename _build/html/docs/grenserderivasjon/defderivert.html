@@ -366,6 +366,11 @@ title="Print to PDF"
    Definisjonen av den deriverte
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deriverbarhet-og-kontinuitet">
+   Deriverbarhet og kontinuitet
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -388,6 +393,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#definisjonen-av-den-deriverte">
    Definisjonen av den deriverte
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deriverbarhet-og-kontinuitet">
+   Deriverbarhet og kontinuitet
   </a>
  </li>
 </ul>
@@ -486,7 +496,109 @@ title="Print to PDF"
 </div>
 <p>Den formelle definisjonen kan virke litt kryptisk, men den sier det samme som 1T-definisjonen. For å gjøre det klarere, så skal vi prøve å forklare den ved ord. <span class="math notranslate nohighlight">\(\Delta\)</span> er et symbol vi bruker for en endring, så når vi skriver <span class="math notranslate nohighlight">\(\Delta x\)</span> mener vi en endring i <span class="math notranslate nohighlight">\(x\)</span>. Definisjonen sier altså at den deriverte er gitt ved endringen i funksjonsverd (endring langs y-aksen) dividert med endringen i <span class="math notranslate nohighlight">\(x\)</span>. Videre lar vi endringen i <span class="math notranslate nohighlight">\(x\)</span> bli veldig, veldig liten.</p>
 <p>Den gjennomsnittlige vekstfarten er endring i funksjonsverdi dividert med endring i <span class="math notranslate nohighlight">\(x\)</span>-verdi. Den deriverte er akkurat det samme bare at vi lar endringen i <span class="math notranslate nohighlight">\(x\)</span> gå mot null. Da finner vi stigningstallet til tangenten.</p>
-<p>Den formelle definisjonen sier altså matematisk den den <em>uformelle</em> sa med ord. Fordelen med den formelle definisjonen er at den gir en matematisk skrivemåte. I tillegg vil vi kunne bruke den til å regne ut den deriverte funksjonen og etterhvert til å bevise generelle derivasjonsregler.</p>
+<p>Den formelle definisjonen sier altså matematisk den den <em>uformelle</em> sa med ord. Så en fordel med den formelle definisjonen er at den gir oss en kompakt matematisk skrivemåte. I tillegg vil vi kunne bruke den til å regne ut den deriverte funksjonen og etterhvert til å bevise generelle derivasjonsregler.</p>
+<div class="def admonition">
+<p class="admonition-title">Eksempel: Derivert av <span class="math notranslate nohighlight">\(x^2\)</span></p>
+<p>Vi skal bruke definisjonen av den deriverte til å utlede en derivasjonsregel for <span class="math notranslate nohighlight">\(f(x)=x^2\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+f'(x)&amp;=\displaystyle\lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x} \\
+&amp;=\lim_{\Delta x\to 0}\frac{(x+\Delta x)^2-x^2}{\Delta x} \\
+&amp;=\lim_{\Delta x\to 0}\frac{x^2+2x\Delta x + (\Delta x)^2-x^2}{\Delta x} \\
+&amp;=\lim_{\Delta x\to 0}\frac{\Delta x (2x+\Delta x)}{\Delta x} \\
+&amp;=\lim_{\Delta x\to 0} (2x+\Delta x) \\
+&amp;= 2x
+\end{align}\)</span></p>
+<p>Vi ser altså at når <span class="math notranslate nohighlight">\(f(x)=x^2\)</span>, så vil <span class="math notranslate nohighlight">\(f'(x)=2x\)</span>.</p>
+<p>Så om vi trenger den momentane vekstfarten til <span class="math notranslate nohighlight">\(f(x)\)</span> for <span class="math notranslate nohighlight">\(x=4\)</span>, så vil den være <span class="math notranslate nohighlight">\(f'(4)=2\cdot 4=8\)</span>.</p>
+</div>
+<div class="def admonition">
+<p class="admonition-title">Eksempel: Derivert av lineær funksjon</p>
+<p>Vi skal bruke definisjonen av den deriverte til å utlede en derivasjonsregel for <span class="math notranslate nohighlight">\(f(x)=a\cdot x + b\)</span>, der <span class="math notranslate nohighlight">\(a,b\in\mathbf{R}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+f'(x)&amp;=\displaystyle\lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x} \\
+&amp;=\lim_{\Delta x\to 0}\frac{a(x+\Delta x)+b-(ax+b)}{\Delta x} \\
+&amp;=\lim_{\Delta x\to 0}\frac{ax+a\Delta x + b -ax-b}{\Delta x} \\
+&amp;=\lim_{\Delta x\to 0}\frac{a\Delta x}{\Delta x} \\
+&amp;=\lim_{\Delta x\to 0} a \\
+&amp;= a
+\end{align}\)</span></p>
+<p>Vi ser altså at når <span class="math notranslate nohighlight">\(f(x)=ax+b\)</span>, så vil <span class="math notranslate nohighlight">\(f'(x)=a\)</span>.</p>
+<p>Den deriverte til en lineær funksjon er altså stigningstallet til funksjonen. Det gir mening siden vi har sagt at den deriverte er lik stigningstallet til tangenten i hvert punkt, og tangenten til en lineær funksjon er funksjonen selv.</p>
+</div>
+</section>
+<section id="deriverbarhet-og-kontinuitet">
+<h2>Deriverbarhet og kontinuitet<a class="headerlink" href="#deriverbarhet-og-kontinuitet" title="Permalink to this headline">#</a></h2>
+<p>På neste side skal vi lære oss alt vi trenger av derivasjonsregler, men først vil vi ta for oss det som kanskje er den mest teoretiske delen av hele R1 faget. Det handler om sammenhengen mellom deriverbarhet og kontinuitet og forklarer på et dypere plan hvorfor mye av det vi gjør videre i faget vil fungere. Om det er vanskelig å forstå, så prøv og fokuser på bildene av grafene og ikke så mye på de matematiske uttrykkene. Det her er viktig for matematikken, men vi kan gjøre det aller meste videre uten å forstå det her.</p>
+<p>Vi starter med å se på funksjonen i grafen under</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/deriverbarhet.png"><img alt="../../_images/deriverbarhet.png" src="../../_images/deriverbarhet.png" style="width: 564.0px; height: 362.40000000000003px;" /></a>
+</figure>
+<p>Funksjonen har bruddpunkt i <span class="math notranslate nohighlight">\(x=-2\)</span> og i <span class="math notranslate nohighlight">\(x=0\)</span>. I bruddpunktet i <span class="math notranslate nohighlight">\(x=-2\)</span> ser vi at funksjonen er kontinuerlig, mens i <span class="math notranslate nohighlight">\(x=0\)</span> er den ikke det. Det her ser vi tydelig fra grafen, men prøv gjerne å vise det også med grenseverdier. For analyse av funksjoner, så er det viktig å kunne si noe om kontinuitet. Like viktig er det å kunne si noe om funksjonen er deriverbar.</p>
+<p>Vi vet at den deriverte er lik stigningstallet til tangenten i et punkt. En naturlig definisjon av deriverbarhet blir da:</p>
+<div class="def admonition">
+<p class="admonition-title">Deriverbarhet</p>
+<p>En funksjon <span class="math notranslate nohighlight">\(f(x)\)</span> er deriverbar for <span class="math notranslate nohighlight">\(x=a\)</span> dersom vi kan tegne inn en tangent i punktet <span class="math notranslate nohighlight">\((a, f(a))\)</span> på grafen til <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Om vi ikke kan tegne inn en tangent, så er funksjonen ikke deriverbar i punktet.</p>
+</div>
+<p>Fra grafen over ser vi at vi vil få problemer med å tegne inn tangenter i de to bruddpunktene. Funksjonen er altså ikke deriverbar i punktene.</p>
+<ul class="simple">
+<li><p>I <span class="math notranslate nohighlight">\(x=-2\)</span> går tangenten fra å ha stigningstall <span class="math notranslate nohighlight">\(-1\)</span> til å ha stigningstall <span class="math notranslate nohighlight">\(1\)</span>. Et slikt punkt der grafen er kontinuerlig, men ikke deriverbar kaller vi et <strong>knekkpunkt</strong>.</p></li>
+<li><p>I <span class="math notranslate nohighlight">\(x=0\)</span> er ikke funksjonen kontinuerlig. En tangent som kommer fra venstre og en som kommer fra høyre vil ikke være lik hverandre i punktet og funksjonen er ikke deriverbar.</p></li>
+</ul>
+<p>Stopp opp og gå gjennom de forrige avsnittene en gang til. Det forklarer med ord og grafer det vi nå skal formulere matematisk.</p>
+<div class="admonition">
+<p class="admonition-title">Formell definisjon på deriverbarhet</p>
+<p>En funksjon <span class="math notranslate nohighlight">\(f\)</span> er deriverbar for <span class="math notranslate nohighlight">\(x=a\)</span> dersom grenseverdien</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\Delta x\to 0}\frac{f(a+\Delta x)-f(a)}{\Delta x}\]</div>
+<p>eksisterer. Dette er egentlig bare definisjonen av den deriverte for <span class="math notranslate nohighlight">\(x=a\)</span>.</p>
+<p>For at grenseverdien over skal eksistere må de to ensidige grenseverdiene (<span class="math notranslate nohighlight">\(\Delta x \to 0^-\)</span> og <span class="math notranslate nohighlight">\(\Delta x \to 0^+\)</span>) eksistere og være like.</p>
+<p>I noen tilfeller vil det være enklere å omformulere definisjonen over ved å sette inn at <span class="math notranslate nohighlight">\(\Delta x = x-a\)</span>. Vi får da formen under, men vi skal prøve å holde oss til den definisjonen som minner mest om definisjonen på den deriverte.</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x\to a}\frac{f(x)-f(a)}{x-a}\]</div>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Ikke-deriverbar funksjon</p>
+<p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=\begin{cases} 
+      |x+2| \text{når } \quad x\leq 0 \\
+      4-x^2 \text{når } \quad x&gt;0
+   \end{cases}\)</span>
+som vi innledet temaet med. Den har vi allerede sett at ikke er deriverbar for <span class="math notranslate nohighlight">\(x=-2\)</span> go <span class="math notranslate nohighlight">\(x=0\)</span>. Det skal vi nå vise algebraisk.</p>
+<p><strong><span class="math notranslate nohighlight">\(x=-2\)</span></strong>
+Vi ser på den venstresidige og den høyresidige grensen av den deriverte i punktet.</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{\Delta x\to 0^-}\frac{f(2+\Delta x)-f(2)}{\Delta x} =\lim_{\Delta x\to 0^-}\frac{-(-2+\Delta x +2)-0}{\Delta x}=\lim_{\Delta x\to 0^-}\frac{-\Delta x}{\Delta x}=-1\)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{\Delta x\to 0^+}\frac{f(2+\Delta x)-f(2)}{\Delta x} =\lim_{\Delta x\to 0^+}\frac{(-2+\Delta x +2)-0}{\Delta x}=\lim_{\Delta x\to 0^+}\frac{\Delta x}{\Delta x}=1\)</span></p>
+<p>Den venstresidige og høyresidige grenseverdien er ulik. Derfor er funksjonen ikke deriverbar for <span class="math notranslate nohighlight">\(x=-2\)</span>.<br />
+<em>Over har vi brukt at <span class="math notranslate nohighlight">\(|x+2|=-(x+2)\)</span> for <span class="math notranslate nohighlight">\(x&lt;-2\)</span> og <span class="math notranslate nohighlight">\(|x+2|=x+2\)</span> for <span class="math notranslate nohighlight">\(x&gt;-2\)</span>.</em></p>
+<p><strong><span class="math notranslate nohighlight">\(x=0\)</span></strong>
+Vi gjør tilsvarende</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{\Delta x\to 0^-}\frac{f(0+\Delta x)-f(0)}{\Delta x} =\lim_{\Delta x\to 0^-}\frac{(0+\Delta x +2)-2}{\Delta x}=\lim_{\Delta x\to 0^-}\frac{\Delta x}{\Delta x}=1\)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{\Delta x\to 0^+}\frac{f(0+\Delta x)-f(0)}{\Delta x} =\lim_{\Delta x\to 0^+}\frac{(4-(0+\Delta x)^2)-4}{\Delta x}=\lim_{\Delta x\to 0^+}\frac{(\Delta x)^2}{\Delta x}=0\)</span></p>
+<p>Den venstresidige og høyresidige grenseverdien er ulik. Derfor er funksjonen ikke deriverbar for <span class="math notranslate nohighlight">\(x=0\)</span>.</p>
+</div>
+<p>Til slutt skal vi vise en viktig sammenheng mellom deriverbarhet og kontinuitet.</p>
+<div class="def admonition">
+<p class="admonition-title">Sammenheng mellom deriverbarhet og kontinuitet</p>
+<p><span class="math notranslate nohighlight">\(f(x)\)</span> er deriverbar i <span class="math notranslate nohighlight">\(x=a \quad \Rightarrow \quad f(x)\)</span> er kontinuerlig i <span class="math notranslate nohighlight">\(x=a\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(f(x)\)</span> er ikke kontinuerlig i <span class="math notranslate nohighlight">\(x=a \quad \Rightarrow \quad f(x)\)</span> er ikke deriverbar i <span class="math notranslate nohighlight">\(x=a\)</span>.</p>
+<p>Merk at begge sammenhengene er implikasjoner og ikke ekvivalenser. Vi kan derfor <strong>ikke</strong> si</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x)\)</span> er deriverbar dersom den er kontinuerlig</p></li>
+<li><p><span class="math notranslate nohighlight">\(f(x)\)</span> er ikke kontinuerlig dersom der ikke er deriverbar</p></li>
+</ul>
+<p>Punktet <span class="math notranslate nohighlight">\(x=-2\)</span> er et eksempel på dette.</p>
+</div>
+<div class="def dropdown admonition">
+<p class="admonition-title">Bevis for sammenhengen</p>
+<p>Vi har sett at en funksjon er deriverbar i <span class="math notranslate nohighlight">\(x=a\)</span> dersom grenseverdien under eksisterer.</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\Delta x\to 0}\frac{f(a+\Delta x)-f(a)}{\Delta x}\]</div>
+<p>I den grensa, så ser vi at nevneren går mot null. Om grenseverdien skal eksistere, så må samtidig telleren gå mot null (hvis ikke går grensa mot uendelig).</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{\Delta x\to 0}(f(a+\Delta x)-f(a))=\lim_{\Delta x\to 0}f(a+\Delta x)-\lim_{\Delta x\to 0}f(a)=\lim_{\Delta x\to 0}f(a+\Delta x) - f(a)=0\)</span></p>
+<p>Da må <span class="math notranslate nohighlight">\(\displaystyle\lim_{\Delta x\to 0} f(a+\Delta x)=f(a)\)</span> som viser at funksjonen er kontinuerlig.</p>
+<p>Vi har da vist</p>
+<p><span class="math notranslate nohighlight">\(f(x)\)</span> er deriverbar i <span class="math notranslate nohighlight">\(x=a \quad \Rightarrow \quad f(x)\)</span> er kontinuerlig i <span class="math notranslate nohighlight">\(x=a\)</span></p>
+</div>
 </section>
 </section>
 
