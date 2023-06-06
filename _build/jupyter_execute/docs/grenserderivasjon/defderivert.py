@@ -216,7 +216,7 @@ get_ipython().run_cell_magic('html', '', '\n<meta name=viewport content="width=d
 # &=\lim_{\Delta x\to 0}f(a+\Delta x) - f(a)=0
 # \end{align}$
 # 
-# Da må $\displaystyle\lim_{\Delta x\to 0} f(a+\Delta x)=f(a)$ som viser at funksjonen er kontinuerlig.
+# Da må $\displaystyle\lim_{\Delta x\to 0} f(a+\Delta x)=f(a)$. Bruker vi at $\Delta x=x-a$ vil grenseverdien gå over til $x\to a$ og vi får $\displaystyle\lim_{x\to a} f(x)=f(a)$ som viser at funksjonen er kontinuerlig.
 # 
 # Vi har da vist
 # 
