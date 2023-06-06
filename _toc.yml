@@ -22,6 +22,7 @@ parts:
   - file: docs/grenserderivasjon/kontinuitet
   - file: docs/grenserderivasjon/defderivert
   - file: docs/grenserderivasjon/derivasjonsregler
+  - file: docs/grenserderivasjon/produktbrokregel
   - file: docs/grenserderivasjon/numeriskderivasjon
 - caption: Bruk av derivasjon
   chapters:
