@@ -199,7 +199,7 @@ get_ipython().run_cell_magic('html', '', '\n<meta name=viewport content="width=d
 #  * $f(x)$ er deriverbar dersom den er kontinuerlig
 #  * $f(x)$ er ikke kontinuerlig dersom der ikke er deriverbar
 # 
-# Punktet $x=-2$ er et eksempel på dette.
+# Punktet $x=-2$ i eksempelet vi har sett på viser dette.
 # ```
 # 
 # ```{admonition} Bevis for sammenhengen
@@ -211,7 +211,10 @@ get_ipython().run_cell_magic('html', '', '\n<meta name=viewport content="width=d
 # 
 # I den grensa, så ser vi at nevneren går mot null. Om grenseverdien skal eksistere, så må samtidig telleren gå mot null (hvis ikke går grensa mot uendelig).
 # 
-# $\displaystyle\lim_{\Delta x\to 0}(f(a+\Delta x)-f(a))=\lim_{\Delta x\to 0}f(a+\Delta x)-\lim_{\Delta x\to 0}f(a)=\lim_{\Delta x\to 0}f(a+\Delta x) - f(a)=0$
+# $\begin{align}
+# \displaystyle\lim_{\Delta x\to 0}(f(a+\Delta x)-f(a))&=\lim_{\Delta x\to 0}f(a+\Delta x)-\lim_{\Delta x\to 0}f(a) \\
+# &=\lim_{\Delta x\to 0}f(a+\Delta x) - f(a)=0
+# \end{align}$
 # 
 # Da må $\displaystyle\lim_{\Delta x\to 0} f(a+\Delta x)=f(a)$ som viser at funksjonen er kontinuerlig.
 # 
