@@ -4,13 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Numerisk løsning av likninger &#8212; Matematikk R1</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,17 +18,21 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/myadmonitions.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -38,13 +40,12 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -64,21 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -87,10 +74,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -232,17 +218,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -250,117 +231,61 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/docs/algebralikninger/numerisklosning.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/docs/algebralikninger/numerisklosning.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#numeriske-metoder">
    Numeriske metoder
@@ -390,11 +315,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Numerisk løsning av likninger</h1>
@@ -440,12 +366,11 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="numerisk-losning-av-likninger">
-<h1>Numerisk løsning av likninger<a class="headerlink" href="#numerisk-losning-av-likninger" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="numerisk-losning-av-likninger">
+<h1>Numerisk løsning av likninger<a class="headerlink" href="#numerisk-losning-av-likninger" title="Permalink to this headline">¶</a></h1>
 <div class="utbytte dropdown admonition">
 <p class="admonition-title">Læringsutbytte</p>
 <p>I dette temaet arbeider vi med kompetansemålet:</p>
@@ -461,11 +386,11 @@ title="Print to PDF"
 </ul>
 </div>
 <p>De aller fleste likninger vi møter i matematikken på skolen kan løses med en eller annen lur metode. Dette er nyttig for blant annet forståelse og utledning av vktige resultater. I det “virkelige liv” vil imidlertid mange (de fleste) av likningne vi møter enten være veldig vanskelig eller umulig å løse. Vi trenger allikevel metoder for å løse likningene. Til det trenger vi numeriske metoder.</p>
-<section id="numeriske-metoder">
-<h2>Numeriske metoder<a class="headerlink" href="#numeriske-metoder" title="Permalink to this headline">#</a></h2>
+<div class="section" id="numeriske-metoder">
+<h2>Numeriske metoder<a class="headerlink" href="#numeriske-metoder" title="Permalink to this headline">¶</a></h2>
 <p>Med en numerisk metode mener vi en metode der vi leter etter en tilnærmet løsning på likningen. Mange numeriske metoder kan utføre for hånd, men normalt sett involverer de mange utregninger og vil derfor enklest gjennomføres digitalt. Felles for de fleste metodene er at vi starter med en <em>gjetning</em> på hva løsningen vil være, og så prøver vi å forbedre gjetningen. Det vil derfor være en fordel dersom vi starter med en kvalifisert gjetning som er nærme løsningen. For å finne en slik kvalifisert gjetning hjelper det med en grafisk framstilling av likningen. Vi flytter derfor alt over til venstre side, tegner grafen og ser etter nullpunkt.</p>
-<section id="graftegning">
-<h3>Graftegning<a class="headerlink" href="#graftegning" title="Permalink to this headline">#</a></h3>
+<div class="section" id="graftegning">
+<h3>Graftegning<a class="headerlink" href="#graftegning" title="Permalink to this headline">¶</a></h3>
 <p>La oss som eksempel ta likningen <span class="math notranslate nohighlight">\(4\ln(x^3-8)=x^2-20\)</span>. Vi flytter alt over på venstre side og kaller uttrykket <span class="math notranslate nohighlight">\(f(x)\)</span> slik at vi skal løse likningen <span class="math notranslate nohighlight">\(f(x)=4\ln(x^3-8)-x^2+20=0\)</span>.</p>
 <p>For å tegne grafen til funksjonen, så må vi importere ekstra bibliotek inn i python. Vi har to muligheter:</p>
 <ul class="simple">
@@ -504,9 +429,9 @@ title="Print to PDF"
 </div>
 </div>
 <p>Fra grafen over ser vi at nullpunktet vårt (som er løsningen av likningen) må ligge ved omtrent <span class="math notranslate nohighlight">\(x=6.5\)</span>. Vi kan nå gå videre til å se på algoritmer/metoder som kan finne dette nullpunktet for oss.</p>
-</section>
-<section id="forste-metode">
-<h3>Første metode<a class="headerlink" href="#forste-metode" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="forste-metode">
+<h3>Første metode<a class="headerlink" href="#forste-metode" title="Permalink to this headline">¶</a></h3>
 <p>Den første metoden vi skal prøve er en metode som i liten grad brukes da den i større sammenhenger er langsom og kan feile. Imidlertid så er den ganske lett å forstå og er en fin intrduksjon til numeris løsning av likninger.</p>
 <p>Metoden går ut på at vi starter med en <span class="math notranslate nohighlight">\(x\)</span>-verdi som er mindre enn løsningen vi vil finne. Vi regner ut funksjonsverdien <span class="math notranslate nohighlight">\(f(x)\)</span>. Så øker vi <span class="math notranslate nohighlight">\(x\)</span> litt og regner ut ny funksjonsverdi. Slik fortsetter vi til <span class="math notranslate nohighlight">\(f(x)\)</span> skifter fortegn. Da vil nullpunktet ligge mellom de to siste <span class="math notranslate nohighlight">\(x\)</span>-verdiene, siden funksjonen har krysset <span class="math notranslate nohighlight">\(x\)</span>-aksen. Først gir vi en pseudokode for metoden.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>x = startverdi
@@ -554,9 +479,9 @@ skriv ut nullpunkt
 </div>
 </div>
 <p>Programmet over kan brukes til å finne nullpunkt til de aller fleste funksjoner. Tenk gjerne over om det er noen spesielle typer nullpunkt programmet ikke kan finne.</p>
-</section>
-<section id="halveringsmetoden">
-<h3>Halveringsmetoden<a class="headerlink" href="#halveringsmetoden" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="halveringsmetoden">
+<h3>Halveringsmetoden<a class="headerlink" href="#halveringsmetoden" title="Permalink to this headline">¶</a></h3>
 <p>Vi skal nå vise en metode som i de fleste tilfeller vil være raskere og bedre enn metoden over. Den kalles halveringsmetoden. I korte trekk går metoden ut på at vi velger oss et intervall <span class="math notranslate nohighlight">\([a, b]\)</span> rundt nullpunktet. Så finner vi midten av intervallet og kaller det <span class="math notranslate nohighlight">\(m\)</span>. Siste steg er at vi ved hjelp av fortegnene til funksjonsverdiene undersøker om nullpunktet ligger i <span class="math notranslate nohighlight">\([a, m]\)</span> eller <span class="math notranslate nohighlight">\([m, b]\)</span>. Dette blir det nye intervallet vårt og så gjentar vi metoden fram til intervallet er <em>lite nok</em>. Da vil en god tilnærmingsverdi for løsningen være midtpunktet i dette intervallet.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -597,13 +522,13 @@ skriv ut nullpunkt
 </div>
 <p>For vårt formål vil begge metodene over stort sett fungere bra nok. For større oppgaver der det skal løses mange likninger trengs det mer avanserte metoder som vi ikke går inn på her.</p>
 <p>For en mer utførlig introduksjon til numeriske løsning av likninger anbefales siden <a class="reference external" href="https://realprog.no/docs/tema4_numeriske_metoder/likninger.html">realprog.no</a>.</p>
-</section>
-<section id="prov-selv">
-<h3>Prøv selv<a class="headerlink" href="#prov-selv" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="prov-selv">
+<h3>Prøv selv<a class="headerlink" href="#prov-selv" title="Permalink to this headline">¶</a></h3>
 <p>Lag eller finn ei likning som du vil løse. Prøv å lage egen kode for å tegne grafen og for å løse likningen med en av metodene over. Bruk enten editoren under eller i eget program på datamaskinen din.</p>
-<iframe src="https://trinket.io/embed/python3/efb8d17aa7" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></section>
-</section>
-</section>
+<iframe src="https://trinket.io/embed/python3/efb8d17aa7" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -627,11 +552,9 @@ skriv ut nullpunkt
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="eksponentiallikninger.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -647,28 +570,24 @@ skriv ut nullpunkt
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Kristoffer Stige<br/>
-  
-      &copy; Copyright 2023.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By Kristoffer Stige<br/>
+    
+        &copy; Copyright 2023.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
