@@ -4,13 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grenseverdier &#8212; Matematikk R1</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,17 +18,21 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/myadmonitions.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -38,13 +40,12 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -64,21 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -87,10 +74,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -173,12 +159,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="derivasjonsregler.html">
-   Grunnleggende derivasjonsregler
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="produktbrokregel.html">
-   Produkt- og brøkregelen
+   Derivasjonsregler
   </a>
  </li>
  <li class="toctree-l1">
@@ -237,17 +218,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -255,117 +231,61 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/docs/grenserderivasjon/grenseverdier.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/docs/grenserderivasjon/grenseverdier.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
    Grenseverdier
@@ -386,11 +306,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Grenseverdier</h1>
@@ -427,12 +348,11 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="grenseverdier">
-<h1>Grenseverdier<a class="headerlink" href="#grenseverdier" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="grenseverdier">
+<h1>Grenseverdier<a class="headerlink" href="#grenseverdier" title="Permalink to this headline">¶</a></h1>
 <div class="utbytte dropdown admonition">
 <p class="admonition-title">Læringsutbytte</p>
 <p>I dette temaet arbeider vi med kompetansemålet:</p>
@@ -453,9 +373,9 @@ title="Print to PDF"
 <li><p>horisontale asymptoter - det funksjonen gikk mot når <span class="math notranslate nohighlight">\(x\)</span> gikk mot <span class="math notranslate nohighlight">\(\pm \infty\)</span>.</p></li>
 <li><p>vertikale asymptoter - der nevneren var 0 - når <span class="math notranslate nohighlight">\(x\)</span> nærmet seg <span class="math notranslate nohighlight">\(x\)</span>-verdien for den vertikale asymptoten, så gikk funksjonsverdien mot <span class="math notranslate nohighlight">\(\pm \infty\)</span>.</p></li>
 </ul>
-<figure class="align-default">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/rasjonalfunksjon.png"><img alt="../../_images/rasjonalfunksjon.png" src="../../_images/rasjonalfunksjon.png" style="width: 598.8000000000001px; height: 362.40000000000003px;" /></a>
-</figure>
+</div>
 <p>I funksjonen over ser vi at den horisontale asymptoten er <span class="math notranslate nohighlight">\(y=2\)</span>. En matematisk skrivemåte for dette er at</p>
 <div class="math notranslate nohighlight">
 \[\lim_{x\to \pm\infty}f(x)=2\]</div>
@@ -464,8 +384,8 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\lim_{x\to 3}f(x)=\pm \infty\]</div>
 <p>Det leser vi som at grenseverdien til <span class="math notranslate nohighlight">\(f(x)\)</span> når <span class="math notranslate nohighlight">\(x\)</span> går mot 3 er pluss/minus uendelig. At grenseverdien går mot uendelig (og i tillegg med begge fortegn) skal vi senere definere som at grenseverdien ikke eksisterer.</p>
-<section id="id1">
-<h2>Grenseverdier<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id1">
+<h2>Grenseverdier<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Over så vi to eksempler på det vi i matematikk kaller grenseverdier.</p>
 <div class="def admonition">
 <p class="admonition-title">Grenseverdi</p>
@@ -485,22 +405,22 @@ title="Print to PDF"
 <div class="eksempel admonition">
 <p class="admonition-title">Eksempel: Grenseverdi for rasjonal funksjon</p>
 <p>Vi ser på den rasjonale funksjonen <span class="math notranslate nohighlight">\(f(x)=\frac{2(x^2-9)}{x-3}\)</span>. Den har definisjonsmengde <span class="math notranslate nohighlight">\(D_f=\mathbf{R} \backslash \{3\}\)</span> som betyr at funksjonen er definert for alle <span class="math notranslate nohighlight">\(x\)</span>-verdier bortsett fra <span class="math notranslate nohighlight">\(x=3\)</span>. Ser vi på grafen ser vi imidlertid ingen problem. Den ser ut som en lineær funksjon.</p>
-<figure class="align-default">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/fjernbardiskontinuitet.png"><img alt="../../_images/fjernbardiskontinuitet.png" src="../../_images/fjernbardiskontinuitet.png" style="width: 394.8px; height: 255.20000000000002px;" /></a>
-</figure>
+</div>
 <p>Ved avlesning kan det se ut som at <span class="math notranslate nohighlight">\(f(3)=12\)</span>, men om vi prøver å sette inn i funksjonsuttrykket får vi</p>
 <p><span class="math notranslate nohighlight">\(f(3)=\frac{2(3^2-9)}{3-3}=\frac{0}{0}\)</span></p>
 <p>som ikke gir noen mening. Hva er det som skjer her?</p>
 <p>For å svare på det må vi bruke grenseverdier. Vi starter først med å finne grenseverdien i CAS.</p>
-<figure class="align-default">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/grenseverdiCAS.png"><img alt="../../_images/grenseverdiCAS.png" src="../../_images/grenseverdiCAS.png" style="width: 198.8px; height: 117.60000000000001px;" /></a>
-</figure>
+</div>
 <p>Vi ser at grenseverdien til funksjonen er 12. Matematisk skriver vi det som at</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3} f(x)= 12\)</span></p>
 <p>Det betyr at når <span class="math notranslate nohighlight">\(x\)</span> kommer nærmere og nærmere 3, så vil <span class="math notranslate nohighlight">\(f\)</span> komme nærmere og nærmere 12. Vi kan aldri sette inn <span class="math notranslate nohighlight">\(x=3\)</span>, men vi kan komme så nært vi vil. Så akkurat i punktet <span class="math notranslate nohighlight">\((3,12)\)</span> har vi et hull på grafen vår, men punktet <span class="math notranslate nohighlight">\((2.999, 11.998)\)</span> er der (og tilsvarende punkt enda nærmere). Vi kan markere det her på grafen med et lite kryss.</p>
-<figure class="align-default">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/fjernbardiskontinuitetkryss.png"><img alt="../../_images/fjernbardiskontinuitetkryss.png" src="../../_images/fjernbardiskontinuitetkryss.png" style="width: 394.8px; height: 255.20000000000002px;" /></a>
-</figure>
+</div>
 </div>
 <p>Over fant vi grenseverdien ved å se på grafen og bruke CAS. Det vil også være nyttig å kunne finne grenseverdier uten hjelpemidler siden det vil hjelpe oss blant annet med å forstå funksjoner som i eksempelet over. Grenseverdier blir også viktig for å få bedre forståelse for derivasjon som er et av de viktigste temaene i R1.</p>
 <p>For å arbeide med grenseverdier trenger vi noen regneregler. Disse er i utgangspunktet ganske intuitive (selv om det kan være litt kronglete å bevise det), så i praksis vil vi sjelden tenke over at vi bruker noen bestemte regler.</p>
@@ -556,9 +476,9 @@ title="Print to PDF"
 <p class="admonition-title">Eksempel: Vanskeligere uttrykk</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 9}\frac{3-\sqrt{x}}{9-x}=\lim_{x\to 9}\frac{3-\sqrt{x}}{(3-\sqrt{x})(3+\sqrt{x})}=\lim_{x\to 9}\frac{1}{3+\sqrt{x}}=\frac{1}{3+\sqrt{9}}=\frac{1}{6}\)</span></p>
 </div>
-</section>
-<section id="ensidige-grenseverdier">
-<h2>Ensidige grenseverdier<a class="headerlink" href="#ensidige-grenseverdier" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="ensidige-grenseverdier">
+<h2>Ensidige grenseverdier<a class="headerlink" href="#ensidige-grenseverdier" title="Permalink to this headline">¶</a></h2>
 <p>I noen tilfeller vil vi komme til å bruke det vi kaller ensidige grenseverdier.</p>
 <div class="def admonition">
 <p class="admonition-title">Ensidige grenseverdier</p>
@@ -588,9 +508,9 @@ title="Print to PDF"
 <p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=\ln(x-3)\)</span> og grenseverdien når <span class="math notranslate nohighlight">\(x\to 3\)</span>. Fra definisjonene av logaritmer husker vi at vi kun ta logaritmen av positive tall. Her er det derfor umulig å la <span class="math notranslate nohighlight">\(x\to 3^-\)</span> siden vi ikke har noen funksjonsverdier på den negative siden av 3. Vi kan derfor skrive</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3^-} f(x)\)</span> eksisterer ikke.</p>
 <p>Dersom vi ser på grafen til funksjonen kan det se ut som at funksjonen har en vertikal asymptote for <span class="math notranslate nohighlight">\(x=3\)</span>.</p>
-<figure class="align-default">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/lnx-3.png"><img alt="../../_images/lnx-3.png" src="../../_images/lnx-3.png" style="width: 473.20000000000005px; height: 295.2px;" /></a>
-</figure>
+</div>
 <p>Vi konkluderer derfor med at</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3^+} f(x)=-\infty\)</span></p>
 </div>
@@ -601,9 +521,9 @@ title="Print to PDF"
 <p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to a^-} f(x)\)</span> eksisterer ikke.</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to a^+} f(x)=-\infty\)</span></p>
 </div>
-</section>
-<section id="grenseverdier-nar-x-to-pm-infty">
-<h2>Grenseverdier når <span class="math notranslate nohighlight">\(x\to\pm\infty\)</span><a class="headerlink" href="#grenseverdier-nar-x-to-pm-infty" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="grenseverdier-nar-x-to-pm-infty">
+<h2>Grenseverdier når <span class="math notranslate nohighlight">\(x\to\pm\infty\)</span><a class="headerlink" href="#grenseverdier-nar-x-to-pm-infty" title="Permalink to this headline">¶</a></h2>
 <p>Til nå har vi sett på grenseverdier der <span class="math notranslate nohighlight">\(x\)</span> går mot et bestemt tall. I tillegg vil vi ofte være interessert i grenseverdien når <span class="math notranslate nohighlight">\(x\to\pm\infty\)</span>. Den sier oss hva som skjer med funksjonen når <span class="math notranslate nohighlight">\(x\)</span> blir veldig stor. Vil funksjonen vokse mot uendelig, eller vil den gå mot en bestemt verdi. Det første er tilfellet for funksjoner som <span class="math notranslate nohighlight">\(f(x)=x^2\)</span>, mens den rasjonale funksjonen vi så på øverst på siden nærmet seg den horisontale asymptoten <span class="math notranslate nohighlight">\(y=2\)</span>.</p>
 <p>Vi oppsummerer først noen resultater (uten bevis) som forhåpentligvis er ganske intuitive.</p>
 <div class="def admonition">
@@ -668,8 +588,8 @@ title="Print to PDF"
 &amp;=\frac{3}{5}
 \end{align}\)</span></p>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -693,11 +613,9 @@ title="Print to PDF"
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="../algebralikninger/numerisklosning.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -713,28 +631,24 @@ title="Print to PDF"
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Kristoffer Stige<br/>
-  
-      &copy; Copyright 2023.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By Kristoffer Stige<br/>
+    
+        &copy; Copyright 2023.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
