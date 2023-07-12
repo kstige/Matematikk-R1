@@ -52,9 +52,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Ekstremalverdier" href="../brukderivasjon/ekstremalverdier.html" />
+    <link rel="next" title="Stasjonære verdier" href="../brukderivasjon/stasjonaereverdier.html" />
     <link rel="prev" title="Derivasjonsregler" href="derivasjonsregler.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -173,8 +175,8 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../brukderivasjon/ekstremalverdier.html">
-   Ekstremalverdier
+  <a class="reference internal" href="../brukderivasjon/stasjonaereverdier.html">
+   Stasjonære verdier
   </a>
  </li>
 </ul>
@@ -279,6 +281,29 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feilanalyse">
+   Feilanalyse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sentraldifferansen-ekstra">
+   Sentraldifferansen (ekstra)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kilder">
+   Kilder
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -291,6 +316,29 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feilanalyse">
+   Feilanalyse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sentraldifferansen-ekstra">
+   Sentraldifferansen (ekstra)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kilder">
+   Kilder
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -314,6 +362,113 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>laste inn datasett i python</p></li>
 <li><p>derivere datasett der vi ikke har en funksjon</p></li>
 </ul>
+</div>
+<p>Vi husker at vi definerte den deriverte som grenseverdien av den gjennomsnittlige vekstfarten.</p>
+<div class="math notranslate nohighlight">
+\[f'(x)=\lim_{\Delta x\to 0}\frac{\Delta f(x)}{\Delta x}=\frac{f(x+\Delta x)-f(x)}{\Delta x}\]</div>
+<p>Den siste brøken her kalles <strong>Newtons kvotient</strong>. Når vi skal beregne den deriverte numerisk, så gjør vi en tilnærming der vi bruker Newtons koeffisient og setter <span class="math notranslate nohighlight">\(\Delta x\)</span> lik et lite tall.</p>
+<div class="def admonition">
+<p class="admonition-title">Numerisk derivasjon (framoverdifferansen)</p>
+<p><span class="math notranslate nohighlight">\(f'(x)\approx\frac{f(x+\Delta x)-f(x)}{\Delta x}\)</span></p>
+<p>der <span class="math notranslate nohighlight">\(\Delta x\)</span> settes til et lite tall (i størrelsesorden <span class="math notranslate nohighlight">\(10^{-8}\)</span>).</p>
+<p>Denne metoden kalles framoverdifferansen siden vi ser på forskjellen mellom <span class="math notranslate nohighlight">\(f(x+\Delta x)\)</span> og <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+</div>
+<p>Framoverdifferansen er illustrert i bildet under. Når <span class="math notranslate nohighlight">\(\Delta x\)</span> blir et lite tall vil den rette linja nærme seg tangenten i punktet <span class="math notranslate nohighlight">\(x\)</span> og stigningstallet til linja vil nærme seg verdien til den deriverte i punktet.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/framoverdifferansen.png"><img alt="../../_images/framoverdifferansen.png" src="../../_images/framoverdifferansen.png" style="width: 467.0px; height: 398.0px;" /></a>
+</div>
+<p>Tilsvarende kan vi bruke det vi kaller bakoverdifferansen der vi i stedet for å se på <span class="math notranslate nohighlight">\(x+\Delta x\)</span> ser på <span class="math notranslate nohighlight">\(x-\Delta x\)</span>. I praksis er det ingen forskjell på disse.</p>
+<div class="def dropdown admonition">
+<p class="admonition-title">Numerisk derivasjon (bakoverdifferansen)</p>
+<p>Med bakoverdifferansen finner vi en tilnærming til den deriverte ved å se på et punkt før <span class="math notranslate nohighlight">\(x\)</span>-verdien vi er interessert i.
+<span class="math notranslate nohighlight">\(f'(x)\approx\frac{f(x)-f(x-\Delta x)}{\Delta x}\)</span></p>
+</div>
+<p>Disse metodene gir oss den deriverte i et punkt. Med programmering kan vi raskt gjennomføre metoden for mange <span class="math notranslate nohighlight">\(x\)</span>-verdier for å få tegnet opp grafen til den deriverte.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>                      <span class="c1"># Her kan vi bruk import pylab as *</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>         <span class="c1"># i stedet for disse to bibliotekene</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>                               <span class="c1"># Definer funksjonen vi skal jobbe med</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">derivert</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="mf">1E-8</span><span class="p">):</span>          <span class="c1"># Numerisk derivert av f. Her har dx fått en standardverdi</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">dx</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">yderivert</span> <span class="o">=</span> <span class="n">derivert</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;f(x)&quot;</span><span class="p">)</span> <span class="c1"># Plotter funksjonen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">yderivert</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;f&#39;(x)&quot;</span><span class="p">)</span> <span class="c1"># Plotter den deriverte til funksjonen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/numeriskderivasjon_2_0.png" src="../../_images/numeriskderivasjon_2_0.png" />
+</div>
+</div>
+<div class="section" id="feilanalyse">
+<h2>Feilanalyse<a class="headerlink" href="#feilanalyse" title="Permalink to this headline">¶</a></h2>
+<p>Med de numeriske metodene gjør vi en tilnærming til den deriverte. Vi lar ikke <span class="math notranslate nohighlight">\(\Delta x\)</span> gå mot null, men vi velger en liten verdi. Det er da naturlig å tenke seg at jo mindre vi velger <span class="math notranslate nohighlight">\(\Delta x\)</span> jo mer nøyaktig blir verdien til den deriverte. Vi gjør en test på det.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>                 
+    <span class="k">return</span> <span class="o">-</span><span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">adf</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>                       <span class="c1"># Analytisk derivert av f</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">df</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="mf">1E-8</span><span class="p">):</span>          <span class="c1"># Numerisk derivert av f</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">dx</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">),</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">),</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">),</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">),</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="p">),</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">14</span><span class="p">),</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">16</span><span class="p">)]</span>
+<span class="n">analytisk</span> <span class="o">=</span> <span class="n">adf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dx</span><span class="p">)):</span>
+    <span class="n">numerisk</span> <span class="o">=</span> <span class="n">df</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">dx</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> 
+    <span class="n">feil</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">numerisk</span><span class="o">-</span><span class="n">analytisk</span><span class="p">)</span><span class="o">/</span><span class="n">analytisk</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For delta_x =&quot;</span><span class="p">,</span> <span class="n">dx</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s2">&quot;er feilen:&quot;</span><span class="p">,</span> <span class="n">feil</span><span class="p">,</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>For delta_x = 0.01 er feilen: 0.3333333333304248 %
+For delta_x = 0.0001 er feilen: 0.003333333524106289 %
+For delta_x = 1e-06 er feilen: 3.33502744827759e-05 %
+For delta_x = 1e-08 er feilen: 6.07747097092215e-07 %
+For delta_x = 1e-10 er feilen: 8.274037099909037e-06 %
+For delta_x = 1e-12 er feilen: 0.008890058234101161 %
+For delta_x = 1e-14 er feilen: 2.1405182655144017 %
+For delta_x = 1e-16 er feilen: 100.0 %
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi ser at feilen er minst for <span class="math notranslate nohighlight">\(\Delta x = 10^{-8}\)</span>. Grunnen til at det ikke hjelper å bruke mindre verdier er at datamaskinen sin evne til å lagre tall nøyaktig slår inn når <span class="math notranslate nohighlight">\(\Delta x\)</span> blir veldig liten. Da dukker det opp avrundingsfeil som gir ganske voldsomme feil når vi opererer med så små tall.</p>
+</div>
+<div class="section" id="sentraldifferansen-ekstra">
+<h2>Sentraldifferansen (ekstra)<a class="headerlink" href="#sentraldifferansen-ekstra" title="Permalink to this headline">¶</a></h2>
+<p>En metode som ofte gir et mer nøyaktig resultat er at vi slår sammen bakoverdifferansen og framoverdifferansen.</p>
+<div class="def admonition">
+<p class="admonition-title">Sentraldifferansen</p>
+<p>Med sentraldifferansen ser vi på et punkt før og et punkt etter den <span class="math notranslate nohighlight">\(x\)</span>-verdien vi er interessert i.
+<span class="math notranslate nohighlight">\(f'(x)\approx\frac{f(x+\Delta x)-f(x-\Delta x)}{2\Delta x}\)</span></p>
+</div>
+<p>Her bruker vi altså et punkt før og et punkt etter det punktet vi er interessert i. Prøv å bruke figuren under til å forklare hvorfor det vil bli mer nøyaktig.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/sentraldifferansen.png"><img alt="../../_images/sentraldifferansen.png" src="../../_images/sentraldifferansen.png" style="width: 582.0px; height: 392.0px;" /></a>
+</div>
+<p>Vi vil komme tilbake til numerisk derivasjon av reelle datasett når vi kommer til modeller.</p>
+</div>
+<div class="section" id="kilder">
+<h2>Kilder<a class="headerlink" href="#kilder" title="Permalink to this headline">¶</a></h2>
+<p>Mye av stoffet på denne siden er basert på informasjon herfra: <a class="reference external" href="https://realprog.no/docs/tema4_numeriske_metoder/derivasjon.html">realprog.no</a>. Den siden går dypere inn i både forklaringer og begrunnelser for metodene.</p>
 </div>
 </div>
 
@@ -349,10 +504,10 @@ const thebe_selector_output = ".output, .cell_output"
             <p class="prev-next-title">Derivasjonsregler</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../brukderivasjon/ekstremalverdier.html" title="next page">
+    <a class='right-next' id="next-link" href="../brukderivasjon/stasjonaereverdier.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Ekstremalverdier</p>
+        <p class="prev-next-title">Stasjonære verdier</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

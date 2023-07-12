@@ -25,7 +25,7 @@ parts:
   - file: docs/grenserderivasjon/numeriskderivasjon
 - caption: Bruk av derivasjon
   chapters:
-  - file: docs/brukderivasjon/ekstremalverdier
+  - file: docs/brukderivasjon/stasjonaereverdier
 - caption: Omvendte funksjoner
   chapters:
   - file: docs/omvendtefunksjoner/omvendtefunksjoner
