@@ -15,7 +15,7 @@ parts:
   - file: docs/algebralikninger/loglikninger
   - file: docs/algebralikninger/eksponentiallikninger
   - file: docs/algebralikninger/numerisklosning
-- caption: Grenseverdier og derivasjon
+- caption: Derivasjon - teori
   chapters:
   - file: docs/grenserderivasjon/grenseverdier
   - file: docs/grenserderivasjon/asymptoter
@@ -23,12 +23,21 @@ parts:
   - file: docs/grenserderivasjon/defderivert
   - file: docs/grenserderivasjon/derivasjonsregler
   - file: docs/grenserderivasjon/numeriskderivasjon
-- caption: Bruk av derivasjon
+- caption: Derivasjon - anvendelser
   chapters:
   - file: docs/brukderivasjon/stasjonaereverdier
+  - file: docs/brukderivasjon/andrederivert
+  - file: docs/brukderivasjon/funksjonsdrofting
+  - file: docs/brukderivasjon/tangenter
+  - file: docs/brukderivasjon/newtonsmetode
+  - file: docs/brukderivasjon/lhopitalsregel
+  - file: docs/brukderivasjon/fartaks
 - caption: Omvendte funksjoner
   chapters:
   - file: docs/omvendtefunksjoner/omvendtefunksjoner
+  - file: docs/omvendtefunksjoner/potensrot
+  - file: docs/omvendtefunksjoner/logeks
+  - file: docs/omvendtefunksjoner/derivasjonomvendt
 - caption: Modellering
   chapters:
   - file: docs/modellering/modellering
