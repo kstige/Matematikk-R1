@@ -25,7 +25,7 @@ parts:
   - file: docs/grenserderivasjon/numeriskderivasjon
 - caption: Derivasjon - anvendelser
   chapters:
-  - file: docs/brukderivasjon/stasjonaereverdier
+  - file: docs/brukderivasjon/kritiskepunkt
   - file: docs/brukderivasjon/andrederivert
   - file: docs/brukderivasjon/funksjonsdrofting
   - file: docs/brukderivasjon/tangenter

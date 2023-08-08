@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Newtons metode &#8212; Matematikk R1</title>
+    <title>Kritiske punkt &#8212; Matematikk R1</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,10 +52,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="L’Hopitals regel" href="lhopitalsregel.html" />
-    <link rel="prev" title="Tangenter" href="tangenter.html" />
+    <link rel="next" title="Den andrederiverte" href="andrederivert.html" />
+    <link rel="prev" title="Numerisk derivasjon" href="../grenserderivasjon/numeriskderivasjon.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -172,8 +174,8 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="kritiskepunkt.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Kritiske punkt
   </a>
  </li>
@@ -192,8 +194,8 @@ const thebe_selector_output = ".output, .cell_output"
    Tangenter
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="newtonsmetode.html">
    Newtons metode
   </a>
  </li>
@@ -299,7 +301,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/docs/brukderivasjon/newtonsmetode.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/docs/brukderivasjon/kritiskepunkt.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -324,6 +326,24 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stasjonaere-punkt">
+   Stasjonære punkt
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Kritiske punkt
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -331,19 +351,123 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Newtons metode</h1>
+                <h1>Kritiske punkt</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stasjonaere-punkt">
+   Stasjonære punkt
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Kritiske punkt
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="newtons-metode">
-<h1>Newtons metode<a class="headerlink" href="#newtons-metode" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="kritiske-punkt">
+<h1>Kritiske punkt<a class="headerlink" href="#kritiske-punkt" title="Permalink to this headline">¶</a></h1>
+<div class="utbytte dropdown admonition">
+<p class="admonition-title">Læringsutbytte</p>
+<p>I dette temaet arbeider vi med kompetansemålet:</p>
+<ul class="simple">
+<li><p>forstå begrepene vekstfart, grenseverdi, derivasjon og kontinuitet, og bruke disse for å løse praktiske problemer
+(* bestemme den deriverte i et punkt geometrisk, algebraisk og ved numeriske metoder, og gi eksempler på funksjoner som ikke er deriverbare i gitte punkter)</p></li>
+</ul>
+<p>Etter å ha arbeidet med temaet, skal du:</p>
+<ul class="simple">
+<li><p>vite hva et kritisk og et stasjonært punkt er og anvende blant annet derivasjon til å finne disse</p></li>
+<li><p>ha forståelse for hva den deriverte sier om stigningen til funksjonen</p></li>
+<li><p>tegne fortegnslinjer for funksjonen og dens deriverte</p></li>
+</ul>
+</div>
+<div class="section" id="stasjonaere-punkt">
+<h2>Stasjonære punkt<a class="headerlink" href="#stasjonaere-punkt" title="Permalink to this headline">¶</a></h2>
+<p>Vi husker fra 1T og den teoretiske gjennomgangen av den deriverte at verdien til den deriverte i et punkt gir oss stigningstallet til tangenten i punktet. Enklere forklart viser altså den deriverte oss hvor en funksjon stiger og hvor den synker. Dette kaller vi ofte for monotoniegenskapene til funksjonen.</p>
+<div class="def admonition">
+<p class="admonition-title">Monotoniegenskaper</p>
+<p>Vi ser på en funksjon <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Dersom <span class="math notranslate nohighlight">\(f'(x)&gt;0\)</span> på et intervall <span class="math notranslate nohighlight">\(I\)</span> sier vi at funksjonen er strengt voksende på intervallet. Da vil <span class="math notranslate nohighlight">\(f(b)&gt;f(a)\)</span> når <span class="math notranslate nohighlight">\(b&gt;a\)</span> og <span class="math notranslate nohighlight">\(a,b \in I\)</span>.</p>
+<p>Dersom <span class="math notranslate nohighlight">\(f'(x)&lt;0\)</span> på et intervall <span class="math notranslate nohighlight">\(I\)</span> sier vi at funksjonen er strengt avtakende på intervallet. Da vil <span class="math notranslate nohighlight">\(f(b)&lt;f(a)\)</span> når <span class="math notranslate nohighlight">\(b&gt;a\)</span> og <span class="math notranslate nohighlight">\(a,b \in I\)</span>.</p>
+</div>
+<p>De punktene der ingen av vilkårene over er oppfylt, så må enten <span class="math notranslate nohighlight">\(f'(x)=0\)</span>, eller <span class="math notranslate nohighlight">\(f'(x)\)</span> er ikke definert. Vi tar for oss det første tilfellet først.</p>
+<div class="def admonition">
+<p class="admonition-title">Stasjære punkt</p>
+<p>Punkt på grafen der <span class="math notranslate nohighlight">\(f'(x)=0\)</span> kaller vi stasjonære punkt. Vi har tre typer stasjonære punkt (b, t og s).</p>
+<p><strong>Bunnpunkt:</strong> <span class="math notranslate nohighlight">\(f'(b)=0\)</span> og <span class="math notranslate nohighlight">\(f'(x)\)</span> skifter fortegn fra negativ til positiv når vi passerer <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<p><strong>Toppunkt:</strong> <span class="math notranslate nohighlight">\(f'(t)=0\)</span> og <span class="math notranslate nohighlight">\(f'(x)\)</span> skifter fortegn fra positiv til negativ når vi passerer <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p><strong>Sadelpunkt/Terrassepunkt</strong> <span class="math notranslate nohighlight">\(f'(s)=0\)</span> og <span class="math notranslate nohighlight">\(f'(x)\)</span> skifter ikke fortegn når vi passerer <span class="math notranslate nohighlight">\(s\)</span>.</p>
+<p>De to første (<span class="math notranslate nohighlight">\(b\)</span> og <span class="math notranslate nohighlight">\(t\)</span>) kalles ekstremalpunkt, mens funksjonsverdiene <span class="math notranslate nohighlight">\(f(b)\)</span> og <span class="math notranslate nohighlight">\(f(t)\)</span> kalles ekstremalverdier.</p>
+</div>
+<p>Vi tar et eksempel.</p>
+<div class="eskempel admonition">
+<p class="admonition-title">Eksempel: Stasjonære punkt</p>
+<p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=x^2 (x-2)^3\)</span>.
+For å finne de stasjonære punktene må vi løse likningen <span class="math notranslate nohighlight">\(f'(x)=0\)</span>. Her er kanskje det enkleste å multiplisere ut parentesene slik at vi får et normalt enkelt polynom.</p>
+<p><span class="math notranslate nohighlight">\(f(x)=x^2 (x-2)^3=x^5-6x^4+12x^3-8x^2 \Rightarrow f'(x)=5x^4-24x^3+36x^2-16x\)</span></p>
+<p>Det er imidlertid ikke helt rett fram å løse likningen <span class="math notranslate nohighlight">\(f'(x)=0\)</span> fra dette. Om vi er litt lure (og heldige) kan det bli enklere om vi deriverer det opprinnelige uttrykket med produkt- og kjerneregelen. Da holder vi det mest mulig faktorisert.</p>
+<p><span class="math notranslate nohighlight">\(f'(x)=2x\cdot(x-2)^3+x^2\cdot 3(x-2)^2=x(x-2)^2(2(x-2)+3x)=x(x-2)^2(5x-4)=5x(x-2)^2(x-\frac{4}{5})\)</span></p>
+<p>Vi kan da lese av løsningene til <span class="math notranslate nohighlight">\(f'(x)=0\)</span> direkte og får de stasjonære punktene <span class="math notranslate nohighlight">\(x\in\{0, 2, \frac{4}{5}}\)</span>.</p>
+<p>Dette kunne vi også fint gjort med CAS.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/stasjonaerepunktCAS.png"><img alt="../../_images/stasjonaerepunktCAS.png" src="../../_images/stasjonaerepunktCAS.png" style="width: 247.5px; height: 119.0px;" /></a>
+</div>
+<p>For å avgjøre hva slags stasjonære punkt vi har kan vi for eksempel tegne ei fortegnslinje.</p>
+<p><strong>Eksemepelet er ikke fullført. Del eksempelet i to (ett med og ett uten CAS)</strong></p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Kritiske punkt<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>De stasjonære punktene er en undergruppe av det vi kaller kritiske punkt.</p>
+<div class="def admonition">
+<p class="admonition-title">Kritiske punkt</p>
+<p>Dersom <span class="math notranslate nohighlight">\(f\)</span> er en funksjon med definisjonsmengde <span class="math notranslate nohighlight">\(D_f=[a,b]\)</span>, så vil de kritiske punktene til <span class="math notranslate nohighlight">\(f\)</span> være:</p>
+<ul class="simple">
+<li><p>alle punkter der <span class="math notranslate nohighlight">\(f'(x)=0\)</span></p></li>
+<li><p>alle punkter der <span class="math notranslate nohighlight">\(f\)</span> ikke er deriverbar (bruddpunkt, knekkpunkt)</p></li>
+<li><p>endepunktene <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span></p></li>
+</ul>
+<p>Om vi ser på et åpent intervall <span class="math notranslate nohighlight">\(\langle a, b \rangle\)</span>, så vil vi ikke ha endepunkt, og de vil derfor heller ikke være kritiske punkt.</p>
+</div>
+<div class="def admonition">
+<p class="admonition-title">Ekstremalpunkt</p>
+<p>Ekstremalpunktene (topp- og bunnpunktene) til en funksjon kan kun befinne seg i de kritiske punktene til funksjonen.</p>
+<p>Merk: Det betyr ikke at et kritisk punkt må være et ekstremalpunkt.</p>
+</div>
+<p>Vi avslutter med et eksempel.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Kritiske punkt</p>
+<p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f\)</span> under og skal avgjøre hva ekstremalpunktene til funksjonen er.
+<span class="math notranslate nohighlight">\(\begin{equation*}
+    f(x) = \begin{cases} 
+      x^2+1 &amp; \text{når } \quad -3 \leq x &lt; 2 \\
+      -2x+9 &amp; \text{når } x \geq 2
+   \end{cases}
+\end{equation*}\)</span></p>
+<p>Aller først, så ser vi at funksjonen har definisjonsmengde <span class="math notranslate nohighlight">\(D_f=[-3, \infty \rangle\)</span>. Det vil si at vi har et kritisk punkt i nedre grense <span class="math notranslate nohighlight">\(x=-3\)</span>.</p>
+<p>Videre sjekker vi punktene der <span class="math notranslate nohighlight">\(f'(x)=0\)</span>. Vi deriverer hvert området for seg og ser at <span class="math notranslate nohighlight">\(f'(x)=0\)</span> for <span class="math notranslate nohighlight">\(x=0\)</span>. Kontroller det selv.</p>
+<p>I et tidligere eksempel på siden om kontinuitet har vi sett at denne funksjonen er kontinuerlig for <span class="math notranslate nohighlight">\(x=2\)</span>. Nå sjekker vi om funksjonen er deriverbar i punktet. Vi kontrollerer da om venstresidig og høyresidig grense for den deriverte er lik hverandre.</p>
+<p><span class="math notranslate nohighlight">\(\lim_{x\to 2^-}f'(x)=\lim_{x\to 2^-} 2x = 4\)</span></p>
+<p><span class="math notranslate nohighlight">\(\lim_{x\to 2^+}f'(x)=\lim_{x\to 2^+}-2=-2\)</span></p>
+<p>Funksjonen er altså ikke deriverbar for <span class="math notranslate nohighlight">\(x=2\)</span>.</p>
+<p>De kritiske punktene til funksjonen er altså <span class="math notranslate nohighlight">\(\{-3, 0, 2\}\)</span>. Det er da også kandidatene til ekstremalpunkt. For å avgjøre om det er topp- eller bunnpunkt tegner vi en fortegnslinje.</p>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -371,17 +495,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="tangenter.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../grenserderivasjon/numeriskderivasjon.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Tangenter</p>
+            <p class="prev-next-title">Numerisk derivasjon</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="lhopitalsregel.html" title="next page">
+    <a class='right-next' id="next-link" href="andrederivert.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">L’Hopitals regel</p>
+        <p class="prev-next-title">Den andrederiverte</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
