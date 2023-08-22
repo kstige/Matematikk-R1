@@ -11,7 +11,7 @@ parts:
   chapters:
   - file: docs/algebralikninger/potensrot
   - file: docs/algebralikninger/logaritmer
-  - file: docs/algebralikninger/naturliglogaritme
+  - file: docs/algebralikninger/logaritmesetningene
   - file: docs/algebralikninger/loglikninger
   - file: docs/algebralikninger/eksponentiallikninger
   - file: docs/algebralikninger/numerisklosning
