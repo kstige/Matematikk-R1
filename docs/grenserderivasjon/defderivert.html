@@ -389,6 +389,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>forstå begrepene vekstfart, grenseverdi, derivasjon og kontinuitet, og bruke disse for å løse praktiske problemer</p></li>
 <li><p>bruke ulike strategier for å utforske og bestemme grenseverdier til funksjoner, og utforske og argumentere for anvendelser av grenseverdier</p></li>
 <li><p>bestemme den deriverte i et punkt geometrisk, algebraisk og ved numeriske metoder, og gi eksempler på funksjoner som ikke er deriverbare i gitte punkter</p></li>
+<li><p>gjøre rede for og argumentere for om en funksjon er kontinuerlig eller diskontinuerlig i et punkt i et definisjonsområde, og gi eksempler på anvendelser av diskontinuerlige funksjoner</p></li>
 </ul>
 <p>Etter å ha arbeidet med temaet, skal du:</p>
 <ul class="simple">
@@ -410,7 +411,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Dette er det samme som stigningstallet til den rette linja gjennom punktene <span class="math notranslate nohighlight">\((x_1, f(x_1))\)</span> og <span class="math notranslate nohighlight">\((x_2, f(x_2))\)</span>.</p>
 <p>Den momentane vekstfarten til en funksjon i et punkt er lik stigningstallet til tangenten i punktet.</p>
 </div>
-<p>I appen under ser vi at når vi lar området vi tar den gjennomsnittlige vekstfarten overv bli mindre og mindre, så vil den gjennomsnittlige vekstfarten nærme seg den momentane vekstfarten. Dette likner på en grenseverdi og vi skal bruke det når vi i neste avsnitt gir en formell definisjon av dette begrepet.</p>
+<p>I appen under ser vi at når vi lar området vi tar den gjennomsnittlige vekstfarten over bli mindre og mindre, så vil den gjennomsnittlige vekstfarten nærme seg den momentane vekstfarten. Dette likner på en grenseverdi og vi skal bruke det når vi i neste avsnitt gir en formell definisjon av dette begrepet.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
@@ -464,7 +465,7 @@ const thebe_selector_output = ".output, .cell_output"
 \[f'(x)=\lim_{\Delta x\to 0}\frac{\Delta f(x)}{\Delta x}=\frac{f(x+\Delta x)-f(x)}{\Delta x}\]</div>
 <p>gitt at grenseverdien eksisterer.</p>
 </div>
-<p>Den formelle definisjonen kan virke litt kryptisk, men den sier det samme som 1T-definisjonen. For å gjøre det klarere, så skal vi prøve å forklare den ved ord. <span class="math notranslate nohighlight">\(\Delta\)</span> er et symbol vi bruker for en endring, så når vi skriver <span class="math notranslate nohighlight">\(\Delta x\)</span> mener vi en endring i <span class="math notranslate nohighlight">\(x\)</span>. Definisjonen sier altså at den deriverte er gitt ved endringen i funksjonsverd (endring langs y-aksen) dividert med endringen i <span class="math notranslate nohighlight">\(x\)</span>. Videre lar vi endringen i <span class="math notranslate nohighlight">\(x\)</span> bli veldig, veldig liten.</p>
+<p>Den formelle definisjonen kan virke litt kryptisk, men den sier det samme som 1T-definisjonen. For å gjøre det klarere, så skal vi prøve å forklare den ved ord. <span class="math notranslate nohighlight">\(\Delta\)</span> er et symbol vi bruker for en endring, så når vi skriver <span class="math notranslate nohighlight">\(\Delta x\)</span> mener vi en endring i <span class="math notranslate nohighlight">\(x\)</span>. Definisjonen sier altså at den deriverte er gitt ved endringen i funksjonsverdi (endring langs y-aksen) dividert med endringen i <span class="math notranslate nohighlight">\(x\)</span>. Videre lar vi endringen i <span class="math notranslate nohighlight">\(x\)</span> bli veldig, veldig liten.</p>
 <p>Den gjennomsnittlige vekstfarten er endring i funksjonsverdi dividert med endring i <span class="math notranslate nohighlight">\(x\)</span>-verdi. Den deriverte er akkurat det samme bare at vi lar endringen i <span class="math notranslate nohighlight">\(x\)</span> gå mot null. Da finner vi stigningstallet til tangenten.</p>
 <p>Den formelle definisjonen sier altså matematisk den den <em>uformelle</em> sa med ord. Så en fordel med den formelle definisjonen er at den gir oss en kompakt matematisk skrivemåte. I tillegg vil vi kunne bruke den til å regne ut den deriverte funksjonen og etterhvert til å bevise generelle derivasjonsregler.</p>
 <div class="def admonition">
