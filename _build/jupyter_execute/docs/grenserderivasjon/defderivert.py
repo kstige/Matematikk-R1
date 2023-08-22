@@ -35,7 +35,7 @@
 # Den momentane vekstfarten til en funksjon i et punkt er lik stigningstallet til tangenten i punktet.
 # ```
 # 
-# I appen under ser vi at når vi lar området vi tar den gjennomsnittlige vekstfarten overv bli mindre og mindre, så vil den gjennomsnittlige vekstfarten nærme seg den momentane vekstfarten. Dette likner på en grenseverdi og vi skal bruke det når vi i neste avsnitt gir en formell definisjon av dette begrepet.
+# I appen under ser vi at når vi lar området vi tar den gjennomsnittlige vekstfarten over bli mindre og mindre, så vil den gjennomsnittlige vekstfarten nærme seg den momentane vekstfarten. Dette likner på en grenseverdi og vi skal bruke det når vi i neste avsnitt gir en formell definisjon av dette begrepet.
 
 # In[4]:
 
