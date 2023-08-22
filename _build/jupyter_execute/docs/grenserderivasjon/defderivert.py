@@ -66,7 +66,7 @@ get_ipython().run_cell_magic('html', '', '\n<meta name=viewport content="width=d
 # gitt at grenseverdien eksisterer.
 # ```
 # 
-# Den formelle definisjonen kan virke litt kryptisk, men den sier det samme som 1T-definisjonen. For å gjøre det klarere, så skal vi prøve å forklare den ved ord. $\Delta$ er et symbol vi bruker for en endring, så når vi skriver $\Delta x$ mener vi en endring i $x$. Definisjonen sier altså at den deriverte er gitt ved endringen i funksjonsverd (endring langs y-aksen) dividert med endringen i $x$. Videre lar vi endringen i $x$ bli veldig, veldig liten.
+# Den formelle definisjonen kan virke litt kryptisk, men den sier det samme som 1T-definisjonen. For å gjøre det klarere, så skal vi prøve å forklare den ved ord. $\Delta$ er et symbol vi bruker for en endring, så når vi skriver $\Delta x$ mener vi en endring i $x$. Definisjonen sier altså at den deriverte er gitt ved endringen i funksjonsverdi (endring langs y-aksen) dividert med endringen i $x$. Videre lar vi endringen i $x$ bli veldig, veldig liten.
 # 
 # Den gjennomsnittlige vekstfarten er endring i funksjonsverdi dividert med endring i $x$-verdi. Den deriverte er akkurat det samme bare at vi lar endringen i $x$ gå mot null. Da finner vi stigningstallet til tangenten.
 # 
