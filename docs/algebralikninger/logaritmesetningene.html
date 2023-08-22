@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eksponentiallikninger &#8212; Matematikk R1</title>
+    <title>Logaritmesetningene &#8212; Matematikk R1</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -56,8 +56,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Numerisk løsning av likninger" href="numerisklosning.html" />
-    <link rel="prev" title="Logaritmelikninger" href="loglikninger.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -99,7 +97,7 @@ const thebe_selector_output = ".output, .cell_output"
   Algebra og likninger
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="potensrot.html">
    Potenser og røtter
@@ -115,8 +113,8 @@ const thebe_selector_output = ".output, .cell_output"
    Logaritmelikninger
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="eksponentiallikninger.html">
    Eksponentiallikninger
   </a>
  </li>
@@ -296,7 +294,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/docs/algebralikninger/eksponentiallikninger.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/docs/algebralikninger/logaritmesetningene.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -321,6 +319,39 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forste-logaritmesetning">
+   Første logaritmesetning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#andre-logaritmesetning">
+   Andre logaritmesetning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tredje-logaritmesetning">
+   Tredje logaritmesetning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#den-naturlige-logaritmen">
+   Den naturlige logaritmen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sammenheng-mellom-logaritmer">
+   Sammenheng mellom logaritmer
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -328,19 +359,52 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Eksponentiallikninger</h1>
+                <h1>Logaritmesetningene</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forste-logaritmesetning">
+   Første logaritmesetning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#andre-logaritmesetning">
+   Andre logaritmesetning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tredje-logaritmesetning">
+   Tredje logaritmesetning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#den-naturlige-logaritmen">
+   Den naturlige logaritmen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sammenheng-mellom-logaritmer">
+   Sammenheng mellom logaritmer
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="eksponentiallikninger">
-<h1>Eksponentiallikninger<a class="headerlink" href="#eksponentiallikninger" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="logaritmesetningene">
+<h1>Logaritmesetningene<a class="headerlink" href="#logaritmesetningene" title="Permalink to this headline">¶</a></h1>
 <div class="utbytte dropdown admonition">
 <p class="admonition-title">Læringsutbytte</p>
 <p>I dette temaet arbeider vi med kompetansemålet:</p>
@@ -349,101 +413,156 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p>Etter å ha arbeidet med temaet, skal du:</p>
 <ul class="simple">
-<li><p>kunne forklare hva en eksponentiallikning er</p></li>
-<li><p>anvende ulike strategier for å løse eksponentiallikninger (blant annet ved hjelp av logaritmer)</p></li>
-<li><p>kunne forklare ekvivalens og implikasjon i logaritmiske likninger</p></li>
-<li><p>bruke digitale hjelpemidler for å løse eksponentiallikninger</p></li>
+<li><p>kunne anvende og bevise logaritmesetningene for tierlogaritmen og den naturlige logaritmen</p></li>
 </ul>
 </div>
-<p>Eksponentiallikninger er likninger der den ukjente er i eksponenten i en potens. De enkleste eksponentiallikningene kan vi løse ved å gjøre høyre og venstre side om til en potens med samme grunntall. Da kan vi bruke følgende resultat som vi kjenner en tilsvarende form av fra logaritmelikninger.</p>
+<p>På forrige side innførte vi begrepet logaritme og så på definisjonen av den. Her skal vi lære oss tre setninger eller regneregler vi kan bruke for å forenkle logaritmeuttrykk. Av mangel på bedre navn kaller vi reglene for første, andre og tredje logaritmesetning. Alle regnereglene beviser vi med utgangspunkt i sammenhengen mellom logaritmer og potenser. Vi innfører logaritmesetningene med tierlogaritmen, men som vi ser lenger ned på siden gjelder akkurat de samme reglene for den naturlige logaritmen.</p>
+<div class="section" id="forste-logaritmesetning">
+<h2>Første logaritmesetning<a class="headerlink" href="#forste-logaritmesetning" title="Permalink to this headline">¶</a></h2>
 <div class="def admonition">
-<p class="admonition-title">Like grunntall</p>
-<p>Dersom <span class="math notranslate nohighlight">\(a^x=a^b\)</span>, så må <span class="math notranslate nohighlight">\(x=b\)</span>.</p>
+<p class="admonition-title">Første logaritmesetning</p>
+<p>La <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> være positive tall. Da er</p>
+<p><span class="math notranslate nohighlight">\(\lg ab = \lg a + \lg b\)</span></p>
+<p>Logaritmer gjør altså multiplikasjon om til addisjon.</p>
+<p><em>Det er viktig å merke seg denne setningen. En vanlig feil er å si at <span class="math notranslate nohighlight">\(\lg(a+b)=\lg a + \lg b\)</span>.</em></p>
+</div>
+<div class="def dropdown admonition">
+<p class="admonition-title">Bevis for første logaritmesetning</p>
+<p>Utgangspunktet for beviset er definisjonen av logaritmer og regnereglene for potenser.</p>
+<p><span class="math notranslate nohighlight">\(ab=10^{\lg ab}\)</span>
+<span class="math notranslate nohighlight">\(ab=a\cdot b = 10^{\lg a}\cdot 10^{\lg b}=10^{\lg a + \lg b}\)</span></p>
+<p>Begge resultatene våre er lik <span class="math notranslate nohighlight">\(ab\)</span>. De må derfor også være lik hverandre.</p>
+<p><span class="math notranslate nohighlight">\(10^{\lg ab}=10^{\lg a + \lg b}\)</span></p>
+<p>For at to potenser med samme grunntall skal være like, så må eksponentene være like. Altså vil</p>
+<p><span class="math notranslate nohighlight">\(\lg ab = \lg a + \lg b\)</span></p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 1: Første logaritmesetning</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{align}
+\lg (1000x) + \lg (10x) &amp;= \lg (10^3\cdot x) + \lg (10\cdot x) \\
+&amp;=\lg 10^3+\lg x + \lg 10 + \lg x \\
+&amp;= 3+\lg x + 1 + \lg x \\
+&amp; = 4 +2\lg x
+\end{align}\)</span></p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 2: Første logaritmesetning</p>
+<p>Du får vite at <span class="math notranslate nohighlight">\(\lg 30 = 1,48\)</span> og at <span class="math notranslate nohighlight">\(\lg 6 = 0,78\)</span>. Finn <span class="math notranslate nohighlight">\(\lg 180\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\lg 180 = \lg (6\cdot 30) = \lg 6 + \lg 30 = 0,78+1,48=2,26\)</span></p>
+</div>
+<p>Andre logaritmesetning er ganske tilsvarende den første, men gjør om divisjon til subtraksjon.</p>
+</div>
+<div class="section" id="andre-logaritmesetning">
+<h2>Andre logaritmesetning<a class="headerlink" href="#andre-logaritmesetning" title="Permalink to this headline">¶</a></h2>
+<div class="def admonition">
+<p class="admonition-title">Andre logartimesetning</p>
+<p>La <span class="math notranslate nohighlight">\(a\)</span> være et positivt tall og <span class="math notranslate nohighlight">\(b\in\mathbf{R}\)</span>. Da er</p>
+<p><span class="math notranslate nohighlight">\(\lg \frac{a}{b} = \lg a - \lg b\)</span></p>
+</div>
+<p>Beviset er helt tilsvarende som beviset for første logaritmesetning og overlates til leseren.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Andre logaritmesetning</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{align}
+\lg \frac{1000}{x} + 3\lg \frac{x}{100} &amp;= \lg \frac{10^3}{x} + 3\lg \frac{x}{10^2} \\
+&amp;=\lg 10^3-\lg x +3(\lg x-\lg 10^2) \\
+&amp;= 3-\lg x+3\lg x - 3\cdot 2 \\
+&amp; = 2\lg x -3
+\end{align}\)</span></p>
+</div>
+</div>
+<div class="section" id="tredje-logaritmesetning">
+<h2>Tredje logaritmesetning<a class="headerlink" href="#tredje-logaritmesetning" title="Permalink to this headline">¶</a></h2>
+<div class="def admonition">
+<p class="admonition-title">Tredje logaritmesetning</p>
+<p>La <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> være positive tall. Da er</p>
+<p><span class="math notranslate nohighlight">\(\lg a^b = b\cdot lg a\)</span></p>
+</div>
+<p>En vanlig feil ved bruk av tredje logaritmesetning er å ikke skille mellom uttrykkene <span class="math notranslate nohighlight">\(\lg a^2=2\lg a\)</span> og <span class="math notranslate nohighlight">\(\left(lg a\right)^2=\lg a \cdot \lg a\)</span>. Tredje logaritmesetning kan brukes på den første, men ikke den andre.</p>
+<div class="def dropdown admonition">
+<p class="admonition-title">Bevis for tredje logaritmesetning</p>
+<p>Vi tar utgangspunkt i definisjonen av logaritmer og av potensreglene.</p>
+<p><span class="math notranslate nohighlight">\(a^b=10^{\lg a^b}\)</span>
+<span class="math notranslate nohighlight">\(a^b= \left(10^{\lg a}\right)^b=10^{b\cdot \lg a}\)</span></p>
+<p>Uttrykkene må være like hverandre slik at <span class="math notranslate nohighlight">\(10^{\lg a^b}=10^{b\cdot \lg a}\)</span>.</p>
+<p>For at to potenser med samme grunntall skal være like, så må eksponentene være like. Altså vil</p>
+<p><span class="math notranslate nohighlight">\(\lg a^b = b\cdot \lg a\)</span></p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Tredje logaritmesetning</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{align}
+2\lg x^4 +3\lg \sqrt[3]{x^4} &amp;= 2\lg x^4+3\lg x^{\frac{4}{3}} \\
+&amp;=2\cdot 4\lg x+ 3\cdot \frac{4}{3}\lg{x} \\
+&amp;= 8\lg x +4\lg x \\
+&amp;= 12\lg x
+\end{align}\)</span></p>
+</div>
+<p>Vi avslutter med et sammensatt eksempel på bruk av logaritmesetningene.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Sammensatt bruk av logaritmesetningene</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+3\lg(x^2\cdot y)-\frac{1}{3}\lg \left(\frac{(10\cdot y)^9}{x^3}\right) &amp;= 3(\lg x^2 + \lg y) -\frac{1}{3}(\lg 10^9 +\lg y^9 -\lg x^3) \\
+&amp;= 3\cdot 2\lg x +3\lg y -\frac{1}{3}(9+9\lg y -3\lg x) \\
+&amp;= 6\lg x +3\lg y -3 -3\lg y +\lg x \\
+&amp;= 7\lg x -3
+\end{align}
+\)</span></p>
+</div>
+</div>
+<div class="section" id="den-naturlige-logaritmen">
+<h2>Den naturlige logaritmen<a class="headerlink" href="#den-naturlige-logaritmen" title="Permalink to this headline">¶</a></h2>
+<p>Logaritmesetningene som vi beviste for tierlogaritmen gjelder også for den naturlige logaritmen. Bevisene er også helt tilsvarende, så her oppgir vi kun resultat og noen eksempler.</p>
+<div class="def admonition">
+<p class="admonition-title">Logaritmesetningene</p>
+<p><strong>Første logaritmesetning</strong><br />
+For <span class="math notranslate nohighlight">\(a, b &gt; 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\ln ab = \ln a + \ln b\)</span></p>
+<p><strong>Andre logaritmesetning</strong><br />
+For <span class="math notranslate nohighlight">\(a, b &gt; 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\ln \frac{a}{b}= \ln a - \ln b\)</span></p>
+<p><strong>Tredje logaritmesetning</strong><br />
+For <span class="math notranslate nohighlight">\(a&gt;0\)</span> og <span class="math notranslate nohighlight">\(b\in \mathbf{R}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\ln a^b = b\ln a\)</span></p>
 </div>
 <div class="eksempel admonition">
 <p class="admonition-title">Eksempel 1</p>
 <p><span class="math notranslate nohighlight">\(\begin{align}
-8^x &amp;= 512 \\
-8^x &amp;= 8^3 \\
-x &amp;= 3
-\end{align}\)</span></p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-e^{2x} &amp;= \sqrt[3]{e^4} \\
-e^{2x} &amp;= e^{\frac{4}{3}} \\
-2x &amp;= \frac{4}{3} \\
-x &amp;= \frac{2}{3}
+\ln (5 e^2)-3\ln \frac{5}{e^3} &amp;= \ln 5 + \ln e^2 -3(\ln 5-\ln e^3) \\
+&amp;= \ln 5 + 2 -3\ln 5 + 3\cdot 3 \\
+&amp;= 11 - 2\ln 5
 \end{align}\)</span></p>
 </div>
-<p>For de fleste eskponentiallikninger vil vi imidlertid være avhengig av logaritmer for å løse likningene for hånd. Logaritmen bruker vi for å ta den ukjente ned fra eksponenten. Dette fungerer siden <span class="math notranslate nohighlight">\(\ln 4^x=x\ln 4\)</span> i følge tredje logaritmesetning. Om ikke grunntallet i potensen tilsier at det er lurt å velge enten tierlogaritmen eller den naturlige logaritmen, så kan vi i utgangspunktet velge akkurat den logaritmen vi vil.</p>
 <div class="eksempel admonition">
 <p class="admonition-title">Eksempel 2</p>
 <p><span class="math notranslate nohighlight">\(\begin{align}
-3^x &amp;= 8 \\
-\lg 3^x &amp;= \lg 8 \\
-x\lg 3 &amp;= \lg 8 \\
-x &amp;= \frac{\lg 8}{\lg 3}
-\end{align}\)</span></p>
-<p>Oppgava kan også løses ved å bruke <span class="math notranslate nohighlight">\(\ln\)</span>.</p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-3^x &amp;= 8 \\
-\ln 3^x &amp;= \ln 8 \\
-x\ln 3 &amp;= \ln 8 \\
-x &amp;= \frac{\ln 8}{\ln 3}
-\end{align}\)</span></p>
-<p>Vi ser at svaret ser ulikt ut, men om vi finner tilnærmet verdi for de to uttrykkene, så ser vi at <span class="math notranslate nohighlight">\(\frac{\lg 8}{\lg 3}=\frac{\ln 8}{\ln 3}\)</span>. Det her kan vi også vise ved å ta i bruk sammenhengen mellom logaritmene som vi viste på siden om den naturlige logaritmen.</p>
-</div>
-<div class="eksempel admonition">
-<p class="admonition-title">Eksempel 3</p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-4^{2x+1} &amp;= e^2 \\
-\ln 4^{2x+1} &amp;= \ln e^2 \\
-(2x+1)\ln 4 &amp;= 2 \\
-2x+1 &amp;= \frac{2}{\ln 4} \\
-2x &amp;= \frac{2}{\ln 4} -1 \\
-x &amp;= \frac{1}{\ln 4} -\frac{1}{2} \\
-x &amp;= \frac{2-\ln 4}{2\ln{4}} = \frac{2-\ln 4}{\ln 16}
+\ln (a^{-2}\cdot e^4)-2\ln \frac{a}{a^2\cdot e^{-2}} &amp;= \ln a^{-2} + \ln e^4 - 2(\ln a-\ln a^2 -\ln e^{-2}) \\
+&amp;= -2\ln a + 4 - 2\ln a -2\cdot (-2)\ln a -2\cdot(-1)\cdot(-2) \\
+&amp;= 0
 \end{align}\)</span></p>
 </div>
-<p>I enkelte eksponentiallikninger må vi gjøre litt forarbeid for å få likningen på en form som gjør at vi kan få eksponenten ned ved hjelp av en logaritme. Dette forarbeidet kan ligge i å slå sammen ulike potenser for å få en potens med den ukjente i, faktorisere eller få uttrykket på form av en andregradslikning. Ofte kreves det litt kreativitet og/eller erfaring for å se hvordan vi kan skrive om likningen for å gjøre det lettere for oss. Vi tar noen eksempler på ulike triks vi kan bruke.</p>
-<div class="eksempel admonition">
-<p class="admonition-title">Eksempel 4</p>
-<p>Vi skal løse likningen <span class="math notranslate nohighlight">\(e^{2x} -4e^x = 0\)</span>. Et triks vi kan bruke her er at <span class="math notranslate nohighlight">\(e^{2x}=(e^x)^2=e^x\cdot e^x\)</span>. Dette bruker vi for å faktorisere uttrykket på venstre side.</p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-e^{2x} -4e^x &amp;= 0 \\
-e^x\cdot e^x-4e^x &amp;= 0 \\
-e^x(e^x-4) &amp;= 0
-\end{align}\)</span></p>
-<p>Her kan vi videre benytte produktregelen vi lærte i 1T. For at <span class="math notranslate nohighlight">\(e^x(e^x-4)\)</span> skal bli null, så må en av faktorene være null. Den første faktoren <span class="math notranslate nohighlight">\(e^x\)</span> kan ikke bli null, så da går vi videre med</p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-e^x -4 &amp;= 0 \\
-e^x &amp;= 4 \\
-\ln e^x &amp;= \ln 4 \\
-x &amp;= \ln 4
-\end{align}\)</span></p>
 </div>
-<div class="eksempel admonition">
-<p class="admonition-title">Eksempel 5</p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-3^{3x}+3^{3x}+3^{3x} &amp;= 27 \\
-3\cdot 3^{3x} &amp;= 27 \\
-3^{3x} &amp;= 9 \\
-3^{3x} &amp;= 3^2 \\
-3x &amp;= 2 \\
-x &amp;= \frac{2}{3}
-\end{align}\)</span></p>
+<div class="section" id="sammenheng-mellom-logaritmer">
+<h2>Sammenheng mellom logaritmer<a class="headerlink" href="#sammenheng-mellom-logaritmer" title="Permalink to this headline">¶</a></h2>
+<p>Det er ikke ofte vi får bruk for det, men det kan være nyttig å vite om at det finnes sammenhenger mellom logaritmer med ulikt grunntall. Her ser vi på sammenhengen mellom tierlogaritmen og den naturlige logaritmen, men tilsvarende sammenhenger kan bevises for logaritmer av alle grunntall.</p>
+<div class="def admonition">
+<p class="admonition-title">Sammenheng mellom logaritmer</p>
+<p>Dersom <span class="math notranslate nohighlight">\(a\)</span> er et positivt tall, så vil</p>
+<p><span class="math notranslate nohighlight">\(\lg a = \frac{\ln a}{\ln 10}\)</span></p>
 </div>
-<div class="eksempel admonition">
-<p class="admonition-title">Eksempel 6</p>
-<p>Vi skal løse <span class="math notranslate nohighlight">\(3^x-4=12\cdot 3^{-x}\)</span>. Her vil vi først kvitte oss med potensen med negativ eksponent. Det gjør vi ved å multiplisere begge sider av likningen med <span class="math notranslate nohighlight">\(3^x\)</span>. Da får vi <span class="math notranslate nohighlight">\((3^x)^2-4\cdot 3^x=12\)</span>. Likningen virker fortsatt vanskelig, men om vi foreløpig setter <span class="math notranslate nohighlight">\(u=3^x\)</span> kan vi skrive den om til <span class="math notranslate nohighlight">\(u^2-4u = 12\)</span>. Det er ei standard andregradslikning som vi løser ved å flytte alt til venstre side og så bruke abc-formelen. Den gir <span class="math notranslate nohighlight">\(u=-2 \vee u=6\)</span>. Så setter vi inn for <span class="math notranslate nohighlight">\(u\)</span> og går videre med</p>
+<div class="def dropdown admonition">
+<p class="admonition-title">Bevis for sammenhengen</p>
+<p>Vi starter med å ta utgangspuntk i definisjonen for tierlogaritmen. Deretter tar vi den naturlige logaritmen på begge sider før vi bruker tredje logaritmesetning og så løser for <span class="math notranslate nohighlight">\(\lg a\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\begin{align}
-u &amp;=-2 \quad &amp;\vee&amp; \quad u &amp;=6 \\
-3^x &amp;= -2 \quad &amp;\vee&amp; \quad 3^x &amp;= 6 \\
-\text{går ikke} &amp; \quad &amp;\vee&amp; \quad x &amp;= \frac{\ln 6}{\ln 3}
-\end{align}\)</span></p>
-<p>Det betyr at <span class="math notranslate nohighlight">\(L=\{\frac{\ln 6}{\ln 3}\}\)</span>.</p>
+10^{\lg a} &amp;= a \\
+\ln 10^{\lg a} &amp;= \ln a \\
+\lg a \ln 10 &amp;= \ln a \\
+\lg a &amp;= \frac{\ln a}{\ln 10}
+\end{align}
+\)</span></p>
 </div>
-<p>Alle likningene her kan selvfølgelig også løses med CAS eller grafisk. Ved løsning med CAS vil vi kunne få svar som ser litt rare ut. Grunnen er at GeoGebra ønsker å skrive alle logaritmer uttrykt med <span class="math notranslate nohighlight">\(\ln\)</span>.</p>
-<p>På neste side skal vi se hvordan alle disse likningene også kan løses ved hjelp av programmering og numeriske metoder.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -470,21 +589,7 @@ u &amp;=-2 \quad &amp;\vee&amp; \quad u &amp;=6 \\
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="loglikninger.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Logaritmelikninger</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="numerisklosning.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Numerisk løsning av likninger</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>
