@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Den naturlige logaritmen &#8212; Matematikk R1</title>
+    <title>Logaritmesetningene &#8212; Matematikk R1</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -112,7 +112,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Den naturlige logaritmen
+   Logaritmesetningene
   </a>
  </li>
  <li class="toctree-l1">
@@ -332,17 +332,29 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#eulertallet">
-   Eulertallet
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
-   Den naturlige logaritmen
+   Logaritmesetningene
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#forste-logaritmesetning">
+     Første logaritmesetning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#andre-logaritmesetning">
+     Andre logaritmesetning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tredje-logaritmesetning">
+     Tredje logaritmesetning
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#logaritmesetningene">
+  <a class="reference internal nav-link" href="#id2">
    Logaritmesetningene
   </a>
  </li>
@@ -361,7 +373,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Den naturlige logaritmen</h1>
+                <h1>Logaritmesetningene</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -372,17 +384,29 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#eulertallet">
-   Eulertallet
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
-   Den naturlige logaritmen
+   Logaritmesetningene
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#forste-logaritmesetning">
+     Første logaritmesetning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#andre-logaritmesetning">
+     Andre logaritmesetning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tredje-logaritmesetning">
+     Tredje logaritmesetning
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#logaritmesetningene">
+  <a class="reference internal nav-link" href="#id2">
    Logaritmesetningene
   </a>
  </li>
@@ -400,8 +424,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="den-naturlige-logaritmen">
-<h1>Den naturlige logaritmen<a class="headerlink" href="#den-naturlige-logaritmen" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="logaritmesetningene">
+<h1>Logaritmesetningene<a class="headerlink" href="#logaritmesetningene" title="Permalink to this headline">¶</a></h1>
 <div class="utbytte dropdown admonition">
 <p class="admonition-title">Læringsutbytte</p>
 <p>I dette temaet arbeider vi med kompetansemålet:</p>
@@ -410,128 +434,110 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p>Etter å ha arbeidet med temaet, skal du:</p>
 <ul class="simple">
-<li><p>kjenne til tallet <span class="math notranslate nohighlight">\(e\)</span> og en tilnærmet verdi for det</p></li>
-<li><p>kunne definisjonen av den naturlige logaritmen</p></li>
-<li><p>kunne regne ut enkle logaritmeverdier for hånd</p></li>
-<li><p>bruke digitale hjelpemidler til å regne ut logaritmeverdier</p></li>
-<li><p>anvende logaritmesetningene for den naturlige logaritmen</p></li>
+<li><p>kunne anvende og bevise logaritmesetningene for tierlogaritmen og den naturlige logaritmen</p></li>
 </ul>
 </div>
-<p>På forrige side så vi på tierlogaritmen. Den er spesielt viktig for oss siden vi har et titallssystem. I datamaskinverden er det imidlertid totallsystemet som gjelder. Da vil det være naturlig å bruke en logaritme med 2 som grunntall. Vi skriver da <span class="math notranslate nohighlight">\(lg_2\)</span> og den fungerer helt likt som logaritmen med 10 som grunntall bare at den er definert ut fra en potens med 2 som grunntall. For eksempel vil <span class="math notranslate nohighlight">\(\lg_2 32=5\)</span> siden <span class="math notranslate nohighlight">\(2^5=32\)</span>.</p>
-<p>Slik kan vi definere logaritmer for alle grunntall vi ønsker, men vi kommer stort sett kun til å jobbe med tierlogaritmen og noe vi kaller den naturlige logaritmen. Den skal vi innføre snart, men først skal vi lære oss et nytt irrasjonalt tall som er minst like viktig som <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
-<div class="section" id="eulertallet">
-<h2>Eulertallet<a class="headerlink" href="#eulertallet" title="Permalink to this headline">¶</a></h2>
-<p>Vi starter med to oppgaver</p>
-<div class="oppgave dropdown admonition">
-<p class="admonition-title">Eulertallet</p>
-<p>Vi skal se på uttrykket <span class="math notranslate nohighlight">\(\left(1+\frac{1}{n}\right)^n\)</span>. Fyll ut tabellen under</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>n</strong></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(1\)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(10^1\)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(10^2\)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(10^3\)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(10^4\)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(10^5\)</span></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><strong><span class="math notranslate nohighlight">\(\left(1+\frac{1}{n}\right)^n\)</span></strong></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<p>Hva skjer med uttrykket når <span class="math notranslate nohighlight">\(n\)</span> blir veldig stor?</p>
-<div class="losning dropdown admonition">
-<p class="admonition-title">Løsningsforslag</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>n</strong></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(1\)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(10^1\)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(10^2\)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(10^3\)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(10^4\)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(10^5\)</span></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><strong><span class="math notranslate nohighlight">\(\left(1+\frac{1}{n}\right)^n\)</span></strong></p></td>
-<td><p>2</p></td>
-<td><p>2,594</p></td>
-<td><p>2.705</p></td>
-<td><p>2.717</p></td>
-<td><p>2.718</p></td>
-<td><p>2.718</p></td>
-</tr>
-</tbody>
-</table>
-<p>Det virker som om verdien til uttrykket går mot 2.718…</p>
-</div>
-</div>
-<div class="oppgave dropdown admonition">
-<p class="admonition-title">Gunstig rente</p>
-<p>Tenk deg at du setter 1 kr i banken til 100 % rente i året. Hvor mye har du etter ett år dersom du får</p>
-<p>a) rente kun en gang? <br />
-b) 50 % rente hvert halvår? <br />
-c) 25 % rente hvert kvartal? <br />
-d) <span class="math notranslate nohighlight">\(\frac{100}{12}\)</span> % rente hver måned? <br />
-e) <span class="math notranslate nohighlight">\(\frac{100}{365}\)</span> % rente hver dag? <br />
-f) <span class="math notranslate nohighlight">\(\frac{100}{365\cdot 24}\)</span> % rente hver time?</p>
-<div class="losning dropdown admonition">
-<p class="admonition-title">Løsningsforslag</p>
-<p>Vi bruker vekstfaktor for å gjøre utregningen effektiv.</p>
-<p>a) <span class="math notranslate nohighlight">\(1\cdot 2 = 2\)</span>, altså 2 kr. <br />
-b) <span class="math notranslate nohighlight">\(1\cdot 1,5^2\approx 2,25\)</span>, altså 2,25 kr. <br />
-c) <span class="math notranslate nohighlight">\(1\cdot 1,25^4\approx 2,441\)</span>, altså 2,441 kr. <br />
-d) <span class="math notranslate nohighlight">\(1\cdot 1,08^{12}\approx 2,518\)</span>, altså 2,518 kr. <br />
-e) <span class="math notranslate nohighlight">\(1\cdot 1,00274^{365}\approx 2,715\)</span>, altså 2,715 kr. <br />
-f) <span class="math notranslate nohighlight">\(1\cdot 1,00011416^{365\cdot 24}\approx 2,7182\)</span>, altså 2,7182 kr.</p>
-<p>Vi ser at jo mindre inndelingen er jo mer vil vi få, men svaret nærmer seg 2,7182.</p>
-</div>
-</div>
-<p>Tallet vi kommer fram til i de to oppgavene er et tall som er minst like viktig som <span class="math notranslate nohighlight">\(\pi\)</span> i matematikken.</p>
-<div class="def admonition">
-<p class="admonition-title">Eulertallet</p>
-<p>Eulertallet (eller bare <span class="math notranslate nohighlight">\(e\)</span>) er et irrasjonalt tall som dukker opp veldig mange plasser i naturen og er utrolig viktig i matematikken. Tallet starter med</p>
-<p><span class="math notranslate nohighlight">\(e = 2,7 1828 1828 8459\ldots\)</span></p>
-<p>Tallet er oppkalt etter matematikeren Leonard Euler som først brukte bokstaven <span class="math notranslate nohighlight">\(e\)</span> for det.</p>
-<p>For å skrive inn <span class="math notranslate nohighlight">\(e\)</span> i GeoGebra kan vi trykke “Alt+e”.</p>
-</div>
-</div>
+<p>På forrige side innførte vi begrepet logaritme og så på definisjonen av den. Her skal vi lære oss tre setninger eller regneregler vi kan bruke for å forenkle logaritmeuttrykk.</p>
 <div class="section" id="id1">
-<h2>Den naturlige logaritmen<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>Siden tallet <span class="math notranslate nohighlight">\(e\)</span> viser seg å være viktig og opptrer flere plasser i naturen, så har logaritmen med <span class="math notranslate nohighlight">\(e\)</span> som grunntall fått navnet den naturlige logaritmen. Vi definerer den på helt samme måte som vi definerte tierlogaritmen.</p>
+<h2>Logaritmesetningene<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Vi skal lære tre regneregler for logaritmer som vi av mangel på bedre navn har valgt å kalle første, andre og tredje logaritmesetning. Alle regnereglene beviser vi med utgangspunkt i sammenhengen mellom logaritmer og potenser. Vi innfører logaritmesetningene med tierlogaritmen, men som vi ser lenger ned på siden gjelder akkurat de samme reglene for den naturlige logaritmen.</p>
+<div class="section" id="forste-logaritmesetning">
+<h3>Første logaritmesetning<a class="headerlink" href="#forste-logaritmesetning" title="Permalink to this headline">¶</a></h3>
 <div class="def admonition">
-<p class="admonition-title">Definisjon av den naturlige logaritmen</p>
-<p>Den naturlige logaritmen, <span class="math notranslate nohighlight">\(\ln p\)</span>, til et tall <span class="math notranslate nohighlight">\(p\)</span> er det tallet vi må opphøye <span class="math notranslate nohighlight">\(e\)</span> i for å få <span class="math notranslate nohighlight">\(p\)</span>.</p>
-<p><span class="math notranslate nohighlight">\(e^{\ln p} = p\)</span> der <span class="math notranslate nohighlight">\(p &gt;0\)</span></p>
+<p class="admonition-title">Første logaritmesetning</p>
+<p>La <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> være positive tall. Da er</p>
+<p><span class="math notranslate nohighlight">\(\lg ab = \lg a + \lg b\)</span></p>
+<p>Logaritmer gjør altså multiplikasjon om til addisjon.</p>
+<p><em>Det er viktig å merke seg denne setningen. En vanlig feil er å si at <span class="math notranslate nohighlight">\(\lg(a+b)=\lg a + \lg b\)</span>.</em></p>
+</div>
+<div class="def dropdown admonition">
+<p class="admonition-title">Bevis for første logaritmesetning</p>
+<p>Utgangspunktet for beviset er definisjonen av logaritmer og regnereglene for potenser.</p>
+<p><span class="math notranslate nohighlight">\(ab=10^{\lg ab}\)</span>
+<span class="math notranslate nohighlight">\(ab=a\cdot b = 10^{\lg a}\cdot 10^{\lg b}=10^{\lg a + \lg b}\)</span></p>
+<p>Begge resultatene våre er lik <span class="math notranslate nohighlight">\(ab\)</span>. De må derfor også være lik hverandre.</p>
+<p><span class="math notranslate nohighlight">\(10^{\lg ab}=10^{\lg a + \lg b}\)</span></p>
+<p>For at to potenser med samme grunntall skal være like, så må eksponentene være like. Altså vil</p>
+<p><span class="math notranslate nohighlight">\(\lg ab = \lg a + \lg b\)</span></p>
 </div>
 <div class="eksempel admonition">
-<p class="admonition-title">Eksempel på logaritmeverdier</p>
-<p><span class="math notranslate nohighlight">\(\ln(e)=1\)</span> siden <span class="math notranslate nohighlight">\(e^1=e\)</span></p>
-<p><span class="math notranslate nohighlight">\(\ln(e^3) = 3\)</span></p>
-<p><span class="math notranslate nohighlight">\(\ln(e^k) = k\)</span></p>
-<p><span class="math notranslate nohighlight">\(\ln(\sqrt[3]{e^5})=\ln(e^{\frac{5}{3}})=\frac{5}{3}\)</span></p>
-<p><span class="math notranslate nohighlight">\(\ln(5) \approx 1,61\)</span> siden <span class="math notranslate nohighlight">\(e^{1,61}\approx 5\)</span></p>
-<p>De fire første kan vi finne uten hjelpemidler, men for de fleste (som den siste) kan vi bruke digitale hjelpemidler. Her er det vist med CAS og programmering i Python</p>
-<div class="figure align-default">
-<a class="reference internal image-reference" href="../../_images/ln5.png"><img alt="../../_images/ln5.png" src="../../_images/ln5.png" style="width: 99.0px; height: 44.5px;" /></a>
+<p class="admonition-title">Eksempel 1: Første logaritmesetning</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{align}
+\lg (1000x) + \lg (10x) &amp;= \lg (10^3\cdot x) + \lg (10\cdot x) \\
+&amp;=\lg 10^3+\lg x + \lg 10 + \lg x \\
+&amp;= 3+\lg x + 1 + \lg x \\
+&amp; = 4 +2\lg x
+\end{align}\)</span></p>
 </div>
-<div class="figure align-default">
-<a class="reference internal image-reference" href="../../_images/ln5python.png"><img alt="../../_images/ln5python.png" src="../../_images/ln5python.png" style="width: 250.5px; height: 131.5px;" /></a>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 2: Første logaritmesetning</p>
+<p>Du får vite at <span class="math notranslate nohighlight">\(\lg 30 = 1,48\)</span> og at <span class="math notranslate nohighlight">\(\lg 6 = 0,78\)</span>. Finn <span class="math notranslate nohighlight">\(\lg 180\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\lg 180 = \lg (6\cdot 30) = \lg 6 + \lg 30 = 0,78+1,48=2,26\)</span></p>
 </div>
-<p>Merk at programmeringsspråket python bruker skrivemåten log for den naturlige logaritmen.</p>
+<p>Andre logaritmesetning er ganske tilsvarende den første, men gjør om divisjon til subtraksjon.</p>
+</div>
+<div class="section" id="andre-logaritmesetning">
+<h3>Andre logaritmesetning<a class="headerlink" href="#andre-logaritmesetning" title="Permalink to this headline">¶</a></h3>
+<div class="def admonition">
+<p class="admonition-title">Andre logartimesetning</p>
+<p>La <span class="math notranslate nohighlight">\(a\)</span> være et positivt tall og <span class="math notranslate nohighlight">\(b\in\mathbf{R}\)</span>. Da er</p>
+<p><span class="math notranslate nohighlight">\(\lg \frac{a}{b} = \lg a - \lg b\)</span></p>
+</div>
+<p>Beviset er helt tilsvarende som beviset for første logaritmesetning og overlates til leseren.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Andre logaritmesetning</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{align}
+\lg \frac{1000}{x} + 3\lg \frac{x}{100} &amp;= \lg \frac{10^3}{x} + 3\lg \frac{x}{10^2} \\
+&amp;=\lg 10^3-\lg x +3(\lg x-\lg 10^2) \\
+&amp;= 3-\lg x+3\lg x - 3\cdot 2 \\
+&amp; = 2\lg x -3
+\end{align}\)</span></p>
 </div>
 </div>
-<div class="section" id="logaritmesetningene">
-<h2>Logaritmesetningene<a class="headerlink" href="#logaritmesetningene" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tredje-logaritmesetning">
+<h3>Tredje logaritmesetning<a class="headerlink" href="#tredje-logaritmesetning" title="Permalink to this headline">¶</a></h3>
+<div class="def admonition">
+<p class="admonition-title">Tredje logaritmesetning</p>
+<p>La <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> være positive tall. Da er</p>
+<p><span class="math notranslate nohighlight">\(\lg a^b = b\cdot lg a\)</span></p>
+</div>
+<p>En vanlig feil ved bruk av tredje logaritmesetning er å ikke skille mellom uttrykkene <span class="math notranslate nohighlight">\(\lg a^2=2\lg a\)</span> og <span class="math notranslate nohighlight">\(\left(lg a\right)^2=\lg a \cdot \lg a\)</span>. Tredje logaritmesetning kan brukes på den første, men ikke den andre.</p>
+<div class="def dropdown admonition">
+<p class="admonition-title">Bevis for tredje logaritmesetning</p>
+<p>Vi tar utgangspunkt i definisjonen av logaritmer og av potensreglene.</p>
+<p><span class="math notranslate nohighlight">\(a^b=10^{\lg a^b}\)</span>
+<span class="math notranslate nohighlight">\(a^b= \left(10^{\lg a}\right)^b=10^{b\cdot \lg a}\)</span></p>
+<p>Uttrykkene må være like hverandre slik at <span class="math notranslate nohighlight">\(10^{\lg a^b}=10^{b\cdot \lg a}\)</span>.</p>
+<p>For at to potenser med samme grunntall skal være like, så må eksponentene være like. Altså vil</p>
+<p><span class="math notranslate nohighlight">\(\lg a^b = b\cdot \lg a\)</span></p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Tredje logaritmesetning</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{align}
+2\lg x^4 +3\lg \sqrt[3]{x^4} &amp;= 2\lg x^4+3\lg x^{\frac{4}{3}} \\
+&amp;=2\cdot 4\lg x+ 3\cdot \frac{4}{3}\lg{x} \\
+&amp;= 8\lg x +4\lg x \\
+&amp;= 12\lg x
+\end{align}\)</span></p>
+</div>
+<p>Vi avslutter med et sammensatt eksempel på bruk av logaritmesetningene.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Sammensatt bruk av logaritmesetningene</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+3\lg(x^2\cdot y)-\frac{1}{3}\lg \left(\frac{(10\cdot y)^9}{x^3}\right) &amp;= 3(\lg x^2 + \lg y) -\frac{1}{3}(\lg 10^9 +\lg y^9 -\lg x^3) \\
+&amp;= 3\cdot 2\lg x +3\lg y -\frac{1}{3}(9+9\lg y -3\lg x) \\
+&amp;= 6\lg x +3\lg y -3 -3\lg y +\lg x \\
+&amp;= 7\lg x -3
+\end{align}
+\)</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Logaritmesetningene<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>Logaritmesetningene som vi beviste for tierlogaritmen gjelder også for den naturlige logaritmen. Bevisene er også helt tilsvarende, så her oppgir vi kun resultat og noen eksempler.</p>
 <div class="def admonition">
 <p class="admonition-title">Logaritmesetningene</p>
