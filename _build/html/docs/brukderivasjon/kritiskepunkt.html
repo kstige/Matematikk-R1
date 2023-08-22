@@ -415,20 +415,37 @@ const thebe_selector_output = ".output, .cell_output"
 <p>De to første (<span class="math notranslate nohighlight">\(b\)</span> og <span class="math notranslate nohighlight">\(t\)</span>) kalles ekstremalpunkt, mens funksjonsverdiene <span class="math notranslate nohighlight">\(f(b)\)</span> og <span class="math notranslate nohighlight">\(f(t)\)</span> kalles ekstremalverdier.</p>
 </div>
 <p>Vi tar et eksempel.</p>
-<div class="eskempel admonition">
+<div class="eksempel admonition">
 <p class="admonition-title">Eksempel: Stasjonære punkt</p>
 <p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=x^2 (x-2)^3\)</span>.
 For å finne de stasjonære punktene må vi løse likningen <span class="math notranslate nohighlight">\(f'(x)=0\)</span>. Her er kanskje det enkleste å multiplisere ut parentesene slik at vi får et normalt enkelt polynom.</p>
-<p><span class="math notranslate nohighlight">\(f(x)=x^2 (x-2)^3=x^5-6x^4+12x^3-8x^2 \Rightarrow f'(x)=5x^4-24x^3+36x^2-16x\)</span></p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+f(x)&amp;=x^2 (x-2)^3=x^5-6x^4+12x^3-8x^2 \\
+&amp;\Rightarrow f'(x)=5x^4-24x^3+36x^2-16x
+\end{align}\)</span></p>
 <p>Det er imidlertid ikke helt rett fram å løse likningen <span class="math notranslate nohighlight">\(f'(x)=0\)</span> fra dette. Om vi er litt lure (og heldige) kan det bli enklere om vi deriverer det opprinnelige uttrykket med produkt- og kjerneregelen. Da holder vi det mest mulig faktorisert.</p>
-<p><span class="math notranslate nohighlight">\(f'(x)=2x\cdot(x-2)^3+x^2\cdot 3(x-2)^2=x(x-2)^2(2(x-2)+3x)=x(x-2)^2(5x-4)=5x(x-2)^2(x-\frac{4}{5})\)</span></p>
-<p>Vi kan da lese av løsningene til <span class="math notranslate nohighlight">\(f'(x)=0\)</span> direkte og får de stasjonære punktene <span class="math notranslate nohighlight">\(x\in\{0, 2, \frac{4}{5}}\)</span>.</p>
-<p>Dette kunne vi også fint gjort med CAS.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+f'(x)&amp;=2x\cdot(x-2)^3+x^2\cdot 3(x-2)^2\\
+&amp;=x(x-2)^2(2(x-2)+3x) \\
+&amp;=x(x-2)^2(5x-4) \\
+&amp;=5x(x-2)^2(x-\frac{4}{5})
+\end{align}\)</span></p>
+<p>Vi kan da lese av løsningene til <span class="math notranslate nohighlight">\(f'(x)=0\)</span> direkte og får de stasjonære punktene <span class="math notranslate nohighlight">\(x\in\{0, 2, \frac{4}{5}\}\)</span>.</p>
+<p>For å avgjøre hva slags stasjonære punkt vi har kan vi for eksempel tegne ei fortegnslinje.</p>
+<p><strong>Eksemepelet er ikke fullført. Mangler fortegnslinje.</strong></p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Stasjonært punkt med CAS</p>
+<p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=x^2 (x-2)^3\)</span> fra forrige eksempel og viser hvordan vi kan finne de stasjonære punktene med CAS.</p>
+<p>Først definerer vi funksjonen, så løser vi likninga <span class="math notranslate nohighlight">\(f'(x)=0\)</span>.</p>
 <div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/stasjonaerepunktCAS.png"><img alt="../../_images/stasjonaerepunktCAS.png" src="../../_images/stasjonaerepunktCAS.png" style="width: 247.5px; height: 119.0px;" /></a>
 </div>
-<p>For å avgjøre hva slags stasjonære punkt vi har kan vi for eksempel tegne ei fortegnslinje.</p>
-<p><strong>Eksemepelet er ikke fullført. Del eksempelet i to (ett med og ett uten CAS)</strong></p>
+<p>Vi får de samme stasjonære punktene som i forrige eksempel. For å avgjøre om det er topp- eller bunnpunkt, så kan vi finne verdien til den deriverte mellom de stasjonære punktene. Vi kan for eksempel se at <span class="math notranslate nohighlight">\(f'(x)\)</span> er positiv til venstre for det første stasjonære punktet (<span class="math notranslate nohighlight">\(x=0\)</span>) og negativ mellom <span class="math notranslate nohighlight">\(x=0\)</span> og <span class="math notranslate nohighlight">\(x=\frac{4}{5}\)</span>. Det betyr at <span class="math notranslate nohighlight">\(x=0\)</span> må være et toppunkt. Tilsvarende kan vi finne <span class="math notranslate nohighlight">\(x=\frac{4}{5}\)</span> er et bunnpunkt, mens <span class="math notranslate nohighlight">\(x=2\)</span> er et sadelpunkt.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/fortegnCAS.png"><img alt="../../_images/fortegnCAS.png" src="../../_images/fortegnCAS.png" style="width: 208.5px; height: 124.0px;" /></a>
+</div>
+<p><strong>Eksemepelet er ikke fullført. Mangler fortegnslinje.</strong></p>
 </div>
 </div>
 <div class="section" id="id1">
