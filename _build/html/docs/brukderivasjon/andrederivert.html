@@ -52,6 +52,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Funksjonsdrøfting" href="funksjonsdrofting.html" />
@@ -324,6 +326,19 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#krumning">
+   Krumning
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -336,6 +351,19 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#krumning">
+   Krumning
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -344,6 +372,33 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="den-andrederiverte">
 <h1>Den andrederiverte<a class="headerlink" href="#den-andrederiverte" title="Permalink to this headline">¶</a></h1>
+<div class="utbytte dropdown admonition">
+<p class="admonition-title">Læringsutbytte</p>
+<p>I dette temaet arbeider vi med kompetansemålet:</p>
+<ul class="simple">
+<li><p>forstå begrepene vekstfart, grenseverdi, derivasjon og kontinuitet, og bruke disse for å løse praktiske problemer</p></li>
+<li><p>analysere og tolke ulike funksjoner ved å bruke derivasjon
+(* bestemme den deriverte i et punkt geometrisk, algebraisk og ved numeriske metoder, og gi eksempler på funksjoner som ikke er deriverbare i gitte punkter)</p></li>
+</ul>
+<p>Etter å ha arbeidet med temaet, skal du:</p>
+<ul class="simple">
+<li><p>vite hva vi mener med den andrederiverte</p></li>
+<li><p>forklare hva den andrederiverte viser om krumningen til funksjonen</p></li>
+<li><p>finne vendepunkt og infleksjonspunkt og forklare hva det viser</p></li>
+<li><p>kjenne til og kunne bruke andrederiverttesten</p></li>
+</ul>
+</div>
+<p>Vi har sett at når vi deriverer en funksjon <span class="math notranslate nohighlight">\(f(x)\)</span>, så ender vi opp med en ny funksjon <span class="math notranslate nohighlight">\(f'(x)\)</span>. Denne nye funksjonen viser hvor raskt <span class="math notranslate nohighlight">\(f(x)\)</span> vokser. Men ellers er <span class="math notranslate nohighlight">\(f'(x)\)</span> en vanlig funksjon på lik linje med <span class="math notranslate nohighlight">\(f(x)\)</span>. Det er derfor ingenting i veien for å derivere en gang til.</p>
+<div class="def admonition">
+<p class="admonition-title">Den andrederiverte</p>
+<p>Den andrederiverte til en funksjon <span class="math notranslate nohighlight">\(f(x)\)</span> er den deriverte av den deriverte funksjonen. Vi skriver det slik</p>
+<div class="math notranslate nohighlight">
+\[(f'(x))'= f''(x)\]</div>
+</div>
+<p>Alt vi har lært til nå gjelder fortsatt. Vi bare deriverer en gang til. Det viktige for oss blir derfor hva den andrederiverte kan fortelle oss om den opprinnelige funksjonen.</p>
+<div class="section" id="krumning">
+<h2>Krumning<a class="headerlink" href="#krumning" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
