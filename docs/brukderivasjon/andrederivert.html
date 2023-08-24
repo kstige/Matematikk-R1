@@ -413,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="def admonition">
 <p class="admonition-title">Vendepunkt og infleksjonspunkt</p>
 <p>Et vendepunkt til en graf er et punkt der grafen går fra å vende den hule siden ned til å vende den hule siden opp - eller motsatt. <span class="math notranslate nohighlight">\(x\)</span>-verdien til vendepunktet blir kalt for et <em>infleksjonspunkt</em> til funksjonen.</p>
-<p>Vendepunkt (og infleksjonspunkt) finner vi der den andrederiverte skifter fortegn. For kontinuerlige funksjoner med kontinuerlige deriverte skjer det for de <span class="math notranslate nohighlight">\(x\)</span>-verdiene som er løsninger av <span class="math notranslate nohighlight">\(f''(x)=0\)</span>.</p>
+<p>Vendepunkt (og infleksjonspunkt) finner vi der den andrederiverte skifter fortegn. For kontinuerlige funksjoner med kontinuerlige deriverte skjer det for de <span class="math notranslate nohighlight">\(x\)</span>-verdiene som er løsninger av <span class="math notranslate nohighlight">\(f''(x)=0\)</span>. Dersom det er punkt der funksjonen ikke er definert, bør vi også undersøke om den andrederiverte skifter fortegn i disse punktene.</p>
 </div>
 <div class="eksempel admonition">
 <p class="admonition-title">Eksempel: Vendepunkt</p>
@@ -423,10 +423,38 @@ const thebe_selector_output = ".output, .cell_output"
 <p><span class="math notranslate nohighlight">\(f''(x)=6x+2\)</span></p>
 <p>Så lager vi fortegnslinje for <span class="math notranslate nohighlight">\(f''(x)\)</span></p>
 <div class="figure align-default">
-<a class="reference internal image-reference" href="docs/brukderivasjon/bilderekskrumning.png"><img alt="docs/brukderivasjon/bilderekskrumning.png" src="docs/brukderivasjon/bilderekskrumning.png" /></a>
+<a class="reference internal image-reference" href="../../_images/ekskrumning.png"><img alt="../../_images/ekskrumning.png" src="../../_images/ekskrumning.png" style="width: 560.5px; height: 201.5px;" /></a>
 </div>
 <p>Vi ser altså at grafen er konkav for <span class="math notranslate nohighlight">\(x&lt;-\frac{1}{3}\)</span> og konveks for <span class="math notranslate nohighlight">\(x&gt;-\frac{1}{3}\)</span>.</p>
 <p>Funksjonen har vendepunkt for <span class="math notranslate nohighlight">\((-\frac{1}{3}, f(-\frac{1}{3}))=(-\frac{1}{3}, -\frac{16}{27})\)</span>.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Vendepunkt med CAS</p>
+<p>Vi ser på den samme funksjonen som i forrige eksempel <span class="math notranslate nohighlight">\(f(x)=x^3+x^2-x-1\)</span>.</p>
+<p>For å finne vendepunktet i CAS starter vi med å definere funksjonen. Videre kan vi løse likninga <span class="math notranslate nohighlight">\(f''(x)=0\)</span>, men enda enklere er det å bruke kommandoen <em>Vendepunkt</em>.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/vendepunktCAS.png"><img alt="../../_images/vendepunktCAS.png" src="../../_images/vendepunktCAS.png" style="width: 217.5px; height: 114.0px;" /></a>
+</div>
+<p>Vi ser at vi får samme resultat som for hånd.</p>
+<p>Dersom vi også ønsker å finne krumningen undersøker vi fortegnet til <span class="math notranslate nohighlight">\(f''(x)\)</span> for en tilfeldig verdi på hver side av vendepunktet.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/krumningCAS.png"><img alt="../../_images/krumningCAS.png" src="../../_images/krumningCAS.png" style="width: 160.5px; height: 89.0px;" /></a>
+</div>
+<p>Her får vi at grafen er konkav for <span class="math notranslate nohighlight">\(x&lt;-\frac{1}{3}\)</span> og konveks for <span class="math notranslate nohighlight">\(x&gt;-\frac{1}{3}\)</span> som vi gjorde for hånd.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Andrederivert lik null, men ikke vendepunkt</p>
+<p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=x^4\)</span> og ønsker å finne eventuelle vendepunkt.</p>
+<p>Finner at <span class="math notranslate nohighlight">\(f''(x)=12x^2\)</span>, slik at <span class="math notranslate nohighlight">\(f''(x)=0\)</span> for <span class="math notranslate nohighlight">\(x=0\)</span>. Om vi undersøker fortegnet til <span class="math notranslate nohighlight">\(f(x)\)</span> på begge sider av <span class="math notranslate nohighlight">\(x=0\)</span>, så ser vi at <span class="math notranslate nohighlight">\(f''(x)\)</span> er positiv på begge sider. Det vil si at den andrederiverte ikke skifter fortegn, og da er det heller ingen vendepunkt for <span class="math notranslate nohighlight">\(x=0\)</span>.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Vendepunkt uten at den andrederiverte er lik null</p>
+<p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=\sqrt[3]{x}\)</span> og ønsker å finne eventulle vendepunkt.</p>
+<p>Vi undersøker den dobbelderiverte i CAS.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/kubikkrotfunksjon.png"><img alt="../../_images/kubikkrotfunksjon.png" src="../../_images/kubikkrotfunksjon.png" style="width: 158.5px; height: 161.0px;" /></a>
+</div>
+<p>Den andrederiverte er altså aldri lik null, men vi ser at funksjonen ikke er definert for <span class="math notranslate nohighlight">\(x=0\)</span>. Vi ser også at <span class="math notranslate nohighlight">\(f''(x)&gt;0\)</span> for <span class="math notranslate nohighlight">\(x&lt;0\)</span> og at <span class="math notranslate nohighlight">\(f''(x)&lt;0\)</span> for <span class="math notranslate nohighlight">\(x&gt;0\)</span>. Det vil si at den andrederiverte skifter fortegn for <span class="math notranslate nohighlight">\(x=0\)</span> slik at punktet <span class="math notranslate nohighlight">\((0, f(0))=(0,0)\)</span> er et vendepunkt for funksjonen <span class="math notranslate nohighlight">\(f\)</span>.</p>
 </div>
 </div>
 </div>
