@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Logaritmer &#8212; Matematikk R1</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,21 +20,17 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/myadmonitions.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -40,12 +38,13 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -65,7 +64,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -74,9 +87,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -263,12 +277,17 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -276,61 +295,117 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/docs/algebralikninger/logaritmer.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/docs/algebralikninger/logaritmer.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tierlogaritmen">
    Tierlogaritmen
@@ -360,12 +435,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Logaritmer</h1>
@@ -411,11 +485,12 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="logaritmer">
-<h1>Logaritmer<a class="headerlink" href="#logaritmer" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="logaritmer">
+<h1>Logaritmer<a class="headerlink" href="#logaritmer" title="Permalink to this headline">#</a></h1>
 <div class="utbytte dropdown admonition">
 <p class="admonition-title">Læringsutbytte</p>
 <p>I dette temaet arbeider vi med kompetansemålet:</p>
@@ -431,13 +506,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>bruke digitale hjelpemidler til å regne ut logaritmeverdier</p></li>
 </ul>
 </div>
-<div class="section" id="tierlogaritmen">
-<h2>Tierlogaritmen<a class="headerlink" href="#tierlogaritmen" title="Permalink to this headline">¶</a></h2>
+<section id="tierlogaritmen">
+<h2>Tierlogaritmen<a class="headerlink" href="#tierlogaritmen" title="Permalink to this headline">#</a></h2>
 <p>I 1T lærte vi mye om ulike funksjonstyper. En av funksjonstypene var eksponentialfunksjoner. Det er funksjoner på formen <span class="math notranslate nohighlight">\(f(x)=a\cdot b^x\)</span>, der <span class="math notranslate nohighlight">\(a,b\in\mathbf{R} \backslash \{0\}\)</span>. Vi husker at funksjonen representerte en størrelse med startverdi <span class="math notranslate nohighlight">\(a\)</span> som økte med en fast prosentstørrelse når <span class="math notranslate nohighlight">\(x\)</span> økte med 1. Denne prosenten kommer inn gjennom tallet <span class="math notranslate nohighlight">\(b\)</span> som er en vekstfaktor.</p>
 <p>I grafen under er eksponentialfunksjonen <span class="math notranslate nohighlight">\(f(x)=10^x\)</span> tegnet inn.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <a class="reference internal image-reference" href="../../_images/10x.png"><img alt="../../_images/10x.png" src="../../_images/10x.png" style="width: 802.8px; height: 543.6px;" /></a>
-</div>
+</figure>
 <p>Fra grafen kan vi lese av ting som at:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(10^{-0,2}\approx 0.6\)</span></p></li>
@@ -465,12 +540,12 @@ const thebe_selector_output = ".output, .cell_output"
 <p><span class="math notranslate nohighlight">\(\lg(0,01)=-2\)</span> siden <span class="math notranslate nohighlight">\(10^{-2}=0,01\)</span></p>
 <p><span class="math notranslate nohighlight">\(\lg(5) \approx 0,69897\)</span> siden <span class="math notranslate nohighlight">\(10^{0,69897}\approx 5\)</span></p>
 <p>De tre første kan vi finne uten hjelpemidler, men for de fleste (som den siste) kan vi bruke digitale hjelpemidler. Her er det vist med CAS og programmering i Python</p>
-<div class="figure align-default">
+<figure class="align-default">
 <a class="reference internal image-reference" href="../../_images/lg5.png"><img alt="../../_images/lg5.png" src="../../_images/lg5.png" style="width: 176.5px; height: 57.5px;" /></a>
-</div>
-<div class="figure align-default">
+</figure>
+<figure class="align-default">
 <a class="reference internal image-reference" href="../../_images/lg5python.png"><img alt="../../_images/lg5python.png" src="../../_images/lg5python.png" style="width: 238.0px; height: 135.5px;" /></a>
-</div>
+</figure>
 <p>Merk at programmeringsspråket python bruker skrivemåten log10 for den briggske logaritmen.</p>
 </div>
 <p>Fra eksempelet over ser vi kanskje at det er noen logaritmer som er enkle å se uten hjelpemiddel.</p>
@@ -482,13 +557,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p><span class="math notranslate nohighlight">\(\lg 1 = 0\)</span> siden <span class="math notranslate nohighlight">\(10^0=1\)</span></p>
 <p><span class="math notranslate nohighlight">\(\lg 10 = 1\)</span> sden <span class="math notranslate nohighlight">\(10^1=10\)</span></p>
 </div>
-</div>
-<div class="section" id="den-naturlige-logaritmen">
-<h2>Den naturlige logaritmen<a class="headerlink" href="#den-naturlige-logaritmen" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="den-naturlige-logaritmen">
+<h2>Den naturlige logaritmen<a class="headerlink" href="#den-naturlige-logaritmen" title="Permalink to this headline">#</a></h2>
 <p>Vi har nå sett på tierlogaritmen. Den er spesielt viktig for oss siden vi har et titallssystem. I datamaskinverden er det imidlertid totallsystemet som gjelder. Da vil det være naturlig å bruke en logaritme med 2 som grunntall. Vi skriver da <span class="math notranslate nohighlight">\(lg_2\)</span> og den fungerer helt likt som logaritmen med 10 som grunntall bare at den er definert ut fra en potens med 2 som grunntall. For eksempel vil <span class="math notranslate nohighlight">\(\lg_2 32=5\)</span> siden <span class="math notranslate nohighlight">\(2^5=32\)</span>.</p>
 <p>Slik kan vi definere logaritmer for alle grunntall vi ønsker, men vi kommer stort sett kun til å jobbe med tierlogaritmen og noe vi kaller den naturlige logaritmen. Den skal vi innføre snart, men først skal vi lære oss et nytt irrasjonalt tall som er minst like viktig som <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
-<div class="section" id="eulertallet">
-<h3>Eulertallet<a class="headerlink" href="#eulertallet" title="Permalink to this headline">¶</a></h3>
+<section id="eulertallet">
+<h3>Eulertallet<a class="headerlink" href="#eulertallet" title="Permalink to this headline">#</a></h3>
 <p>Vi starter med to oppgaver</p>
 <div class="oppgave dropdown admonition">
 <p class="admonition-title">Eulertallet</p>
@@ -572,9 +647,9 @@ f) <span class="math notranslate nohighlight">\(1\cdot 1,00011416^{365\cdot 24}\
 <p>Tallet er oppkalt etter matematikeren Leonard Euler som først brukte bokstaven <span class="math notranslate nohighlight">\(e\)</span> for det.</p>
 <p>For å skrive inn <span class="math notranslate nohighlight">\(e\)</span> i GeoGebra kan vi trykke “Alt+e”.</p>
 </div>
-</div>
-<div class="section" id="id1">
-<h3>Den naturlige logaritmen<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id1">
+<h3>Den naturlige logaritmen<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>Siden tallet <span class="math notranslate nohighlight">\(e\)</span> viser seg å være viktig og opptrer flere plasser i naturen, så har logaritmen med <span class="math notranslate nohighlight">\(e\)</span> som grunntall fått navnet den naturlige logaritmen. Vi definerer den på helt samme måte som vi definerte tierlogaritmen.</p>
 <div class="def admonition">
 <p class="admonition-title">Definisjon av den naturlige logaritmen</p>
@@ -589,18 +664,18 @@ f) <span class="math notranslate nohighlight">\(1\cdot 1,00011416^{365\cdot 24}\
 <p><span class="math notranslate nohighlight">\(\ln(\sqrt[3]{e^5})=\ln(e^{\frac{5}{3}})=\frac{5}{3}\)</span></p>
 <p><span class="math notranslate nohighlight">\(\ln(5) \approx 1,61\)</span> siden <span class="math notranslate nohighlight">\(e^{1,61}\approx 5\)</span></p>
 <p>De fire første kan vi finne uten hjelpemidler, men for de fleste (som den siste) kan vi bruke digitale hjelpemidler. Her er det vist med CAS og programmering i Python</p>
-<div class="figure align-default">
+<figure class="align-default">
 <a class="reference internal image-reference" href="../../_images/ln5.png"><img alt="../../_images/ln5.png" src="../../_images/ln5.png" style="width: 99.0px; height: 44.5px;" /></a>
-</div>
-<div class="figure align-default">
+</figure>
+<figure class="align-default">
 <a class="reference internal image-reference" href="../../_images/ln5python.png"><img alt="../../_images/ln5python.png" src="../../_images/ln5python.png" style="width: 250.5px; height: 131.5px;" /></a>
-</div>
+</figure>
 <p>Merk at programmeringsspråket python bruker skrivemåten log for den naturlige logaritmen.</p>
 </div>
-</div>
-</div>
-<div class="section" id="bruk-av-logaritmer">
-<h2>Bruk av logaritmer<a class="headerlink" href="#bruk-av-logaritmer" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="bruk-av-logaritmer">
+<h2>Bruk av logaritmer<a class="headerlink" href="#bruk-av-logaritmer" title="Permalink to this headline">#</a></h2>
 <p>Logaritmer har færre bruksområder i dag enn det har hatt før. Regnereglene vi har sett på viser at logaritmer kan gjøre multiplikasjon om til addisjon og divisjon om til subtraksjon. Dette har historisk vært til stor hjelp før kalkulatorer og datamaskiner kunne utføre beregningene.</p>
 <p>Logartimer er nødvendig for å løse liknigner der den ukjente befinner seg i eksponenten i en potens. Slike likninger kalles eksponentiallikninger og vi vil komme tilbake til de senere.</p>
 <p>Logaritmer brukes til å definere en del størrelser i kjemi og fysikk:</p>
@@ -609,8 +684,8 @@ f) <span class="math notranslate nohighlight">\(1\cdot 1,00011416^{365\cdot 24}\
 <li><p>Richters skala for jordskjelv fungerer tilsvarende</p></li>
 <li><p>dB-skalaen for lydstyrke er logaritmisk</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -634,9 +709,11 @@ f) <span class="math notranslate nohighlight">\(1\cdot 1,00011416^{365\cdot 24}\
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="potensrot.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -652,24 +729,28 @@ f) <span class="math notranslate nohighlight">\(1\cdot 1,00011416^{365\cdot 24}\
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Kristoffer Stige<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Kristoffer Stige<br/>
-    
-        &copy; Copyright 2023.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
