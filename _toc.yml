@@ -32,7 +32,6 @@ parts:
   - file: docs/brukderivasjon/tangenter
   - file: docs/brukderivasjon/newtonsmetode
   - file: docs/brukderivasjon/lhopitalsregel
-  - file: docs/brukderivasjon/fartaks
 - caption: 4 - Funksjoner og modeller
   numbered: 1
   chapters:
