@@ -3,11 +3,10 @@
 
 format: jb-book
 root: docs/intro
-options:
-  numbered: true
 
 parts:
-- caption: Algebra og likninger
+- caption: 1 - Algebra og likninger
+  numbered: 1
   chapters:
   - file: docs/algebralikninger/potensrot
   - file: docs/algebralikninger/logaritmer
@@ -15,7 +14,8 @@ parts:
   - file: docs/algebralikninger/loglikninger
   - file: docs/algebralikninger/eksponentiallikninger
   - file: docs/algebralikninger/numerisklosning
-- caption: Derivasjon - teori
+- caption: 2 - Derivasjon - teori
+  numbered: 1
   chapters:
   - file: docs/grenserderivasjon/grenseverdier
   - file: docs/grenserderivasjon/asymptoter
@@ -23,7 +23,8 @@ parts:
   - file: docs/grenserderivasjon/defderivert
   - file: docs/grenserderivasjon/derivasjonsregler
   - file: docs/grenserderivasjon/numeriskderivasjon
-- caption: Derivasjon - anvendelser
+- caption: 3 - Derivasjon - anvendelser
+  numbered: 1
   chapters:
   - file: docs/brukderivasjon/kritiskepunkt
   - file: docs/brukderivasjon/andrederivert
@@ -32,15 +33,20 @@ parts:
   - file: docs/brukderivasjon/newtonsmetode
   - file: docs/brukderivasjon/lhopitalsregel
   - file: docs/brukderivasjon/fartaks
-- caption: Omvendte funksjoner
+- caption: 4 - Funksjoner og modeller
+  numbered: 1
   chapters:
-  - file: docs/omvendtefunksjoner/omvendtefunksjoner
-  - file: docs/omvendtefunksjoner/potensrot
-  - file: docs/omvendtefunksjoner/logeks
-  - file: docs/omvendtefunksjoner/derivasjonomvendt
-- caption: Modellering
-  chapters:
-  - file: docs/modellering/modellering
-- caption: Vektorer
+  - file: docs/funksjonermodeller/omvendtefunksjoner
+  - file: docs/funksjonermodeller/viktigefunksjoner
+  - file: docs/funksjonermodeller/vekstmodeller
+  - file: docs/funksjonermodeller/reelledatasett
+- caption: 5 - Vektorer
+  numbered: 1
   chapters:
   - file: docs/vektorer/vektorer
+  - file: docs/vektorer/regnevektorer
+  - file: docs/vektorer/vektorlikninger
+  - file: docs/vektorer/skalarprodukt
+  - file: docs/vektorer/geometri
+  - file: docs/vektorer/parameterframstilling
+  - file: docs/vektorer/kurver

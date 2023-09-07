@@ -19,6 +19,7 @@ execute:
 # HTML-specific settings
 html:
   home_page_in_navbar         : false
+  use_multitoc_numbering: false
 
 # Interact link settings
 notebook_interface            : "notebook"
