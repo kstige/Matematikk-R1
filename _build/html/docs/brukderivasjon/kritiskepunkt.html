@@ -507,13 +507,17 @@ title="Print to PDF"
 <p><strong>Toppunkt:</strong> <span class="math notranslate nohighlight">\(f'(t)=0\)</span> og <span class="math notranslate nohighlight">\(f'(x)\)</span> skifter fortegn fra positiv til negativ når vi passerer <span class="math notranslate nohighlight">\(t\)</span>.</p>
 <p><strong>Sadelpunkt/Terrassepunkt</strong> <span class="math notranslate nohighlight">\(f'(s)=0\)</span> og <span class="math notranslate nohighlight">\(f'(x)\)</span> skifter ikke fortegn når vi passerer <span class="math notranslate nohighlight">\(s\)</span>.</p>
 <p>De to første (<span class="math notranslate nohighlight">\(b\)</span> og <span class="math notranslate nohighlight">\(t\)</span>) kalles ekstremalpunkt, mens funksjonsverdiene <span class="math notranslate nohighlight">\(f(b)\)</span> og <span class="math notranslate nohighlight">\(f(t)\)</span> kalles ekstremalverdier.</p>
-<p><strong>Sett inn graf tilsvarenede s. 168 i boka.</strong></p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/stasjonaerepunkt.png"><img alt="../../_images/stasjonaerepunkt.png" src="../../_images/stasjonaerepunkt.png" style="width: 571.5px; height: 313.5px;" /></a>
+</figure>
 </div>
 <p>Vi tar et eksempel.</p>
 <div class="eksempel admonition">
 <p class="admonition-title">Eksempel: Stasjonære punkt</p>
-<p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=x^2 (x-2)^3\)</span>.
-For å finne de stasjonære punktene må vi løse likningen <span class="math notranslate nohighlight">\(f'(x)=0\)</span>. Her er kanskje det enkleste å multiplisere ut parentesene slik at vi får et normalt enkelt polynom.</p>
+<p>Finn de stasjonære punktene til funksjonen <span class="math notranslate nohighlight">\(f(x)=x^2 (x-2)^3\)</span> og avgjør hva slags punkt det er.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>For å finne de stasjonære punktene må vi løse likningen <span class="math notranslate nohighlight">\(f'(x)=0\)</span>. Her er kanskje det enkleste å multiplisere ut parentesene slik at vi får et normalt enkelt polynom.</p>
 <p><span class="math notranslate nohighlight">\(\begin{align}
 f(x)&amp;=x^2 (x-2)^3=x^5-6x^4+12x^3-8x^2 \\
 &amp;\Rightarrow f'(x)=5x^4-24x^3+36x^2-16x
@@ -527,20 +531,33 @@ f'(x)&amp;=2x\cdot(x-2)^3+x^2\cdot 3(x-2)^2\\
 \end{align}\)</span></p>
 <p>Vi kan da lese av løsningene til <span class="math notranslate nohighlight">\(f'(x)=0\)</span> direkte og får de stasjonære punktene <span class="math notranslate nohighlight">\(x\in\{0, 2, \frac{4}{5}\}\)</span>.</p>
 <p>For å avgjøre hva slags stasjonære punkt vi har kan vi for eksempel tegne ei fortegnslinje.</p>
-<p><strong>Eksemepelet er ikke fullført. Mangler fortegnslinje.</strong></p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/fortegnslinje.png"><img alt="../../_images/fortegnslinje.png" src="../../_images/fortegnslinje.png" style="width: 315.0px; height: 206.0px;" /></a>
+</figure>
+<p>Under fortegnslinja er det tegnet ei pil som viser hvilken vei grafen stiger/synker i retning økende <span class="math notranslate nohighlight">\(x\)</span>-verdi.</p>
+<p>Vi ser da at</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x=0\)</span> gir et toppunkt</p></li>
+<li><p><span class="math notranslate nohighlight">\(x=\frac{4}{5}\)</span> gir et bunnpunkt</p></li>
+<li><p><span class="math notranslate nohighlight">\(x=2\)</span> gir et sadelpunkt</p></li>
+</ul>
+</div>
 </div>
 <div class="eksempel admonition">
 <p class="admonition-title">Eksempel: Stasjonært punkt med CAS</p>
-<p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=x^2 (x-2)^3\)</span> fra forrige eksempel og viser hvordan vi kan finne de stasjonære punktene med CAS.</p>
+<p>Bruk CAS til å finne og klassifisere de stasjonære punktene til <span class="math notranslate nohighlight">\(f(x)=x^2 (x-2)^3\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
 <p>Først definerer vi funksjonen, så løser vi likninga <span class="math notranslate nohighlight">\(f'(x)=0\)</span>.</p>
 <figure class="align-default">
-<a class="reference internal image-reference" href="../../_images/stasjonaerepunktCAS.png"><img alt="../../_images/stasjonaerepunktCAS.png" src="../../_images/stasjonaerepunktCAS.png" style="width: 247.5px; height: 119.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/stasjonaerepunktCAS.png"><img alt="../../_images/stasjonaerepunktCAS.png" src="../../_images/stasjonaerepunktCAS.png" style="width: 297.0px; height: 142.79999999999998px;" /></a>
 </figure>
 <p>Vi får de samme stasjonære punktene som i forrige eksempel. For å avgjøre om det er topp- eller bunnpunkt, så kan vi finne verdien til den deriverte mellom de stasjonære punktene. Vi kan for eksempel se at <span class="math notranslate nohighlight">\(f'(x)\)</span> er positiv i <span class="math notranslate nohighlight">\(x=-1\)</span> som er en mindre <span class="math notranslate nohighlight">\(x\)</span>-verdi enn det første stasjonære punktet (<span class="math notranslate nohighlight">\(x=0\)</span>) og negativ i <span class="math notranslate nohighlight">\(x=\frac{1}{5}\)</span> som ligger mellom <span class="math notranslate nohighlight">\(x=0\)</span> og <span class="math notranslate nohighlight">\(x=\frac{4}{5}\)</span>. Det betyr at <span class="math notranslate nohighlight">\(f'(x)\)</span> går fra positiv til negativ når vi passerer <span class="math notranslate nohighlight">\(x=0\)</span>, slik at <span class="math notranslate nohighlight">\(x=0\)</span> må være et toppunkt.</p>
 <figure class="align-default">
-<a class="reference internal image-reference" href="../../_images/fortegnCAS.png"><img alt="../../_images/fortegnCAS.png" src="../../_images/fortegnCAS.png" style="width: 208.5px; height: 124.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/fortegnCAS.png"><img alt="../../_images/fortegnCAS.png" src="../../_images/fortegnCAS.png" style="width: 250.2px; height: 148.79999999999998px;" /></a>
 </figure>
 <p>Tilsvarende kan vi finne <span class="math notranslate nohighlight">\(x=\frac{4}{5}\)</span> er et bunnpunkt, mens <span class="math notranslate nohighlight">\(x=2\)</span> er et sadelpunkt.</p>
+</div>
 </div>
 </section>
 <section id="id1">
@@ -564,21 +581,31 @@ f'(x)&amp;=2x\cdot(x-2)^3+x^2\cdot 3(x-2)^2\\
 <p>Vi avslutter med et eksempel.</p>
 <div class="eksempel admonition">
 <p class="admonition-title">Eksempel: Kritiske punkt</p>
-<p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f\)</span> under og skal avgjøre hva ekstremalpunktene til funksjonen er.
+<p>Finn ekstremalpunktene til funksjonen <span class="math notranslate nohighlight">\(f\)</span>.
 <span class="math notranslate nohighlight">\(\begin{equation*}
     f(x) = \begin{cases} 
       x^2+1 &amp; \text{når } \quad -3 \leq x &lt; 2 \\
       -2x+9 &amp; \text{når } x \geq 2
    \end{cases}
 \end{equation*}\)</span></p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
 <p>Aller først, så ser vi at funksjonen har definisjonsmengde <span class="math notranslate nohighlight">\(D_f=[-3, \infty \rangle\)</span>. Det vil si at vi har et kritisk punkt i nedre grense <span class="math notranslate nohighlight">\(x=-3\)</span>.</p>
 <p>Videre sjekker vi punktene der <span class="math notranslate nohighlight">\(f'(x)=0\)</span>. Vi deriverer hvert området for seg og ser at <span class="math notranslate nohighlight">\(f'(x)=0\)</span> for <span class="math notranslate nohighlight">\(x=0\)</span>. Kontroller det selv.</p>
 <p>I et tidligere eksempel på siden om kontinuitet har vi sett at denne funksjonen er kontinuerlig for <span class="math notranslate nohighlight">\(x=2\)</span>. Nå sjekker vi om funksjonen er deriverbar i punktet. Vi kontrollerer da om venstresidig og høyresidig grense for den deriverte er lik hverandre.</p>
 <p><span class="math notranslate nohighlight">\(\lim_{x\to 2^-}f'(x)=\lim_{x\to 2^-} 2x = 4\)</span></p>
 <p><span class="math notranslate nohighlight">\(\lim_{x\to 2^+}f'(x)=\lim_{x\to 2^+}-2=-2\)</span></p>
 <p>Funksjonen er altså ikke deriverbar for <span class="math notranslate nohighlight">\(x=2\)</span>.</p>
-<p>De kritiske punktene til funksjonen er altså <span class="math notranslate nohighlight">\(\{-3, 0, 2\}\)</span>. Det er da også kandidatene til ekstremalpunkt. For å avgjøre om det er topp- eller bunnpunkt tegner vi en fortegnslinje.</p>
-<p><strong>Eksemepelet er ikke fullført. Mangler fortegnslinje.</strong></p>
+<p>De kritiske punktene til funksjonen er altså <span class="math notranslate nohighlight">\(\{-3, 0, 2\}\)</span>. Det er da også kandidatene til ekstremalpunkt. For å avgjøre om det er topp- eller bunnpunkt tegner vi en fortegnslinje. Her blir fortegnslinja litt <em>rar</em> siden det er forskjellig uttrykk for den deriverte når <span class="math notranslate nohighlight">\(x&lt;2\)</span> og <span class="math notranslate nohighlight">\(x\geq 2\)</span>.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/fortegnslinje.png"><img alt="../../_images/fortegnslinje.png" src="../../_images/fortegnslinje.png" style="width: 315.0px; height: 206.0px;" /></a>
+</figure>
+<p>Vi ser altså at vi har:</p>
+<ul class="simple">
+<li><p>Toppunkt for <span class="math notranslate nohighlight">\(x=-3\)</span> og <span class="math notranslate nohighlight">\(x=2\)</span></p></li>
+<li><p>Bunnpunkt for <span class="math notranslate nohighlight">\(x=0\)</span></p></li>
+</ul>
+</div>
 </div>
 </section>
 </section>
