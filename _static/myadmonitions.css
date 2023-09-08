@@ -53,6 +53,21 @@
     color: #2aaf1e
 }
 
+.admonition.videolos {
+    border-color: #2aaf1e;
+    background-color: rgba(60, 160, 74, 0.2);
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+.admonition.videolos > .admonition-title {
+    background-color: rgba(60, 160, 74, 0.2);
+
+}
+.admonition.videolos > .admonition-title::before {
+    content: '\f167';
+    color: #2aaf1e
+}
+
 .admonition.def {
     border-color: rgba(var(--pst-color-primary));
 
