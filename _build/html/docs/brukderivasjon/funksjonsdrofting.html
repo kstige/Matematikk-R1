@@ -486,7 +486,7 @@ title="Print to PDF"
 <p>Det vi har lært om på de to forrige sidene handler om å analysere eller drøfte funksjoner. Hva slags informasjon kan vi få ut av funksjonsuttrykket, og hva kan det sies om den situasjonen funksjonen beskriver. Her skal vi se på noen litt sammensatte eksempler der vi drøfter hva en funksjon sier oss.</p>
 <div class="eksempel admonition">
 <p class="admonition-title">Eksempel 1</p>
-<p>Vi ser på funksjonen $f(x)=x^3-3x^2+4</p>
+<p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=x^3-3x^2+4\)</span></p>
 <p><strong>a)</strong> Finn nullpunktene til funksjonen og avgjør hvor funksjonen er positiv/negativ.</p>
 <p><strong>b)</strong> Finn ekstremalpunktene og ekstremalverdiene til funksjonen.</p>
 <p><strong>c)</strong> Finn vendepunktet til funksjonen. Finn også verdien til funksjonen og den deriverte i dette punktet.</p>
@@ -495,7 +495,7 @@ title="Print to PDF"
 <p class="admonition-title">Løsning</p>
 <p><strong>a)</strong> Denne kan vi løse ved å prøve/feile oss fram til ei løsning, og så bruke polynomdivisjon for å faktorisere uttrykket. Her velger vi å bruke CAS.</p>
 <figure class="align-default">
-<a class="reference internal image-reference" href="../../_images/droftingeksempel1CAS.png"><img alt="../../_images/droftingeksempel1CAS.png" src="../../_images/droftingeksempel1CAS.png" style="width: 195.0px; height: 98.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/droftingeksempel1CAS.png"><img alt="../../_images/droftingeksempel1CAS.png" src="../../_images/droftingeksempel1CAS.png" style="width: 234.0px; height: 117.6px;" /></a>
 </figure>
 <p>Nullpunktene til funksjonen er <span class="math notranslate nohighlight">\(x=-1\)</span> og <span class="math notranslate nohighlight">\(x=2\)</span>. Med det kan vi sette opp en faktorisering <span class="math notranslate nohighlight">\(f(x)=(x+1)(x-2)^2\)</span>. <em>Her må <span class="math notranslate nohighlight">\(x=2\)</span> være et dobbelt nullpunkt siden vi ser i b) at det også er et bunnpunkt.</em> Tegner fortegnslinje for funksjonen. Den viser at funksjonen er positiv for <span class="math notranslate nohighlight">\(x\in\langle \leftarrow, -1\rangle \cup \langle 2, \rightarrow \rangle\)</span> og negativ for <span class="math notranslate nohighlight">\(x\in\langle -1, 2\rangle\)</span>.</p>
 <figure class="align-default">
@@ -548,18 +548,30 @@ title="Print to PDF"
 <p><strong>a)</strong> <span class="math notranslate nohighlight">\(s(0)=10\)</span> gir at starthøyden er 10 m over havnivå.</p>
 <p><strong>b)</strong> Løser likningen <span class="math notranslate nohighlight">\(s(t)=0\)</span> enten med abc-formelen, eller som her med CAS.</p>
 <figure class="align-default">
-<a class="reference internal image-reference" href="../../_images/kanonkuleb.png"><img alt="../../_images/kanonkuleb.png" src="../../_images/kanonkuleb.png" style="width: 228.5px; height: 94.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/kanonkuleb.png"><img alt="../../_images/kanonkuleb.png" src="../../_images/kanonkuleb.png" style="width: 274.2px; height: 113.39999999999999px;" /></a>
 </figure>
 <p>Ser at vi får to løsninger. Den første er før kula ble skutt opp, så den er ugyldig. Kula treffer havet etter 8,12 s.</p>
 <p><strong>c)</strong> Kula er på sitt høyeste når den deriverte er null (det tilsvarer at farta er null akkurat i det kula snur).</p>
 <figure class="align-default">
-<a class="reference internal image-reference" href="../../_images/kanonkulec.png"><img alt="../../_images/kanonkulec.png" src="../../_images/kanonkulec.png" style="width: 223.5px; height: 93.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/kanonkulec.png"><img alt="../../_images/kanonkulec.png" src="../../_images/kanonkulec.png" style="width: 268.2px; height: 111.6px;" /></a>
 </figure>
 <p>Ser at det skjer etter 4 s. Høyden er da 85 m over havnivå.</p>
 <p><strong>d)</strong>
 Farten er gitt ved <span class="math notranslate nohighlight">\(v(t)=s'(t)=-10t+40\)</span>. Finner da at</p>
 <p><span class="math notranslate nohighlight">\(v(0)=40\)</span> gir en startfart på 40 m/s.</p>
 <p><span class="math notranslate nohighlight">\(v(1)=30\)</span> gir en fart på 30 m/s etter 1 s.</p>
+</div>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel</p>
+<p>Under testing av en bil kjører bilen fram og tilbake med varierende fart og akselerasjon. Posisjonen til bilen <span class="math notranslate nohighlight">\(t\)</span> sekund etter start og de første 15 sekundene er gitt ved funksjonen <span class="math notranslate nohighlight">\(s(t)=0.04t^4-0.6t^3-0.8t^2+25t\)</span>.</p>
+<p><strong>a)</strong> På hvilket tidspunkt er bilen lengst vekk fra start?</p>
+<p><strong>b)</strong> Når kjører framover og når kjører den bakover?</p>
+<p><strong>c)</strong> Hva er den største farten bilen har, hvor stor er denne farten og hvor er bilen da?</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Starter med å definere alle funksjonene vi kan ha bruk for i CAS.</p>
+<p><strong>a)</strong> For å undersøke når bilen er lengst vekk må vi undersøke de kritiske punktene. Det er der <span class="math notranslate nohighlight">\(s'(t)=v(t)=0\)</span> og i endepunktene i definisjonsmengden. Definisjonsmengden her er <span class="math notranslate nohighlight">\(D_s=[0, 15]\)</span>.</p>
 </div>
 </div>
 </section>
