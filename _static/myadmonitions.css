@@ -34,7 +34,7 @@
     background-color: rgba(60, 160, 74, 0.1);
 }
 .admonition.eksempel > .admonition-title::before {
-    content: '\f044';
+    content: '\f304';
     color: #2aaf1e
 }
 
