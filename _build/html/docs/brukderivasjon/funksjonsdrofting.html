@@ -565,14 +565,35 @@ Farten er gitt ved <span class="math notranslate nohighlight">\(v(t)=s'(t)=-10t+
 </div>
 <div class="eksempel admonition">
 <p class="admonition-title">Eksempel</p>
-<p>Under testing av en bil kjører bilen fram og tilbake med varierende fart og akselerasjon. Posisjonen til bilen <span class="math notranslate nohighlight">\(t\)</span> sekund etter start og de første 15 sekundene er gitt ved funksjonen <span class="math notranslate nohighlight">\(s(t)=0.04t^4-0.6t^3-0.8t^2+25t\)</span>.</p>
+<p>Under testing av en bil kjører bilen fram og tilbake med varierende fart og akselerasjon. Posisjonen til bilen <span class="math notranslate nohighlight">\(t\)</span> sekund etter start og de første 14 sekundene er gitt ved funksjonen <span class="math notranslate nohighlight">\(s(t)=0.05t^4-1.2t^3+7t^2\)</span>.</p>
 <p><strong>a)</strong> På hvilket tidspunkt er bilen lengst vekk fra start?</p>
-<p><strong>b)</strong> Når kjører framover og når kjører den bakover?</p>
+<p><strong>b)</strong> Når kjører bilen framover og når kjører den bakover?</p>
 <p><strong>c)</strong> Hva er den største farten bilen har, hvor stor er denne farten og hvor er bilen da?</p>
 <div class="ekslos dropdown admonition">
 <p class="admonition-title">Løsning</p>
 <p>Starter med å definere alle funksjonene vi kan ha bruk for i CAS.</p>
-<p><strong>a)</strong> For å undersøke når bilen er lengst vekk må vi undersøke de kritiske punktene. Det er der <span class="math notranslate nohighlight">\(s'(t)=v(t)=0\)</span> og i endepunktene i definisjonsmengden. Definisjonsmengden her er <span class="math notranslate nohighlight">\(D_s=[0, 15]\)</span>.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/bilfunksjoner.png"><img alt="../../_images/bilfunksjoner.png" src="../../_images/bilfunksjoner.png" style="width: 345.59999999999997px; height: 183.6px;" /></a>
+</figure>
+<p><strong>a)</strong> For å undersøke når bilen er lengst vekk må vi undersøke de kritiske punktene. Det er der <span class="math notranslate nohighlight">\(s'(t)=v(t)=0\)</span> og i endepunktene i definisjonsmengden. Definisjonsmengden her er <span class="math notranslate nohighlight">\(D_s=[0, 14]\)</span>.</p>
+<p>Løser <span class="math notranslate nohighlight">\(v(t)=0\)</span> i CAS. Finner i linje 4 at det er mulige ekstremalpunkter for <span class="math notranslate nohighlight">\(t=0\)</span>, <span class="math notranslate nohighlight">\(t=5.68\)</span> og <span class="math notranslate nohighlight">\(t=12.32\)</span>. Dersom vi skulle øndersøke om det var topp- eller bunnpunkt kunne vi undersøkt om <span class="math notranslate nohighlight">\(v(t)\)</span> skiftet fortegn (f.eks. med fortegnslinje), men her er vi kun interessert i når bilen er lengst vekk. Finner derfor posisjonen i endepunktene og der <span class="math notranslate nohighlight">\(v(t)=0\)</span> som vi ser i linje 5-8. Ser da at bilen er lengst vekk etter 5.68 s. Da er den omtrent 58 m fra start.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/bilekstremal.png"><img alt="../../_images/bilekstremal.png" src="../../_images/bilekstremal.png" style="width: 339.59999999999997px; height: 268.8px;" /></a>
+</figure>
+<p><strong>b)</strong>
+Her kan vi lage fortegnslinje, eller vi kan undersøke fortegnet til <span class="math notranslate nohighlight">\(v(t)\)</span> mellom de kritiske punktene som vist i linje 9-11. Der ser vi at bilen kjører framover når <span class="math notranslate nohighlight">\(t\in[0, 5.68\rangle \cup \langle 12.32, 14]\)</span> og bakover når <span class="math notranslate nohighlight">\(t\in \langle 5.68, 12.32 \rangle\)</span>.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/bilretning.png"><img alt="../../_images/bilretning.png" src="../../_images/bilretning.png" style="width: 301.2px; height: 158.4px;" /></a>
+</figure>
+<p><strong>c)</strong>
+For å finne den største farten til bilen må vi undersøke de kritiske punktene til <span class="math notranslate nohighlight">\(v(t)\)</span>. Det er der <span class="math notranslate nohighlight">\(v'(t)=a(t)=0\)</span>, eller i endepunktene i definisjonsmengden. Ser av linje 12 at vi må undersøke <span class="math notranslate nohighlight">\(t=2.44\)</span> og <span class="math notranslate nohighlight">\(t=9.56\)</span> i tillegg til endepunktene. Undersøker verdien til farten i disse punktene i linje 13-16. Ser at bilen har størst fart etter 14 s. Da har den farten 39.2 m/s framover (tilsvarer omtrent 141 km/t).</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/bilstorstfart.png"><img alt="../../_images/bilstorstfart.png" src="../../_images/bilstorstfart.png" style="width: 344.4px; height: 267.0px;" /></a>
+</figure>
+<p>Legger til slutt ved en graf som viser posisjon, fart og akselerasjon for bilen. Prøv og les svarene fra oppgaven ut fra grafen. Undersøk også sammenhengen mellom grafene.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/bilgraf.png"><img alt="../../_images/bilgraf.png" src="../../_images/bilgraf.png" style="width: 472.8px; height: 362.40000000000003px;" /></a>
+</figure>
 </div>
 </div>
 </section>
