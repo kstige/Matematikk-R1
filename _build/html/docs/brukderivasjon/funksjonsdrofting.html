@@ -530,6 +530,51 @@ title="Print to PDF"
 <p>Under skissen ser vi fortegnslinjene for <span class="math notranslate nohighlight">\(f(x)\)</span>, <span class="math notranslate nohighlight">\(f'(x)\)</span> og <span class="math notranslate nohighlight">\(f''(x)\)</span>. Legg merke til hvordan informasjonen i linjene stemmer med fortegn, stigning og krumning på grafen til funksjonen.</p>
 </div>
 </div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 2</p>
+<p>En funksjon er gitt ved <span class="math notranslate nohighlight">\(f(x)=x^3-3x^2+4x\)</span></p>
+<p><strong>a)</strong> Når vokser funksjonen minst?<br />
+<strong>b)</strong> Hva er verdien til funksjonen da?<br />
+<strong>c)</strong> Hvor raskt vokser funksjonen da?</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p><strong>a)</strong> Deriverer først funksjonen to ganger.</p>
+<p><span class="math notranslate nohighlight">\(f'(x)=3x^2-6x+4\)</span></p>
+<p><span class="math notranslate nohighlight">\(f''(x)=6x-6\)</span></p>
+<p>Setter så den andrederiverte lik null og finner at et mulig vendepunkt er for <span class="math notranslate nohighlight">\(x=1\)</span>. Ved å se at <span class="math notranslate nohighlight">\(f''(0)=-6\)</span> og <span class="math notranslate nohighlight">\(f''(2)=6\)</span>, så ser vi også at <span class="math notranslate nohighlight">\(f''(x)\)</span> skifter fortegn fra negativt til positivt i <span class="math notranslate nohighlight">\(x=1\)</span>. Det betyr at <span class="math notranslate nohighlight">\(f'(x)\)</span> må ha et bunnpunkt der. Vi har altså minst vekst for <span class="math notranslate nohighlight">\(x=1\)</span>.</p>
+<p><strong>b)</strong> Verdien til funksjonen i vendepunktet er <span class="math notranslate nohighlight">\(f(1)=1^3-3\cdot 1^2+4\cdot 1=2\)</span>. Vendepunktet er altså i <span class="math notranslate nohighlight">\((1,2)\)</span>.</p>
+<p><strong>c)</strong> Verdien til den deriverte i vendepunktet er <span class="math notranslate nohighlight">\(f'(1)=3\cdot 1^2-6\cdot 1+4=1\)</span>. Den momentane vekstfarten i vendepunktet er altså 1. Dette er den laveste verdien den deriverte har.</p>
+</div>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 3</p>
+<p>Antall bakterier i en bakterieprøve vokser med funksjonen <span class="math notranslate nohighlight">\(f(x)=\frac{5000}{8\cdot e^{-0.5x}+1}\)</span> de første 12 timene etter at prøven ble tatt. <span class="math notranslate nohighlight">\(x\)</span> er antall timer.</p>
+<p><strong>a)</strong> Etter hvor mange timer vokser antall bakterier raskest?<br />
+<strong>b)</strong> Hvor mange bakterier er det og hvor raskt øker det ved tidspunktet i a)?<br />
+<strong>c)</strong> Tegn grafen til <span class="math notranslate nohighlight">\(f(x)\)</span>, <span class="math notranslate nohighlight">\(f'(x)\)</span> og <span class="math notranslate nohighlight">\(f''(x)\)</span>. Bruk grafene til å finne svarene i a) og b).</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p><strong>a)</strong> Definerer funksjonen i CAS og løser så likninga <span class="math notranslate nohighlight">\(f''(x)=0\)</span>. Får at det er et mulig vendepunkt i <span class="math notranslate nohighlight">\(x=4.16\)</span>. I linje 3 og 4 sjekker vi at <span class="math notranslate nohighlight">\(f''(x)\)</span> skifter fortegn fra positivt til negativt. Det betyr at det er vendepunkt og at den deriverte har et toppunkt. Antall bakterier vokser altså raskest etter 4.16 timer.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/bakterierCAS.png"><img alt="../../_images/bakterierCAS.png" src="../../_images/bakterierCAS.png" style="width: 300.0px; height: 302.4px;" /></a>
+</figure>
+<p><strong>b)</strong> Skriver inn <span class="math notranslate nohighlight">\(f(4.16)\)</span> og <span class="math notranslate nohighlight">\(f'(4.16)\)</span> i CAS.</p>
+<p>Det er omtrent 2500 bakterier og det øker med en fart på 625 bakterier per time etter 4.16 timer.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/bakterierCAS2.png"><img alt="../../_images/bakterierCAS2.png" src="../../_images/bakterierCAS2.png" style="width: 289.8px; height: 120.6px;" /></a>
+</figure>
+<p><strong>c)</strong> Skriver inn funksjonsuttrykket i algebrafeltet som vist under.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/bakterierfunksjon.png"><img alt="../../_images/bakterierfunksjon.png" src="../../_images/bakterierfunksjon.png" style="width: 365.4px; height: 58.199999999999996px;" /></a>
+</figure>
+<p>Fortsetter med å skrive inn <span class="math notranslate nohighlight">\(f'(x)\)</span> og <span class="math notranslate nohighlight">\(f''(x)\)</span> for å få grafene til den deriverte og den andrederiverte. For å finne den største vekstfarten finner vi ekstremalpunktet til <span class="math notranslate nohighlight">\(f'(x)\)</span> ved å skrive inn <em>Ekstremalpunkt[f’(x), 4, 5]</em> (knappen for ekstremalpunkt virker dårlig på annet enn polynomer og vi må derfor skrive inn kommandoen med avgrensning). Det er vist ved <span class="math notranslate nohighlight">\(A=(4.16, 625)\)</span> som er et toppunkt. Punktet viser at antall bakterier vokser raskest etter 4.16 timer og at det da vokser med en fart på 625 bakterier per time.</p>
+<p>For å finne antall bakterier i punktet kan vi skrive inn <span class="math notranslate nohighlight">\(f(4.16)\)</span>. Her har vi også tegnet inn vendepunktet <span class="math notranslate nohighlight">\(V=(4.16, f(4.16))\)</span>. Det viser at det er omtrent 2500 bakterier etter 4.16 timer.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/bakteriergraf.png"><img alt="../../_images/bakteriergraf.png" src="../../_images/bakteriergraf.png" style="width: 532.8000000000001px; height: 362.40000000000003px;" /></a>
+</figure>
+<p>Som en ekstra kontroll og for å vise sammenhengene har vi tegnet inn tangenten i vendepunktet og finner at den har et stigningstall på 625. I tillegg har vi brukt <em>Nullpunkt[f’’(x), 4, 5]</em> som gir punktet <span class="math notranslate nohighlight">\(B=(4.16, 0)\)</span>, som viser at den andrederiverte har nullpunkt i vendepunktet. Av grafen ser vi også at den andrederiverte skifter fortegn ved vendepunktet som den må gjøre for at det skal være et vendepunkt.</p>
+</div>
+</div>
 </section>
 <section id="posisjon-fart-og-akselerasjon">
 <h2>Posisjon, fart og akselerasjon<a class="headerlink" href="#posisjon-fart-og-akselerasjon" title="Permalink to this headline">#</a></h2>
