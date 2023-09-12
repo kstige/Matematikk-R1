@@ -457,7 +457,8 @@ title="Print to PDF"
 <p><strong>b)</strong> Finn skjæringspunktet til tangenten med <span class="math notranslate nohighlight">\(x\)</span>-aksen og <span class="math notranslate nohighlight">\(y\)</span>-aksen.</p>
 <div class="ekslos dropdown admonition">
 <p class="admonition-title">Løsning</p>
-<p>Starter med å finne den deriverte i punktet og funksjonsverdien i punktet.</p>
+<p><strong>a)</strong>
+Starter med å finne den deriverte i punktet og funksjonsverdien i punktet.</p>
 <p><span class="math notranslate nohighlight">\(f'(x)=2x+3 \Rightarrow f'(3)=2\cdot 3 + 3=9\)</span></p>
 <p><span class="math notranslate nohighlight">\(f(3)=3^2+3\cdot 3=18\)</span></p>
 <p>Tangenten finner vi da ved ettpunktsformelen.</p>
@@ -467,8 +468,58 @@ y &amp;= 9(x-3)+18 \\
 y &amp;= 9x-27+18 \\
 y &amp;= 9x-9
 \end{align}\)</span></p>
-<p><strong>b)</strong> Skjæringspunktet med <span class="math notranslate nohighlight">\(y\)</span>-aksen finner vi fra konstantleddet, så det er ved <span class="math notranslate nohighlight">\(y=-9\)</span>.</p>
+<p><strong>b)</strong>
+Skjæringspunktet med <span class="math notranslate nohighlight">\(y\)</span>-aksen finner vi fra konstantleddet, så det er ved <span class="math notranslate nohighlight">\(y=-9\)</span>.</p>
 <p>Skjæringspunktet med <span class="math notranslate nohighlight">\(x\)</span>-aksen finner vi ved å sette <span class="math notranslate nohighlight">\(9x-9=0\)</span>. Ser da at det er ved <span class="math notranslate nohighlight">\(x=1\)</span>.</p>
+</div>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 2</p>
+<p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=x^3-3x^2+4\)</span> fra eksempel 1 på forrige side. Finn den såkalte vendetangenten, altså tangenten i vendepunktet.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Vi har allerede funnet at vendepunktet er <span class="math notranslate nohighlight">\((1, 2)\)</span> og at den momentane vekstfarten i vendepunktet er -3 (se eksempel 1 på sida om funksjonsdrøfting). Ved bruk av ettpunktsformelen får vi da:</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+y - 2 &amp;= -3(x-1) \\
+y &amp;= -3x +3+2\\
+y &amp;= -3x+5
+\end{align}\)</span></p>
+</div>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning med CAS</p>
+<p>Vi definerer funksjonen i CAS. For polynomfunksjoner kan vi spare oss litt jobb med å bruke funksjonen <em>Vendepunkt</em> for å finne vendepunktet. For andre funksjoner må vi dobbeltderivere og løse likningen <span class="math notranslate nohighlight">\(f''(x)=0\)</span> for å finne <span class="math notranslate nohighlight">\(x\)</span>-koordinat til vendepuntktet. Til slutt bruker vi kommandoen <em>Tangent</em> der vi setter inn <span class="math notranslate nohighlight">\(x\)</span>-verdien til vendepunktet og navnet til funksjonen. Får at vendetangenten er <span class="math notranslate nohighlight">\(y=-3x+5\)</span></p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="docs/brukderivasjon/bilder/vendetangent.png"><img alt="docs/brukderivasjon/bilder/vendetangent.png" src="docs/brukderivasjon/bilder/vendetangent.png" /></a>
+</figure>
+</div>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 3</p>
+<p>En funksjon er gitt ved <span class="math notranslate nohighlight">\(f(x)=\ln x + a\)</span>. Bestem <span class="math notranslate nohighlight">\(a\)</span> slik at linja <span class="math notranslate nohighlight">\(y=2x+3\)</span> blir en tangent til <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Bruker <span class="math notranslate nohighlight">\(g(x)=2x+3\)</span> for linja for å forenkle notasjonen.</p>
+<p>Dersom <span class="math notranslate nohighlight">\(g\)</span> skal være en tangent til <span class="math notranslate nohighlight">\(f\)</span> i et punkt, så må de ha samme stigningstall. Det må bety at de deriverte må ha samme verdi i et punkt.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+f'(x)&amp;=g'(x) \\
+\frac{1}{x} &amp;= 2 \\
+x &amp;= \frac{1}{2}
+\end{align}\)</span></p>
+<p>For at <span class="math notranslate nohighlight">\(g\)</span> skal være en tangent i <span class="math notranslate nohighlight">\(x=\frac{1}{2}\)</span>, så må <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(g\)</span> ha samme funksjonsverdi i punktet.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+f\left(\frac{1}{2}\right) &amp;= g\left(\frac{1}{2}\right) \\
+\ln\left(\frac{1}{2}\right) + a &amp;= 2\cdot \frac{1}{2}+3 \\
+-\ln 2 +a &amp;= 4 \\
+a &amp;= \ln 2 + 4
+\end{align}\)</span></p>
+<p>Vi må ha <span class="math notranslate nohighlight">\(a=\ln 2 + 4\)</span> for at <span class="math notranslate nohighlight">\(y=2x+3\)</span> skal være en tangent til <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+</div>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning med CAS</p>
+<p>Definerer funksjonen og løser videre på samme måte som uten hjelpemidler.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/tangentukjenta.png"><img alt="../../_images/tangentukjenta.png" src="../../_images/tangentukjenta.png" style="width: 196.0px; height: 224.0px;" /></a>
+</figure>
 </div>
 </div>
 </section>
