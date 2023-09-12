@@ -445,21 +445,32 @@ title="Print to PDF"
 </div>
 <div class="eksempel admonition">
 <p class="admonition-title">Eksempel 1</p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
+<p>Løs likningene:</p>
+<p><strong>a)</strong> <span class="math notranslate nohighlight">\(8^x = 512\)</span></p>
+<p><strong>b)</strong> <span class="math notranslate nohighlight">\(e^{2x} = \sqrt[3]{e^4}\)</span></p>
+<div class="ekslos admonition">
+<p class="admonition-title">Løsning</p>
+<p><strong>a)</strong><br />
+<span class="math notranslate nohighlight">\(\begin{align}
 8^x &amp;= 512 \\
 8^x &amp;= 8^3 \\
 x &amp;= 3
 \end{align}\)</span></p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
+<p><strong>b)</strong><br />
+<span class="math notranslate nohighlight">\(\begin{align}
 e^{2x} &amp;= \sqrt[3]{e^4} \\
 e^{2x} &amp;= e^{\frac{4}{3}} \\
 2x &amp;= \frac{4}{3} \\
 x &amp;= \frac{2}{3}
 \end{align}\)</span></p>
 </div>
+</div>
 <p>For de fleste eskponentiallikninger vil vi imidlertid være avhengig av logaritmer for å løse likningene for hånd. Logaritmen bruker vi for å ta den ukjente ned fra eksponenten. Dette fungerer siden <span class="math notranslate nohighlight">\(\ln 4^x=x\ln 4\)</span> i følge tredje logaritmesetning. Om ikke grunntallet i potensen tilsier at det er lurt å velge enten tierlogaritmen eller den naturlige logaritmen, så kan vi i utgangspunktet velge akkurat den logaritmen vi vil.</p>
 <div class="eksempel admonition">
 <p class="admonition-title">Eksempel 2</p>
+<p>Løs likningen <span class="math notranslate nohighlight">\(3^x = 8\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
 <p><span class="math notranslate nohighlight">\(\begin{align}
 3^x &amp;= 8 \\
 \lg 3^x &amp;= \lg 8 \\
@@ -473,10 +484,14 @@ x &amp;= \frac{\lg 8}{\lg 3}
 x\ln 3 &amp;= \ln 8 \\
 x &amp;= \frac{\ln 8}{\ln 3}
 \end{align}\)</span></p>
-<p>Vi ser at svaret ser ulikt ut, men om vi finner tilnærmet verdi for de to uttrykkene, så ser vi at <span class="math notranslate nohighlight">\(\frac{\lg 8}{\lg 3}=\frac{\ln 8}{\ln 3}\)</span>. Det her kan vi også vise ved å ta i bruk sammenhengen mellom logaritmene som vi viste på siden om den naturlige logaritmen.</p>
+<p>Vi ser at svaret ser ulikt ut, men om vi finner tilnærmet verdi for de to uttrykkene, så ser vi at <span class="math notranslate nohighlight">\(\frac{\lg 8}{\lg 3}=\frac{\ln 8}{\ln 3}\)</span>. Det her kan vi også vise ved å ta i bruk at <span class="math notranslate nohighlight">\(\lg a = \frac{\ln a}{\ln 10}\)</span>.</p>
+</div>
 </div>
 <div class="eksempel admonition">
 <p class="admonition-title">Eksempel 3</p>
+<p>Løs likningen <span class="math notranslate nohighlight">\(4^{2x+1} = e^2\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
 <p><span class="math notranslate nohighlight">\(\begin{align}
 4^{2x+1} &amp;= e^2 \\
 \ln 4^{2x+1} &amp;= \ln e^2 \\
@@ -487,25 +502,34 @@ x &amp;= \frac{1}{\ln 4} -\frac{1}{2} \\
 x &amp;= \frac{2-\ln 4}{2\ln{4}} = \frac{2-\ln 4}{\ln 16}
 \end{align}\)</span></p>
 </div>
+</div>
 <p>I enkelte eksponentiallikninger må vi gjøre litt forarbeid for å få likningen på en form som gjør at vi kan få eksponenten ned ved hjelp av en logaritme. Dette forarbeidet kan ligge i å slå sammen ulike potenser for å få en potens med den ukjente i, faktorisere eller få uttrykket på form av en andregradslikning. Ofte kreves det litt kreativitet og/eller erfaring for å se hvordan vi kan skrive om likningen for å gjøre det lettere for oss. Vi tar noen eksempler på ulike triks vi kan bruke.</p>
 <div class="eksempel admonition">
 <p class="admonition-title">Eksempel 4</p>
-<p>Vi skal løse likningen <span class="math notranslate nohighlight">\(e^{2x} -4e^x = 0\)</span>. Et triks vi kan bruke her er at <span class="math notranslate nohighlight">\(e^{2x}=(e^x)^2=e^x\cdot e^x\)</span>. Dette bruker vi for å faktorisere uttrykket på venstre side.</p>
+<p>Løs likningen <span class="math notranslate nohighlight">\(e^{2x} -4e^x = 0\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Et triks vi kan bruke her er at <span class="math notranslate nohighlight">\(e^{2x}=(e^x)^2=e^x\cdot e^x\)</span>. Dette bruker vi for å faktorisere uttrykket på venstre side.</p>
 <p><span class="math notranslate nohighlight">\(\begin{align}
 e^{2x} -4e^x &amp;= 0 \\
 e^x\cdot e^x-4e^x &amp;= 0 \\
 e^x(e^x-4) &amp;= 0
 \end{align}\)</span></p>
-<p>Her kan vi videre benytte produktregelen vi lærte i 1T. For at <span class="math notranslate nohighlight">\(e^x(e^x-4)\)</span> skal bli null, så må en av faktorene være null. Den første faktoren <span class="math notranslate nohighlight">\(e^x\)</span> kan ikke bli null, så da går vi videre med</p>
+<p>Her kan vi videre benytte produktregelen vi lærte i 1T. For at <span class="math notranslate nohighlight">\(e^x(e^x-4)\)</span> skal bli null, så må en av faktorene være null. Den første faktoren <span class="math notranslate nohighlight">\(e^x\)</span> kan ikke bli null (eller negativ), så da går vi videre med</p>
 <p><span class="math notranslate nohighlight">\(\begin{align}
 e^x -4 &amp;= 0 \\
 e^x &amp;= 4 \\
 \ln e^x &amp;= \ln 4 \\
 x &amp;= \ln 4
 \end{align}\)</span></p>
+<p>Løsninga på likninga er altså <span class="math notranslate nohighlight">\(x=\ln 4\)</span>.</p>
+</div>
 </div>
 <div class="eksempel admonition">
 <p class="admonition-title">Eksempel 5</p>
+<p>Løs likninga <span class="math notranslate nohighlight">\(3^{3x}+3^{3x}+3^{3x} = 27\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
 <p><span class="math notranslate nohighlight">\(\begin{align}
 3^{3x}+3^{3x}+3^{3x} &amp;= 27 \\
 3\cdot 3^{3x} &amp;= 27 \\
@@ -515,9 +539,13 @@ x &amp;= \ln 4
 x &amp;= \frac{2}{3}
 \end{align}\)</span></p>
 </div>
+</div>
 <div class="eksempel admonition">
 <p class="admonition-title">Eksempel 6</p>
-<p>Vi skal løse <span class="math notranslate nohighlight">\(3^x-4=12\cdot 3^{-x}\)</span>. Her vil vi først kvitte oss med potensen med negativ eksponent. Det gjør vi ved å multiplisere begge sider av likningen med <span class="math notranslate nohighlight">\(3^x\)</span>. Da får vi <span class="math notranslate nohighlight">\((3^x)^2-4\cdot 3^x=12\)</span>. Likningen virker fortsatt vanskelig, men om vi foreløpig setter <span class="math notranslate nohighlight">\(u=3^x\)</span> kan vi skrive den om til <span class="math notranslate nohighlight">\(u^2-4u = 12\)</span>. Det er ei standard andregradslikning som vi løser ved å flytte alt til venstre side og så bruke abc-formelen. Den gir <span class="math notranslate nohighlight">\(u=-2 \vee u=6\)</span>. Så setter vi inn for <span class="math notranslate nohighlight">\(u\)</span> og går videre med</p>
+<p>Løs likninga <span class="math notranslate nohighlight">\(3^x-4=12\cdot 3^{-x}\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Her vil vi først kvitte oss med potensen med negativ eksponent. Det gjør vi ved å multiplisere begge sider av likningen med <span class="math notranslate nohighlight">\(3^x\)</span>. Da får vi <span class="math notranslate nohighlight">\((3^x)^2-4\cdot 3^x=12\)</span>. Likningen virker fortsatt vanskelig, men om vi foreløpig setter <span class="math notranslate nohighlight">\(u=3^x\)</span> kan vi skrive den om til <span class="math notranslate nohighlight">\(u^2-4u = 12\)</span>. Det er ei standard andregradslikning som vi løser ved å flytte alt til venstre side og så bruke abc-formelen. Den gir <span class="math notranslate nohighlight">\(u=-2 \vee u=6\)</span>. Så setter vi inn for <span class="math notranslate nohighlight">\(u\)</span> og går videre med</p>
 <p><span class="math notranslate nohighlight">\(\begin{align}
 u &amp;=-2 \quad &amp;\vee&amp; \quad u &amp;=6 \\
 3^x &amp;= -2 \quad &amp;\vee&amp; \quad 3^x &amp;= 6 \\
@@ -525,8 +553,9 @@ u &amp;=-2 \quad &amp;\vee&amp; \quad u &amp;=6 \\
 \end{align}\)</span></p>
 <p>Det betyr at <span class="math notranslate nohighlight">\(L=\{\frac{\ln 6}{\ln 3}\}\)</span>.</p>
 </div>
+</div>
 <p>Alle likningene her kan selvfølgelig også løses med CAS eller grafisk. Ved løsning med CAS vil vi kunne få svar som ser litt rare ut. Grunnen er at GeoGebra ønsker å skrive alle logaritmer uttrykt med <span class="math notranslate nohighlight">\(\ln\)</span>.</p>
-<p>På neste side skal vi se hvordan alle disse likningene også kan løses ved hjelp av programmering og numeriske metoder.</p>
+<p>På neste side skal vi se hvordan disse likningene (og andre likninger) også kan løses ved hjelp av programmering og numeriske metoder.</p>
 </section>
 
     <script type="text/x-thebe-config">
