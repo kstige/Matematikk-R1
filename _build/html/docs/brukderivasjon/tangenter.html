@@ -52,6 +52,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="5. Newtons metode" href="newtonsmetode.html" />
@@ -422,6 +424,53 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="tangenter">
 <h1><span class="section-number">4. </span>Tangenter<a class="headerlink" href="#tangenter" title="Permalink to this headline">#</a></h1>
+<div class="utbytte dropdown admonition">
+<p class="admonition-title">Læringsutbytte</p>
+<p>I dette temaet arbeider vi med kompetansemålet:</p>
+<ul class="simple">
+<li><p>forstå begrepene vekstfart, grenseverdi, derivasjon og kontinuitet, og bruke disse for å løse praktiske problemer</p></li>
+<li><p>analysere og tolke ulike funksjoner ved å bruke derivasjon</p></li>
+</ul>
+<p>Etter å ha arbeidet med temaet, skal du:</p>
+<ul class="simple">
+<li><p>finne tangenten til en funksjon i ulike punkt på grafen</p></li>
+</ul>
+</div>
+<p>Vi husker fra tidligere at tangenten til en funksjon i et punkt er den rette linja som akkurat berører funksjonen i punktet. Stigningstallet til tangenten er lik verdien til den deriverte i punktet. Her skal vi se nærmere på hvordan vi kan finne likninga til tangenten. Til det kan vi ha nytte av ettpunktsformelen som vi lærte om i 1T.</p>
+<div class="def admonition">
+<p class="admonition-title">Ettpunktsformelen</p>
+<p>Dersom ei rett linje går gjennom punktet <span class="math notranslate nohighlight">\((x_1, y_1)\)</span> og har stigningstallet <span class="math notranslate nohighlight">\(a\)</span>, så vil likningen for den rette linja være gitt ved</p>
+<div class="math notranslate nohighlight">
+\[y-y_1 = a(x-x_1)\]</div>
+</div>
+<p>Når vi skal finne tangenten til en funksjon for <span class="math notranslate nohighlight">\(x=x_1\)</span> får vi at</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* stigningstallet $a=f&#39;(x_1)$
+* tangeringspunktet $(x_1, y_1) = (x_1, f(x_1))$
+</pre></div>
+</div>
+<p>Likningen for tangenten kan da finnes fra uttrykket</p>
+<div class="math notranslate nohighlight">
+\[y-f(x_1)=f'(x_1)\cdot (x-x_1)\]</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 1</p>
+<p><strong>a)</strong> Finn likninga for tangenten til <span class="math notranslate nohighlight">\(f(x)=x^2+3x\)</span> når <span class="math notranslate nohighlight">\(x=3\)</span>.</p>
+<p><strong>b)</strong> Finn skjæringspunktet til tangenten med <span class="math notranslate nohighlight">\(x\)</span>-aksen og <span class="math notranslate nohighlight">\(y\)</span>-aksen.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Starter med å finne den deriverte i punktet og funksjonsverdien i punktet.</p>
+<p><span class="math notranslate nohighlight">\(f'(x)=2x+3 \Rightarrow f'(3)=2\cdot 3 + 3=9\)</span></p>
+<p><span class="math notranslate nohighlight">\(f(3)=3^2+3\cdot 3=18\)</span></p>
+<p>Tangenten finner vi da ved ettpunktsformelen.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+y-f(3)&amp;=f'(3)(x-3) \\
+y &amp;= 9(x-3)+18 \\
+y &amp;= 9x-27+18 \\
+y &amp;= 9x-9
+\end{align}\)</span></p>
+<p><strong>b)</strong> Skjæringspunktet med <span class="math notranslate nohighlight">\(y\)</span>-aksen finner vi fra konstantleddet, så det er ved <span class="math notranslate nohighlight">\(y=-9\)</span>.</p>
+<p>Skjæringspunktet med <span class="math notranslate nohighlight">\(x\)</span>-aksen finner vi ved å sette <span class="math notranslate nohighlight">\(9x-9=0\)</span>. Ser da at det er ved <span class="math notranslate nohighlight">\(x=1\)</span>.</p>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
