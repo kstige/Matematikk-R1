@@ -398,12 +398,36 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#videoer">
+   Videoer
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -415,6 +439,19 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#videoer">
+   Videoer
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -448,21 +485,25 @@ title="Print to PDF"
 <p>Løs likningene:</p>
 <p><strong>a)</strong> <span class="math notranslate nohighlight">\(8^x = 512\)</span></p>
 <p><strong>b)</strong> <span class="math notranslate nohighlight">\(e^{2x} = \sqrt[3]{e^4}\)</span></p>
-<div class="ekslos admonition">
+<div class="ekslos dropdown admonition">
 <p class="admonition-title">Løsning</p>
-<p><strong>a)</strong><br />
-<span class="math notranslate nohighlight">\(\begin{align}
+<p><strong>a)</strong></p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
 8^x &amp;= 512 \\
 8^x &amp;= 8^3 \\
 x &amp;= 3
 \end{align}\)</span></p>
-<p><strong>b)</strong><br />
-<span class="math notranslate nohighlight">\(\begin{align}
+<p><strong>b)</strong></p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
 e^{2x} &amp;= \sqrt[3]{e^4} \\
 e^{2x} &amp;= e^{\frac{4}{3}} \\
 2x &amp;= \frac{4}{3} \\
 x &amp;= \frac{2}{3}
 \end{align}\)</span></p>
+</div>
+<div class="videolos dropdown admonition">
+<p class="admonition-title">Videoløsning</p>
+<iframe width="680" height="350" src="https://www.youtube.com/embed/WiJI5_21dPY?si=Nl-utBl1FQjRcNMS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 </div>
 <p>For de fleste eskponentiallikninger vil vi imidlertid være avhengig av logaritmer for å løse likningene for hånd. Logaritmen bruker vi for å ta den ukjente ned fra eksponenten. Dette fungerer siden <span class="math notranslate nohighlight">\(\ln 4^x=x\ln 4\)</span> i følge tredje logaritmesetning. Om ikke grunntallet i potensen tilsier at det er lurt å velge enten tierlogaritmen eller den naturlige logaritmen, så kan vi i utgangspunktet velge akkurat den logaritmen vi vil.</p>
@@ -486,6 +527,10 @@ x &amp;= \frac{\ln 8}{\ln 3}
 \end{align}\)</span></p>
 <p>Vi ser at svaret ser ulikt ut, men om vi finner tilnærmet verdi for de to uttrykkene, så ser vi at <span class="math notranslate nohighlight">\(\frac{\lg 8}{\lg 3}=\frac{\ln 8}{\ln 3}\)</span>. Det her kan vi også vise ved å ta i bruk at <span class="math notranslate nohighlight">\(\lg a = \frac{\ln a}{\ln 10}\)</span>.</p>
 </div>
+<div class="videolos dropdown admonition">
+<p class="admonition-title">Videoløsning</p>
+<iframe width="680" height="350" src="https://www.youtube.com/embed/dBNLmrRQczQ?si=_3jPsFzwUGUTc1qJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 </div>
 <div class="eksempel admonition">
 <p class="admonition-title">Eksempel 3</p>
@@ -501,6 +546,10 @@ x &amp;= \frac{\ln 8}{\ln 3}
 x &amp;= \frac{1}{\ln 4} -\frac{1}{2} \\
 x &amp;= \frac{2-\ln 4}{2\ln{4}} = \frac{2-\ln 4}{\ln 16}
 \end{align}\)</span></p>
+</div>
+<div class="videolos dropdown admonition">
+<p class="admonition-title">Videoløsning</p>
+<iframe width="680" height="350" src="https://www.youtube.com/embed/ekkzvTg0d-w?si=9lOWTJ4_fyDI5wJ_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 </div>
 <p>I enkelte eksponentiallikninger må vi gjøre litt forarbeid for å få likningen på en form som gjør at vi kan få eksponenten ned ved hjelp av en logaritme. Dette forarbeidet kan ligge i å slå sammen ulike potenser for å få en potens med den ukjente i, faktorisere eller få uttrykket på form av en andregradslikning. Ofte kreves det litt kreativitet og/eller erfaring for å se hvordan vi kan skrive om likningen for å gjøre det lettere for oss. Vi tar noen eksempler på ulike triks vi kan bruke.</p>
@@ -524,6 +573,10 @@ x &amp;= \ln 4
 \end{align}\)</span></p>
 <p>Løsninga på likninga er altså <span class="math notranslate nohighlight">\(x=\ln 4\)</span>.</p>
 </div>
+<div class="videolos dropdown admonition">
+<p class="admonition-title">Videoløsning</p>
+<iframe width="680" height="350" src="https://www.youtube.com/embed/TfWcNDr2_kc?si=-wEYZOjvaMEg272P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 </div>
 <div class="eksempel admonition">
 <p class="admonition-title">Eksempel 5</p>
@@ -539,6 +592,10 @@ x &amp;= \ln 4
 x &amp;= \frac{2}{3}
 \end{align}\)</span></p>
 </div>
+<div class="videolos dropdown admonition">
+<p class="admonition-title">Videoløsning</p>
+<iframe width="680" height="350" src="https://www.youtube.com/embed/QkagU9UQbHc?si=PLo2XpA2W2WcsBcN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 </div>
 <div class="eksempel admonition">
 <p class="admonition-title">Eksempel 6</p>
@@ -553,9 +610,24 @@ u &amp;=-2 \quad &amp;\vee&amp; \quad u &amp;=6 \\
 \end{align}\)</span></p>
 <p>Det betyr at <span class="math notranslate nohighlight">\(L=\{\frac{\ln 6}{\ln 3}\}\)</span>.</p>
 </div>
+<div class="videolos dropdown admonition">
+<p class="admonition-title">Videoløsning</p>
+<iframe width="680" height="350" src="https://www.youtube.com/embed/wvmbWna2gRY?si=0h42DqzF1O33Db48" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 </div>
 <p>Alle likningene her kan selvfølgelig også løses med CAS eller grafisk. Ved løsning med CAS vil vi kunne få svar som ser litt rare ut. Grunnen er at GeoGebra ønsker å skrive alle logaritmer uttrykt med <span class="math notranslate nohighlight">\(\ln\)</span>.</p>
 <p>På neste side skal vi se hvordan disse likningene (og andre likninger) også kan løses ved hjelp av programmering og numeriske metoder.</p>
+<section id="videoer">
+<h2>Videoer<a class="headerlink" href="#videoer" title="Permalink to this headline">#</a></h2>
+<p>Her kan du se flere videoer for innhold på denne siden:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="545d2346-ccf4-46f9-8d3b-75f1a8fa49cd" name="5f32e0a9-8c6b-48c9-9946-cac71c62087a" type="radio">
+</input><label class="sd-tab-label" for="545d2346-ccf4-46f9-8d3b-75f1a8fa49cd">
+Eksponentiallikninger - introduksjon</label><div class="sd-tab-content docutils">
+<iframe width="680" height="350" src="https://www.youtube.com/embed/HRJkU18MLA4?si=nt7WFVxx8zNmUuMT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
