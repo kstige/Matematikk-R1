@@ -522,6 +522,43 @@ a &amp;= \ln 2 + 4
 </figure>
 </div>
 </div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 4</p>
+<p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=4-x^2\)</span> med definisjonsmengde <span class="math notranslate nohighlight">\(D_f=\langle 0, 2\rangle\)</span>.</p>
+<p>Vi tegner inn en tangent til <span class="math notranslate nohighlight">\(f\)</span> i punktet <span class="math notranslate nohighlight">\(P=(a, f(a))\)</span>. Tangenten skjærer <span class="math notranslate nohighlight">\(y\)</span>-aksen i <span class="math notranslate nohighlight">\(A\)</span> og <span class="math notranslate nohighlight">\(x\)</span>-aksen i <span class="math notranslate nohighlight">\(B\)</span>. Sammen med origo <span class="math notranslate nohighlight">\(O\)</span> danner <span class="math notranslate nohighlight">\(A\)</span> og <span class="math notranslate nohighlight">\(B\)</span> en rettvinklet trekant. Se figuren under.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/tangentgraf.png"><img alt="../../_images/tangentgraf.png" src="../../_images/tangentgraf.png" style="width: 429.5px; height: 356.0px;" /></a>
+</figure>
+<p><strong>a)</strong> Finn likningen for tangenten.</p>
+<p><strong>b)</strong> Finn koordinatene til <span class="math notranslate nohighlight">\(A\)</span> og <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p><strong>c)</strong> Finn et uttrykk for arealet til trekanten.</p>
+<p><strong>d)</strong> Hva er det minste arealet trekanten kan ha.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p><strong>a)</strong> Tangenten finner vi ved å bruke ettpunktsformelen.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+y-f(a)&amp;=f'(a)(x-a) \\
+y &amp;= -2a(x-a)+(4-a^2) \\
+y &amp;= -2ax+a^2+4
+\end{align}\)</span></p>
+<p><strong>b)</strong> Skjæringspunkt med <span class="math notranslate nohighlight">\(y\)</span>-aksen når <span class="math notranslate nohighlight">\(x=0\)</span> gir <span class="math notranslate nohighlight">\(A=(0, a^2+4)\)</span>.</p>
+<p>Skjæringspunkt med <span class="math notranslate nohighlight">\(x\)</span>-aksen når <span class="math notranslate nohighlight">\(y=0\)</span> gir likninga</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+0 &amp;= -2ax+a^2+4 \\
+2ax &amp;= a^2+4 \\
+x &amp;= \frac{a^2+4}{2a}
+\end{align}\)</span></p>
+<p>slik at <span class="math notranslate nohighlight">\(B=(\frac{a^2+4}{2a}, 0)\)</span>.</p>
+<p><strong>c)</strong> Arealet til trekanten er gitt ved</p>
+<p><span class="math notranslate nohighlight">\(T = \frac{1}{2}\cdot (a^2+4)\cdot \frac{a^2+4}{2a} = \frac{(a^2+4)^2}{4a}\)</span></p>
+<p><strong>d)</strong> For å finne det minste arealet trekanten kan ha, så må vi finne et bunnpunkt. Da deriverer vi uttrykket og setter det lik null. Her kan vi bruke brøkregelen for derivasjon, men uttrykket er så stygt at vi velger å bruke CAS (endrer da <span class="math notranslate nohighlight">\(a\)</span> til <span class="math notranslate nohighlight">\(x\)</span>).</p>
+<p>Definerer funksjonen i CAS, løser likninga <span class="math notranslate nohighlight">\(T'(x)=0\)</span>. Det er kun den positive løsninga som er innenfor definisjonsmengden. Den gir det kritiske punktet. Sjekker at den deriverte er negativ rett før og positiv rett etter det kritiske punktet. Det gir altså et bunnpunkt.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/tangentgrafCAS.png"><img alt="../../_images/tangentgrafCAS.png" src="../../_images/tangentgrafCAS.png" style="width: 287.5px; height: 447.0px;" /></a>
+</figure>
+<p>Det minste arealet trekanten kan ha er altså <span class="math notranslate nohighlight">\(\displaystyle\frac{32}{9}\sqrt{3}\)</span>.</p>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
