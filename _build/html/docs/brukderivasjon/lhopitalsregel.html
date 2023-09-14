@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>6. L’Hopitals regel &#8212; Matematikk R1</title>
+    <title>6. L’Hôpitals &#8212; Matematikk R1</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="1. Omvendte funksjoner" href="../funksjonermodeller/omvendtefunksjoner.html" />
@@ -214,7 +216,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   6. L’Hopitals regel
+   6. L’Hôpitals
   </a>
  </li>
 </ul>
@@ -408,7 +410,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>L’Hopitals regel</h1>
+                <h1>L’Hôpitals</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -420,8 +422,89 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="l-hopitals-regel">
-<h1><span class="section-number">6. </span>L’Hopitals regel<a class="headerlink" href="#l-hopitals-regel" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="l-hopitals">
+<h1><span class="section-number">6. </span>L’Hôpitals<a class="headerlink" href="#l-hopitals" title="Permalink to this headline">#</a></h1>
+<div class="utbytte dropdown admonition">
+<p class="admonition-title">Læringsutbytte</p>
+<p>I dette temaet arbeider vi med kompetansemålet:</p>
+<ul class="simple">
+<li><p>forstå begrepene vekstfart, grenseverdi, derivasjon og kontinuitet, og bruke disse for å løse praktiske problemer</p></li>
+</ul>
+<p>Etter å ha arbeidet med temaet, skal du:</p>
+<ul class="simple">
+<li><p>beregne grenseverdier ved å bruke L’Hôpitals regel</p></li>
+</ul>
+</div>
+<p>Stoffet på denne siden er litt på grensen til å være R1-pensum. Det kan tolkes inn under kompetansemålet over, men må ikke nødvendigvis bli det.</p>
+<p>L’Hôpitals regel er en metode (som bevises på universitet) for å beregne grenseverdier av <span class="math notranslate nohighlight">\(\frac{0}{0}\)</span>- og <span class="math notranslate nohighlight">\(\frac{\infty}{\infty}\)</span>-uttrykk.</p>
+<div class="def admonition">
+<p class="admonition-title">L’Hôpitals regel</p>
+<p>Dersom grenseverdien</p>
+<p><span class="math notranslate nohighlight">\(\lim_{x\to a}\frac{f(x)}{g(x)}\)</span></p>
+<p>leder til et <span class="math notranslate nohighlight">\(\frac{0}{0}\)</span>- og <span class="math notranslate nohighlight">\(\frac{\infty}{\infty}\)</span>-uttrykk, så kan grenseverdien beregnes ved</p>
+<p><span class="math notranslate nohighlight">\(\lim_{x\to a}\frac{f(x){g(x)}}=\lim_{x\to a}\frac{f'(x)}{g'(x)}\)</span></p>
+</div>
+<p>Vi tar noen eksempler:</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 1</p>
+<p>Finn <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\to 3}\frac{2(x^2-9)}{x-3}}\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Teller og nevner går mot null når <span class="math notranslate nohighlight">\(x\)</span> går mot 3. På siden om grenseverdier beregnet vi denne grenseverdien ved å faktorisere teller og nevner og forkorte ved faktoren <span class="math notranslate nohighlight">\(x-3\)</span>. Nå kan vi gjøre det med L’Hôpitals regel.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\lim_{x\to 3}\frac{2(x^2-9)}{x-3}&amp;=\lim_{x\to 3}\frac{(2(x^2-9))'}{(x-3)'} \\
+&amp;=\lim_{x\to 3}\frac{4x}{1} \\
+&amp;=\frac{4\cdot 3}{1} \\
+&amp;=12
+\end{align}\)</span></p>
+</div>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 2</p>
+<p>Finn <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\to 0}\frac{e^x-1}{2x}}\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Teller og nevner går mot null når <span class="math notranslate nohighlight">\(x\)</span> går mot 0. Bruker L’Hôpitals regel.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\lim_{x\to 0}\frac{e^x-1}{2x}&amp;=\lim_{x\to 0}\frac{(e^x-1)'}{(2x)'} \\
+&amp;= \lim_{x\to 0}\frac{e^x}{2} \\
+&amp;= \lim_{x\to 0}\frac{e^0}{2} \\
+&amp;= \frac{1}{2}
+\end{align}\)</span></p>
+</div>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 3</p>
+<p>Finn <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\to \infty}\frac{e^x}{x^2}}\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Teller og nevner går mot <span class="math notranslate nohighlight">\(\infty\)</span> når <span class="math notranslate nohighlight">\(x\)</span> går mot <span class="math notranslate nohighlight">\(\infty\)</span>. Bruker L’Hôpitals regel.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\lim_{x\to \infty}\frac{e^x}{x^2}&amp;=\lim_{x\to \infty}\frac{(e^x)'}{(x^2)'} \\
+&amp;= \lim_{x\to \infty}\frac{e^x}{2x}  \quad \text{går mot uendelig, deriverer en gang til} \\
+&amp;= \lim_{x\to \infty}\frac{(e^x)'}{(2x)'} \\
+&amp;= \lim_{x\to \infty}\frac{e^x}{2} \\
+&amp;= \infty
+\end{align}\)</span></p>
+<p>Grenseverdien går mot uendelig. Denne grenseverdien kunne vi ikke beregnet med vanlige metoder.</p>
+</div>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 4</p>
+<p>Finn <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\to \infty}e^{-x}\cdot \ln x^2}\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Starter med å skrive om uttrykket</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to \infty}e^{-x}\cdot \ln(x^2)=\lim_{x\to \infty}\frac{\ln x^2}{e^x}=\lim_{x\to \infty}\frac{2\ln x}{e^x}\)</span></p>
+<p>Teller og nevner går mot <span class="math notranslate nohighlight">\(\infty\)</span> når <span class="math notranslate nohighlight">\(x\)</span> går mot <span class="math notranslate nohighlight">\(\infty\)</span>. Bruker L’Hôpitals regel.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\lim_{x\to \infty}\frac{2\ln x}{e^x}&amp;=\lim_{x\to \infty}\frac{(2\ln x)'}{(e^x)'} \\
+&amp;= \lim_{x\to \infty}\frac{\frac{1}{x}}{e^x} \\
+&amp;= \lim_{x\to 0}\frac{0}{\infty} \\
+&amp;= 0
+\end{align}\)</span></p>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
