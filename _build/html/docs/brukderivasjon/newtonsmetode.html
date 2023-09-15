@@ -382,6 +382,7 @@ document.write(`
 \[x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}\]</div>
 <p>Vi starter metoden ved å velge en starttilnærming <span class="math notranslate nohighlight">\(x_0\)</span> og avslutter når <span class="math notranslate nohighlight">\(f(x_{n+1})\)</span> er tilstrekkelig nærme null.</p>
 </div>
+<p>Under er det vist hvordan vi kan implementere algoritmen på en enkel måte med python. For å bruke programmet legger vi inn en funksjon med riktig derivert.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>               <span class="c1"># Funksjonen</span>
@@ -390,7 +391,7 @@ document.write(`
 <span class="k">def</span> <span class="nf">df</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>              <span class="c1"># Den deriverte</span>
     <span class="k">return</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span>
 
-<span class="n">toleranse</span> <span class="o">=</span> <span class="mf">1E-8</span>
+<span class="n">toleranse</span> <span class="o">=</span> <span class="mf">1E-8</span>        <span class="c1"># Betyr det samme som 1*10^-8</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span>                 <span class="c1"># Første tilnærming</span>
 
 <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">toleranse</span><span class="p">:</span>
@@ -434,6 +435,8 @@ document.write(`
 </div>
 </div>
 </div>
+<p>For å avgjøre hva som er en fornuftig startverdi for <span class="math notranslate nohighlight">\(x_0\)</span> kan det lønne seg å tegne opp grafen først. Da vil du også se om du må lete etter flere nullpunkt.</p>
+<p>For mer informasjon anbefales siden <a class="reference external" href="https://realprog.no/docs/tema4_numeriske_metoder/likninger.html">realprog.no</a>.</p>
 </section>
 
     <script type="text/x-thebe-config">
