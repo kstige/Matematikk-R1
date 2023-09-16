@@ -63,6 +63,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/funksjonsdrofting/omvendtefunksjoner';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -357,6 +359,35 @@ document.write(`
 <li><p>kunne finne den omvendte funksjonen</p></li>
 <li><p>derivere omvendte funksjoner</p></li>
 </ul>
+</div>
+<p>I matematikk har vi mange operasjoner som er omvendt (invers) av hverandre. For eksempel vil addisjon og subtraksjon, multiplikasjon og divisjon være omvendte operasjoner. Dersom vi tar utgangspunkt i en størrelse <span class="math notranslate nohighlight">\(x\)</span>, så vil <span class="math notranslate nohighlight">\(x +5-5\)</span> og <span class="math notranslate nohighlight">\(\frac{x+5}{5} føre oss tilbake til \)</span>x$.</p>
+<p>Det vil være praktis å kunne gjøre noe tilsvarende for funksjoner, der en funksjon fører oss en vei og en annen funksjon fører oss tilbake.</p>
+<p>Vi kan for eksempel tenke oss en plante som er 5 cm da den plantes og vokser med 3 cm hver uke. En funksjon for høyden vil være <span class="math notranslate nohighlight">\(h(x)=3x +5\)</span>, der <span class="math notranslate nohighlight">\(x\)</span> er antall uker. Den omvendte funksjonen til <span class="math notranslate nohighlight">\(h\)</span> er funksjonen som gir oss antall uker når vi vet høyden. Vi skal snart vise at den funksjonen er <span class="math notranslate nohighlight">\(u(x)=\frac{x-5}{3}\)</span> der <span class="math notranslate nohighlight">\(x\)</span> er høyden i cm. En enkel test viser at:</p>
+<div class="math notranslate nohighlight">
+\[h(4)=3\cdot 4+5=17\]</div>
+<div class="math notranslate nohighlight">
+\[u(17)=\frac{17-5}{3}\]</div>
+<p>Funksjonen <span class="math notranslate nohighlight">\(u(h)\)</span> fører oss altså tilbake til antall uker.</p>
+<p>Før vi ser på flere eksempler definerer vi formelt hva vi mener med omvendte funksjoner.</p>
+<div class="def admonition">
+<p class="admonition-title">Omvendte funksjoner</p>
+<p>To funksjoner <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(g\)</span> er omvendte funksjoner dersom</p>
+<p><span class="math notranslate nohighlight">\(f(g(x))=x\)</span> for alle <span class="math notranslate nohighlight">\(x\in D_g\)</span></p>
+<p><span class="math notranslate nohighlight">\(g(f(x))=x\)</span> for alle <span class="math notranslate nohighlight">\(x\in D_f\)</span></p>
+<p>Skrivemåten <span class="math notranslate nohighlight">\(f(g(x))\)</span> betyr at vi setter hele funksjonsuttrykket for <span class="math notranslate nohighlight">\(g(x)\)</span> inn som <span class="math notranslate nohighlight">\(x\)</span> i funksjonsuttrykket til <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Det er også vanlig å kalle omvendte funksjoner for inverse funksjoner. Da vil man også se skrivemåten <span class="math notranslate nohighlight">\(f^{-1}\)</span> for den omvendte funksjonen. Det er da viktig å være klar over at det ikke betyr det samme som <span class="math notranslate nohighlight">\((f(x))^{-1}=\frac{1}{f(x)}\)</span>.</p>
+</div>
+<p>Vi skal nå bruke funksjonene <span class="math notranslate nohighlight">\(h\)</span> og <span class="math notranslate nohighlight">\(u\)</span> over som et eksempel på hvordan definisjonen fungerer.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 1</p>
+<p>Vis at funksjonene <span class="math notranslate nohighlight">\(h(x)=3x+5\)</span> og <span class="math notranslate nohighlight">\(u(x)=\frac{x-5}{3}\)</span> er omvendte funksjoner.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Vi ser at</p>
+<p><span class="math notranslate nohighlight">\(h(u(x))=3u+5=3\cdot \frac{x-5}{3} + 5 = x-5+5=x\)</span></p>
+<p><span class="math notranslate nohighlight">\(u(h(x))=\frac{h-5}{3}=\frac{3x+5-5}{3}=\frac{3x}{3}=x\)</span></p>
+<p>Det betyr at <span class="math notranslate nohighlight">\(h\)</span> og <span class="math notranslate nohighlight">\(u\)</span> er omvendte funksjoner.</p>
+</div>
 </div>
 </section>
 
