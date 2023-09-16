@@ -13,32 +13,31 @@ parts:
   - file: docs/algebralikninger/logaritmesetningene
   - file: docs/algebralikninger/loglikninger
   - file: docs/algebralikninger/eksponentiallikninger
-  - file: docs/algebralikninger/numerisklosning
-- caption: 2 - Derivasjon - teori
+- caption: 2 - Derivasjon
   numbered: 1
   chapters:
-  - file: docs/grenserderivasjon/grenseverdier
-  - file: docs/grenserderivasjon/asymptoter
-  - file: docs/grenserderivasjon/kontinuitet
-  - file: docs/grenserderivasjon/defderivert
-  - file: docs/grenserderivasjon/derivasjonsregler
-  - file: docs/grenserderivasjon/numeriskderivasjon
-- caption: 3 - Derivasjon - anvendelser
+  - file: docs/derivasjon/grenseverdier
+  - file: docs/derivasjon/asymptoter
+  - file: docs/derivasjon/kontinuitet
+  - file: docs/derivasjon/defderivert
+  - file: docs/derivasjon/derivasjonsregler
+  - file: docs/derivasjon/lhopitalsregel
+- caption: 3 - Funksjonsdrøfting
   numbered: 1
   chapters:
-  - file: docs/brukderivasjon/kritiskepunkt
-  - file: docs/brukderivasjon/andrederivert
-  - file: docs/brukderivasjon/funksjonsdrofting
-  - file: docs/brukderivasjon/tangenter
-  - file: docs/brukderivasjon/newtonsmetode
-  - file: docs/brukderivasjon/lhopitalsregel
-- caption: 4 - Funksjoner og modeller
+  - file: docs/funksjonsdrofting/kritiskepunkt
+  - file: docs/funksjonsdrofting/andrederivert
+  - file: docs/funksjonsdrofting/funksjonsdrofting
+  - file: docs/funksjonsdrofting/tangenter
+  - file: docs/funksjonsdrofting/omvendtefunksjoner
+  - file: docs/funksjonsdrofting/vekstmodeller
+- caption: 4 - Numeriske metoder og modeller
   numbered: 1
   chapters:
-  - file: docs/funksjonermodeller/omvendtefunksjoner
-  - file: docs/funksjonermodeller/viktigefunksjoner
-  - file: docs/funksjonermodeller/vekstmodeller
-  - file: docs/funksjonermodeller/reelledatasett
+  - file: docs/numerikkmodeller/numerisklosning
+  - file: docs/numerikkmodeller/newtonsmetode
+  - file: docs/numerikkmodeller/numeriskderivasjon
+  - file: docs/numerikkmodeller/reelledatasett
 - caption: 5 - Vektorer
   numbered: 1
   chapters:
