@@ -37,7 +37,7 @@ parts:
   - file: docs/numerikkmodeller/numerisklosning
   - file: docs/numerikkmodeller/newtonsmetode
   - file: docs/numerikkmodeller/numeriskderivasjon
-  - file: docs/numerikkmodeller/vekstmodeller
+  - file: docs/numerikkmodeller/regresjon
   - file: docs/numerikkmodeller/eulersmetode
   - file: docs/numerikkmodeller/reelledatasett
 - caption: 5 - Vektorer
