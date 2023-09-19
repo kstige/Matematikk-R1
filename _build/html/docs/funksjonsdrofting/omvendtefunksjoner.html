@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="nb-NO" >
 
   <head>
     <meta charset="utf-8" />
@@ -55,6 +55,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -67,11 +68,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/funksjonsdrofting/omvendtefunksjoner';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6. Funksjoner og vekst" href="vekstmodeller.html" />
+    <link rel="search" title="Søk" href="../../search.html" />
+    <link rel="next" title="6. Viktige funksjoner" href="viktigefunksjoner.html" />
     <link rel="prev" title="4. Tangenter" href="tangenter.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="nb-NO"/>
   </head>
   
   
@@ -176,14 +177,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="funksjonsdrofting.html">3. Funksjonsdrøfting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tangenter.html">4. Tangenter</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Omvendte funksjoner</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vekstmodeller.html">6. Funksjoner og vekst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viktigefunksjoner.html">6. Viktige funksjoner</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Numeriske metoder og modeller</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../numerikkmodeller/numerisklosning.html">1. Numerisk løsning av likninger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../numerikkmodeller/newtonsmetode.html">2. Newtons metode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../numerikkmodeller/numeriskderivasjon.html">3. Numerisk derivasjon</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../numerikkmodeller/reelledatasett.html">4. Reelle datasett</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerikkmodeller/eulersmetode.html">4. Eulers metode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerikkmodeller/reelledatasett.html">5. Reelle datasett</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">5 - Vektorer</span></p>
 <ul class="nav bd-sidenav">
@@ -312,7 +314,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Søk" aria-label="Søk" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
@@ -509,7 +511,7 @@ x &amp;= y^2-2
 </section>
 <section id="eksistens-av-omvendte-funksjoner">
 <h2>Eksistens av omvendte funksjoner<a class="headerlink" href="#eksistens-av-omvendte-funksjoner" title="Permalink to this heading">#</a></h2>
-<p>I det siste eksempelet over så vi at vi måtte innskrenke definisjonsmengden til funksjonen <span class="math notranslate nohighlight">\(g(x)=x^2-2\)</span> for at den skulle kunne være den omvendte funksjonen til <span class="math notranslate nohighlight">\(f(x)=\sqrt{x+2}\)</span>. Grunnen til det ser vi om vi prøver å speile hele <span class="math notranslate nohighlight">\(g(x)\)</span> om linja <span class="math notranslate nohighlight">\(y=x\)</span>. Det kan vi gjøre i GeoGebra med verktøyet “Speil objekt om linje”. Da får vi den røde kurva i grafen under</p>
+<p>I det siste eksempelet over så vi at vi måtte innskrenke definisjonsmengden til funksjonen <span class="math notranslate nohighlight">\(g(x)=x^2-2\)</span> for at den skulle kunne være den omvendte funksjonen til <span class="math notranslate nohighlight">\(f(x)=\sqrt{x+2}\)</span>. Grunnen til det ser vi om vi prøver å speile hele <span class="math notranslate nohighlight">\(g(x)\)</span> om linja <span class="math notranslate nohighlight">\(y=x\)</span>. Det kan vi gjøre i GeoGebra med verktøyet «Speil objekt om linje». Da får vi den røde kurva i grafen under</p>
 <figure class="align-default">
 <a class="reference internal image-reference" href="../../_images/speilinggraf.png"><img alt="../../_images/speilinggraf.png" src="../../_images/speilinggraf.png" style="width: 532.8000000000001px; height: 362.40000000000003px;" /></a>
 </figure>
@@ -519,7 +521,7 @@ x &amp;= y^2-2
 <p class="admonition-title">Eksistens av omvendte funksjoner</p>
 <p>Funksjoner <span class="math notranslate nohighlight">\(f\)</span> som er en-tydig har omvendte funksjoner.</p>
 <p>At en funksjon <span class="math notranslate nohighlight">\(f\)</span> er en-tydig betyr at det for hver <span class="math notranslate nohighlight">\(x\)</span>-verdi er kun en <span class="math notranslate nohighlight">\(y\)</span>-verdi og for hver <span class="math notranslate nohighlight">\(y\)</span>-verdi er kun en <span class="math notranslate nohighlight">\(x\)</span>-verdi. Eller sagt med symbol</p>
-<p><span class="math notranslate nohighlight">\(x_1 \neq x_2 \Rightarrow \)</span>f(x_1) \neq f(x_2)<span class="math notranslate nohighlight">\( for alle \)</span>x_1, x_2 \in D_f$.</p>
+<p><span class="math notranslate nohighlight">\(x_1 \neq x_2 \Rightarrow f(x_1) \neq f(x_2)\)</span> for alle <span class="math notranslate nohighlight">\(x_1, x_2 \in D_f\)</span>.</p>
 <p>Dersom en funksjon skal være en-tydig kan den ikke ha topp- eller bunnpunkt. Det vil si at den deriverte ikke kan skifte fortegn. Det vil si at funksjonen enten må være strengt voksende eller strengt avtakende.</p>
 </div>
 <p>Litt mindre formelt kan vi si at hvis ingen horisontal linje krysser grafen til funksjonen i mer enn et punkt, så vil funksjonen ha en omvendt funksjon.</p>
@@ -578,7 +580,7 @@ x &amp;= y^2-2
 <p><span class="math notranslate nohighlight">\(g'(3)=\frac{1}{f'(1)}=\frac{1}{3\cdot 1^2+2\cdot 1+1}=\frac{1}{6}\)</span></p>
 <p><strong>Metode 2</strong></p>
 <p><span class="math notranslate nohighlight">\(g'(3)=\frac{1}{f'(g(3))}=\frac{1}{f'(1)}=\frac{1}{3\cdot 1^2+2\cdot 1+1}=\frac{1}{6}\)</span></p>
-<p>Vi ser at eneste forskjellen egentlig er den første mellomregningen som “forklarer” bytte mellom <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p>Vi ser at eneste forskjellen egentlig er den første mellomregningen som «forklarer» bytte mellom <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span>.</p>
 </div>
 </div>
 <div class="eksempel admonition">
@@ -632,16 +634,16 @@ x &amp;= y^2-2
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-subtitle">forrige</p>
         <p class="prev-next-title"><span class="section-number">4. </span>Tangenter</p>
       </div>
     </a>
     <a class="right-next"
-       href="vekstmodeller.html"
+       href="viktigefunksjoner.html"
        title="next page">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Funksjoner og vekst</p>
+        <p class="prev-next-subtitle">neste</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Viktige funksjoner</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

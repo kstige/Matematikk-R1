@@ -53,6 +53,7 @@ sphinx:
   config:
     html_theme_options:
       repository_provider: github
+    language: nb_NO
 
 
 # Add GitHub buttons to your book
