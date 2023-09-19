@@ -30,14 +30,13 @@ parts:
   - file: docs/funksjonsdrofting/funksjonsdrofting
   - file: docs/funksjonsdrofting/tangenter
   - file: docs/funksjonsdrofting/omvendtefunksjoner
-  - file: docs/funksjonsdrofting/viktigefunksjoner
 - caption: 4 - Numeriske metoder og modeller
   numbered: 1
   chapters:
   - file: docs/numerikkmodeller/numerisklosning
   - file: docs/numerikkmodeller/newtonsmetode
   - file: docs/numerikkmodeller/numeriskderivasjon
-  - file: docs/numerikkmodeller/regresjon
+  - file: docs/numerikkmodeller/vekstmodeller
   - file: docs/numerikkmodeller/eulersmetode
   - file: docs/numerikkmodeller/reelledatasett
 - caption: 5 - Vektorer
