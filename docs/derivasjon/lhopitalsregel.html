@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>2. Regne med vektorer &#8212; Matematikk R1</title>
+    <title>6. L’Hôpitals regel &#8212; Matematikk R1</title>
   
   
   
@@ -64,11 +64,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/vektorer/regnevektorer';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/derivasjon/lhopitalsregel';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Søk" href="../../search.html" />
-    <link rel="next" title="3. Regne med vektorer" href="vektorlikninger.html" />
-    <link rel="prev" title="1. Vektorer" href="vektorer.html" />
+    <link rel="next" title="1. Kritiske punkt" href="../funksjonsdrofting/kritiskepunkt.html" />
+    <link rel="prev" title="5. Derivasjonsregler" href="derivasjonsregler.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb-NO"/>
   </head>
@@ -160,13 +162,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../algebralikninger/eksponentiallikninger.html">5. Eksponentiallikninger</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2 - Derivasjon</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../derivasjon/grenseverdier.html">1. Grenseverdier</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../derivasjon/asymptoter.html">2. Asymptoter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../derivasjon/kontinuitet.html">3. Kontinuitet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../derivasjon/defderivert.html">4. Definisjon av den deriverte</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../derivasjon/derivasjonsregler.html">5. Derivasjonsregler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../derivasjon/lhopitalsregel.html">6. L’Hôpitals regel</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="grenseverdier.html">1. Grenseverdier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="asymptoter.html">2. Asymptoter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kontinuitet.html">3. Kontinuitet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defderivert.html">4. Definisjon av den deriverte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivasjonsregler.html">5. Derivasjonsregler</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. L’Hôpitals regel</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Funksjonsdrøfting</span></p>
 <ul class="nav bd-sidenav">
@@ -186,14 +188,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../numerikkmodeller/reelledatasett.html">5. Reelle datasett</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">5 - Vektorer</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="vektorer.html">1. Vektorer</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Regne med vektorer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vektorlikninger.html">3. Regne med vektorer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="skalarprodukt.html">4. Skalarprodukt</a></li>
-<li class="toctree-l1"><a class="reference internal" href="geometri.html">5. Anvendelser i geometri</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parameterframstilling.html">6. Parameterframstilling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kurver.html">7. Kurver</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../vektorer/vektorer.html">1. Vektorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vektorer/regnevektorer.html">2. Regne med vektorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vektorer/vektorlikninger.html">3. Regne med vektorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vektorer/skalarprodukt.html">4. Skalarprodukt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vektorer/geometri.html">5. Anvendelser i geometri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vektorer/parameterframstilling.html">6. Parameterframstilling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vektorer/kurver.html">7. Kurver</a></li>
 </ul>
 
     </div>
@@ -248,7 +250,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/docs/vektorer/regnevektorer.ipynb" target="_blank"
+      <li><a href="../../_sources/docs/derivasjon/lhopitalsregel.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -328,7 +330,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Regne med vektorer</h1>
+    <h1>L’Hôpitals regel</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -342,8 +344,89 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="regne-med-vektorer">
-<h1><span class="section-number">2. </span>Regne med vektorer<a class="headerlink" href="#regne-med-vektorer" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="l-hopitals-regel">
+<h1><span class="section-number">6. </span>L’Hôpitals regel<a class="headerlink" href="#l-hopitals-regel" title="Permalink to this heading">#</a></h1>
+<div class="utbytte dropdown admonition">
+<p class="admonition-title">Læringsutbytte</p>
+<p>I dette temaet arbeider vi med kompetansemålet:</p>
+<ul class="simple">
+<li><p>forstå begrepene vekstfart, grenseverdi, derivasjon og kontinuitet, og bruke disse for å løse praktiske problemer</p></li>
+</ul>
+<p>Etter å ha arbeidet med temaet, skal du:</p>
+<ul class="simple">
+<li><p>beregne grenseverdier ved å bruke L’Hôpitals regel</p></li>
+</ul>
+</div>
+<p>Stoffet på denne siden er litt på grensen til å være R1-pensum. Det kan tolkes inn under kompetansemålet over, men må ikke nødvendigvis bli det.</p>
+<p>L’Hôpitals regel er en metode (som bevises på universitet) for å beregne grenseverdier av <span class="math notranslate nohighlight">\(\frac{0}{0}\)</span>- og <span class="math notranslate nohighlight">\(\frac{\infty}{\infty}\)</span>-uttrykk.</p>
+<div class="def admonition">
+<p class="admonition-title">L’Hôpitals regel</p>
+<p>Dersom grenseverdien</p>
+<p><span class="math notranslate nohighlight">\(\lim_{x\to a}\frac{f(x)}{g(x)}\)</span></p>
+<p>leder til et <span class="math notranslate nohighlight">\(\frac{0}{0}\)</span>- og <span class="math notranslate nohighlight">\(\frac{\infty}{\infty}\)</span>-uttrykk, så kan grenseverdien beregnes ved</p>
+<p><span class="math notranslate nohighlight">\(\lim_{x\to a}\frac{f(x){g(x)}}=\lim_{x\to a}\frac{f'(x)}{g'(x)}\)</span></p>
+</div>
+<p>Vi tar noen eksempler:</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 1</p>
+<p>Finn <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\to 3}\frac{2(x^2-9)}{x-3}}\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Teller og nevner går mot null når <span class="math notranslate nohighlight">\(x\)</span> går mot 3. På siden om grenseverdier beregnet vi denne grenseverdien ved å faktorisere teller og nevner og forkorte ved faktoren <span class="math notranslate nohighlight">\(x-3\)</span>. Nå kan vi gjøre det med L’Hôpitals regel.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\lim_{x\to 3}\frac{2(x^2-9)}{x-3}&amp;=\lim_{x\to 3}\frac{(2(x^2-9))'}{(x-3)'} \\
+&amp;=\lim_{x\to 3}\frac{4x}{1} \\
+&amp;=\frac{4\cdot 3}{1} \\
+&amp;=12
+\end{align}\)</span></p>
+</div>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 2</p>
+<p>Finn <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\to 0}\frac{e^x-1}{2x}}\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Teller og nevner går mot null når <span class="math notranslate nohighlight">\(x\)</span> går mot 0. Bruker L’Hôpitals regel.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\lim_{x\to 0}\frac{e^x-1}{2x}&amp;=\lim_{x\to 0}\frac{(e^x-1)'}{(2x)'} \\
+&amp;= \lim_{x\to 0}\frac{e^x}{2} \\
+&amp;= \lim_{x\to 0}\frac{e^0}{2} \\
+&amp;= \frac{1}{2}
+\end{align}\)</span></p>
+</div>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 3</p>
+<p>Finn <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\to \infty}\frac{e^x}{x^2}}\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Teller og nevner går mot <span class="math notranslate nohighlight">\(\infty\)</span> når <span class="math notranslate nohighlight">\(x\)</span> går mot <span class="math notranslate nohighlight">\(\infty\)</span>. Bruker L’Hôpitals regel.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\lim_{x\to \infty}\frac{e^x}{x^2}&amp;=\lim_{x\to \infty}\frac{(e^x)'}{(x^2)'} \\
+&amp;= \lim_{x\to \infty}\frac{e^x}{2x}  \quad \text{går mot uendelig, deriverer en gang til} \\
+&amp;= \lim_{x\to \infty}\frac{(e^x)'}{(2x)'} \\
+&amp;= \lim_{x\to \infty}\frac{e^x}{2} \\
+&amp;= \infty
+\end{align}\)</span></p>
+<p>Grenseverdien går mot uendelig. Denne grenseverdien kunne vi ikke beregnet med vanlige metoder.</p>
+</div>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 4</p>
+<p>Finn <span class="math notranslate nohighlight">\(\displaystyle{\lim_{x\to \infty}e^{-x}\cdot \ln x^2}\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Starter med å skrive om uttrykket</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to \infty}e^{-x}\cdot \ln(x^2)=\lim_{x\to \infty}\frac{\ln x^2}{e^x}=\lim_{x\to \infty}\frac{2\ln x}{e^x}\)</span></p>
+<p>Teller og nevner går mot <span class="math notranslate nohighlight">\(\infty\)</span> når <span class="math notranslate nohighlight">\(x\)</span> går mot <span class="math notranslate nohighlight">\(\infty\)</span>. Bruker L’Hôpitals regel.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\lim_{x\to \infty}\frac{2\ln x}{e^x}&amp;=\lim_{x\to \infty}\frac{(2\ln x)'}{(e^x)'} \\
+&amp;= \lim_{x\to \infty}\frac{\frac{1}{x}}{e^x} \\
+&amp;= \lim_{x\to 0}\frac{0}{\infty} \\
+&amp;= 0
+\end{align}\)</span></p>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -359,7 +442,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./docs\vektorer"
+            path: "./docs\derivasjon"
         },
         predefinedOutput: true
     }
@@ -378,20 +461,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="vektorer.html"
+       href="derivasjonsregler.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">forrige</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Vektorer</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Derivasjonsregler</p>
       </div>
     </a>
     <a class="right-next"
-       href="vektorlikninger.html"
+       href="../funksjonsdrofting/kritiskepunkt.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">neste</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Regne med vektorer</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Kritiske punkt</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>5. Eksponentiallikninger &#8212; Matematikk R1</title>
+    <title>3. Kontinuitet &#8212; Matematikk R1</title>
   
   
   
@@ -66,11 +66,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/algebralikninger/eksponentiallikninger';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/derivasjon/kontinuitet';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Søk" href="../../search.html" />
-    <link rel="next" title="1. Grenseverdier" href="../derivasjon/grenseverdier.html" />
-    <link rel="prev" title="4. Logaritmelikninger" href="loglikninger.html" />
+    <link rel="next" title="4. Definisjon av den deriverte" href="defderivert.html" />
+    <link rel="prev" title="2. Asymptoter" href="asymptoter.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb-NO"/>
   </head>
@@ -154,21 +154,21 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">1 - Algebra og likninger</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="potensrot.html">1. Potenser og røtter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="logaritmer.html">2. Logaritmer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="logaritmesetningene.html">3. Logaritmesetningene</a></li>
-<li class="toctree-l1"><a class="reference internal" href="loglikninger.html">4. Logaritmelikninger</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Eksponentiallikninger</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../algebralikninger/potensrot.html">1. Potenser og røtter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algebralikninger/logaritmer.html">2. Logaritmer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algebralikninger/logaritmesetningene.html">3. Logaritmesetningene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algebralikninger/loglikninger.html">4. Logaritmelikninger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algebralikninger/eksponentiallikninger.html">5. Eksponentiallikninger</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2 - Derivasjon</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../derivasjon/grenseverdier.html">1. Grenseverdier</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../derivasjon/asymptoter.html">2. Asymptoter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../derivasjon/kontinuitet.html">3. Kontinuitet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../derivasjon/defderivert.html">4. Definisjon av den deriverte</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../derivasjon/derivasjonsregler.html">5. Derivasjonsregler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../derivasjon/lhopitalsregel.html">6. L’Hôpitals regel</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="grenseverdier.html">1. Grenseverdier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="asymptoter.html">2. Asymptoter</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Kontinuitet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defderivert.html">4. Definisjon av den deriverte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivasjonsregler.html">5. Derivasjonsregler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lhopitalsregel.html">6. L’Hôpitals regel</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Funksjonsdrøfting</span></p>
 <ul class="nav bd-sidenav">
@@ -250,7 +250,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/docs/algebralikninger/eksponentiallikninger.ipynb" target="_blank"
+      <li><a href="../../_sources/docs/derivasjon/kontinuitet.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -332,7 +332,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Eksponentiallikninger</h1>
+    <h1>Kontinuitet</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -342,7 +342,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videoer">Videoer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delt-forskrift">Delt forskrift</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Kontinuitet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absoluttverdifunksjonen">Absoluttverdifunksjonen</a></li>
 </ul>
             </nav>
         </div>
@@ -354,173 +356,178 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="eksponentiallikninger">
-<h1><span class="section-number">5. </span>Eksponentiallikninger<a class="headerlink" href="#eksponentiallikninger" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="kontinuitet">
+<h1><span class="section-number">3. </span>Kontinuitet<a class="headerlink" href="#kontinuitet" title="Permalink to this heading">#</a></h1>
 <div class="utbytte dropdown admonition">
 <p class="admonition-title">Læringsutbytte</p>
 <p>I dette temaet arbeider vi med kompetansemålet:</p>
 <ul class="simple">
-<li><p>utforske og forstå regneregler for potenser og logaritmer, og bruke ulike strategier for å løse eksponentialligninger og logaritmeligninger</p></li>
+<li><p>forstå begrepene vekstfart, grenseverdi, derivasjon og kontinuitet, og bruke disse for å løse praktiske problemer</p></li>
+<li><p>bruke ulike strategier for å utforske og bestemme grenseverdier til funksjoner, og utforske og argumentere for anvendelser av grenseverdier</p></li>
+<li><p>gjøre rede for og argumentere for om en funksjon er kontinuerlig eller diskontinuerlig i et punkt i et definisjonsområde, og gi eksempler på anvendelser av diskontinuerlige funksjoner</p></li>
 </ul>
 <p>Etter å ha arbeidet med temaet, skal du:</p>
 <ul class="simple">
-<li><p>kunne forklare hva en eksponentiallikning er</p></li>
-<li><p>anvende ulike strategier for å løse eksponentiallikninger (blant annet ved hjelp av logaritmer)</p></li>
-<li><p>kunne forklare ekvivalens og implikasjon i logaritmiske likninger</p></li>
-<li><p>bruke digitale hjelpemidler for å løse eksponentiallikninger</p></li>
+<li><p>kunne forklare hva vi mener med at en funksjon er kontinuerlig i et punkt og en kontinuerlig funksjon</p></li>
+<li><p>avgjøre om en funksjon er kontinuerlig i et punkt og om en funksjon er kontinuerlig</p></li>
+<li><p>bruke og forstå funksjonsuttrykk for funksjoner med delt forskrift</p></li>
+<li><p>kunne tegne funksjoner med delt forskrift digitalt</p></li>
+<li><p>forklare hva vi mener med et bruddpunkt</p></li>
+<li><p>kjenne til absoluttverdifunksjonen</p></li>
 </ul>
 </div>
-<p>Eksponentiallikninger er likninger der den ukjente er i eksponenten i en potens. De enkleste eksponentiallikningene kan vi løse ved å gjøre høyre og venstre side om til en potens med samme grunntall. Da kan vi bruke følgende resultat som vi kjenner en tilsvarende form av fra logaritmelikninger.</p>
+<p>Vi har til nå stort sett på funksjoner som <em>oppfører seg fint</em>. Et unntak er de rasjonale funksjonene som gjerne gjør et plutselig hopp fra <span class="math notranslate nohighlight">\(-\infty\)</span> til <span class="math notranslate nohighlight">\(\infty\)</span> (eller motsatt) når vi passerer en vertikal asymptote. Vi har også sett på rasjonale funksjoner uten asymptoter, men som har et punkt der de ikke er definert. Allikevel vil vi si at disse funksjonene oppfører seg normalt innenfor det området der de er definert. Nå skal vi se på noen funksjoner som kan gjøre plutselige hopp eller ha <em>knekker</em> innenfor definisjonsområdet sitt.</p>
+<section id="delt-forskrift">
+<h2>Delt forskrift<a class="headerlink" href="#delt-forskrift" title="Permalink to this heading">#</a></h2>
+<p>Vi har brukt begrepet <em>definisjonsmengde</em> til å si noe om området der en funksjon er definert. Men hva skjer hvis vi gir funksjonen ulike funksjonsuttrykk innefor ulike deler av dette området?</p>
 <div class="def admonition">
-<p class="admonition-title">Like grunntall</p>
-<p>Dersom <span class="math notranslate nohighlight">\(a^x=a^b\)</span>, så må <span class="math notranslate nohighlight">\(x=b\)</span>.</p>
+<p class="admonition-title">Delt forksrift</p>
+<p>En funksjon med delt forskrift har ulikt funksjonsuttrykk for ulike intervaller i definisjonsmengden.</p>
+<p>Punktene der funksjonsuttrykket endres kaller vi bruddpunkter til funksjonen.</p>
 </div>
 <div class="eksempel admonition">
-<p class="admonition-title">Eksempel 1</p>
-<p>Løs likningene:</p>
-<p><strong>a)</strong> <span class="math notranslate nohighlight">\(8^x = 512\)</span></p>
-<p><strong>b)</strong> <span class="math notranslate nohighlight">\(e^{2x} = \sqrt[3]{e^4}\)</span></p>
-<div class="ekslos dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p><strong>a)</strong></p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-8^x &amp;= 512 \\
-8^x &amp;= 8^3 \\
-x &amp;= 3
-\end{align}\)</span></p>
-<p><strong>b)</strong></p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-e^{2x} &amp;= \sqrt[3]{e^4} \\
-e^{2x} &amp;= e^{\frac{4}{3}} \\
-2x &amp;= \frac{4}{3} \\
-x &amp;= \frac{2}{3}
-\end{align}\)</span></p>
-</div>
-<div class="videolos dropdown admonition">
-<p class="admonition-title">Videoløsning</p>
-<iframe width="680" height="350" src="https://www.youtube.com/embed/WiJI5_21dPY?si=Nl-utBl1FQjRcNMS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</div>
-<p>For de fleste eskponentiallikninger vil vi imidlertid være avhengig av logaritmer for å løse likningene for hånd. Logaritmen bruker vi for å ta den ukjente ned fra eksponenten. Dette fungerer siden <span class="math notranslate nohighlight">\(\ln 4^x=x\ln 4\)</span> i følge tredje logaritmesetning. Om ikke grunntallet i potensen tilsier at det er lurt å velge enten tierlogaritmen eller den naturlige logaritmen, så kan vi i utgangspunktet velge akkurat den logaritmen vi vil.</p>
-<div class="eksempel admonition">
-<p class="admonition-title">Eksempel 2</p>
-<p>Løs likningen <span class="math notranslate nohighlight">\(3^x = 8\)</span>.</p>
-<div class="ekslos dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-3^x &amp;= 8 \\
-\lg 3^x &amp;= \lg 8 \\
-x\lg 3 &amp;= \lg 8 \\
-x &amp;= \frac{\lg 8}{\lg 3}
-\end{align}\)</span></p>
-<p>Oppgava kan også løses ved å bruke <span class="math notranslate nohighlight">\(\ln\)</span>.</p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-3^x &amp;= 8 \\
-\ln 3^x &amp;= \ln 8 \\
-x\ln 3 &amp;= \ln 8 \\
-x &amp;= \frac{\ln 8}{\ln 3}
-\end{align}\)</span></p>
-<p>Vi ser at svaret ser ulikt ut, men om vi finner tilnærmet verdi for de to uttrykkene, så ser vi at <span class="math notranslate nohighlight">\(\frac{\lg 8}{\lg 3}=\frac{\ln 8}{\ln 3}\)</span>. Det her kan vi også vise ved å ta i bruk at <span class="math notranslate nohighlight">\(\lg a = \frac{\ln a}{\ln 10}\)</span>.</p>
-</div>
-<div class="videolos dropdown admonition">
-<p class="admonition-title">Videoløsning</p>
-<iframe width="680" height="350" src="https://www.youtube.com/embed/dBNLmrRQczQ?si=_3jPsFzwUGUTc1qJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
+<p class="admonition-title">Eksempel: Delt forskrift</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation*}
+    f(x) = \begin{cases} 
+      x^2+1 &amp; \text{når } \quad x &lt; 2 \\
+      -2x+9 &amp; \text{når } \quad x \geq 2
+   \end{cases}
+\end{equation*}\)</span></p>
+<p>Grafen ser slik ut</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/delt1.png"><img alt="../../_images/delt1.png" src="../../_images/delt1.png" style="width: 532.8000000000001px; height: 362.40000000000003px;" /></a>
+</figure>
+<p>For å skrive inn dette funksjonsuttrykket i GeoGebra, så kan vi skrive:
+Grafen ser slik ut</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/delt1skrivinn.png"><img alt="../../_images/delt1skrivinn.png" src="../../_images/delt1skrivinn.png" style="width: 273.6px; height: 38.400000000000006px;" /></a>
+</figure>
 </div>
 <div class="eksempel admonition">
-<p class="admonition-title">Eksempel 3</p>
-<p>Løs likningen <span class="math notranslate nohighlight">\(4^{2x+1} = e^2\)</span>.</p>
-<div class="ekslos dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-4^{2x+1} &amp;= e^2 \\
-\ln 4^{2x+1} &amp;= \ln e^2 \\
-(2x+1)\ln 4 &amp;= 2 \\
-2x+1 &amp;= \frac{2}{\ln 4} \\
-2x &amp;= \frac{2}{\ln 4} -1 \\
-x &amp;= \frac{1}{\ln 4} -\frac{1}{2} \\
-x &amp;= \frac{2-\ln 4}{2\ln{4}} = \frac{2-\ln 4}{\ln 16}
-\end{align}\)</span></p>
+<p class="admonition-title">Eksempel 2: Delt forskrift</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation*}
+    f(x) = \begin{cases} 
+      e^x &amp; \text{når } \quad x \leq 0 \\
+      x+2 &amp; \text{når } \quad x&gt; 0
+   \end{cases}
+\end{equation*}\)</span></p>
+<p>Grafen ser slik ut</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/delt2.png"><img alt="../../_images/delt2.png" src="../../_images/delt2.png" style="width: 555.6px; height: 362.40000000000003px;" /></a>
+</figure>
+<p>Merk at når vi tegner slike funksjoner kan det være lurt å tydeliggjøre på grafen om endepunktet er med eller ikke. Her er det gjort med ] og &lt; på samme måte som når vi skriver intervaller. GeoGebra har dessverre ingen mulighet for å gjøre dette.</p>
+<p>Prøv å tegne denne grafen i GeoGebra ved å bruke «Dersom» slik som i forrige eksempel.</p>
 </div>
-<div class="videolos dropdown admonition">
-<p class="admonition-title">Videoløsning</p>
-<iframe width="680" height="350" src="https://www.youtube.com/embed/ekkzvTg0d-w?si=9lOWTJ4_fyDI5wJ_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<p>Funksjoner med delt forskrift bruker vi for å beskrive fenomener, prosesser eller modeller der for eksempel betingelser kan endre seg underveis.</p>
+</section>
+<section id="id1">
+<h2>Kontinuitet<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Det siste eksempelet over er et eksempel på noe vi kaller en diskontinuerlig funksjon. Den gjør et hopp midt inne i definisjonsmengden sin. Kontinuitet og diskontinuitet er viktige begreper dersom man skal gå videre med matematikk etter videregående. Her nøyer vi oss med en forholdsvis grunnleggende innføring.</p>
+<div class="def admonition">
+<p class="admonition-title">Kontinuerlige funksjoner</p>
+<p>En funksjon <span class="math notranslate nohighlight">\(f\)</span> er kontinuerlig i <span class="math notranslate nohighlight">\(x=a\)</span> dersom</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x\to a} f(x)= f(a)\]</div>
+<p>Ofte gir det mer mening å se på det med de ensidige grensene</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x\to a^-} f(x)=\lim_{x\to a^+} f(x)=f(a)\]</div>
+<p>Dersom funksjonen <span class="math notranslate nohighlight">\(f\)</span> er kontinuerlig for alle <span class="math notranslate nohighlight">\(x\in D_f\)</span>, så sier vi at funksjonen er en <strong>kontinuerlig funksjon</strong>.</p>
 </div>
-</div>
-<p>I enkelte eksponentiallikninger må vi gjøre litt forarbeid for å få likningen på en form som gjør at vi kan få eksponenten ned ved hjelp av en logaritme. Dette forarbeidet kan ligge i å slå sammen ulike potenser for å få en potens med den ukjente i, faktorisere eller få uttrykket på form av en andregradslikning. Ofte kreves det litt kreativitet og/eller erfaring for å se hvordan vi kan skrive om likningen for å gjøre det lettere for oss. Vi tar noen eksempler på ulike triks vi kan bruke.</p>
-<div class="eksempel admonition">
-<p class="admonition-title">Eksempel 4</p>
-<p>Løs likningen <span class="math notranslate nohighlight">\(e^{2x} -4e^x = 0\)</span>.</p>
-<div class="ekslos dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Et triks vi kan bruke her er at <span class="math notranslate nohighlight">\(e^{2x}=(e^x)^2=e^x\cdot e^x\)</span>. Dette bruker vi for å faktorisere uttrykket på venstre side.</p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-e^{2x} -4e^x &amp;= 0 \\
-e^x\cdot e^x-4e^x &amp;= 0 \\
-e^x(e^x-4) &amp;= 0
-\end{align}\)</span></p>
-<p>Her kan vi videre benytte produktregelen vi lærte i 1T. For at <span class="math notranslate nohighlight">\(e^x(e^x-4)\)</span> skal bli null, så må en av faktorene være null. Den første faktoren <span class="math notranslate nohighlight">\(e^x\)</span> kan ikke bli null (eller negativ), så da går vi videre med</p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-e^x -4 &amp;= 0 \\
-e^x &amp;= 4 \\
-\ln e^x &amp;= \ln 4 \\
-x &amp;= \ln 4
-\end{align}\)</span></p>
-<p>Løsninga på likninga er altså <span class="math notranslate nohighlight">\(x=\ln 4\)</span>.</p>
-</div>
-<div class="videolos dropdown admonition">
-<p class="admonition-title">Videoløsning</p>
-<iframe width="680" height="350" src="https://www.youtube.com/embed/TfWcNDr2_kc?si=-wEYZOjvaMEg272P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
+<div class="def admonition">
+<p class="admonition-title">Kjente kontinuerlige funksjoner</p>
+<p>Alle funksjoner som vi har jobbet med tidligere er kontinuerlige</p>
+<ul class="simple">
+<li><p>polynomfunksjoner</p></li>
+<li><p>eksponentialfunksjoner</p></li>
+<li><p>potensfunksjoner</p></li>
+<li><p>logaritmefunksjoner</p></li>
+</ul>
+<p>Og vi skal snart se at rasjonale funksjoner også regnes som kontinuerlige.</p>
+<p>I tillegg vil alle sammensetninger, summer, differanser, produkt og kvotienter av kontinuerlige funksjoner være kontinuerlig.</p>
 </div>
 <div class="eksempel admonition">
-<p class="admonition-title">Eksempel 5</p>
-<p>Løs likninga <span class="math notranslate nohighlight">\(3^{3x}+3^{3x}+3^{3x} = 27\)</span>.</p>
-<div class="ekslos dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-3^{3x}+3^{3x}+3^{3x} &amp;= 27 \\
-3\cdot 3^{3x} &amp;= 27 \\
-3^{3x} &amp;= 9 \\
-3^{3x} &amp;= 3^2 \\
-3x &amp;= 2 \\
-x &amp;= \frac{2}{3}
-\end{align}\)</span></p>
-</div>
-<div class="videolos dropdown admonition">
-<p class="admonition-title">Videoløsning</p>
-<iframe width="680" height="350" src="https://www.youtube.com/embed/QkagU9UQbHc?si=PLo2XpA2W2WcsBcN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
+<p class="admonition-title">Eksempel: Ikke-kontinuerlig funksjon</p>
+<p>Funksjonen i eksempel 2 over er et eksempel på en ikke-koninuterlig (eller diskontinuerlig) funksjon. Definisjonsmengden er alle reelle tall, men vi ser at</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 0^-} f(x)= e^0=1 = f(0)\)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 0^+} f(x)= 0+2 = 2\)</span></p>
+<p>De ensidige grensene er ulike. Derfor er <span class="math notranslate nohighlight">\(f\)</span> ikke kontinuerlig i <span class="math notranslate nohighlight">\(x=0\)</span> og dermed er ikke <span class="math notranslate nohighlight">\(f\)</span> en kontinuerlig funksjon.</p>
 </div>
 <div class="eksempel admonition">
-<p class="admonition-title">Eksempel 6</p>
-<p>Løs likninga <span class="math notranslate nohighlight">\(3^x-4=12\cdot 3^{-x}\)</span>.</p>
-<div class="ekslos dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Her vil vi først kvitte oss med potensen med negativ eksponent. Det gjør vi ved å multiplisere begge sider av likningen med <span class="math notranslate nohighlight">\(3^x\)</span>. Da får vi <span class="math notranslate nohighlight">\((3^x)^2-4\cdot 3^x=12\)</span>. Likningen virker fortsatt vanskelig, men om vi foreløpig setter <span class="math notranslate nohighlight">\(u=3^x\)</span> kan vi skrive den om til <span class="math notranslate nohighlight">\(u^2-4u = 12\)</span>. Det er ei standard andregradslikning som vi løser ved å flytte alt til venstre side og så bruke abc-formelen. Den gir <span class="math notranslate nohighlight">\(u=-2 \vee u=6\)</span>. Så setter vi inn for <span class="math notranslate nohighlight">\(u\)</span> og går videre med</p>
+<p class="admonition-title">Eksempel: Rasjonale funksjoner er kontinuerlige</p>
+<p>Vi ser på en rasjonal funksjon <span class="math notranslate nohighlight">\(f(x)=\frac{2x+3}{x-1}\)</span>. Vi vet at grenseverdien <span class="math notranslate nohighlight">\(x\to 1\)</span> ikke eksisterer og at funksjonen gjør et hopp fra <span class="math notranslate nohighlight">\(-\infty\)</span> til <span class="math notranslate nohighlight">\(\infty\)</span> når v passer <span class="math notranslate nohighlight">\(x=1\)</span>. Funksjonen er derfor ikke kontinuerlig i <span class="math notranslate nohighlight">\(x=1\)</span>. Men siden <span class="math notranslate nohighlight">\(x=1\)</span> ikke er med i definisjonsmengden til funksjonen sier vi allikevel at <span class="math notranslate nohighlight">\(f\)</span> er en rasjonal funksjon. Begrunnelsen er at den er kontinuerlig i alle punkt i sin definisjonsmengde.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Gjør en funksjon kontinuerlig</p>
+<p>Bestem tallet <span class="math notranslate nohighlight">\(a\)</span> slik at funksjon <span class="math notranslate nohighlight">\(f(x)\)</span> er kontinuerlig:
+<span class="math notranslate nohighlight">\(
+\begin{equation*}
+    f(x) = \begin{cases} 
+      x^2+a &amp; \text{når } \quad x \leq 2 \\
+      2x+3 &amp; \text{når } \quad x&gt; 2
+   \end{cases}
+\end{equation*}
+\)</span></p>
+<p>For <span class="math notranslate nohighlight">\(x&lt;2\)</span> og <span class="math notranslate nohighlight">\(x&gt;2\)</span> er funksjonen «vanlige» polynomfunskjoner, så der er den kontinuerlig. For at hele funksjonen skal være kontinuerlig må vi få den til å være kontinuerlig også for <span class="math notranslate nohighlight">\(x=2\)</span>. Da må</p>
 <p><span class="math notranslate nohighlight">\(\begin{align}
-u &amp;=-2 \quad &amp;\vee&amp; \quad u &amp;=6 \\
-3^x &amp;= -2 \quad &amp;\vee&amp; \quad 3^x &amp;= 6 \\
-\text{går ikke} &amp; \quad &amp;\vee&amp; \quad x &amp;= \frac{\ln 6}{\ln 3}
+\displaystyle\lim_{x\to 2^-} f(x) &amp;= \displaystyle\lim_{x\to 2^+} f(x) \\
+\displaystyle\lim_{x\to 2^-} x^2+a &amp;= \displaystyle\lim_{x\to 2^+} 2x+3 \\
+4+a &amp;= 7 \\
+a &amp;= 3
 \end{align}\)</span></p>
-<p>Det betyr at <span class="math notranslate nohighlight">\(L=\{\frac{\ln 6}{\ln 3}\}\)</span>.</p>
+<p>Funksjonen blir kontinuerlig om <span class="math notranslate nohighlight">\(a=3\)</span>.</p>
 </div>
-<div class="videolos dropdown admonition">
-<p class="admonition-title">Videoløsning</p>
-<iframe width="680" height="350" src="https://www.youtube.com/embed/wvmbWna2gRY?si=0h42DqzF1O33Db48" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</section>
+<section id="absoluttverdifunksjonen">
+<h2>Absoluttverdifunksjonen<a class="headerlink" href="#absoluttverdifunksjonen" title="Permalink to this heading">#</a></h2>
+<p>En spesiell kontinuerlig funksjon som kan være verdt å se ekstra på er absoluttfunksjonen.</p>
+<div class="def admonition">
+<p class="admonition-title">Absoluttverdifunksjonen</p>
+<p>Absoluttverdifunksjonen <span class="math notranslate nohighlight">\(f(x)=|x|\)</span> defineres ved hjelp av å skrive den på delt forskrift. Funksjonen forteller oss hvor lang vi er fra null på tallinja.</p>
+<p><span class="math notranslate nohighlight">\(f(x)= |x| =\begin{cases} 
+      -x &amp; \text{når } \quad x&lt;0 \\
+      x &amp; \text{når } \quad x\geq 0
+   \end{cases}\)</span></p>
+<p>Grafen til absoluttverdifunksjonen ser slik ut</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/absoluttverdifunksjonen.png"><img alt="../../_images/absoluttverdifunksjonen.png" src="../../_images/absoluttverdifunksjonen.png" style="width: 555.6px; height: 362.40000000000003px;" /></a>
+</figure>
 </div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Absoluttverdifunksjonen</p>
+<p>Avgjør om funksjonen <span class="math notranslate nohighlight">\(f(x)=\frac{|x-2|}{x-2}\)</span> er en kontinuerlig funksjon.</p>
+<p>Vi vet at <span class="math notranslate nohighlight">\(|x-2|=\begin{cases} 
+      -(x-2) &amp; \text{når } \quad x&lt;2 \\
+      x-2 &amp; \text{når } \quad x\geq 2
+   \end{cases}\)</span></p>
+<p>Så da må vi få</p>
+<p><span class="math notranslate nohighlight">\(f(x)=\begin{cases} 
+      \frac{-(x-2)}{x-2} &amp;= -1 &amp; \text{når } \quad x&lt;2 \\
+      \frac{x-2}{x-2} &amp;= 1 &amp; \text{når } \quad x&gt;2
+   \end{cases}\)</span></p>
+<p>Merk at her er ikke <span class="math notranslate nohighlight">\(x=2\)</span> med siden det ikke er en del av definisjonsmengden.</p>
+<p>Videre får vi da at</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 2^-}f(x)=-1\)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 2^+}f(x)=1\)</span></p>
+<p>Grenseverdien når <span class="math notranslate nohighlight">\(x\to 2\)</span> eksisterer altså ikke. Det vil si at <span class="math notranslate nohighlight">\(f\)</span> ikke er kontinuerlig i <span class="math notranslate nohighlight">\(x=2\)</span>. Siden <span class="math notranslate nohighlight">\(x=2\)</span> ikke er en del av definisjonsmengden, så vil <span class="math notranslate nohighlight">\(f\)</span> allikevel være en kontinuerlig funksjon.</p>
+<p>En graf av funksjonen ser vi under</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/absoluttverdifunksjonen2.png"><img alt="../../_images/absoluttverdifunksjonen2.png" src="../../_images/absoluttverdifunksjonen2.png" style="width: 482.40000000000003px; height: 362.40000000000003px;" /></a>
+</figure>
 </div>
-<p>Alle likningene her kan selvfølgelig også løses med CAS eller grafisk. Ved løsning med CAS vil vi kunne få svar som ser litt rare ut. Grunnen er at GeoGebra ønsker å skrive alle logaritmer uttrykt med <span class="math notranslate nohighlight">\(\ln\)</span>.</p>
-<p>På neste side skal vi se hvordan disse likningene (og andre likninger) også kan løses ved hjelp av programmering og numeriske metoder.</p>
-<section id="videoer">
-<h2>Videoer<a class="headerlink" href="#videoer" title="Permalink to this heading">#</a></h2>
-<p>Her kan du se flere videoer for innhold på denne siden:</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-0">
-Eksponentiallikninger - introduksjon</label><div class="sd-tab-content docutils">
-<iframe width="680" height="350" src="https://www.youtube.com/embed/HRJkU18MLA4?si=nt7WFVxx8zNmUuMT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
+<p>Følgende eksempel er litt i utkanten av læreplanen i R1, men vi tar det med som litt utfyllende informasjon rundt absoluttverdifunksjoner.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: Likninger med absoluttverdi</p>
+<p>Vi skal løse likningen <span class="math notranslate nohighlight">\(|x-2|=4\)</span>.</p>
+<p>En måte å se på absoluttverdier på er avstand. Likningen over kan vi tenke på som hvilke tall har avstanden 4 fra 2. Da ser vi ganske raskt at <span class="math notranslate nohighlight">\(L=\{-2, 6\}\)</span>.</p>
+<p>Vi kan også løse det grafisk ved å tegne inn funksjonsuttrykkene <span class="math notranslate nohighlight">\(f(x)=|x-2|\)</span> og <span class="math notranslate nohighlight">\(g(x)=4\)</span> og finne skjæringspunktene. Ser at vi får samme løsning.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/absoluttverdilikning.png"><img alt="../../_images/absoluttverdilikning.png" src="../../_images/absoluttverdilikning.png" style="width: 482.40000000000003px; height: 362.40000000000003px;" /></a>
+</figure>
+<p>Enda et alternativ er å gjøre det algebraisk. Da ser vi at <span class="math notranslate nohighlight">\(|x-2|=4\)</span> tilsvarer de to likningene</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+x-2 &amp;=4 &amp;\vee  x-2&amp;=-4 \\
+x &amp;= 6 &amp;\vee x&amp;=-2
+\end{align}\)</span></p>
 </div>
 </section>
 </section>
@@ -538,7 +545,7 @@ Eksponentiallikninger - introduksjon</label><div class="sd-tab-content docutils"
         },
         kernelOptions: {
             name: "python3",
-            path: "./docs\algebralikninger"
+            path: "./docs\derivasjon"
         },
         predefinedOutput: true
     }
@@ -557,20 +564,20 @@ Eksponentiallikninger - introduksjon</label><div class="sd-tab-content docutils"
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="loglikninger.html"
+       href="asymptoter.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">forrige</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Logaritmelikninger</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Asymptoter</p>
       </div>
     </a>
     <a class="right-next"
-       href="../derivasjon/grenseverdier.html"
+       href="defderivert.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">neste</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Grenseverdier</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Definisjon av den deriverte</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -592,7 +599,9 @@ Eksponentiallikninger - introduksjon</label><div class="sd-tab-content docutils"
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videoer">Videoer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delt-forskrift">Delt forskrift</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Kontinuitet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absoluttverdifunksjonen">Absoluttverdifunksjonen</a></li>
 </ul>
   </nav></div>
 

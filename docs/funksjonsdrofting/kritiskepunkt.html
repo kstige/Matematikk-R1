@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>5. Eksponentiallikninger &#8212; Matematikk R1</title>
+    <title>1. Kritiske punkt &#8212; Matematikk R1</title>
   
   
   
@@ -66,11 +66,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/algebralikninger/eksponentiallikninger';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/funksjonsdrofting/kritiskepunkt';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Søk" href="../../search.html" />
-    <link rel="next" title="1. Grenseverdier" href="../derivasjon/grenseverdier.html" />
-    <link rel="prev" title="4. Logaritmelikninger" href="loglikninger.html" />
+    <link rel="next" title="2. Den andrederiverte" href="andrederivert.html" />
+    <link rel="prev" title="6. L’Hôpitals regel" href="../derivasjon/lhopitalsregel.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb-NO"/>
   </head>
@@ -154,12 +154,12 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">1 - Algebra og likninger</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="potensrot.html">1. Potenser og røtter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="logaritmer.html">2. Logaritmer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="logaritmesetningene.html">3. Logaritmesetningene</a></li>
-<li class="toctree-l1"><a class="reference internal" href="loglikninger.html">4. Logaritmelikninger</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Eksponentiallikninger</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../algebralikninger/potensrot.html">1. Potenser og røtter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algebralikninger/logaritmer.html">2. Logaritmer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algebralikninger/logaritmesetningene.html">3. Logaritmesetningene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algebralikninger/loglikninger.html">4. Logaritmelikninger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algebralikninger/eksponentiallikninger.html">5. Eksponentiallikninger</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2 - Derivasjon</span></p>
 <ul class="nav bd-sidenav">
@@ -171,13 +171,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../derivasjon/lhopitalsregel.html">6. L’Hôpitals regel</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Funksjonsdrøfting</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../funksjonsdrofting/kritiskepunkt.html">1. Kritiske punkt</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../funksjonsdrofting/andrederivert.html">2. Den andrederiverte</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../funksjonsdrofting/funksjonsdrofting.html">3. Funksjonsdrøfting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../funksjonsdrofting/tangenter.html">4. Tangenter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../funksjonsdrofting/omvendtefunksjoner.html">5. Omvendte funksjoner</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../funksjonsdrofting/viktigefunksjoner.html">6. Viktige funksjoner</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Kritiske punkt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="andrederivert.html">2. Den andrederiverte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funksjonsdrofting.html">3. Funksjonsdrøfting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangenter.html">4. Tangenter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="omvendtefunksjoner.html">5. Omvendte funksjoner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viktigefunksjoner.html">6. Viktige funksjoner</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Numeriske metoder og modeller</span></p>
 <ul class="nav bd-sidenav">
@@ -250,7 +250,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/docs/algebralikninger/eksponentiallikninger.ipynb" target="_blank"
+      <li><a href="../../_sources/docs/funksjonsdrofting/kritiskepunkt.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -332,7 +332,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Eksponentiallikninger</h1>
+    <h1>Kritiske punkt</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -342,7 +342,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videoer">Videoer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stasjonaere-punkt">Stasjonære punkt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Kritiske punkt</a></li>
 </ul>
             </nav>
         </div>
@@ -354,172 +355,143 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="eksponentiallikninger">
-<h1><span class="section-number">5. </span>Eksponentiallikninger<a class="headerlink" href="#eksponentiallikninger" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="kritiske-punkt">
+<h1><span class="section-number">1. </span>Kritiske punkt<a class="headerlink" href="#kritiske-punkt" title="Permalink to this heading">#</a></h1>
 <div class="utbytte dropdown admonition">
 <p class="admonition-title">Læringsutbytte</p>
 <p>I dette temaet arbeider vi med kompetansemålet:</p>
 <ul class="simple">
-<li><p>utforske og forstå regneregler for potenser og logaritmer, og bruke ulike strategier for å løse eksponentialligninger og logaritmeligninger</p></li>
+<li><p>forstå begrepene vekstfart, grenseverdi, derivasjon og kontinuitet, og bruke disse for å løse praktiske problemer</p></li>
+<li><p>analysere og tolke ulike funksjoner ved å bruke derivasjon</p></li>
+<li><p>bestemme den deriverte i et punkt geometrisk, algebraisk og ved numeriske metoder, og gi eksempler på funksjoner som ikke er deriverbare i gitte punkter</p></li>
 </ul>
 <p>Etter å ha arbeidet med temaet, skal du:</p>
 <ul class="simple">
-<li><p>kunne forklare hva en eksponentiallikning er</p></li>
-<li><p>anvende ulike strategier for å løse eksponentiallikninger (blant annet ved hjelp av logaritmer)</p></li>
-<li><p>kunne forklare ekvivalens og implikasjon i logaritmiske likninger</p></li>
-<li><p>bruke digitale hjelpemidler for å løse eksponentiallikninger</p></li>
+<li><p>vite hva et kritisk og et stasjonært punkt er og anvende blant annet derivasjon til å finne disse</p></li>
+<li><p>ha forståelse for hva den deriverte sier om stigningen til funksjonen</p></li>
+<li><p>tegne fortegnslinjer for funksjonen og dens deriverte</p></li>
 </ul>
 </div>
-<p>Eksponentiallikninger er likninger der den ukjente er i eksponenten i en potens. De enkleste eksponentiallikningene kan vi løse ved å gjøre høyre og venstre side om til en potens med samme grunntall. Da kan vi bruke følgende resultat som vi kjenner en tilsvarende form av fra logaritmelikninger.</p>
+<section id="stasjonaere-punkt">
+<h2>Stasjonære punkt<a class="headerlink" href="#stasjonaere-punkt" title="Permalink to this heading">#</a></h2>
+<p>Vi husker fra 1T og den teoretiske gjennomgangen av den deriverte at verdien til den deriverte i et punkt gir oss stigningstallet til tangenten i punktet. Enklere forklart viser altså den deriverte oss hvor en funksjon stiger og hvor den synker. Dette kaller vi ofte for monotoniegenskapene til funksjonen.</p>
 <div class="def admonition">
-<p class="admonition-title">Like grunntall</p>
-<p>Dersom <span class="math notranslate nohighlight">\(a^x=a^b\)</span>, så må <span class="math notranslate nohighlight">\(x=b\)</span>.</p>
+<p class="admonition-title">Monotoniegenskaper</p>
+<p>Vi ser på en funksjon <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Dersom <span class="math notranslate nohighlight">\(f'(x)&gt;0\)</span> på et intervall <span class="math notranslate nohighlight">\(I\)</span> sier vi at funksjonen er strengt voksende på intervallet. Da vil <span class="math notranslate nohighlight">\(f(b)&gt;f(a)\)</span> når <span class="math notranslate nohighlight">\(b&gt;a\)</span> og <span class="math notranslate nohighlight">\(a,b \in I\)</span>.</p>
+<p>Dersom <span class="math notranslate nohighlight">\(f'(x)&lt;0\)</span> på et intervall <span class="math notranslate nohighlight">\(I\)</span> sier vi at funksjonen er strengt avtakende på intervallet. Da vil <span class="math notranslate nohighlight">\(f(b)&lt;f(a)\)</span> når <span class="math notranslate nohighlight">\(b&gt;a\)</span> og <span class="math notranslate nohighlight">\(a,b \in I\)</span>.</p>
 </div>
+<p>De punktene der ingen av vilkårene over er oppfylt, så må enten <span class="math notranslate nohighlight">\(f'(x)=0\)</span>, eller <span class="math notranslate nohighlight">\(f'(x)\)</span> er ikke definert. Vi tar for oss det første tilfellet først.</p>
+<div class="def admonition">
+<p class="admonition-title">Stasjonære punkt</p>
+<p>Punkt på grafen der <span class="math notranslate nohighlight">\(f'(x)=0\)</span> kaller vi stasjonære punkt. Vi har tre typer stasjonære punkt (b, t og s).</p>
+<p><strong>Bunnpunkt:</strong> <span class="math notranslate nohighlight">\(f'(b)=0\)</span> og <span class="math notranslate nohighlight">\(f'(x)\)</span> skifter fortegn fra negativ til positiv når vi passerer <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<p><strong>Toppunkt:</strong> <span class="math notranslate nohighlight">\(f'(t)=0\)</span> og <span class="math notranslate nohighlight">\(f'(x)\)</span> skifter fortegn fra positiv til negativ når vi passerer <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p><strong>Sadelpunkt/Terrassepunkt</strong> <span class="math notranslate nohighlight">\(f'(s)=0\)</span> og <span class="math notranslate nohighlight">\(f'(x)\)</span> skifter ikke fortegn når vi passerer <span class="math notranslate nohighlight">\(s\)</span>.</p>
+<p>De to første (<span class="math notranslate nohighlight">\(b\)</span> og <span class="math notranslate nohighlight">\(t\)</span>) kalles ekstremalpunkt, mens funksjonsverdiene <span class="math notranslate nohighlight">\(f(b)\)</span> og <span class="math notranslate nohighlight">\(f(t)\)</span> kalles ekstremalverdier.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/stasjonaerepunkt.png"><img alt="../../_images/stasjonaerepunkt.png" src="../../_images/stasjonaerepunkt.png" style="width: 571.5px; height: 313.5px;" /></a>
+</figure>
+</div>
+<p>Vi tar et eksempel.</p>
 <div class="eksempel admonition">
-<p class="admonition-title">Eksempel 1</p>
-<p>Løs likningene:</p>
-<p><strong>a)</strong> <span class="math notranslate nohighlight">\(8^x = 512\)</span></p>
-<p><strong>b)</strong> <span class="math notranslate nohighlight">\(e^{2x} = \sqrt[3]{e^4}\)</span></p>
+<p class="admonition-title">Eksempel: Stasjonære punkt</p>
+<p>Finn de stasjonære punktene til funksjonen <span class="math notranslate nohighlight">\(f(x)=x^2 (x-2)^3\)</span> og avgjør hva slags punkt det er.</p>
 <div class="ekslos dropdown admonition">
 <p class="admonition-title">Løsning</p>
-<p><strong>a)</strong></p>
+<p>For å finne de stasjonære punktene må vi løse likningen <span class="math notranslate nohighlight">\(f'(x)=0\)</span>. Her er kanskje det enkleste å multiplisere ut parentesene slik at vi får et normalt enkelt polynom.</p>
 <p><span class="math notranslate nohighlight">\(\begin{align}
-8^x &amp;= 512 \\
-8^x &amp;= 8^3 \\
-x &amp;= 3
+f(x)&amp;=x^2 (x-2)^3=x^5-6x^4+12x^3-8x^2 \\
+&amp;\Rightarrow f'(x)=5x^4-24x^3+36x^2-16x
 \end{align}\)</span></p>
-<p><strong>b)</strong></p>
+<p>Det er imidlertid ikke helt rett fram å løse likningen <span class="math notranslate nohighlight">\(f'(x)=0\)</span> fra dette. Om vi er litt lure (og heldige) kan det bli enklere om vi deriverer det opprinnelige uttrykket med produkt- og kjerneregelen. Da holder vi det mest mulig faktorisert.</p>
 <p><span class="math notranslate nohighlight">\(\begin{align}
-e^{2x} &amp;= \sqrt[3]{e^4} \\
-e^{2x} &amp;= e^{\frac{4}{3}} \\
-2x &amp;= \frac{4}{3} \\
-x &amp;= \frac{2}{3}
+f'(x)&amp;=2x\cdot(x-2)^3+x^2\cdot 3(x-2)^2\\
+&amp;=x(x-2)^2(2(x-2)+3x) \\
+&amp;=x(x-2)^2(5x-4) \\
+&amp;=5x(x-2)^2(x-\frac{4}{5})
 \end{align}\)</span></p>
-</div>
-<div class="videolos dropdown admonition">
-<p class="admonition-title">Videoløsning</p>
-<iframe width="680" height="350" src="https://www.youtube.com/embed/WiJI5_21dPY?si=Nl-utBl1FQjRcNMS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</div>
-<p>For de fleste eskponentiallikninger vil vi imidlertid være avhengig av logaritmer for å løse likningene for hånd. Logaritmen bruker vi for å ta den ukjente ned fra eksponenten. Dette fungerer siden <span class="math notranslate nohighlight">\(\ln 4^x=x\ln 4\)</span> i følge tredje logaritmesetning. Om ikke grunntallet i potensen tilsier at det er lurt å velge enten tierlogaritmen eller den naturlige logaritmen, så kan vi i utgangspunktet velge akkurat den logaritmen vi vil.</p>
-<div class="eksempel admonition">
-<p class="admonition-title">Eksempel 2</p>
-<p>Løs likningen <span class="math notranslate nohighlight">\(3^x = 8\)</span>.</p>
-<div class="ekslos dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-3^x &amp;= 8 \\
-\lg 3^x &amp;= \lg 8 \\
-x\lg 3 &amp;= \lg 8 \\
-x &amp;= \frac{\lg 8}{\lg 3}
-\end{align}\)</span></p>
-<p>Oppgava kan også løses ved å bruke <span class="math notranslate nohighlight">\(\ln\)</span>.</p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-3^x &amp;= 8 \\
-\ln 3^x &amp;= \ln 8 \\
-x\ln 3 &amp;= \ln 8 \\
-x &amp;= \frac{\ln 8}{\ln 3}
-\end{align}\)</span></p>
-<p>Vi ser at svaret ser ulikt ut, men om vi finner tilnærmet verdi for de to uttrykkene, så ser vi at <span class="math notranslate nohighlight">\(\frac{\lg 8}{\lg 3}=\frac{\ln 8}{\ln 3}\)</span>. Det her kan vi også vise ved å ta i bruk at <span class="math notranslate nohighlight">\(\lg a = \frac{\ln a}{\ln 10}\)</span>.</p>
-</div>
-<div class="videolos dropdown admonition">
-<p class="admonition-title">Videoløsning</p>
-<iframe width="680" height="350" src="https://www.youtube.com/embed/dBNLmrRQczQ?si=_3jPsFzwUGUTc1qJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<p>Vi kan da lese av løsningene til <span class="math notranslate nohighlight">\(f'(x)=0\)</span> direkte og får de stasjonære punktene <span class="math notranslate nohighlight">\(x\in\{0, 2, \frac{4}{5}\}\)</span>.</p>
+<p>For å avgjøre hva slags stasjonære punkt vi har kan vi for eksempel tegne ei fortegnslinje.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/fortegnslinje.png"><img alt="../../_images/fortegnslinje.png" src="../../_images/fortegnslinje.png" style="width: 315.0px; height: 206.0px;" /></a>
+</figure>
+<p>Under fortegnslinja er det tegnet ei pil som viser hvilken vei grafen stiger/synker i retning økende <span class="math notranslate nohighlight">\(x\)</span>-verdi.</p>
+<p>Vi ser da at</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x=0\)</span> gir et toppunkt</p></li>
+<li><p><span class="math notranslate nohighlight">\(x=\frac{4}{5}\)</span> gir et bunnpunkt</p></li>
+<li><p><span class="math notranslate nohighlight">\(x=2\)</span> gir et sadelpunkt</p></li>
+</ul>
 </div>
 </div>
 <div class="eksempel admonition">
-<p class="admonition-title">Eksempel 3</p>
-<p>Løs likningen <span class="math notranslate nohighlight">\(4^{2x+1} = e^2\)</span>.</p>
+<p class="admonition-title">Eksempel: Stasjonært punkt med CAS</p>
+<p>Bruk CAS til å finne og klassifisere de stasjonære punktene til <span class="math notranslate nohighlight">\(f(x)=x^2 (x-2)^3\)</span>.</p>
 <div class="ekslos dropdown admonition">
 <p class="admonition-title">Løsning</p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-4^{2x+1} &amp;= e^2 \\
-\ln 4^{2x+1} &amp;= \ln e^2 \\
-(2x+1)\ln 4 &amp;= 2 \\
-2x+1 &amp;= \frac{2}{\ln 4} \\
-2x &amp;= \frac{2}{\ln 4} -1 \\
-x &amp;= \frac{1}{\ln 4} -\frac{1}{2} \\
-x &amp;= \frac{2-\ln 4}{2\ln{4}} = \frac{2-\ln 4}{\ln 16}
-\end{align}\)</span></p>
-</div>
-<div class="videolos dropdown admonition">
-<p class="admonition-title">Videoløsning</p>
-<iframe width="680" height="350" src="https://www.youtube.com/embed/ekkzvTg0d-w?si=9lOWTJ4_fyDI5wJ_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<p>Først definerer vi funksjonen, så løser vi likninga <span class="math notranslate nohighlight">\(f'(x)=0\)</span>.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/stasjonaerepunktCAS.png"><img alt="../../_images/stasjonaerepunktCAS.png" src="../../_images/stasjonaerepunktCAS.png" style="width: 297.0px; height: 142.79999999999998px;" /></a>
+</figure>
+<p>Vi får de samme stasjonære punktene som i forrige eksempel. For å avgjøre om det er topp- eller bunnpunkt, så kan vi finne verdien til den deriverte mellom de stasjonære punktene. Vi kan for eksempel se at <span class="math notranslate nohighlight">\(f'(x)\)</span> er positiv i <span class="math notranslate nohighlight">\(x=-1\)</span> som er en mindre <span class="math notranslate nohighlight">\(x\)</span>-verdi enn det første stasjonære punktet (<span class="math notranslate nohighlight">\(x=0\)</span>) og negativ i <span class="math notranslate nohighlight">\(x=\frac{1}{5}\)</span> som ligger mellom <span class="math notranslate nohighlight">\(x=0\)</span> og <span class="math notranslate nohighlight">\(x=\frac{4}{5}\)</span>. Det betyr at <span class="math notranslate nohighlight">\(f'(x)\)</span> går fra positiv til negativ når vi passerer <span class="math notranslate nohighlight">\(x=0\)</span>, slik at <span class="math notranslate nohighlight">\(x=0\)</span> må være et toppunkt.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/fortegnCAS.png"><img alt="../../_images/fortegnCAS.png" src="../../_images/fortegnCAS.png" style="width: 250.2px; height: 148.79999999999998px;" /></a>
+</figure>
+<p>Tilsvarende kan vi finne <span class="math notranslate nohighlight">\(x=\frac{4}{5}\)</span> er et bunnpunkt, mens <span class="math notranslate nohighlight">\(x=2\)</span> er et sadelpunkt.</p>
 </div>
 </div>
-<p>I enkelte eksponentiallikninger må vi gjøre litt forarbeid for å få likningen på en form som gjør at vi kan få eksponenten ned ved hjelp av en logaritme. Dette forarbeidet kan ligge i å slå sammen ulike potenser for å få en potens med den ukjente i, faktorisere eller få uttrykket på form av en andregradslikning. Ofte kreves det litt kreativitet og/eller erfaring for å se hvordan vi kan skrive om likningen for å gjøre det lettere for oss. Vi tar noen eksempler på ulike triks vi kan bruke.</p>
+</section>
+<section id="id1">
+<h2>Kritiske punkt<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>De stasjonære punktene er en undergruppe av det vi kaller kritiske punkt.</p>
+<div class="def admonition">
+<p class="admonition-title">Kritiske punkt</p>
+<p>Dersom <span class="math notranslate nohighlight">\(f\)</span> er en funksjon med definisjonsmengde <span class="math notranslate nohighlight">\(D_f=[a,b]\)</span>, så vil de kritiske punktene til <span class="math notranslate nohighlight">\(f\)</span> være:</p>
+<ul class="simple">
+<li><p>alle punkter der <span class="math notranslate nohighlight">\(f'(x)=0\)</span> (stasjonære punkt)</p></li>
+<li><p>alle punkter der <span class="math notranslate nohighlight">\(f\)</span> ikke er deriverbar (bruddpunkt og knekkpunkt)</p></li>
+<li><p>endepunktene <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span></p></li>
+</ul>
+<p>Om vi ser på et åpent intervall <span class="math notranslate nohighlight">\(\langle a, b \rangle\)</span>, så vil vi ikke ha endepunkt, og de vil derfor heller ikke være kritiske punkt.</p>
+</div>
+<div class="def admonition">
+<p class="admonition-title">Ekstremalpunkt</p>
+<p>Ekstremalpunktene (topp- og bunnpunktene) til en funksjon kan kun befinne seg i de kritiske punktene til funksjonen.</p>
+<p>Merk: Det betyr ikke at et kritisk punkt må være et ekstremalpunkt.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/kritiskepunkt.png"><img alt="../../_images/kritiskepunkt.png" src="../../_images/kritiskepunkt.png" style="width: 507.5px; height: 399.0px;" /></a>
+</figure>
+<p>Funksjonen over er definert på <span class="math notranslate nohighlight">\(\langle a, b]\)</span>. De kritiske punktene er markert. Siden <span class="math notranslate nohighlight">\(a\)</span> ikke er med i definisjonsmengden vil det ikke være et kritisk punkt for <span class="math notranslate nohighlight">\(x=a\)</span>.</p>
+<p>Vi ser at <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(C\)</span> og <span class="math notranslate nohighlight">\(E\)</span> gir toppunkt, mens <span class="math notranslate nohighlight">\(B\)</span> og <span class="math notranslate nohighlight">\(D\)</span> gir bunnpunkt. Dersom vi ser etter den største eller den laveste verdien til funksjonen, så finner vi de i <span class="math notranslate nohighlight">\(D\)</span> og <span class="math notranslate nohighlight">\(E\)</span>. De punktene kalles for <em>globale</em> eller <em>absolutte</em> topp- og bunnpunkt, mens resten av punktene kalles <em>lokale</em> topp- og bunnpunkt.</p>
+</div>
+<p>Vi avslutter med et eksempel.</p>
 <div class="eksempel admonition">
-<p class="admonition-title">Eksempel 4</p>
-<p>Løs likningen <span class="math notranslate nohighlight">\(e^{2x} -4e^x = 0\)</span>.</p>
+<p class="admonition-title">Eksempel: Kritiske punkt</p>
+<p>Finn ekstremalpunktene til funksjonen <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation*}
+    f(x) = \begin{cases} 
+      x^2+1 &amp; \text{når } \quad -3 \leq x &lt; 2 \\
+      -2x+9 &amp; \text{når } x \geq 2
+   \end{cases}
+\end{equation*}\)</span></p>
 <div class="ekslos dropdown admonition">
 <p class="admonition-title">Løsning</p>
-<p>Et triks vi kan bruke her er at <span class="math notranslate nohighlight">\(e^{2x}=(e^x)^2=e^x\cdot e^x\)</span>. Dette bruker vi for å faktorisere uttrykket på venstre side.</p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-e^{2x} -4e^x &amp;= 0 \\
-e^x\cdot e^x-4e^x &amp;= 0 \\
-e^x(e^x-4) &amp;= 0
-\end{align}\)</span></p>
-<p>Her kan vi videre benytte produktregelen vi lærte i 1T. For at <span class="math notranslate nohighlight">\(e^x(e^x-4)\)</span> skal bli null, så må en av faktorene være null. Den første faktoren <span class="math notranslate nohighlight">\(e^x\)</span> kan ikke bli null (eller negativ), så da går vi videre med</p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-e^x -4 &amp;= 0 \\
-e^x &amp;= 4 \\
-\ln e^x &amp;= \ln 4 \\
-x &amp;= \ln 4
-\end{align}\)</span></p>
-<p>Løsninga på likninga er altså <span class="math notranslate nohighlight">\(x=\ln 4\)</span>.</p>
-</div>
-<div class="videolos dropdown admonition">
-<p class="admonition-title">Videoløsning</p>
-<iframe width="680" height="350" src="https://www.youtube.com/embed/TfWcNDr2_kc?si=-wEYZOjvaMEg272P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</div>
-<div class="eksempel admonition">
-<p class="admonition-title">Eksempel 5</p>
-<p>Løs likninga <span class="math notranslate nohighlight">\(3^{3x}+3^{3x}+3^{3x} = 27\)</span>.</p>
-<div class="ekslos dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-3^{3x}+3^{3x}+3^{3x} &amp;= 27 \\
-3\cdot 3^{3x} &amp;= 27 \\
-3^{3x} &amp;= 9 \\
-3^{3x} &amp;= 3^2 \\
-3x &amp;= 2 \\
-x &amp;= \frac{2}{3}
-\end{align}\)</span></p>
-</div>
-<div class="videolos dropdown admonition">
-<p class="admonition-title">Videoløsning</p>
-<iframe width="680" height="350" src="https://www.youtube.com/embed/QkagU9UQbHc?si=PLo2XpA2W2WcsBcN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</div>
-<div class="eksempel admonition">
-<p class="admonition-title">Eksempel 6</p>
-<p>Løs likninga <span class="math notranslate nohighlight">\(3^x-4=12\cdot 3^{-x}\)</span>.</p>
-<div class="ekslos dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Her vil vi først kvitte oss med potensen med negativ eksponent. Det gjør vi ved å multiplisere begge sider av likningen med <span class="math notranslate nohighlight">\(3^x\)</span>. Da får vi <span class="math notranslate nohighlight">\((3^x)^2-4\cdot 3^x=12\)</span>. Likningen virker fortsatt vanskelig, men om vi foreløpig setter <span class="math notranslate nohighlight">\(u=3^x\)</span> kan vi skrive den om til <span class="math notranslate nohighlight">\(u^2-4u = 12\)</span>. Det er ei standard andregradslikning som vi løser ved å flytte alt til venstre side og så bruke abc-formelen. Den gir <span class="math notranslate nohighlight">\(u=-2 \vee u=6\)</span>. Så setter vi inn for <span class="math notranslate nohighlight">\(u\)</span> og går videre med</p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-u &amp;=-2 \quad &amp;\vee&amp; \quad u &amp;=6 \\
-3^x &amp;= -2 \quad &amp;\vee&amp; \quad 3^x &amp;= 6 \\
-\text{går ikke} &amp; \quad &amp;\vee&amp; \quad x &amp;= \frac{\ln 6}{\ln 3}
-\end{align}\)</span></p>
-<p>Det betyr at <span class="math notranslate nohighlight">\(L=\{\frac{\ln 6}{\ln 3}\}\)</span>.</p>
-</div>
-<div class="videolos dropdown admonition">
-<p class="admonition-title">Videoløsning</p>
-<iframe width="680" height="350" src="https://www.youtube.com/embed/wvmbWna2gRY?si=0h42DqzF1O33Db48" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</div>
-<p>Alle likningene her kan selvfølgelig også løses med CAS eller grafisk. Ved løsning med CAS vil vi kunne få svar som ser litt rare ut. Grunnen er at GeoGebra ønsker å skrive alle logaritmer uttrykt med <span class="math notranslate nohighlight">\(\ln\)</span>.</p>
-<p>På neste side skal vi se hvordan disse likningene (og andre likninger) også kan løses ved hjelp av programmering og numeriske metoder.</p>
-<section id="videoer">
-<h2>Videoer<a class="headerlink" href="#videoer" title="Permalink to this heading">#</a></h2>
-<p>Her kan du se flere videoer for innhold på denne siden:</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-0">
-Eksponentiallikninger - introduksjon</label><div class="sd-tab-content docutils">
-<iframe width="680" height="350" src="https://www.youtube.com/embed/HRJkU18MLA4?si=nt7WFVxx8zNmUuMT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<p>Aller først, så ser vi at funksjonen har definisjonsmengde <span class="math notranslate nohighlight">\(D_f=[-3, \infty \rangle\)</span>. Det vil si at vi har et kritisk punkt i nedre grense <span class="math notranslate nohighlight">\(x=-3\)</span>.</p>
+<p>Videre sjekker vi punktene der <span class="math notranslate nohighlight">\(f'(x)=0\)</span>. Vi deriverer hvert området for seg og ser at <span class="math notranslate nohighlight">\(f'(x)=0\)</span> for <span class="math notranslate nohighlight">\(x=0\)</span>. Kontroller det selv.</p>
+<p>I et tidligere eksempel på siden om kontinuitet har vi sett at denne funksjonen er kontinuerlig for <span class="math notranslate nohighlight">\(x=2\)</span>. Nå sjekker vi om funksjonen er deriverbar i punktet. Vi kontrollerer da om venstresidig og høyresidig grense for den deriverte er lik hverandre.</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 2^-}f'(x)=\lim_{x\to 2^-} 2x = 4\)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 2^+}f'(x)=\lim_{x\to 2^+}-2=-2\)</span></p>
+<p>Funksjonen er altså ikke deriverbar for <span class="math notranslate nohighlight">\(x=2\)</span>. Det vil si at det er et knekkpunkt.</p>
+<p>De kritiske punktene til funksjonen er altså <span class="math notranslate nohighlight">\(\{-3, 0, 2\}\)</span>. Det er da også kandidatene til ekstremalpunkt. For å avgjøre om det er topp- eller bunnpunkt tegner vi en fortegnslinje. Her blir fortegnslinja litt <em>rar</em> siden det er forskjellig uttrykk for den deriverte når <span class="math notranslate nohighlight">\(x&lt;2\)</span> og <span class="math notranslate nohighlight">\(x\geq 2\)</span>.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/fortegnslinje.png"><img alt="../../_images/fortegnslinje.png" src="../../_images/fortegnslinje.png" style="width: 315.0px; height: 206.0px;" /></a>
+</figure>
+<p>Vi ser altså at vi har:</p>
+<ul class="simple">
+<li><p>Toppunkt for <span class="math notranslate nohighlight">\(x=-3\)</span> og <span class="math notranslate nohighlight">\(x=2\)</span></p></li>
+<li><p>Bunnpunkt for <span class="math notranslate nohighlight">\(x=0\)</span></p></li>
+</ul>
 </div>
 </div>
 </section>
@@ -538,7 +510,7 @@ Eksponentiallikninger - introduksjon</label><div class="sd-tab-content docutils"
         },
         kernelOptions: {
             name: "python3",
-            path: "./docs\algebralikninger"
+            path: "./docs\funksjonsdrofting"
         },
         predefinedOutput: true
     }
@@ -557,20 +529,20 @@ Eksponentiallikninger - introduksjon</label><div class="sd-tab-content docutils"
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="loglikninger.html"
+       href="../derivasjon/lhopitalsregel.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">forrige</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Logaritmelikninger</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>L’Hôpitals regel</p>
       </div>
     </a>
     <a class="right-next"
-       href="../derivasjon/grenseverdier.html"
+       href="andrederivert.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">neste</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Grenseverdier</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Den andrederiverte</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -592,7 +564,8 @@ Eksponentiallikninger - introduksjon</label><div class="sd-tab-content docutils"
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videoer">Videoer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stasjonaere-punkt">Stasjonære punkt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Kritiske punkt</a></li>
 </ul>
   </nav></div>
 

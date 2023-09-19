@@ -1,0 +1,725 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="nb-NO" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>5. Omvendte funksjoner &#8212; Matematikk R1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/iframe-scale.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myadmonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/funksjonsdrofting/omvendtefunksjoner';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Søk" href="../../search.html" />
+    <link rel="next" title="6. Viktige funksjoner" href="viktigefunksjoner.html" />
+    <link rel="prev" title="4. Tangenter" href="tangenter.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="nb-NO"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">1 - Algebra og likninger</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../algebralikninger/potensrot.html">1. Potenser og røtter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algebralikninger/logaritmer.html">2. Logaritmer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algebralikninger/logaritmesetningene.html">3. Logaritmesetningene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algebralikninger/loglikninger.html">4. Logaritmelikninger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algebralikninger/eksponentiallikninger.html">5. Eksponentiallikninger</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2 - Derivasjon</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../derivasjon/grenseverdier.html">1. Grenseverdier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../derivasjon/asymptoter.html">2. Asymptoter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../derivasjon/kontinuitet.html">3. Kontinuitet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../derivasjon/defderivert.html">4. Definisjon av den deriverte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../derivasjon/derivasjonsregler.html">5. Derivasjonsregler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../derivasjon/lhopitalsregel.html">6. L’Hôpitals regel</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Funksjonsdrøfting</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="kritiskepunkt.html">1. Kritiske punkt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="andrederivert.html">2. Den andrederiverte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funksjonsdrofting.html">3. Funksjonsdrøfting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangenter.html">4. Tangenter</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Omvendte funksjoner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viktigefunksjoner.html">6. Viktige funksjoner</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Numeriske metoder og modeller</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../numerikkmodeller/numerisklosning.html">1. Numerisk løsning av likninger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerikkmodeller/newtonsmetode.html">2. Newtons metode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerikkmodeller/numeriskderivasjon.html">3. Numerisk derivasjon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerikkmodeller/eulersmetode.html">4. Eulers metode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerikkmodeller/reelledatasett.html">5. Reelle datasett</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5 - Vektorer</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../vektorer/vektorer.html">1. Vektorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vektorer/regnevektorer.html">2. Regne med vektorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vektorer/vektorlikninger.html">3. Regne med vektorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vektorer/skalarprodukt.html">4. Skalarprodukt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vektorer/geometri.html">5. Anvendelser i geometri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vektorer/parameterframstilling.html">6. Parameterframstilling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vektorer/kurver.html">7. Kurver</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/docs/funksjonsdrofting/omvendtefunksjoner.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Søk" aria-label="Søk" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Omvendte funksjoner</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finne-den-omvendte-funksjonen">Finne den omvendte funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafen-til-omvendte-funksjoner">Grafen til omvendte funksjoner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksistens-av-omvendte-funksjoner">Eksistens av omvendte funksjoner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#den-deriverte-av-omvendte-funksjoner">Den deriverte av omvendte funksjoner</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="omvendte-funksjoner">
+<h1><span class="section-number">5. </span>Omvendte funksjoner<a class="headerlink" href="#omvendte-funksjoner" title="Permalink to this heading">#</a></h1>
+<div class="utbytte dropdown admonition">
+<p class="admonition-title">Læringsutbytte</p>
+<p>I dette temaet arbeider vi med kompetansemålet:</p>
+<ul class="simple">
+<li><p>utforske, analysere og derivere ulike funksjoner og deres omvendte funksjoner, og gjøre rede for egenskaper til og sammenhenger mellom slike funksjoner</p></li>
+<li><p>analysere og tolke ulike funksjoner ved å bruke derivasjon</p></li>
+</ul>
+<p>Etter å ha arbeidet med temaet, skal du:</p>
+<ul class="simple">
+<li><p>forklare hva vi mener med omvendte (inverse) funskjoner</p></li>
+<li><p>forklare sammenhengen mellom omvendte funksjoner</p></li>
+<li><p>begrunne eksistens av omvendte funksjoner</p></li>
+<li><p>kunne finne den omvendte funksjonen</p></li>
+<li><p>derivere omvendte funksjoner</p></li>
+</ul>
+</div>
+<p>I matematikk har vi mange operasjoner som er omvendt (invers) av hverandre. For eksempel vil addisjon og subtraksjon, multiplikasjon og divisjon være omvendte operasjoner. Dersom vi tar utgangspunkt i en størrelse <span class="math notranslate nohighlight">\(x\)</span>, så vil <span class="math notranslate nohighlight">\(x +5-5\)</span> og <span class="math notranslate nohighlight">\(\frac{x+5}{5} føre oss tilbake til \)</span>x$. Flere omvendte regneoperasjoner er:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x^n\)</span> og <span class="math notranslate nohighlight">\(\sqrt[n]{x}\)</span> siden <span class="math notranslate nohighlight">\(\sqrt[n]{x^n}=x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(10^x\)</span> og <span class="math notranslate nohighlight">\(\lg x\)</span> siden <span class="math notranslate nohighlight">\(10^{\lg x} = x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(e^x\)</span> og <span class="math notranslate nohighlight">\(\ln x\)</span> siden <span class="math notranslate nohighlight">\(e^{\ln x} = x\)</span></p></li>
+</ul>
+<p>Her ser vi at en funksjon kan være den omvendte av en annen funksjon. Den ene funksjonen opphever effekten av den andre, eller fører oss tilbake til utgangspunktet.</p>
+<p>Vi kan for eksempel tenke oss en plante som er 5 cm da den plantes og vokser med 3 cm hver uke. En funksjon for høyden vil være <span class="math notranslate nohighlight">\(h(x)=3x +5\)</span>, der <span class="math notranslate nohighlight">\(x\)</span> er antall uker. Den omvendte funksjonen til <span class="math notranslate nohighlight">\(h\)</span> er funksjonen som gir oss antall uker når vi vet høyden. Vi skal snart vise at den funksjonen er <span class="math notranslate nohighlight">\(u(x)=\frac{x-5}{3}\)</span> der <span class="math notranslate nohighlight">\(x\)</span> er høyden i cm. En enkel test viser at:</p>
+<div class="math notranslate nohighlight">
+\[h(4)=3\cdot 4+5=17\]</div>
+<div class="math notranslate nohighlight">
+\[u(17)=\frac{17-5}{3}\]</div>
+<p>Funksjonen <span class="math notranslate nohighlight">\(u(h)\)</span> fører oss altså tilbake til antall uker.</p>
+<p>Før vi ser på flere eksempler definerer vi formelt hva vi mener med omvendte funksjoner.</p>
+<div class="def admonition">
+<p class="admonition-title">Omvendte funksjoner</p>
+<p>To funksjoner <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(g\)</span> er omvendte funksjoner dersom</p>
+<p><span class="math notranslate nohighlight">\(f(g(x))=x\)</span> for alle <span class="math notranslate nohighlight">\(x\in D_g\)</span></p>
+<p><span class="math notranslate nohighlight">\(g(f(x))=x\)</span> for alle <span class="math notranslate nohighlight">\(x\in D_f\)</span></p>
+<p>Skrivemåten <span class="math notranslate nohighlight">\(f(g(x))\)</span> betyr at vi setter hele funksjonsuttrykket for <span class="math notranslate nohighlight">\(g(x)\)</span> inn som <span class="math notranslate nohighlight">\(x\)</span> i funksjonsuttrykket til <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Det er også vanlig å kalle omvendte funksjoner for inverse funksjoner. Da vil man også se skrivemåten <span class="math notranslate nohighlight">\(f^{-1}\)</span> for den omvendte funksjonen. Det er da viktig å være klar over at det ikke betyr det samme som <span class="math notranslate nohighlight">\((f(x))^{-1}=\frac{1}{f(x)}\)</span>.</p>
+</div>
+<p>Vi skal nå bruke funksjonene <span class="math notranslate nohighlight">\(h\)</span> og <span class="math notranslate nohighlight">\(u\)</span> over som et eksempel på hvordan definisjonen fungerer.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 1</p>
+<p>Vis at funksjonene <span class="math notranslate nohighlight">\(h(x)=3x+5\)</span> og <span class="math notranslate nohighlight">\(u(x)=\frac{x-5}{3}\)</span> er omvendte funksjoner.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Vi ser at</p>
+<p><span class="math notranslate nohighlight">\(h(u(x))=3u+5=3\cdot \frac{x-5}{3} + 5 = x-5+5=x\)</span></p>
+<p><span class="math notranslate nohighlight">\(u(h(x))=\frac{h-5}{3}=\frac{3x+5-5}{3}=\frac{3x}{3}=x\)</span></p>
+<p>Det betyr at <span class="math notranslate nohighlight">\(h\)</span> og <span class="math notranslate nohighlight">\(u\)</span> er omvendte funksjoner.</p>
+</div>
+</div>
+<section id="finne-den-omvendte-funksjonen">
+<h2>Finne den omvendte funksjonen<a class="headerlink" href="#finne-den-omvendte-funksjonen" title="Permalink to this heading">#</a></h2>
+<p>I forrige eksempel viste vi at funksjonene <span class="math notranslate nohighlight">\(h(x)=3x+5\)</span> og <span class="math notranslate nohighlight">\(u(x)=\frac{x-5}{3}\)</span> er omvendte funksjoner, men hvordan kommer vi fram til uttrykket for den omvendte funksjonen?</p>
+<p>La oss ta utgangspunkt i uttrykket for <span class="math notranslate nohighlight">\(h(x)\)</span>. For enkelthetsskyld setter vi <span class="math notranslate nohighlight">\(h(x)=y\)</span>. Så skriver vi om uttrykket slik at vi får <span class="math notranslate nohighlight">\(x\)</span> uttrykt ved <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+y&amp;=3x+5 \\
+3x &amp;= y-5 \\
+x &amp;= \frac{y-5}{3}
+\end{align}\)</span></p>
+<p>Så bytter vi om på <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span> slik at <span class="math notranslate nohighlight">\(u(x)=y=\frac{x-5}{3}\)</span>. Denne metoden kan vi bruke generelt så lenge funksjonen vi ser på har en omvendt funksjon. Det er det nemlig ikke alle funksjoner som har.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 2</p>
+<p><strong>a)</strong> Finn uttrykket <span class="math notranslate nohighlight">\(g(x)\)</span> til den omvendte funksjonen til <span class="math notranslate nohighlight">\(f(x)=e^{2x+3}\)</span>.</p>
+<p><strong>b)</strong> Vis ved hjelp av definisjonen at <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(g\)</span> er omvendte funksjoner.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p><strong>a)</strong> Vi setter <span class="math notranslate nohighlight">\(f(x)=y\)</span> og prøver å finne <span class="math notranslate nohighlight">\(x\)</span> uttrykt ved <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+y&amp;=^{2x+3} \\
+\ln y &amp;= \ln e^{2x+3} \\
+\ln y &amp;= 2x+3 \\
+x &amp;= \frac{\ln y-3}{2}
+\end{align}\)</span></p>
+<p>Så bytter vi om på <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span> og får funksjonen <span class="math notranslate nohighlight">\(g(x)=\frac{\ln x -3}{2}\)</span>.</p>
+<p>Vi kan også bruke CAS til å finne den omvendte funksjonen.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/omvendtCAS.png"><img alt="../../_images/omvendtCAS.png" src="../../_images/omvendtCAS.png" style="width: 233.5px; height: 110.0px;" /></a>
+</figure>
+<p><strong>b)</strong> Bruker definisjonen får å sjekke at <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(g\)</span> er omvendte funksjoner.</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle{f(g(x))=e^{2g+3}=e^{2\cdot(\frac{\ln x-3}{2})+3}=e^{\ln x -3 +3}=e^{\ln x}=x}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle g(f(x))=\frac{\ln f -3}{2}=\frac{\ln \left(e^{2x+3}\right)-3}{2}=\frac{2x+3-3}{2}=\frac{2x}{2}=x\)</span></p>
+<p>Det viser at <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(g\)</span> er omvendte funksjoner.</p>
+</div>
+</div>
+</section>
+<section id="grafen-til-omvendte-funksjoner">
+<h2>Grafen til omvendte funksjoner<a class="headerlink" href="#grafen-til-omvendte-funksjoner" title="Permalink to this heading">#</a></h2>
+<p>Vi går igjen tilbake til funksjonene <span class="math notranslate nohighlight">\(h\)</span> og <span class="math notranslate nohighlight">\(u\)</span> som vi har arbeidet med tidligere. Nå tegner vi begge funksjonene i det samme koordinatsystemet.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/omvendtgraf.png"><img alt="../../_images/omvendtgraf.png" src="../../_images/omvendtgraf.png" style="width: 532.8000000000001px; height: 362.40000000000003px;" /></a>
+</figure>
+<p>I tillegg til funksjonene har vi tegnet inn linja <span class="math notranslate nohighlight">\(y=x\)</span>. Vi observerer da at <span class="math notranslate nohighlight">\(h\)</span> og <span class="math notranslate nohighlight">\(u\)</span> speiles om linja. Skjæringspunktet til <span class="math notranslate nohighlight">\(h\)</span> med <span class="math notranslate nohighlight">\(y\)</span>-aksen blir skjæringspunktet til <span class="math notranslate nohighlight">\(u\)</span> med <span class="math notranslate nohighlight">\(x\)</span>-aksen og motsatt. Sammenhengen vi ser her gjelder for alle omvendte funksjoner.</p>
+<div class="def admonition">
+<p class="admonition-title">Grafen til omvendte funksjoner</p>
+<p>Omvendte funksjoner vil ha grafer som speiles om linja <span class="math notranslate nohighlight">\(y=x\)</span>.</p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 3</p>
+<p>Tegn grafene til de to omvendte funksjonene <span class="math notranslate nohighlight">\(f(x)=e^{2x+3}\)</span> og <span class="math notranslate nohighlight">\(g(x)=\frac{\ln x-3}{2}\)</span> i samme koordinatsystem og kommenter resultatet. Skriv også ned definisjons- og verdimengden til funksjonene.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Skriver inn begge funksjonsuttrykkene i GeoGebra. Legger i tillegg inn linja <span class="math notranslate nohighlight">\(y=x\)</span>.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/omvendtgraf2.png"><img alt="../../_images/omvendtgraf2.png" src="../../_images/omvendtgraf2.png" style="width: 532.8000000000001px; height: 362.40000000000003px;" /></a>
+</figure>
+<p>Ser at grafene til funksjonene speiler seg om linja <span class="math notranslate nohighlight">\(y=x\)</span>.</p>
+<p>Definisjonsmengden til <span class="math notranslate nohighlight">\(f\)</span> ser ut til å være <span class="math notranslate nohighlight">\(D_f=\mathbf{R}\)</span>, mens verdimengden er <span class="math notranslate nohighlight">\(V_f=\langle 0, \rightarrow\rangle\)</span></p>
+<p>Definisjonsmengden til <span class="math notranslate nohighlight">\(g\)</span> ser ut til å være <span class="math notranslate nohighlight">\(D_g=\langle 0, \rightarrow\rangle\)</span>, mens verdimengden er <span class="math notranslate nohighlight">\(V_f=\mathbf{R}\)</span></p>
+</div>
+</div>
+<p>Fra siste del av eksempelet over kan det se ut som at det er en sammenheng mellom definisjons- og verdimengden til omvendte funksjoner.</p>
+<div class="def admonition">
+<p class="admonition-title">Definisjonsmengde og verdimengde</p>
+<p><strong>Definisjonsmengden</strong> er alle verdiene vi kan putte inn i funksjonen.\
+<strong>Veridmengden</strong> er alle verdiene vi kan få ut av funksjonen.</p>
+<p>For omvendte funksjoner <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(g\)</span> har vi at</p>
+<p><span class="math notranslate nohighlight">\(D_f = V_g\)</span> og <span class="math notranslate nohighlight">\(D_g = V_f\)</span></p>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 4</p>
+<p><strong>a)</strong> Finn definisjons- og verdimengden til funksjonen <span class="math notranslate nohighlight">\(f(x)=\sqrt{x+2}\)</span>.</p>
+<p><strong>b)</strong> Hva blir definisjons- og verdimengden til den omvendte funksjonen <span class="math notranslate nohighlight">\(g(x)\)</span></p>
+<p><strong>c)</strong> Finn <span class="math notranslate nohighlight">\(g(5)\)</span> uten å finne funksjonsuttrykket til <span class="math notranslate nohighlight">\(g(x)\)</span>.</p>
+<p><strong>d)</strong> Tegn grafen til funksjonene i det samme koordinatsystemet.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p><strong>a)</strong> Vi kan ikke ta kvadratrota av et negativt tall. Det vil si at vi må ha <span class="math notranslate nohighlight">\(x+2\geq 0\)</span> som gir at definisjonsmengden blir <span class="math notranslate nohighlight">\(D_f=[-2, \rightarrow\rangle\)</span>. Vi vet også at kvadratrota aldri blir negativ og at det er en voksende funksjon. Verdimengden blir derfor <span class="math notranslate nohighlight">\(V_f=[0, \rightarrow\rangle\)</span>.</p>
+<p><strong>b)</strong> Vi kan finne definisjons- og verdimengden uten å finne funksjonsuttrykket. <span class="math notranslate nohighlight">\(D_g=V_f=[0, \rightarrow\rangle\)</span>. <span class="math notranslate nohighlight">\(V_g=D_f=[-2, \rightarrow\rangle\)</span>.</p>
+<p><strong>c)</strong> Siden <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(g\)</span> er omvendte funksjoner, så må <span class="math notranslate nohighlight">\(g(5)\)</span> være den <span class="math notranslate nohighlight">\(x\)</span>-verdien som gir at <span class="math notranslate nohighlight">\(f(x)=5\)</span>. Løser derfor den likninga.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\sqrt{x+2} &amp;= 5 \\
+x+2 &amp;= 5^2 \\
+x &amp;= 23
+\end{align}\)</span></p>
+<p>Det betyr at <span class="math notranslate nohighlight">\(g(5)=23\)</span>.</p>
+<p><strong>d</strong>) For å tegne grafen er det enklest å finne funksjonsuttrykket til <span class="math notranslate nohighlight">\(g\)</span>. Setter <span class="math notranslate nohighlight">\(f(x)=y\)</span> og finner <span class="math notranslate nohighlight">\(x\)</span> uttrykt ved <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+\sqrt{x+2} &amp;= y \\
+x+2 &amp;= y^2 \\
+x &amp;= y^2-2
+\end{align}\)</span></p>
+<p>Bytter om på <span class="math notranslate nohighlight">\(y\)</span> og <span class="math notranslate nohighlight">\(x\)</span> og får at <span class="math notranslate nohighlight">\(g(x)=x^2-2\)</span> med <span class="math notranslate nohighlight">\(D_g=[0, \rightarrow\rangle\)</span>.</p>
+<p>*Her er det verdt å merke seg at vi i prinsippet kan sette inn alle reelle tall for <span class="math notranslate nohighlight">\(x\)</span> i funksjonen <span class="math notranslate nohighlight">\(g\)</span>, men om den skal være den omvendte funksjonen til <span class="math notranslate nohighlight">\(f\)</span> må vi begrense definisjonsmengden til det vi har satt over.</p>
+<p>Skriver inn begge funksjonene i GeoGebra og får grafene under.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/omvendtgraf3.png"><img alt="../../_images/omvendtgraf3.png" src="../../_images/omvendtgraf3.png" style="width: 532.8000000000001px; height: 362.40000000000003px;" /></a>
+</figure>
+</div>
+</div>
+</section>
+<section id="eksistens-av-omvendte-funksjoner">
+<h2>Eksistens av omvendte funksjoner<a class="headerlink" href="#eksistens-av-omvendte-funksjoner" title="Permalink to this heading">#</a></h2>
+<p>I det siste eksempelet over så vi at vi måtte innskrenke definisjonsmengden til funksjonen <span class="math notranslate nohighlight">\(g(x)=x^2-2\)</span> for at den skulle kunne være den omvendte funksjonen til <span class="math notranslate nohighlight">\(f(x)=\sqrt{x+2}\)</span>. Grunnen til det ser vi om vi prøver å speile hele <span class="math notranslate nohighlight">\(g(x)\)</span> om linja <span class="math notranslate nohighlight">\(y=x\)</span>. Det kan vi gjøre i GeoGebra med verktøyet «Speil objekt om linje». Da får vi den røde kurva i grafen under</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/speilinggraf.png"><img alt="../../_images/speilinggraf.png" src="../../_images/speilinggraf.png" style="width: 532.8000000000001px; height: 362.40000000000003px;" /></a>
+</figure>
+<p>Om vi husker tilbake til hvordan vi definerte funksjonsbegrepet i 1T, så ser vi at den røde kurva ikke er en funksjon. For en funksjon skal vi ha <strong>kun</strong> en verdi ut for hver verdi vi putter inn. Hvis vi putter inn <span class="math notranslate nohighlight">\(x=2\)</span> vil vi her få ut både <span class="math notranslate nohighlight">\(2\)</span> og <span class="math notranslate nohighlight">\(-2\)</span>. Det er derfor ikke en funksjon. Om vi innskrenker definisjonsmengden slik vi gjorde det i eksempelet oppstår ikke det problemet.</p>
+<p>Ved å innskrenke definisjonsmengden gjør vi funksjonen <em>en-tydig</em>. Det er et krav for at den skal ha en ovendt funksjon.</p>
+<div class="def admonition">
+<p class="admonition-title">Eksistens av omvendte funksjoner</p>
+<p>Funksjoner <span class="math notranslate nohighlight">\(f\)</span> som er en-tydig har omvendte funksjoner.</p>
+<p>At en funksjon <span class="math notranslate nohighlight">\(f\)</span> er en-tydig betyr at det for hver <span class="math notranslate nohighlight">\(x\)</span>-verdi er kun en <span class="math notranslate nohighlight">\(y\)</span>-verdi og for hver <span class="math notranslate nohighlight">\(y\)</span>-verdi er kun en <span class="math notranslate nohighlight">\(x\)</span>-verdi. Eller sagt med symbol</p>
+<p><span class="math notranslate nohighlight">\(x_1 \neq x_2 \Rightarrow f(x_1) \neq f(x_2)\)</span> for alle <span class="math notranslate nohighlight">\(x_1, x_2 \in D_f\)</span>.</p>
+<p>Dersom en funksjon skal være en-tydig kan den ikke ha topp- eller bunnpunkt. Det vil si at den deriverte ikke kan skifte fortegn. Det vil si at funksjonen enten må være strengt voksende eller strengt avtakende.</p>
+</div>
+<p>Litt mindre formelt kan vi si at hvis ingen horisontal linje krysser grafen til funksjonen i mer enn et punkt, så vil funksjonen ha en omvendt funksjon.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 5</p>
+<p>Undersøk om følgende funksjoner har en omvendt funksjon:</p>
+<p><strong>a)</strong> <span class="math notranslate nohighlight">\(f(x)=x^2\)</span></p>
+<p><strong>b)</strong> <span class="math notranslate nohighlight">\(g(x)=e^x\)</span></p>
+<p><strong>c)</strong> <span class="math notranslate nohighlight">\(h(x)=x^3+x^2+x\)</span></p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p><strong>a)</strong> Vi vet at <span class="math notranslate nohighlight">\(f(x)\)</span> er en parabel som er symmetrisk om <span class="math notranslate nohighlight">\(y\)</span>-aksen. Det vil si at det er to <span class="math notranslate nohighlight">\(y\)</span>-verdier som gir samme <span class="math notranslate nohighlight">\(x\)</span>-verdi. Funksjonen er derfor ikke en-tydig og kan ikke ha en omvendt funksjon uten at vi begrenser definisjonsmengden.</p>
+<p>Om vi undersøker <span class="math notranslate nohighlight">\(f'(x)\)</span>, så ser vi at den skifter fortegn fra <span class="math notranslate nohighlight">\(-\)</span> til <span class="math notranslate nohighlight">\(+\)</span> for <span class="math notranslate nohighlight">\(x=0\)</span>. Dersom vi hadde <em>delt funksjonen i to</em> her, så kunne ville funksjonene med definisjonsmengde <span class="math notranslate nohighlight">\(\langle \leftarrow, 0]\)</span> og <span class="math notranslate nohighlight">\([0,\rightarrow\rangle\)</span> hatt omvendte funksjoner.</p>
+<p><strong>b)</strong> Vi deriverer og får <span class="math notranslate nohighlight">\(g'(x)=e^x\)</span>. Siden eksponentialfunksjonen alltid er positiv vil <span class="math notranslate nohighlight">\(g'(x)&gt;0\)</span> og <span class="math notranslate nohighlight">\(g(x)\)</span> er strengt voksende. Den har derfor en omvendt funksjon.</p>
+<p><strong>c)</strong> Vi deriverer og får <span class="math notranslate nohighlight">\(h'(x)=3x^2+2x+1\)</span>. Om vi prøver å løse <span class="math notranslate nohighlight">\(h'(x)=0\)</span> enten med CAS eller abc-formelen, så får vi ingen løsning. Det vil si at <span class="math notranslate nohighlight">\(h'(x)\)</span> aldri blir null og derfor heller ikke kan skifte fortegn. Da må <span class="math notranslate nohighlight">\(h(x)\)</span> kunne ha en omvendt funksjon.</p>
+</div>
+</div>
+</section>
+<section id="den-deriverte-av-omvendte-funksjoner">
+<h2>Den deriverte av omvendte funksjoner<a class="headerlink" href="#den-deriverte-av-omvendte-funksjoner" title="Permalink to this heading">#</a></h2>
+<p>Til slutt vil vi ta for oss en sammenheng mellom den deriverte til to omvendte funksjoner. Vi beviser ikke sammenhengen, men vil antyde den med utgangspunkt i eksempelet vi startet med. Da så vi på de omvendte funksjonene <span class="math notranslate nohighlight">\(h(x)=3x+5\)</span> og <span class="math notranslate nohighlight">\(u(x)=\frac{x-5}{3}\)</span>. Dette er to rette linjer og vi ser at <span class="math notranslate nohighlight">\(h'(x)=3\)</span>, mens <span class="math notranslate nohighlight">\(u'(x)=\frac{1}{3}\)</span>. Det kan se ut som at den deriverte av den ene er den inverse av den deriverte av den andre. Generelt har vi følgende sammenheng:</p>
+<div class="def admonition">
+<p class="admonition-title">Derivasjon av omvendte funksjoner</p>
+<p>Dersom vi har to omvendte funksjoner <span class="math notranslate nohighlight">\(y=f(x)\)</span> og <span class="math notranslate nohighlight">\(x=g(y)\)</span>, så vil sammenhengen mellom de deriverte funksjonene være:</p>
+<p><span class="math notranslate nohighlight">\(g'(y)=\frac{1}{f'(x)} \quad \text{når} \quad f'(x)\neq 0\)</span></p>
+<p>Definisjonen kan virke litt forvirrende og for noen vil den være lettere å forstå på følgende form:</p>
+<p><span class="math notranslate nohighlight">\(f'(x)=\frac{1}{g'(f(x))}\)</span></p>
+</div>
+<p>Definisjonen kan være vanskelig å forstå i begge formene, men vi prøver med et eksempel.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 6</p>
+<p>Vi har tidligere sett på de omvendte funksjonene <span class="math notranslate nohighlight">\(f(x)=e^{2x+3}\)</span> og <span class="math notranslate nohighlight">\(g(x)=\frac{\ln x-3}{2}\)</span>.</p>
+<p><strong>a)</strong> Vis at sammenhengen mellom de deriverte gjelder ved å derivere <span class="math notranslate nohighlight">\(f(x)\)</span> direkte og ved hjelp av den omvendte funksjonen.</p>
+<p><strong>a)</strong> Vis at sammenhengen mellom de deriverte gjelder ved å derivere <span class="math notranslate nohighlight">\(g(x)\)</span> direkte og ved hjelp av den omvendte funksjonen.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p><strong>a)</strong> Direkte derivasjon ved hjelp av kjerneregelen:</p>
+<p><span class="math notranslate nohighlight">\(f'(x)=2e^{2x+3}\)</span></p>
+<p>Når vi skal derivere ved bruk av den omvendte funksjonen, så må vi først derivere <span class="math notranslate nohighlight">\(g(x)\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(g'(x)=\frac{1}{2x}\)</span></p>
+<p><span class="math notranslate nohighlight">\(f'(x)=\frac{1}{g'(f(x))}=\frac{1}{\frac{1}{2f(x)}}=\frac{1}{\frac{1}{2e^{2x+3}}}=2e^{2x+3}\)</span></p>
+<p><strong>b)</strong> Har allerede at <span class="math notranslate nohighlight">\(g'(x)=\frac{1}{2x}\)</span> og <span class="math notranslate nohighlight">\(f'(x)=2e^{2x+3}\)</span>. Bruker så derivasjon av omvendt funksjon for å finne <span class="math notranslate nohighlight">\(g'(x)\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(g'(x)=\frac{1}{f'(g(x))}=\frac{1}{2e^{2g(x)+3}}=\frac{1}{2e^{2\cdot \frac{\ln x -3}{2}+3}}=\frac{1}{2e^{\ln x}}=\frac{1}{2x}\)</span></p>
+<p>I begge tilfeller ser vi at vi får det samme både ved direkte derivasjon og ved å bruke den omvendte funksjonen.</p>
+</div>
+</div>
+<p>I eksempelet over ser vi at vi enklere kommer fram til svaret ved å bruke direkte derivasjon. Slik vil det ofte være. Fordelen med derivasjon ved hjelp av den omvendte funksjonen er derfor i de tilfellene der det er vanskelig å finne et uttrykk for den omvendte funksjonen. Da kan vi bruke definisjonen over til å finne enkeltverdier av den derivert for den omvendte funksjonen.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 7</p>
+<p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=x^3+x^2+x\)</span> og får vite at den går gjennom punktet <span class="math notranslate nohighlight">\((1, 3)\)</span>. Finn <span class="math notranslate nohighlight">\(g'(3)\)</span>, der <span class="math notranslate nohighlight">\(g(x)\)</span> er den omvendte funksjonen til <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>I eksempel 5 viste vi at funksjonen <span class="math notranslate nohighlight">\(f\)</span> har en omvendt funksjon. Det er imidlertid vanskelig å finne et uttrykk for denne. Vi kan allikevel finne den deriverte i de oppgitte punktene. Finner først <span class="math notranslate nohighlight">\(f'(x)=3x^2+2x+1\)</span>. Viser videre hvordan begge former av definisjonen kan brukes til å finne <span class="math notranslate nohighlight">\(g'(3)\)</span>.</p>
+<p><strong>Metode 1</strong></p>
+<p>For den første metoden trenger vi at punktet <span class="math notranslate nohighlight">\((1, 3)\)</span> er på grafen til <span class="math notranslate nohighlight">\(f\)</span>. Da må <span class="math notranslate nohighlight">\((3, 1)\)</span> ligge på grafen til <span class="math notranslate nohighlight">\(g\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(g'(3)=\frac{1}{f'(1)}=\frac{1}{3\cdot 1^2+2\cdot 1+1}=\frac{1}{6}\)</span></p>
+<p><strong>Metode 2</strong></p>
+<p><span class="math notranslate nohighlight">\(g'(3)=\frac{1}{f'(g(3))}=\frac{1}{f'(1)}=\frac{1}{3\cdot 1^2+2\cdot 1+1}=\frac{1}{6}\)</span></p>
+<p>Vi ser at eneste forskjellen egentlig er den første mellomregningen som «forklarer» bytte mellom <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span>.</p>
+</div>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 8</p>
+<p><strong>a)</strong> Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=x^2-2\)</span> med definisjonsmengden <span class="math notranslate nohighlight">\(D_f=[0, \rightarrow\rangle\)</span>. Finn <span class="math notranslate nohighlight">\(g'(5)\)</span> når <span class="math notranslate nohighlight">\(g\)</span> er den omvendte funksjonen til <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p><strong>b)</strong> Vi ser på samme funksjon, men med definisjonsmengden <span class="math notranslate nohighlight">\(D_f=\langle \leftarrow, 0]\)</span>. Finn <span class="math notranslate nohighlight">\(g'(5)\)</span> når <span class="math notranslate nohighlight">\(g\)</span> er den omvendte funksjonen til <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p><strong>a)</strong> Her bruker vi den første versjonen av definisjonen. Siden vi skal finne <span class="math notranslate nohighlight">\(g'(5)\)</span> må vi ha <span class="math notranslate nohighlight">\(y=5\)</span>. Finner derfor først hvilken <span class="math notranslate nohighlight">\(x\)</span>-verdi det tilsvarer. Løser da <span class="math notranslate nohighlight">\(f(x)=5\)</span> med abc-formelen og får <span class="math notranslate nohighlight">\(x=\pm 3\)</span>. Det er kun den positive verdien som ligger innenfor definisjonsmengden. Derfor må <span class="math notranslate nohighlight">\(y=5\)</span> tilsvare <span class="math notranslate nohighlight">\(x=3\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(g'(5)=\frac{1}{f'(3)}=\frac{1}{2\cdot 3}=\frac{1}{6}\)</span></p>
+<p><strong>b)</strong> Her blir det helt tilsvarende, men <span class="math notranslate nohighlight">\(y=5\)</span> må tilsvare <span class="math notranslate nohighlight">\(x=-3\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(g'(5)=\frac{1}{f'(-3)}=\frac{1}{2\cdot (-3)}=-\frac{1}{6}\)</span></p>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs\funksjonsdrofting"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tangenter.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">forrige</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Tangenter</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="viktigefunksjoner.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">neste</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Viktige funksjoner</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finne-den-omvendte-funksjonen">Finne den omvendte funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafen-til-omvendte-funksjoner">Grafen til omvendte funksjoner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksistens-av-omvendte-funksjoner">Eksistens av omvendte funksjoner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#den-deriverte-av-omvendte-funksjoner">Den deriverte av omvendte funksjoner</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Kristoffer Stige
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

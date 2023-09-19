@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>2. Regne med vektorer &#8212; Matematikk R1</title>
+    <title>2. Newtons metode &#8212; Matematikk R1</title>
   
   
   
@@ -64,11 +64,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/vektorer/regnevektorer';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/numerikkmodeller/newtonsmetode';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Søk" href="../../search.html" />
-    <link rel="next" title="3. Regne med vektorer" href="vektorlikninger.html" />
-    <link rel="prev" title="1. Vektorer" href="vektorer.html" />
+    <link rel="next" title="3. Numerisk derivasjon" href="numeriskderivasjon.html" />
+    <link rel="prev" title="1. Numerisk løsning av likninger" href="numerisklosning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb-NO"/>
   </head>
@@ -178,22 +180,22 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../funksjonsdrofting/viktigefunksjoner.html">6. Viktige funksjoner</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Numeriske metoder og modeller</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../numerikkmodeller/numerisklosning.html">1. Numerisk løsning av likninger</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../numerikkmodeller/newtonsmetode.html">2. Newtons metode</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../numerikkmodeller/numeriskderivasjon.html">3. Numerisk derivasjon</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../numerikkmodeller/eulersmetode.html">4. Eulers metode</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../numerikkmodeller/reelledatasett.html">5. Reelle datasett</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="numerisklosning.html">1. Numerisk løsning av likninger</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Newtons metode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numeriskderivasjon.html">3. Numerisk derivasjon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eulersmetode.html">4. Eulers metode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reelledatasett.html">5. Reelle datasett</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">5 - Vektorer</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="vektorer.html">1. Vektorer</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Regne med vektorer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vektorlikninger.html">3. Regne med vektorer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="skalarprodukt.html">4. Skalarprodukt</a></li>
-<li class="toctree-l1"><a class="reference internal" href="geometri.html">5. Anvendelser i geometri</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parameterframstilling.html">6. Parameterframstilling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kurver.html">7. Kurver</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../vektorer/vektorer.html">1. Vektorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vektorer/regnevektorer.html">2. Regne med vektorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vektorer/vektorlikninger.html">3. Regne med vektorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vektorer/skalarprodukt.html">4. Skalarprodukt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vektorer/geometri.html">5. Anvendelser i geometri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vektorer/parameterframstilling.html">6. Parameterframstilling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vektorer/kurver.html">7. Kurver</a></li>
 </ul>
 
     </div>
@@ -248,7 +250,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/docs/vektorer/regnevektorer.ipynb" target="_blank"
+      <li><a href="../../_sources/docs/numerikkmodeller/newtonsmetode.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -328,7 +330,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Regne med vektorer</h1>
+    <h1>Newtons metode</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -342,8 +344,100 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="regne-med-vektorer">
-<h1><span class="section-number">2. </span>Regne med vektorer<a class="headerlink" href="#regne-med-vektorer" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="newtons-metode">
+<h1><span class="section-number">2. </span>Newtons metode<a class="headerlink" href="#newtons-metode" title="Permalink to this heading">#</a></h1>
+<div class="utbytte dropdown admonition">
+<p class="admonition-title">Læringsutbytte</p>
+<p>I dette temaet arbeider vi med kompetansemålet:</p>
+<ul class="simple">
+<li><p>utforske og forstå regneregler for potenser og logaritmer, og bruke ulike strategier for å løse eksponentialligninger og logaritmeligninger</p></li>
+<li><p>analysere og tolke ulike funksjoner ved å bruke derivasjon</p></li>
+</ul>
+<p>Etter å ha arbeidet med temaet, skal du:</p>
+<ul class="simple">
+<li><p>bruke og forklare Newtons metode til å løse likninger numerisk</p></li>
+</ul>
+</div>
+<p>Vi har <span class="xref myst">tidligere</span> sett på to metoder (blant annet halveringsmetoden) for å løse likninger numerisk. Her skal vi se på en tredje metode som ofte vil være raskere enn halveringsmetoden. Metoden anvender tangenter til funksjoner som vi studerte på forrige side. Ved start flytter vi alt i likningen over på venstre side slik at problemet blir å løse en likning <span class="math notranslate nohighlight">\(f(x)=0\)</span>. Det vil si at vi skal finne et nullpunkt.</p>
+<p>Algoritmen for metoden er slik:</p>
+<ol class="arabic simple">
+<li><p>Velg et startpunkt <span class="math notranslate nohighlight">\(x_0\)</span> som første tilnærming til nullpunktet.</p></li>
+<li><p>Finn tangenten til <span class="math notranslate nohighlight">\(f(x)\)</span> i punktet <span class="math notranslate nohighlight">\((x_0, f(x_0))\)</span>.</p></li>
+<li><p>Finn nullpunktet <span class="math notranslate nohighlight">\(x_1\)</span> til tangenten.</p></li>
+<li><p>Sjekk om <span class="math notranslate nohighlight">\(x_1\)</span> er nullpunkt til <span class="math notranslate nohighlight">\(f(x)\)</span>. Om det ikke er det lar vi <span class="math notranslate nohighlight">\(x_1\)</span> være neste tilnærming til nullpunktet.</p></li>
+<li><p>Gjenta til tilnærmingsverdien er så god som du ønsker.</p></li>
+</ol>
+<p>De to første tilnærmingene er illustrert i grafen under. Vi ser at nullpunktet til tangenten vil flytte seg nærmere og nærmere nullpunktet til funksjonen.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/newtonsmetode.png"><img alt="../../_images/newtonsmetode.png" src="../../_images/newtonsmetode.png" style="width: 532.8000000000001px; height: 362.40000000000003px;" /></a>
+</figure>
+<p>For at algoritmen skal bli effektiv i bruk utleder vi et uttrykk som vi kan bruke direkte til å finne neste tilnærming. Vi tar utgangspunkt i ettpunktsformelen.</p>
+<p><span class="math notranslate nohighlight">\(y - f(x_0) = f'(x_0)(x-x_0)\)</span></p>
+<p>Neste tilnærming <span class="math notranslate nohighlight">\(x=x_1\)</span> finner vi der <span class="math notranslate nohighlight">\(y=0\)</span>. Setter inn det i uttrykket over og løser for <span class="math notranslate nohighlight">\(x_1\)</span>. Da får vi at</p>
+<p><span class="math notranslate nohighlight">\(x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}\)</span></p>
+<p>Neste tilnærming finner vi på akkurat samme måte. Generelt får vi:</p>
+<div class="def admonition">
+<p class="admonition-title">Newtons metode</p>
+<p>La <span class="math notranslate nohighlight">\(f(x)\)</span> være en kontinuerlig, deriverbar funksjon og la <span class="math notranslate nohighlight">\((x_n, f(x_n))\)</span> være et punkt på grafen til <span class="math notranslate nohighlight">\(f(x)\)</span>, der <span class="math notranslate nohighlight">\(x_n\)</span> er en tilnærming til nullpunktet til <span class="math notranslate nohighlight">\(f\)</span>. Da kan en bedre tilnærming til nullpunktet finnes ved</p>
+<div class="math notranslate nohighlight">
+\[x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}\]</div>
+<p>Vi starter metoden ved å velge en starttilnærming <span class="math notranslate nohighlight">\(x_0\)</span> og avslutter når <span class="math notranslate nohighlight">\(f(x_{n+1})\)</span> er tilstrekkelig nærme null.</p>
+</div>
+<p>Under er det vist hvordan vi kan implementere algoritmen på en enkel måte med python. For å bruke programmet legger vi inn en funksjon med riktig derivert.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>               <span class="c1"># Funksjonen</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">df</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>              <span class="c1"># Den deriverte</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+
+<span class="n">toleranse</span> <span class="o">=</span> <span class="mf">1E-8</span>        <span class="c1"># Betyr det samme som 1*10^-8</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span>                 <span class="c1"># Første tilnærming</span>
+
+<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">toleranse</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">df</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nullpunktet er x =&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nullpunktet er x = 1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>I koden over har vi brukt en funksjon der vi kjenner uttrykket for den deriverte. Om vi ikke gjør det kan vi finne en numerisk verdi for den deriverte slik vi gjorde det på siden om <span class="xref myst">numerisk derivasjon</span>. Det introduserer en ekstra feilkilde i beregningen vår, men vil i mange tilfeller være nødvendig.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>               <span class="c1"># Funksjonen</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">df</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>              <span class="c1"># Den deriverte</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="mf">1E-6</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">dx</span><span class="p">)</span><span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span> <span class="n">dx</span>
+
+<span class="n">toleranse</span> <span class="o">=</span> <span class="mf">1E-8</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span>                 <span class="c1"># Første tilnærming</span>
+
+<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">toleranse</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">df</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nullpunktet er x =&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nullpunktet er x = 0.5232
+</pre></div>
+</div>
+</div>
+</div>
+<p>For å avgjøre hva som er en fornuftig startverdi for <span class="math notranslate nohighlight">\(x_0\)</span> kan det lønne seg å tegne opp grafen først. Da vil du også se om du må lete etter flere nullpunkt.</p>
+<p>For mer informasjon anbefales siden <a class="reference external" href="https://realprog.no/docs/tema4_numeriske_metoder/likninger.html">realprog.no</a>.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -359,7 +453,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./docs\vektorer"
+            path: "./docs\numerikkmodeller"
         },
         predefinedOutput: true
     }
@@ -378,20 +472,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="vektorer.html"
+       href="numerisklosning.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">forrige</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Vektorer</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Numerisk løsning av likninger</p>
       </div>
     </a>
     <a class="right-next"
-       href="vektorlikninger.html"
+       href="numeriskderivasjon.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">neste</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Regne med vektorer</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Numerisk derivasjon</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
