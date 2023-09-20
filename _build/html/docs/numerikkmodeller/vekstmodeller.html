@@ -343,6 +343,13 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konstant-vekst">Konstant vekst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksponentiell-vekst">Eksponentiell vekst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logistisk-vekst">Logistisk vekst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regresjon">Regresjon</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lineaer-regresjon">Lineær regresjon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-med-logistisk-modell">Eksempel med logistisk modell</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -380,10 +387,193 @@ document.write(`
 <p>Vi kjenner igjen det her som stigningstallet til en lineær funksjon.</p>
 <div class="def admonition">
 <p class="admonition-title">Konstant vekst</p>
-<p>Vi har konstant vekst når den deriverte har en konstant verdi. Funksjonen som beskriver konstant vekst er den lineære funksjonen</p>
+<p>Vi har konstant vekst når den deriverte har en konstant verdi. Funksjonen som beskriver konstant vekst er den <strong>lineære funksjonen</strong></p>
 <p><span class="math notranslate nohighlight">\(f(x)=ax+b\)</span></p>
 <p>der <span class="math notranslate nohighlight">\(a=f'(x)\)</span> er stigningstallet til funksjonen og <span class="math notranslate nohighlight">\(b\)</span> er konstantleddet gitt ved <span class="math notranslate nohighlight">\(f(0)\)</span>.</p>
 </div>
+</section>
+<section id="eksponentiell-vekst">
+<h2>Eksponentiell vekst<a class="headerlink" href="#eksponentiell-vekst" title="Permalink to this heading">#</a></h2>
+<p>En annen vanlig form for vekst er at vekstfarten er proporsjonal med størrelsen som vokser. Med matematiske symbol kan vi skrive det som</p>
+<p><span class="math notranslate nohighlight">\(f'(x)=k\cdot f(x)\)</span></p>
+<p>Det vil si at dersom <span class="math notranslate nohighlight">\(k&gt;0\)</span> så vil funksjonen vokse raskere når verdien til funksjonen øker. I motsatt fall med <span class="math notranslate nohighlight">\(k&lt;0\)</span> så vil funksjonen minke og den vil minke saktere og saktere.</p>
+<div class="eksempel dropdown admonition">
+<p class="admonition-title">Eksempel på størrelser med eksponentiell vekst</p>
+<p>Et vanlig eksempel på en slik form for vekst er renter. Endringen i verdi (rentene) fra en periode til neste (<span class="math notranslate nohighlight">\(f'(x)\)</span>) er gitt ved vekstfaktoren (<span class="math notranslate nohighlight">\(k\)</span>) multiplisert med beholdningen ved start på perioden (<span class="math notranslate nohighlight">\(f(x)\)</span>).</p>
+<p>Et annet eksempel er ukontrollert vekst i en populasjon. Vekstfarten i populasjonen (<span class="math notranslate nohighlight">\(f'(x)\)</span>) er gitt ved en eller annen konstant (<span class="math notranslate nohighlight">\(k\)</span>) multiplisert med størrelsen på populasjonen (<span class="math notranslate nohighlight">\(f(x)\)</span>). Denne typen vekst er vanlig i for eksempel startfasen på en pandemi, i bakterievekst på et laboratorium eller når vi innfører en ny art i et område der den ikke har naturlige fiender.</p>
+<p>Et eksempel på en størrelse som avtar eksponentielt er radioaktivitet. Et radioaktivt stoff vil for hver periode (kalt halveringstiden) avta med 50 %.</p>
+</div>
+<p>Av funksjonstypene vi har sett på, så er det eksponentialfunksjonen som har en derivert som er lik seg selv multiplisert med en konstant. Dersom vi lar</p>
+<p><span class="math notranslate nohighlight">\(f(x)=a\cdot e^{kx}\)</span></p>
+<p>så vil</p>
+<p><span class="math notranslate nohighlight">\(f'(x)=k\cdot a\cdot e^{kx}=k\cdot f(x)\)</span></p>
+<div class="def admonition">
+<p class="admonition-title">Eksponentiell vekst</p>
+<p>En funksjon som har vekstfart (derivert) proporsjonal med funksjonen, altså <span class="math notranslate nohighlight">\(f'(x)=k\cdot f(x)\)</span> vil gi eksponentiell vekst. Eksponentialfunksjonen er gitt ved</p>
+<p><span class="math notranslate nohighlight">\(f(x)=a\cdot e^{kx}\)</span></p>
+<p>der <span class="math notranslate nohighlight">\(a\)</span> er startverdien og <span class="math notranslate nohighlight">\(k\)</span> er proporsjonalitetskonstanten.</p>
+<p>Vi vil også møte eksponentialfunksjonen på formen</p>
+<p><span class="math notranslate nohighlight">\(f(x)=a\cdot b^x\)</span></p>
+<p>der <span class="math notranslate nohighlight">\(a\)</span> er startverdien og <span class="math notranslate nohighlight">\(b\)</span> er en vekstfaktor, det vil si <span class="math notranslate nohighlight">\(b=1\pm\frac{p}{100}\)</span> der <span class="math notranslate nohighlight">\(p\)</span> er en prosentvis endring.</p>
+<p>Sammenhengen mellom de to formene for eksponentialfunksjon er at <span class="math notranslate nohighlight">\(b=e^k\)</span> eller <span class="math notranslate nohighlight">\(k=\ln b\)</span>.</p>
+</div>
+</section>
+<section id="logistisk-vekst">
+<h2>Logistisk vekst<a class="headerlink" href="#logistisk-vekst" title="Permalink to this heading">#</a></h2>
+<p>Lineær vekst og eksponentiell vekst er vekstmodeller som aldri vil stoppe. I praksis vil imidlertid de fleste former for vekst avta etter en periode. Den logistiske vekstmodellen tar hensyn til det. Utgangspunktet for modellen er den samme som den eksponentielle (<span class="math notranslate nohighlight">\(f'(x)=k\cdot f(x)\)</span>), men i tillegg innføres det en øvre begrensning eller bæreevne <span class="math notranslate nohighlight">\(B\)</span> for størrelsen vi modellerer. Det gjøres ved å innføre en faktor <span class="math notranslate nohighlight">\(1-\frac{f(x)}{B}\)</span> i uttrykket for den deriverte</p>
+<p><span class="math notranslate nohighlight">\(f'(x)=k\cdot f(x)\cdot \left(1-\frac{f(x)}{B}\right)\)</span></p>
+<p>Når <span class="math notranslate nohighlight">\(f(x)\)</span> er liten vil <span class="math notranslate nohighlight">\(\left(1-\frac{f(x)}{B}\right)\)</span> være omtrent 1 og vi får en utvikling som tilsvarer den eksponentielle. Når <span class="math notranslate nohighlight">\(f(x)\)</span> øker vil <span class="math notranslate nohighlight">\(\left(1-\frac{f(x)}{B}\right)\)</span> minke slik at den deriverte minker og funksjonen vil flate ut. Når <span class="math notranslate nohighlight">\(f(x)\)</span> nærmer seg <span class="math notranslate nohighlight">\(B\)</span> vil <span class="math notranslate nohighlight">\(\left(1-\frac{f(x)}{B}\right)\to 0\)</span> og veksten stopper omtrent helt opp.</p>
+<p>Vi kjenner ingen funksjoner som oppfører seg slikt fra før, men det går an å vise at den logistiske funksjonen er gitt ved <span class="math notranslate nohighlight">\(\displaystyle f(x)=\frac{B}{1+a\cdot e^{-kx}}\)</span>. For de interesserte så viser vi under at denne funksjonen gir en derivert på ønsket form.</p>
+<div class="eksempel dropdown admonition">
+<p class="admonition-title">Derivert av logistisk funksjon</p>
+<p>Vi skriver først funksjonen som <span class="math notranslate nohighlight">\(f(x)=B\cdot(1+a\cdot e^{-kx})^{-1}\)</span> for lettere å se hvordan vi kan bruke kjerneregelen til å derivere. Etterpå må vi trikse litt algebraisk for å ende opp på riktig form.</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+f'(x)&amp;=B\cdot (-1)\cdot(1+a\cdot e^{-kx})^{-2}\cdot (-ake^{-kx}) \\
+&amp;=k\cdot \frac{B}{1+a\cdot e^{-kx}}\cdot\frac{a\cdot e^{-kx}}{1+a\cdot e^{-kx}} \\
+&amp;=k\cdot f(x)\cdot \frac{1+a\cdot e^{-kx}-1}{1+a\cdot e^{-kx}} \\
+&amp;=k\cdot f(x)\cdot \left(\frac{1+a\cdot e^{-kx}}{1+a\cdot e^{-kx}}-\frac{1}{1+a\cdot e^{-kx}}\right) \\
+&amp;=k\cdot f(x)\cdot \left(1-\frac{f(x)}{B}\right)
+\end{align}\)</span></p>
+</div>
+<div class="def admonition">
+<p class="admonition-title">Logistisk vekst</p>
+<p>Logistisk vekst er gitt ved en funksjon på formen</p>
+<p><span class="math notranslate nohighlight">\(f(x)=\frac{B}{1+a\cdot e^{-kx}}\)</span></p>
+<p>der <span class="math notranslate nohighlight">\(y=B\)</span> er den horisontale asymptoten som grafen til <span class="math notranslate nohighlight">\(f\)</span> går mot når <span class="math notranslate nohighlight">\(x\to\infty\)</span>. Vi kaller ofte <span class="math notranslate nohighlight">\(B\)</span> for bæreevnen dersom det er en populasjonsvekst som modelleres. Størrelsene <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(k\)</span> har ikke like praktiske forklaringer, men skal også være positive størrelser.</p>
+<p>Den deriverte er gitt ved</p>
+<p><span class="math notranslate nohighlight">\(f'(x)=k\cdot f(x)\cdot\left(1-\frac{f(x)}{B}\right)\)</span></p>
+</div>
+<p>Siden den logistiske funksjonen er ny for oss vil vi se litt nøyere på den enn vi gjorde på den lineære og eksponentielle. Grafen til en typisk logistisk funksjon (sammen med den deriverte) er gitt under. Vi ser at den har en slags S-form.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/logistiskmodell.png"><img alt="../../_images/logistiskmodell.png" src="../../_images/logistiskmodell.png" style="width: 1386.0px; height: 906.0px;" /></a>
+</figure>
+<p>I starten øker veksten (den rød grafen) fram til den når et toppunkt. Der har <span class="math notranslate nohighlight">\(f(x)\)</span> et vendepunkt. Etter vendepunktet begynner veksten og avta før den flater ut mot den horisontale asymptoten som er bæreevnen <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel: asymptote</p>
+<p>Vis at den horisontale asymptoten til en generell logistisk funksjon er <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Funksjonen er gitt ved <span class="math notranslate nohighlight">\(\displaystyle f(x)=\frac{B}{1+a\cdot e^{-kx}}\)</span>. For å finne horisontal asymptote ser vi på grenseverdien når <span class="math notranslate nohighlight">\(x\to\infty\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\lim_{x\to\infty}\frac{B}{1+a\cdot e^{-kx}}=\frac{B}{1+a\cdot \lim_{x\to\infty} e^{-kx}}=\frac{B}{1+a\cdot 0}=\frac{B}{1}=B\)</span></p>
+</div>
+</div>
+<p>Av andre ting å legge merke til er vendepunktet. Vi ser av grafen over at det vil være punktet der veksten er størst. Det kan vises at vendepunktet ligger i <span class="math notranslate nohighlight">\(\left(\frac{\ln a}{k}, \frac{B}{2}\right)\)</span> (vis det gjerne selv med CAS).</p>
+</section>
+<section id="regresjon">
+<h2>Regresjon<a class="headerlink" href="#regresjon" title="Permalink to this heading">#</a></h2>
+<p>I 1T arbeidet vi med [regresjonsmodeller]{<a class="reference external" href="https://kstige.github.io/Matematikk-1T/docs/funksjoner/modellering.html">https://kstige.github.io/Matematikk-1T/docs/funksjoner/modellering.html</a>}. Regresjon er en mye brukt form for modellering. Det handler om å finne det funksjonsuttrykket som passer best med de målingene vi har gjort eller det datasettet vi ønsker å modellere.</p>
+<p>I skolematematikken har GeoGebra blitt et standardverktøy for å utføre regresjon. Eksempel på bruk av det kan dere finne på siden med 1T. Om det er en eksponentiell eller logistisk modell du ønsker å finne, så er framgangsmåten den samme. Forskjellen ligger i valg av modell i siste steg.</p>
+<p>GeoGebra har den fordelen at det er brukervennlig og oversiktlig. Med programmering vil vi imidlertid får større muligheter til å tilpasse modellene våre, så det er den framgangsmåten vi bruker her. For å forenkle prosessen mest mulig velger vi å importere en funksjon som heter <em>curve_fit</em> fra biblioteket <em>scipy.optimize</em>. Vi starter med et eksempel med lineær regresjon.</p>
+<section id="lineaer-regresjon">
+<h3>Lineær regresjon<a class="headerlink" href="#lineaer-regresjon" title="Permalink to this heading">#</a></h3>
+<p>Under er det gitt et program som utfører lineær regresjon på oppgitte lister med <span class="math notranslate nohighlight">\(x\)</span>- og <span class="math notranslate nohighlight">\(y\)</span>-verdier. Programmet er delt opp med korte forklaringer før hele programmet (med mulighet for å endre) er gitt til slutt.</p>
+<p>Vi starter med å importere ekstra bibliotek som vi trenger. Som vanlig kan du velge «import pylab as *» i stedet for å importere numpy og pyplot. Da må du fjerne np. og plt. alle steder det står i koden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Så skriver vi inn listene med <span class="math notranslate nohighlight">\(x\)</span>- og <span class="math notranslate nohighlight">\(y\)</span>-verdier som vi skal utføre regresjonen på. Disse listene kommer fra datapunktene våre (målinger).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.9</span><span class="p">,</span> <span class="mf">4.1</span><span class="p">,</span> <span class="mf">6.3</span><span class="p">,</span> <span class="mf">7.2</span><span class="p">,</span> <span class="mf">10.8</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Videre lager vi en funksjon som viser hvilken modell vi ønsker å bruke. I dette eksempelet er det en lineær modell med variabel <span class="math notranslate nohighlight">\(x\)</span> og parametre <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span>. Her kan vi lage akkurat den funksjonstypen vi ønsker, eller sette opp en kombinasjon av flere funksjonstyper. Under definisjonen av modellen bruker vi kommandoen curve_fit som utfører selve regresjonen og finner parametrene. curve_fit er en funksjon og vi gir den modellfunksjonen og listene med <span class="math notranslate nohighlight">\(x\)</span>- og <span class="math notranslate nohighlight">\(y\)</span>-verdier som input. Til sist i linje 4 står det [0]. Grunnen til det er at curve_fit sender ut mer informasjon enn parametrene <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span>. Siden vi (i R1) hovedsakelig er interessert i disse verdiene setter vi på [0] som betyr at vi kun skal ha denne informasjonen. Så skriver vi ut <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> med to desimaler.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">modell</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">b</span>
+
+<span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">modell</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a = &quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b = &quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a =  2.09
+b =  -0.21
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dersom vi ønsker å lage en graf av modellen kan vi bruke koden under. Den starter med å velge verdiene for <span class="math notranslate nohighlight">\(x\)</span> som vi skal sette inn i modellen. Så beregner den <span class="math notranslate nohighlight">\(y\)</span>-verdiene for alle disse <span class="math notranslate nohighlight">\(x\)</span>-verdiene. Resten av koden er ulike kommandoer for å tilpasse grafen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_akse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">y_modell</span> <span class="o">=</span> <span class="n">modell</span><span class="p">(</span><span class="n">x_akse</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_akse</span><span class="p">,</span> <span class="n">y_modell</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Lineær modell&quot;</span><span class="p">)</span>     <span class="c1"># Grafen til modellen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Datapunkter&quot;</span><span class="p">)</span>                 <span class="c1"># Målepunktene</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>                                                         <span class="c1"># Navn på x-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>                                                         <span class="c1"># Navn på y-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>                                                              <span class="c1"># Rutenett</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>                                                            <span class="c1"># Informasjonsboks</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>                                                              <span class="c1"># Vis grafen</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b74c8094c1a1176cac421288fc5470ccb4bb4302d4ccd062e21454c4808e0848.png" src="../../_images/b74c8094c1a1176cac421288fc5470ccb4bb4302d4ccd062e21454c4808e0848.png" />
+</div>
+</div>
+<p>Under er hele programmet satt sammen.</p>
+<ul class="simple">
+<li><p>Endre på listene med <span class="math notranslate nohighlight">\(x\)</span>- og <span class="math notranslate nohighlight">\(y\)</span>-verdier og se hvordan modellen endrer seg.</p></li>
+<li><p>Gjør om modellen til en andregradsmodell. Da må du innføre en ekstra parameter <span class="math notranslate nohighlight">\(c\)</span>, endre på linje 7, 8, 10 og 15. I tillegg må du legge til ei linje etter linje 12.</p></li>
+<li><p>Klarer du å lage en eksponentialmodell.</p></li>
+</ul>
+<iframe src="https://trinket.io/embed/python3/3adb2590c6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></section>
+<section id="eksempel-med-logistisk-modell">
+<h3>Eksempel med logistisk modell<a class="headerlink" href="#eksempel-med-logistisk-modell" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">6.8</span><span class="p">,</span> <span class="mf">7.4</span><span class="p">,</span> <span class="mf">12.0</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">modell</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">B</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>                       <span class="c1"># np.exp(-k*x) gir e^(-kx)</span>
+
+<span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">B</span><span class="p">]</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">modell</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a = &quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;k = &quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B = &quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="n">x_akse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">y_modell</span> <span class="o">=</span> <span class="n">modell</span><span class="p">(</span><span class="n">x_akse</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_akse</span><span class="p">,</span> <span class="n">y_modell</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Logistisk modell&quot;</span><span class="p">)</span>     <span class="c1"># Grafen til modellen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Datapunkter&quot;</span><span class="p">)</span>                 <span class="c1"># Målepunktene</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>                                                         <span class="c1"># Navn på x-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>                                                         <span class="c1"># Navn på y-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>                                                              <span class="c1"># Rutenett</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>                                                            <span class="c1"># Informasjonsboks</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>                                                              <span class="c1"># Vis grafen</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a =  44.14
+k =  0.4
+B =  82.32
+</pre></div>
+</div>
+<img alt="../../_images/09066fe31ab2a2f51085f9d05d158ff3a10f09e1506479bca9e22ba39d421cf4.png" src="../../_images/09066fe31ab2a2f51085f9d05d158ff3a10f09e1506479bca9e22ba39d421cf4.png" />
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -455,6 +645,13 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konstant-vekst">Konstant vekst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksponentiell-vekst">Eksponentiell vekst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logistisk-vekst">Logistisk vekst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regresjon">Regresjon</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lineaer-regresjon">Lineær regresjon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-med-logistisk-modell">Eksempel med logistisk modell</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
