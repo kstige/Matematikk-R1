@@ -422,6 +422,11 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[f'(x)=k\cdot f(x)\cdot \left(1-\frac{f(x)}{B}\right)\]</div>
 <p>Når <span class="math notranslate nohighlight">\(f(x)\)</span> er liten vil <span class="math notranslate nohighlight">\(\left(1-\frac{f(x)}{B}\right)\)</span> være omtrent 1 og vi får en utvikling som tilsvarer den eksponentielle. Når <span class="math notranslate nohighlight">\(f(x)\)</span> øker vil <span class="math notranslate nohighlight">\(\left(1-\frac{f(x)}{B}\right)\)</span> minke slik at den deriverte minker og funksjonen vil flate ut. Når <span class="math notranslate nohighlight">\(f(x)\)</span> nærmer seg <span class="math notranslate nohighlight">\(B\)</span> vil <span class="math notranslate nohighlight">\(\left(1-\frac{f(x)}{B}\right)\to 0\)</span> og veksten stopper omtrent helt opp.</p>
+<div class="eksempel dropdown admonition">
+<p class="admonition-title">Eksempel på størrelser med logistisk vekst</p>
+<p>Det vanligste eksempelet på logistisk vekst er innføring av en art på et nytt sted der den ikke har naturlige fiender. I starten vil antallet vokse tilnærmet eksponentielt, men etterhvert som bestanden blir større så vil veksten stoppe opp på grunn av konkurranse, sykdommer og andre begrensninger.</p>
+<p>Et annet eksempel er innføring av ny teknologi eller nye apper til mobiltelefoner. Når appen først kommer og begynner å bli kjent vil veksten i brukere være eksponentiell. Etterhvert vil de fleste som er interessert ha tatt i bruk appen og veksten vil avta og nærme seg en øvre grense.</p>
+</div>
 <p>Vi kjenner ingen funksjoner som oppfører seg slikt fra før, men det går an å vise at den logistiske funksjonen er gitt ved <span class="math notranslate nohighlight">\(\displaystyle f(x)=\frac{B}{1+a\cdot e^{-kx}}\)</span>. For de interesserte så viser vi under at denne funksjonen gir en derivert på ønsket form.</p>
 <div class="eksempel dropdown admonition">
 <p class="admonition-title">Derivert av logistisk funksjon</p>
@@ -437,7 +442,7 @@ f'(x)&amp;=B\cdot (-1)\cdot(1+a\cdot e^{-kx})^{-2}\cdot (-ake^{-kx}) \\
 <div class="def admonition">
 <p class="admonition-title">Logistisk vekst</p>
 <p>Logistisk vekst er gitt ved en funksjon på formen</p>
-<p><span class="math notranslate nohighlight">\(f(x)=\frac{B}{1+a\cdot e^{-kx}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle f(x)=\frac{B}{1+a\cdot e^{-kx}}\)</span></p>
 <p>der <span class="math notranslate nohighlight">\(y=B\)</span> er den horisontale asymptoten som grafen til <span class="math notranslate nohighlight">\(f\)</span> går mot når <span class="math notranslate nohighlight">\(x\to\infty\)</span>. Vi kaller ofte <span class="math notranslate nohighlight">\(B\)</span> for bæreevnen dersom det er en populasjonsvekst som modelleres. Størrelsene <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(k\)</span> har ikke like praktiske forklaringer, men skal også være positive størrelser.</p>
 <p>Den deriverte er gitt ved</p>
 <p><span class="math notranslate nohighlight">\(f'(x)=k\cdot f(x)\cdot\left(1-\frac{f(x)}{B}\right)\)</span></p>
@@ -460,7 +465,7 @@ f'(x)&amp;=B\cdot (-1)\cdot(1+a\cdot e^{-kx})^{-2}\cdot (-ake^{-kx}) \\
 </section>
 <section id="regresjon">
 <h2>Regresjon<a class="headerlink" href="#regresjon" title="Permalink to this heading">#</a></h2>
-<p>I 1T arbeidet vi med [regresjonsmodeller]{<a class="reference external" href="https://kstige.github.io/Matematikk-1T/docs/funksjoner/modellering.html">https://kstige.github.io/Matematikk-1T/docs/funksjoner/modellering.html</a>}. Regresjon er en mye brukt form for modellering. Det handler om å finne det funksjonsuttrykket som passer best med de målingene vi har gjort eller det datasettet vi ønsker å modellere.</p>
+<p>I 1T arbeidet vi med <a class="reference external" href="https://kstige.github.io/Matematikk-1T/docs/funksjoner/modellering.html">regresjonsmodeller</a>. Regresjon er en mye brukt form for modellering. Det handler om å finne det funksjonsuttrykket som passer best med de målingene vi har gjort eller det datasettet vi ønsker å modellere.</p>
 <p>I skolematematikken har GeoGebra blitt et standardverktøy for å utføre regresjon. Eksempel på bruk av det kan dere finne på siden med 1T. Om det er en eksponentiell eller logistisk modell du ønsker å finne, så er framgangsmåten den samme. Forskjellen ligger i valg av modell i siste steg.</p>
 <p>GeoGebra har den fordelen at det er brukervennlig og oversiktlig. Med programmering vil vi imidlertid får større muligheter til å tilpasse modellene våre, så det er den framgangsmåten vi bruker her. For å forenkle prosessen mest mulig velger vi å importere en funksjon som heter <em>curve_fit</em> fra biblioteket <em>scipy.optimize</em>. Vi starter med et eksempel med lineær regresjon.</p>
 <section id="lineaer-regresjon">
@@ -578,6 +583,36 @@ B =  82.32
 </div>
 <img alt="../../_images/342d73f4ab84a630b75a3f9fdb0cd497adbae255b796a04857ed286030763665.png" src="../../_images/342d73f4ab84a630b75a3f9fdb0cd497adbae255b796a04857ed286030763665.png" />
 </div>
+</div>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel</p>
+<p>Vi skal lage en modell for andelen nordmenn som har tilgang til internett. På <a class="reference external" href="http://ssb.no">ssb.no</a> finner vi en tabell over dette. Under er tabellen lagt inn som lister der <span class="math notranslate nohighlight">\(x\)</span> viser antall år etter 1997, mens <span class="math notranslate nohighlight">\(y\)</span> viser andelen.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">25</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">66</span><span class="p">,</span><span class="mi">71</span><span class="p">,</span><span class="mi">73</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">85</span><span class="p">,</span><span class="mi">88</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">89</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">91</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">92</span><span class="p">,</span><span class="mi">93</span><span class="p">,</span><span class="mi">93</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>a)</strong> Finn en logistisk modell som viser utviklingen og tegn grafen.</p>
+<p><strong>b)</strong> Finn ut hvilket årstall veksten var størst. Hvor mange hadde da tilgang til internett?</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Bruker samme kode som over, men endrer <span class="math notranslate nohighlight">\(x\)</span>-listene. Ved kjøring av programmet kommer ei feilmelding. Den får vi vekk ved å legge inn startverdier for parametrene som programmet kan lete ut fra. Det er vanskelig å vurdere hva som er gode startverdier, men vi prøver oss med <span class="math notranslate nohighlight">\(a=10\)</span>, <span class="math notranslate nohighlight">\(k=0.2\)</span> og <span class="math notranslate nohighlight">\(B=100\)</span>. Den siste er et naturlig siden andelen aldri kan stige over 100. Vi legger inn denne informasjonen som et ekstra argument når modellen beregnes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">B</span><span class="p">]</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">modell</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">100</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span> 
+</pre></div>
+</div>
+<p>Ellers er det ingen endringer i programmet. Vi kjører det og får</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/internettmodellparamtere.png"><img alt="../../_images/internettmodellparamtere.png" src="../../_images/internettmodellparamtere.png" style="width: 116.80000000000001px; height: 64.0px;" /></a>
+</figure>
+<p>Det vil si at funksjonsuttrykket blir <span class="math notranslate nohighlight">\(\displaystyle f(x)=\frac{92.1}{1+6.6\cdot e^{-0.28x}}\)</span>. Grafen ser slik ut:</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/internettmodell.png"><img alt="../../_images/internettmodell.png" src="../../_images/internettmodell.png" style="width: 448.0px; height: 336.0px;" /></a>
+</figure>
+<p><strong>b)</strong> Vi vet at funksjonen vokser raskest i vendepunktet og at vendepunktet er gitt ved <span class="math notranslate nohighlight">\(\displaystyle \left(\frac{\ln a}{k}, \frac{B}{2}\right)\approx \left(6.7, 46\right)\)</span>.</p>
+<p>Det vil si at det etter 6.7 år (i siste halvdel av 2003) var størst økning i antallet som hadde tilgang til internett. På det tidspunktet var det omtrent 46 % som hadde tilgang.</p>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
 </div>
 </section>
 </section>
