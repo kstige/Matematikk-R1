@@ -479,8 +479,6 @@ document.write(`
 <section id="eksponentiell-vekst">
 <h2>Eksponentiell vekst<a class="headerlink" href="#eksponentiell-vekst" title="Permalink to this heading">#</a></h2>
 <p>En annen form for vekst er der vekstfarten er proporsjonal med funksjonen. Det kan vi skrive som at <span class="math notranslate nohighlight">\(f'(x)=k\cdot f(x)\)</span>. Den deriverte er altså gitt av en konstant multiplisert med funksjonsverdien.</p>
-<p>Et vanlig eksempel på en slik form for vekst er renter. Endringen i verdi (rentene) fra en periode til neste (<span class="math notranslate nohighlight">\(f'(x)\)</span>) er gitt ved vekstfaktoren (<span class="math notranslate nohighlight">\(k\)</span>) multiplisert med beholdningen ved start på perioden (<span class="math notranslate nohighlight">\(f(x)\)</span>).</p>
-<p>Et annet eksempel er ukontrollert vekst i en populasjon. Vekstfarten i populasjonen (<span class="math notranslate nohighlight">\(f'(x)\)</span>) er gitt ved en eller annen konstant (<span class="math notranslate nohighlight">\(k\)</span>) multiplisert med størrelsen på populasjonen (<span class="math notranslate nohighlight">\(f(x)\)</span>). Denne typen vekst er vanlig i for eksempel startfasen på en pandemi, i bakterievekst på et laboratorium eller når vi innfører en ny art i et område der den ikke har naturlige fiender.</p>
 <p>Vi sjekker modellen med start i <span class="math notranslate nohighlight">\((2, 3)\)</span>, konstant <span class="math notranslate nohighlight">\(k=0.2\)</span> og sluttverdi for <span class="math notranslate nohighlight">\(x\)</span> lik 10.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -521,22 +519,9 @@ document.write(`
 </div>
 </div>
 <p>Det her likner tydelig på eksponentiell vekst. Om vi går ut fra en eksponentialfunksjon på formen <span class="math notranslate nohighlight">\(f(x)=a\cdot e^{kx}\)</span> og deriverer den, så får vi <span class="math notranslate nohighlight">\(f'(x)=ak\cdot e^{kx}=k\cdot f(x)\)</span> som var utgangspunktet vårt.</p>
-<div class="def admonition">
-<p class="admonition-title">Eksponentiell vekst</p>
-<p>En funksjon som har vekstfart (derivert) proporsjonal med funksjonen, altså <span class="math notranslate nohighlight">\(f'(x)=k\cdot f(x)\)</span> vil gi eksponentiell vekst. Eksponentialfunksjonen er gitt ved</p>
-<p><span class="math notranslate nohighlight">\(f(x)=a\cdot e^{kx}\)</span></p>
-<p>der <span class="math notranslate nohighlight">\(a\)</span> er startverdien og <span class="math notranslate nohighlight">\(k\)</span> er proporsjonalitetskonstanten.</p>
-<p>Vi vil også møte eksponentialfunksjonen på formen</p>
-<p><span class="math notranslate nohighlight">\(f(x)=a\cdot b^x\)</span></p>
-<p>der <span class="math notranslate nohighlight">\(a\)</span> er startverdien og <span class="math notranslate nohighlight">\(b\)</span> er en vekstfaktor, det vil si <span class="math notranslate nohighlight">\(b=1\pm\frac{p}{100}\)</span> der <span class="math notranslate nohighlight">\(p\)</span> er en prosentvis endring.</p>
-<p>Sammenhengen mellom de to formene for eksponentialfunksjon er at <span class="math notranslate nohighlight">\(b=e^k\)</span> eller <span class="math notranslate nohighlight">\(k=\ln b\)</span>.</p>
-</div>
 </section>
 <section id="logistisk-vekst">
 <h2>Logistisk vekst<a class="headerlink" href="#logistisk-vekst" title="Permalink to this heading">#</a></h2>
-<p>Lineær vekst og eksponentiell vekst er vekstmodeller som aldri vil stoppe. I praksis vil imidlertid de fleste former for vekst avta etter en periode. Den logistiske vekstmodellen tar hensyn til det. Utgangspunktet for modellen er den samme som den eksponentielle (<span class="math notranslate nohighlight">\(f'(x)=k\cdot f(x)\)</span>), men i tillegg innføres det en øvre begrensning eller bæreevne <span class="math notranslate nohighlight">\(B\)</span> for størrelsen vi modellerer. Det gjøres ved å innføre en faktor <span class="math notranslate nohighlight">\(1-\frac{f(x)}{B}\)</span> i uttrykket for den deriverte</p>
-<p><span class="math notranslate nohighlight">\(f'(x)=k\cdot f(x)\cdot \left(1-\frac{f(x)}{B}\right)\)</span></p>
-<p>Når <span class="math notranslate nohighlight">\(f(x)\)</span> er liten vil <span class="math notranslate nohighlight">\(\left(1-\frac{f(x)}{B}\right)\)</span> være omtrent 1 og vi får en utvikling som tilsvarer den eksponentielle. Når <span class="math notranslate nohighlight">\(f(x)\)</span> øker vil <span class="math notranslate nohighlight">\(\left(1-\frac{f(x)}{B}\right)\)</span> minke slik at den deriverte minker og funksjonen vil flate ut. Når <span class="math notranslate nohighlight">\(f(x)\)</span> nærmer seg <span class="math notranslate nohighlight">\(B\)</span> vil <span class="math notranslate nohighlight">\(\left(1-\frac{f(x)}{B}\right)\to 0\)</span> og veksten stopper omtrent helt opp.</p>
 <p>Vi sjekker modellen ved en</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -577,24 +562,6 @@ document.write(`
 </div>
 </div>
 <p>Den logistiske funksjonen har en typisk S-form. Den starter bratt (omtrent eksponentielt), så blir den omtrent lineær rundt vendepunktet før veksten avtar og den flater ut med horisontal asymptote mot bæreevnen.</p>
-<p>Det går an å vise at den logistiske funksjonen er gitt ved <span class="math notranslate nohighlight">\(\displaystyle f(x)=\frac{B}{1+a\cdot e^{-kx}}\)</span>. Det går utenfor målet her, men ved å derivere funksjonen kan vi vise at den gir det ønskede uttrykket for <span class="math notranslate nohighlight">\(f(x)\)</span>. Vi skriver først funksjonen som <span class="math notranslate nohighlight">\(f(x)=B\cdot(1+a\cdot e^{-kx})^{-1}\)</span> for lettere å se hvordan vi kan bruke kjerneregelen til å derivere. Etterpå må vi trikse litt algebraisk for å ende opp på riktig form.</p>
-<p><span class="math notranslate nohighlight">\(\begin{align}
-f'(x)&amp;=B\cdot (-1)\cdot(1+a\cdot e^{-kx})^{-2}\cdot (-ake^{-kx}) \\
-&amp;=k\cdot \frac{B}{1+a\cdot e^{-kx}}\cdot\frac{a\cdot e^{-kx}}{1+a\cdot e^{-kx}} \\
-&amp;=k\cdot f(x)\cdot \frac{1+a\cdot e^{-kx}-1}{1+a\cdot e^{-kx}} \\
-&amp;=k\cdot f(x)\cdot \left(\frac{1+a\cdot e^{-kx}}{1+a\cdot e^{-kx}}-\frac{1}{1+a\cdot e^{-kx}}\right) \\
-&amp;=k\cdot f(x)\cdot \left(1-\frac{f(x)}{B}\right)
-\end{align}\)</span></p>
-<p>Av andre egenskaper som er verdt å merke seg er at grafen har vendepunkt i <span class="math notranslate nohighlight">\(\left(\frac{\ln a}{k}, \frac{B}{2}\right)\)</span> (kontroller det med CAS) og at det er det punktet der veksten er størst.</p>
-<div class="def admonition">
-<p class="admonition-title">Logistisk vekst</p>
-<p>Logistisk vekst er gitt ved en funksjon på formen</p>
-<p><span class="math notranslate nohighlight">\(f(x)=\frac{B}{1+a\cdot e^{-kx}}\)</span></p>
-<p>der <span class="math notranslate nohighlight">\(y=B\)</span> er den horisontale asymptoten som grafen til <span class="math notranslate nohighlight">\(f\)</span> går mot når <span class="math notranslate nohighlight">\(x\to\infty\)</span>. Vi kaller ofte <span class="math notranslate nohighlight">\(B\)</span> for bæreevnen dersom det er en populasjonsvekst som modelleres. Størrelsene <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(k\)</span> har ikke like praktiske forklaringer, men skal også være positive størrelser.</p>
-<p>Den deriverte er gitt ved</p>
-<p><span class="math notranslate nohighlight">\(f'(x)=k\cdot f(x)\cdot\left(1-\frac{f(x)}{B}\right)\)</span></p>
-<p>Grafen til <span class="math notranslate nohighlight">\(f(x)\)</span> stiger raskest i vendepunktet som ligger i <span class="math notranslate nohighlight">\(\left(\frac{\ln a}{k}, \frac{B}{2}\right)\)</span>.</p>
-</div>
 </section>
 </section>
 
