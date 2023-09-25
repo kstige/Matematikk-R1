@@ -405,9 +405,20 @@ document.write(`
 <p>Finn grenseverdien <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3}f(x)\)</span> når <span class="math notranslate nohighlight">\(f(x)=x^2+2x-3\)</span>.</p>
 <div class="ekslos dropdown admonition">
 <p class="admonition-title">Løsning</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Skriftlig</label><div class="sd-tab-content docutils">
 <p>Definisjonsmengden til funksjonen er alle reelle tall. Da vil</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3} f(x)=3^2+2\cdot 3-3=12=f(3)\)</span></p>
 <p>Resultatet betyr at når <span class="math notranslate nohighlight">\(x\)</span> nærmer seg 3, så vil <span class="math notranslate nohighlight">\(f\)</span> nærme seg 12. Vi kan komme så nærme 12 vi vil ved å la <span class="math notranslate nohighlight">\(x\)</span> gå nærme nok 3.</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Video</label><div class="sd-tab-content docutils">
+<iframe width="680" height="350" src="https://www.youtube.com/embed/vZ9b5DEDyZ4?si=8T2K-cg36paasTC-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</div>
 </div>
 </div>
 <p>I eksempelet over kunne vi bare sette inn for <span class="math notranslate nohighlight">\(x\)</span> for å finne grenseverdien. Slike eksempel er stort sett kun interessante fra et teoretisk og innlæringsperspektiv. I praksis vil vi være interessert i grenseverdier for <span class="math notranslate nohighlight">\(x\)</span>-verdier der funksjonen ikke er definert.</p>
@@ -416,6 +427,10 @@ document.write(`
 <p>Undersøk funksjonen <span class="math notranslate nohighlight">\(f(x)=\frac{2(x^2-9)}{x-3}\)</span>. Hva slags funksjon er det og hva er definisjonsmengden?</p>
 <div class="ekslos dropdown admonition">
 <p class="admonition-title">Løsning</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Skriftlig</label><div class="sd-tab-content docutils">
 <p>Siden både teller og nevner inneholder et polynom, så må det være en rasjonal funksjon. Den har definisjonsmengde <span class="math notranslate nohighlight">\(D_f=\mathbf{R} \backslash \{3\}\)</span> som betyr at funksjonen er definert for alle <span class="math notranslate nohighlight">\(x\)</span>-verdier bortsett fra <span class="math notranslate nohighlight">\(x=3\)</span>. Ser vi på grafen ser vi imidlertid ingen problem. Den ser ut som en lineær funksjon.</p>
 <figure class="align-default">
 <a class="reference internal image-reference" href="../../_images/fjernbardiskontinuitet.png"><img alt="../../_images/fjernbardiskontinuitet.png" src="../../_images/fjernbardiskontinuitet.png" style="width: 394.8px; height: 255.20000000000002px;" /></a>
@@ -432,6 +447,13 @@ document.write(`
 <figure class="align-default">
 <a class="reference internal image-reference" href="../../_images/fjernbardiskontinuitetkryss.png"><img alt="../../_images/fjernbardiskontinuitetkryss.png" src="../../_images/fjernbardiskontinuitetkryss.png" style="width: 394.8px; height: 255.20000000000002px;" /></a>
 </figure>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Video</label><div class="sd-tab-content docutils">
+<iframe width="680" height="350" src="https://www.youtube.com/embed/_8zrGYKFQaY?si=MWPL2fNJq0B7oE7W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</div>
 </div>
 </div>
 <p>Over fant vi grenseverdien ved å se på grafen og bruke CAS. Det vil også være nyttig å kunne finne grenseverdier uten hjelpemidler siden det vil hjelpe oss blant annet med å forstå funksjoner som i eksempelet over. Grenseverdier blir også viktig for å få bedre forståelse for derivasjon som er et av de viktigste temaene i R1.</p>
@@ -451,6 +473,10 @@ document.write(`
 <p>Finn grenseverdien <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3}\frac{2x+3}{3x}\)</span>.</p>
 <div class="ekslos dropdown admonition">
 <p class="admonition-title">Løsning</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Skriftlig</label><div class="sd-tab-content docutils">
 <p><span class="math notranslate nohighlight">\(\begin{align}
 \displaystyle\lim_{x\to 3}\frac{2x+3}{3x}&amp;=\displaystyle\frac{\lim_{x\to 3}(2x+3)}{\lim_{x \to 3}3x}\\
 &amp;=\displaystyle\frac{\lim_{x\to 3}2\cdot\lim_{x\to 3}x+\lim_{x\to 3}3}{\lim_{x\to 3}3\cdot\lim_{x\to 3}x}\\
@@ -461,12 +487,23 @@ document.write(`
 <p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3}\frac{2x+3}{3x}=\frac{2\cdot 3+3}{3\cdot 3}=\frac{9}{9}=1\)</span></p>
 <p>I dette eksempelet var <span class="math notranslate nohighlight">\(x\)</span> i definisjonsmengden til uttrykket vi så på, så i praksis er dette bare det samme som å sette inn 3 for <span class="math notranslate nohighlight">\(x\)</span>.</p>
 </div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Video</label><div class="sd-tab-content docutils">
+<iframe width="680" height="350" src="https://www.youtube.com/embed/h_CgPn7JLr8?si=E0GcemrAFpxvLONR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</div>
+</div>
 </div>
 <div class="eksempel admonition">
 <p class="admonition-title">Eksempel 4</p>
 <p>Finn <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3} f(x)\)</span> når <span class="math notranslate nohighlight">\(f(x)=\frac{2(x^2-9)}{x-3}\)</span> er funksjonen vi så på i eksempel 2.</p>
 <div class="ekslos dropdown admonition">
 <p class="admonition-title">Løsning</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
+Skriftlig</label><div class="sd-tab-content docutils">
 <p>Om vi hadde prøvd på framgangsmåten i forrige eksempel eksempel 3 ville vi kommet til <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3} f(x)=\frac{0}{0}\)</span>. Det betyr at <span class="math notranslate nohighlight">\(x=3\)</span> er et nullpunkt både i teller og nevner. Hadde det kun vært et nullpunkt i nevner ville vi fått en vertikal asymptote og grenseverdien ville blitt uendelig (ikke eksistert). Vi har imidlertid allerede sett at den skal bli 12 og må derfor anvende litt av det vi lærte om faktorisering i 1T for å komme videre.</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3} f(x)=\lim_{x\to 3} \frac{2(x^2-9)}{x-3} = \lim_{x\to 3}\frac{2(x-3)(x+3)}{x-3}\)</span></p>
 <p>Uttrykket er ikke definert når <span class="math notranslate nohighlight">\(x=3\)</span>. Vi kan derfor sette <span class="math notranslate nohighlight">\(x\neq 3\)</span> slik at <span class="math notranslate nohighlight">\(x-3\neq 0\)</span> og da forkorte vekk den felles faktoren <span class="math notranslate nohighlight">\(x-3\)</span>.</p>
@@ -479,6 +516,13 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[g(x)=2x+6,\quad D_g=\mathbf{R}\backslash \{3\}\]</div>
 <p>Det forklarer hvorfor funksjonsgrafen ser ut som grafen til ei rett linje.</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
+Video</label><div class="sd-tab-content docutils">
+<iframe width="680" height="350" src="https://www.youtube.com/embed/dSRYPxOdzEY?si=lxyXTI50mS6-DZJF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</div>
 </div>
 </div>
 <p>Metoden i eksempelet over med å forkorte vekk felles faktor vil vi ofte få bruk for når vi møter på <span class="math notranslate nohighlight">\(\frac{0}{0}\)</span>-uttrykk.</p>
@@ -493,9 +537,20 @@ document.write(`
 <p><strong>b)</strong> <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 1}\frac{x^2-1}{x-1}\)</span></p>
 <div class="ekslos dropdown admonition">
 <p class="admonition-title">Løsning</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
+Skriftlig</label><div class="sd-tab-content docutils">
 <p><strong>a)</strong> <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 1}\frac{x^2-2}{x-1}\)</span> eksisterer ikke siden nevner blir 0, mens teller er ulik 0. Funksjonen vokser mot uendelig slik at <span class="math notranslate nohighlight">\(x=1\)</span> er en vertikal asymptote.</p>
 <p><strong>b</strong>) <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 1}\frac{x^2-1}{x-1}=\lim_{x\to 1}\frac{(x-1)(x+1)}{x-1}=\lim_{x\to 1}(x+1)=1+1=2\)</span></p>
 <p>Den siste grenseverdien eksisterer siden teller og nevner har et felles nullpunkt som vi kan forkorte vekk. Det er imidlertid viktig å merke seg at uttrykket allikevel ikke har en verdi for <span class="math notranslate nohighlight">\(x=1\)</span>, men at verdien til uttrykket nærmer seg 2 når <span class="math notranslate nohighlight">\(x\)</span> nærmer seg 1.</p>
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
+Video</label><div class="sd-tab-content docutils">
+<iframe width="680" height="350" src="https://www.youtube.com/embed/8moD-2VJYis?si=B8Y55d3MYTFude7G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</div>
 </div>
 </div>
 <div class="eksempel admonition">
@@ -503,7 +558,18 @@ document.write(`
 <p>Finn grenseverdien <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 9}\frac{3-\sqrt{x}}{9-x}\)</span></p>
 <div class="ekslos dropdown admonition">
 <p class="admonition-title">Løsning</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
+Skriftlig</label><div class="sd-tab-content docutils">
 <p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 9}\frac{3-\sqrt{x}}{9-x}=\lim_{x\to 9}\frac{3-\sqrt{x}}{(3-\sqrt{x})(3+\sqrt{x})}=\lim_{x\to 9}\frac{1}{3+\sqrt{x}}=\frac{1}{3+\sqrt{9}}=\frac{1}{6}\)</span></p>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
+Video</label><div class="sd-tab-content docutils">
+<iframe width="680" height="350" src="https://www.youtube.com/embed/n8Invf7kDEI?si=klDR-OL7VVua7mKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -531,9 +597,20 @@ document.write(`
 <p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=\frac{2x+1}{x+2}\)</span>. Finn de ensidige grenseverdiene når <span class="math notranslate nohighlight">\(x\to -2\)</span>.</p>
 <div class="ekslos dropdown admonition">
 <p class="admonition-title">Løsning</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-12">
+Skriftlig</label><div class="sd-tab-content docutils">
 <p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to -2^-} f(x) = \infty\)</span> siden telleren er negativ og nevneren går mot null fra negativ side.</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to -2^+} f(x) = -\infty\)</span> siden telleren er negativ og nevneren går mot null fra positiv side.</p>
 <p>Siden <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to -2^-} f(x) \neq \displaystyle\lim_{x\to -2^+} f(x)\)</span>, så eksisterer ikke grenseverdien <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to -2} f(x)\)</span>.</p>
+</div>
+<input id="sd-tab-item-13" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-13">
+Video</label><div class="sd-tab-content docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/L88yekY3TMQ?si=d9eCHrEW100hP2VF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</div>
 </div>
 </div>
 <div class="eksempel admonition">
@@ -541,6 +618,10 @@ document.write(`
 <p>Vi ser på funksjonen <span class="math notranslate nohighlight">\(f(x)=\ln(x-3)\)</span>. Finn grenseverdien når <span class="math notranslate nohighlight">\(x\to 3\)</span>.</p>
 <div class="ekslos dropdown admonition">
 <p class="admonition-title">Løsning</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-14" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-14">
+Skriftlig</label><div class="sd-tab-content docutils">
 <p>Fra definisjonene av logaritmer husker vi at vi kun ta logaritmen av positive tall. Her er det derfor umulig å la <span class="math notranslate nohighlight">\(x\to 3^-\)</span> siden vi ikke har noen funksjonsverdier på den negative siden av 3. Vi kan derfor skrive</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3^-} f(x)\)</span> eksisterer ikke.</p>
 <p>Dersom vi ser på grafen til funksjonen kan det se ut som at funksjonen har en vertikal asymptote for <span class="math notranslate nohighlight">\(x=3\)</span>.</p>
@@ -549,6 +630,13 @@ document.write(`
 </figure>
 <p>Vi konkluderer derfor med at</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3^+} f(x)=-\infty\)</span></p>
+</div>
+<input id="sd-tab-item-15" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-15">
+Video</label><div class="sd-tab-content docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zK1fewM04Fc?si=sfUzZbgiOjqa8FVR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</div>
 </div>
 </div>
 <p>Resultatet i det siste eksempelet kan uttrykkes generelt.</p>
@@ -602,6 +690,10 @@ document.write(`
 <p>Finn grenseverdien <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to\infty}\frac{x^2+2x-4}{2x^3-3x^2+5}\)</span>.</p>
 <div class="ekslos dropdown admonition">
 <p class="admonition-title">Løsning</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-16" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-16">
+Skriftlig</label><div class="sd-tab-content docutils">
 <p>Her kan vi med en gang si at grenseverdien bli <span class="math notranslate nohighlight">\(0\)</span> siden nevneren har høyere grad enn telleren.</p>
 <p>Det blir kanskje lettere å se resultatet dersom vi deler alle ledd i funksjonen på den høyeste potensen av <span class="math notranslate nohighlight">\(x\)</span> som er <span class="math notranslate nohighlight">\(x^3\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\begin{align}
@@ -610,12 +702,23 @@ document.write(`
 &amp;=\frac{0+0-0}{2+0+0}=0
 \end{align}\)</span></p>
 </div>
+<input id="sd-tab-item-17" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-17">
+Video</label><div class="sd-tab-content docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/D9uJWxHgXeQ?si=LCl4MuVBLpu9Gl8l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</div>
+</div>
 </div>
 <div class="eksempel admonition">
 <p class="admonition-title">Eksempel 10</p>
 <p>Finn grenseverdien <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to\infty}\frac{x^3+9}{4x^2-2x}\)</span></p>
 <div class="ekslos dropdown admonition">
 <p class="admonition-title">Løsning</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-18" name="sd-tab-set-9" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-18">
+Skriftlig</label><div class="sd-tab-content docutils">
 <p>Her vil grenseverdien gå mot <span class="math notranslate nohighlight">\(\infty\)</span> siden telleren har høyere grad enn nevneren.</p>
 <p>Det blir kanskje lettere å se det dersom vi deler alle ledd i funksjonen på den høyeste potensen av <span class="math notranslate nohighlight">\(x\)</span> som er <span class="math notranslate nohighlight">\(x^3\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\begin{align}
@@ -625,12 +728,23 @@ document.write(`
 \end{align}\)</span></p>
 <p>siden vi prøver å dele på null.</p>
 </div>
+<input id="sd-tab-item-19" name="sd-tab-set-9" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-19">
+Video</label><div class="sd-tab-content docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_coDwvVUMHE?si=87e1ION3z9XGMyWR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</div>
+</div>
 </div>
 <div class="eksempel admonition">
 <p class="admonition-title">Eksempel 11</p>
 <p>Finn grenseverdien <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to\infty}\frac{3x^2+4}{5x^2-2x+1}\)</span>.</p>
 <div class="ekslos dropdown admonition">
 <p class="admonition-title">Løsning</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-20" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-20">
+Skriftlig</label><div class="sd-tab-content docutils">
 <p>Her vil grenseverdien være <span class="math notranslate nohighlight">\(\frac{3}{5}\)</span>.</p>
 <p>Det blir kanskje lettere å se det dersom vi deler alle ledd i funksjonen på den høyeste potensen av <span class="math notranslate nohighlight">\(x\)</span> som er <span class="math notranslate nohighlight">\(x^2\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\begin{align}
@@ -639,6 +753,13 @@ document.write(`
 &amp;=\frac{3+0}{5-0+0} \\
 &amp;=\frac{3}{5}
 \end{align}\)</span></p>
+</div>
+<input id="sd-tab-item-21" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-21">
+Video</label><div class="sd-tab-content docutils">
+<p>Mangler video.</p>
+</div>
+</div>
 </div>
 </div>
 </section>
