@@ -395,8 +395,10 @@ document.write(`
 </div>
 <p>På forrige side så vi at <span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to a^+} \ln (x-a)=-\infty\)</span>. Det vil si at den funksjonen har en vertikal asymptote for <span class="math notranslate nohighlight">\(x=a\)</span>. Ellers vil vi stort sett møte slike asynptoter hos rasjonale funksjoner. I 1T arbeidet vi stort sett med rasjonale funksjoner med en vertikal asymptote. Som vi ser i eksempelet under, så er det fullt mulig med mer enn en.</p>
 <div class="eksempel admonition">
-<p class="admonition-title">Eksempel: To vertikale asymptoter</p>
-<p>Vi skal finne de vertikale asymptotene til <span class="math notranslate nohighlight">\(f(x)=\frac{x}{x^2-9}\)</span></p>
+<p class="admonition-title">Eksempel 1</p>
+<p>Finn de vertikale asymptotene til <span class="math notranslate nohighlight">\(f(x)=\frac{x}{x^2-9}\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
 <p>Eventuelle vertikale asymptoter finner vi i nullpunktene til nevneren. Det vil si når <span class="math notranslate nohighlight">\(x=3\vee x=-3\)</span>. Vi sjekker med definisjonen av vertikal asymptote</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3^+} \frac{x}{x^2-9} = \frac{3}{0}=\infty\)</span></p>
 <p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to -3^+} \frac{x}{x^2-9} = \frac{-3}{-0}=\infty\)</span></p>
@@ -406,11 +408,16 @@ document.write(`
 <a class="reference internal image-reference" href="../../_images/vertikaleasymptoter.png"><img alt="../../_images/vertikaleasymptoter.png" src="../../_images/vertikaleasymptoter.png" style="width: 532.8000000000001px; height: 362.40000000000003px;" /></a>
 </figure>
 </div>
+</div>
 <div class="eksempel admonition">
-<p class="admonition-title">Eksempel: Rasjonal funksjon uten vertikal asymptote</p>
-<p>I forrige eksempel var vi nøye med å sjekke grenseverdiene før vi konkluderte med asymptotene. Grunnen til det er at vi kan ha nullpunkt i nevner som ikke gir vertikale asymptoter. Det skjer hvis vi samtidig har nullpunkt i teller. Da kan den problematiske faktoren forkortes vekk og vi får ingen vertikal asymptote. Vi så et eksempel på det i funksjonen <span class="math notranslate nohighlight">\(f(x)=\frac{2(x^2-9)}{x-3}\)</span> på forrige side. Nevneren er null for <span class="math notranslate nohighlight">\(x=3\)</span> og der kan det derfor være en vertikal asymptote. Ved å faktorisere og forkorte fant vi imidlertid ut at</p>
+<p class="admonition-title">Eksempel 2</p>
+<p>Undersøk funksjonen <span class="math notranslate nohighlight">\(f(x)=\frac{2(x^2-9)}{x-3}\)</span> for eventuelle vertikale asymptoter.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>I forrige eksempel var vi nøye med å sjekke grenseverdiene før vi konkluderte med asymptotene. Grunnen til det er at vi kan ha nullpunkt i nevner som ikke gir vertikale asymptoter. Det skjer hvis vi samtidig har nullpunkt i teller. Da kan den problematiske faktoren forkortes vekk og vi får ingen vertikal asymptote. Den funksjonen her er et eksempel på <a class="reference external" href="http://det.Vi">det.Vi</a> så på den på siden om grenseverdier. Der fikk vi at nevneren er null for <span class="math notranslate nohighlight">\(x=3\)</span>. Ved å faktorisere og forkorte fant vi imidlertid ut at</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 3} f(x) = \frac{2(x-3)(x+3)}{x-3}=\lim_{x\to 3} 2(x+3)=\lim_{x\to 3} (2x+6)=2\cdot 3+6=12\)</span></p>
 <p>Siden grenseverdien eksisterer er det ingen vertikal asymptote for <span class="math notranslate nohighlight">\(x=3\)</span>.</p>
+</div>
 </div>
 <p>Rasjonale funksjoner er såpass viktige at vi oppsummerer resultatene her.</p>
 <div class="def admonition">
@@ -429,14 +436,20 @@ document.write(`
 <p>og tilsvarende for <span class="math notranslate nohighlight">\(x\to -\infty\)</span>.</p>
 </div>
 <div class="eksempel admonition">
-<p class="admonition-title">Eksempel: Horisontal asymptote</p>
+<p class="admonition-title">Eksempel 3</p>
+<p>Finn den horisontale asymptoten til <span class="math notranslate nohighlight">\(f(x)=3^{-x}+2\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to\infty} (3^{-x}+2) = 0+2=2\)</span></p>
 <p>viser at funksjonen <span class="math notranslate nohighlight">\(f(x)=3^{-x}+2\)</span> har en horisontal asymptote <span class="math notranslate nohighlight">\(y=2\)</span>.</p>
 </div>
+</div>
 <p>Vi husker fra forrige side at rasjonale funksjoner har en grenseverdi når <span class="math notranslate nohighlight">\(x\to\infty\)</span> kun dersom teller har lavere (da er grenseverdien 0) eller lik grad som nevner. Denne grenseverdien gir den horisontale asymptoten og for å finne den kan vi bruke trikset om å dele på høyeste potens av <span class="math notranslate nohighlight">\(x\)</span> i alle ledd.</p>
 <div class="eksempel admonition">
-<p class="admonition-title">Eksempel: Horisontal asymptote for rasjonal funksjon</p>
-<p>Vi vil finne den horisontale asymptoten til <span class="math notranslate nohighlight">\(f(x)=\frac{2x^2-3x+4}{3x^2-5}\)</span>.</p>
+<p class="admonition-title">Eksempel 4</p>
+<p>Finn den horisontale asymptoten til <span class="math notranslate nohighlight">\(f(x)=\frac{2x^2-3x+4}{3x^2-5}\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
 <p><span class="math notranslate nohighlight">\(\begin{align}
 \displaystyle\lim_{x\to\infty}\frac{2x^2-3x+4}{3x^2-5}&amp;=\lim_{x\to\infty}\frac{2-\frac{3}{x}+\frac{4}{x^2}}{3-\frac{5}{x^2}}\\
 &amp;=\frac{2-0+0}{3-0} \\
@@ -444,10 +457,13 @@ document.write(`
 \end{align}\)</span></p>
 <p>Den horisontale asymptoten er <span class="math notranslate nohighlight">\(y=\frac{2}{3}\)</span>.</p>
 </div>
+</div>
 <p>I eksempelet over ville vi fått akkurat samme grenseverdi om vi hadde sett på <span class="math notranslate nohighlight">\(x\to -\infty\)</span>. Det kan imidlertid være lurt å sjekke begge grenseverdier som eksempelet under viser.</p>
 <div class="eksempel admonition">
-<p class="admonition-title">Eksempel: To horisontale asymptoter</p>
-<p>Vi skal finne asymptotene til <span class="math notranslate nohighlight">\(f(x)=\frac{2x}{x(e^{-x}+1)}\)</span>.</p>
+<p class="admonition-title">Eksempel 5</p>
+<p>Finn asymptotene til <span class="math notranslate nohighlight">\(f(x)=\frac{2x}{x(e^{-x}+1)}\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
 <p>Det første vi observerer er at nevneren har et nullpunkt når <span class="math notranslate nohighlight">\(x=0\)</span>. Faktoren <span class="math notranslate nohighlight">\(e^{-x}+1\)</span> er positiv for alle <span class="math notranslate nohighlight">\(x\)</span> siden en eksponentialfunksjon aldri kan bli negativ. Nullpunktet i nevneren er imidlertid felles med telleren, så vi undersøker grenseverdien <span class="math notranslate nohighlight">\(x\to 0\)</span> og får</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x\to 0} \frac{2x}{x(e^{-x}+1)}=\lim_{x\to 0}\frac{2}{e^{-x}+1} = \frac{2}{e^0+1}=\frac{2}{1+1}=1\)</span></p>
 <p>Grenseverdien eksisterer, så vi har ingen vertikal asymptote.</p>
@@ -459,6 +475,7 @@ document.write(`
 <figure class="align-default">
 <a class="reference internal image-reference" href="../../_images/tohorisontale.png"><img alt="../../_images/tohorisontale.png" src="../../_images/tohorisontale.png" style="width: 532.8000000000001px; height: 362.40000000000003px;" /></a>
 </figure>
+</div>
 </div>
 </section>
 <section id="skra-asymptoter">
@@ -472,8 +489,10 @@ document.write(`
 <p>I praksis finner vi den skrå asymptoten ved å utføre polynomdivisjon av <span class="math notranslate nohighlight">\(t(x)\)</span> mot <span class="math notranslate nohighlight">\(n(x)\)</span>.</p>
 </div>
 <div class="eksempel admonition">
-<p class="admonition-title">Eksempel: Skrå asymptote</p>
-<p>Vi skal finne asymptotene til <span class="math notranslate nohighlight">\(f(x)=\frac{x^3+2}{x^2-6x+9}\)</span>.</p>
+<p class="admonition-title">Eksempel 6: Skrå asymptote</p>
+<p>Finn asymptotene til <span class="math notranslate nohighlight">\(f(x)=\frac{x^3+2}{x^2-6x+9}\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
 <p>Vi starter med å se etter vertikale asymptoter. Nevneren er et fullstendig kvadrat <span class="math notranslate nohighlight">\((x-3)^2\)</span> med nullpunkt <span class="math notranslate nohighlight">\(x=3\)</span>. Telleren har ikke nullpunkt for <span class="math notranslate nohighlight">\(x=3\)</span>, så <span class="math notranslate nohighlight">\(x=3\)</span> er en vertikal asymptote.</p>
 <p>Videre ser vi at teller har grad en større enn nevner, så vi kan se etter skrå asymptote. For å finne den utfører vi polynomdivisjonen <span class="math notranslate nohighlight">\(x^3+2 : x^2-6x+9\)</span>.</p>
 <figure class="align-default">
@@ -486,6 +505,7 @@ document.write(`
 <figure class="align-default">
 <a class="reference internal image-reference" href="../../_images/skraasymptote.png"><img alt="../../_images/skraasymptote.png" src="../../_images/skraasymptote.png" style="width: 532.8000000000001px; height: 362.40000000000003px;" /></a>
 </figure>
+</div>
 </div>
 </section>
 </section>
