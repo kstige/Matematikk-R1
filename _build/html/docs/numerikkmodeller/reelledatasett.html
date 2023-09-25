@@ -317,7 +317,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -333,6 +335,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laste-inn-datasett">Laste inn datasett</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -344,6 +354,67 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="reelle-datasett">
 <h1><span class="section-number">6. </span>Reelle datasett<a class="headerlink" href="#reelle-datasett" title="Permalink to this heading">#</a></h1>
+<div class="utbytte dropdown admonition">
+<p class="admonition-title">Læringsutbytte</p>
+<p>I dette temaet arbeider vi med kompetansemålet:</p>
+<ul class="simple">
+<li><p>planlegge og gjennomføre et selvstendig arbeid med reelle datasett knyttet til naturvitenskapelige temaer og forhold, og analysere og presentere funn</p></li>
+<li><p>anvende derivasjon til å analysere og tolke egne matematiske modeller av reelle datasett</p></li>
+<li><p>modellere og analysere eksponentiell og logistisk vekst i reelle datasett</p></li>
+</ul>
+<p>Etter å ha arbeidet med temaet, skal du:</p>
+<ul class="simple">
+<li><p>hente inn og rydde i datasett ved hjelp av biblioteket pandas</p></li>
+<li><p>anvende kunnskap om funksjoner og derivasjon til å velge egnet modell for datasettet</p></li>
+<li><p>visualisere (plotte) datasettet på en oversiktlig måte</p></li>
+<li><p>analysere og tolke datasettet ved hjelp av blant annet derivasjon</p></li>
+</ul>
+</div>
+<p>Det moderne samfunnet er bygd opp av data. De fleste beslutninger rundt oss blir tatt med utgangspunkt i innsamling av store mengder data. Når du åpner Youtube, så får du opp informasjon tilpasset deg. Den informasjonen baserer seg på datainnsamling av hva du ser på og hva andre som ser på det samme har sett på. Moderne biler samler kontinuerlig data for å analysere trafikksituasjonen og hjelpe sjårføren med riktige beslutninger. Framover vil vi i enda større grad se at prosesser styres av kunstig intelligens. Alt dette handler i bunn og grunn om store datamengder som analyseres gjennom derivasjon og statiske behandlinger. Noe av det skal vi se på her.</p>
+<section id="laste-inn-datasett">
+<h2>Laste inn datasett<a class="headerlink" href="#laste-inn-datasett" title="Permalink to this heading">#</a></h2>
+<p>Det første vi må lære oss er hvordan vi kan laste inn datasett i programmene våre. Filene vi henter inn er rene tekstfiler uten noen form for formattering (farger, tekststørrelse osv.). Det kalles råtekstformat. Grunnen til at vi ønsker å bruke slike filer er at de er lettere å lese og færre distraherende faktorer å forholde seg til. Slike filer vil ofte være lagret som txt-filer eller csv-filer og de er forholdsvis enkle å laste inn i Python med biblioteket <em>Pandas</em>.</p>
+<p>Her vil vi ta utgangspunkt i eksempelet med andel internettbrukere som vi så på på siden om modeller. Under ser vi de første radene i filen. Resten av filen finner du her <a class="reference download internal" download="" href="../../_downloads/a0120fd160a7ecf754c7b746fd5b690f/internettbrukere.csv"><span class="xref download myst">internettbrukere</span></a>.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>aar, andel
+0,7
+1,10
+2,18
+3,27
+4,35
+5,35
+</pre></div>
+</div>
+<p>Under er det gitt et enkelt lite program som bruker <em>pandas</em>-biblioteket til å laste inn filen før punktene plottes. Vi ser at første rad automatisk identifiseres som overskrifter og kan brukes til å hente ut ei liste med årstall og ei liste med andeler.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;internettbrukere.csv&quot;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;aar&quot;</span><span class="p">]</span><span class="o">+</span><span class="mi">1997</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;andel&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;År&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Andel internettbrukere&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/fd33d7c47ab7f45bb42d846307254b63876e4291fd6454c9b2d509b1384db7ff.png" src="../../_images/fd33d7c47ab7f45bb42d846307254b63876e4291fd6454c9b2d509b1384db7ff.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             aar      andel
+count  26.000000  26.000000
+mean   12.500000  64.538462
+std     7.648529  28.169815
+min     0.000000   7.000000
+25%     6.250000  42.500000
+50%    12.500000  75.000000
+75%    18.750000  88.750000
+max    25.000000  93.000000
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -404,6 +475,20 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laste-inn-datasett">Laste inn datasett</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
