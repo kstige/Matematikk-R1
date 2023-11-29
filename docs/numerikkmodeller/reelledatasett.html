@@ -64,6 +64,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/numerikkmodeller/reelledatasett';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Søk" href="../../search.html" />
@@ -341,6 +343,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laste-inn-datasett">Laste inn datasett</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-med-sprettball">Eksempel med sprettball</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-temperatur">Eksempel - temperatur</a></li>
 </ul>
             </nav>
         </div>
@@ -374,7 +378,7 @@ document.write(`
 <section id="laste-inn-datasett">
 <h2>Laste inn datasett<a class="headerlink" href="#laste-inn-datasett" title="Permalink to this heading">#</a></h2>
 <p>Det første vi må lære oss er hvordan vi kan laste inn datasett i programmene våre. Filene vi henter inn er rene tekstfiler uten noen form for formattering (farger, tekststørrelse osv.). Det kalles råtekstformat. Grunnen til at vi ønsker å bruke slike filer er at de er lettere å lese og færre distraherende faktorer å forholde seg til. Slike filer vil ofte være lagret som txt-filer eller csv-filer og de er forholdsvis enkle å laste inn i Python med biblioteket <em>Pandas</em>.</p>
-<p>Her vil vi ta utgangspunkt i eksempelet med andel internettbrukere som vi så på på siden om modeller. Under ser vi de første radene i filen. Resten av filen finner du her <a class="reference download internal" download="" href="../../_downloads/a0120fd160a7ecf754c7b746fd5b690f/internettbrukere.csv"><span class="xref download myst">internettbrukere</span></a>.</p>
+<p>Her vil vi ta utgangspunkt i eksempelet med andel internettbrukere som vi så på på siden om vekstmodeller. Under ser vi de første radene i filen. Resten av filen finner du her <a class="reference download internal" download="" href="../../_downloads/a0120fd160a7ecf754c7b746fd5b690f/internettbrukere.csv"><span class="xref download myst">internettbrukere</span></a>.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>aar, andel
 0,7
 1,10
@@ -384,36 +388,241 @@ document.write(`
 5,35
 </pre></div>
 </div>
-<p>Under er det gitt et enkelt lite program som bruker <em>pandas</em>-biblioteket til å laste inn filen før punktene plottes. Vi ser at første rad automatisk identifiseres som overskrifter og kan brukes til å hente ut ei liste med årstall og ei liste med andeler.</p>
+<p>Under er det gitt et enkelt lite program som bruker <em>pandas</em>-biblioteket til å laste inn filen før punktene plottes. Vi ser at første rad automatisk identifiseres som overskrifter og kan brukes til å hente ut ei liste med årstall og ei liste med andeler.
+Da vi undersøkte datasettet med regresjon fant vi at funksjonen som paset best var <span class="math notranslate nohighlight">\(\displaystyle f(x)=\frac{92.1}{1+6.6e^{-0.28x}}\)</span>. Vi plotter denne funksjonen sammen med datapunktene.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;internettbrukere.csv&quot;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="n">aar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;aar&quot;</span><span class="p">])</span>           <span class="c1"># Henter ut lista med år</span>
+<span class="n">andel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;andel&quot;</span><span class="p">])</span>       <span class="c1"># Henter ut lista med andeler</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;aar&quot;</span><span class="p">]</span><span class="o">+</span><span class="mi">1997</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;andel&quot;</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;År&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">aar</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">92.1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mf">6.6</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.28</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+
+<span class="n">xakse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">aar</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">aar</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1000</span><span class="p">)</span>      <span class="c1"># Lager 1000 x-verdier mellom første og siste år</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">aar</span><span class="p">,</span> <span class="n">andel</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>                 <span class="c1"># Bruker scatter for å tegne kun punktene</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xakse</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">xakse</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;År etter 1997&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Andel internettbrukere&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fd33d7c47ab7f45bb42d846307254b63876e4291fd6454c9b2d509b1384db7ff.png" src="../../_images/fd33d7c47ab7f45bb42d846307254b63876e4291fd6454c9b2d509b1384db7ff.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             aar      andel
-count  26.000000  26.000000
-mean   12.500000  64.538462
-std     7.648529  28.169815
-min     0.000000   7.000000
-25%     6.250000  42.500000
-50%    12.500000  75.000000
-75%    18.750000  88.750000
-max    25.000000  93.000000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+<img alt="../../_images/8af829caca894b9eb8aacdf4e93986db71d9a13009cc5e67d731957ce7ff6038.png" src="../../_images/8af829caca894b9eb8aacdf4e93986db71d9a13009cc5e67d731957ce7ff6038.png" />
+</div>
+</div>
+<p>Vi kan også undersøke veksten i datasettet ved å bruke numerisk derivasjon. Fra siden om numerisk derivasjon husker vi at vi kunne tilnærme den deriverte ved</p>
+<div class="math notranslate nohighlight">
+\[f'(x)\approx\frac{f(x+\Delta x)-f(x)}{\Delta x}\]</div>
+<p>der <span class="math notranslate nohighlight">\(\Delta x\)</span> var et lite tall.</p>
+<p>Her gjør vi det både med å bruke funksjonsuttrykket og med å bruke datasettet direkte. Når vi bruker datasettet beregner vi gjennomsnittlige vekstfart mellom andelen for de ulike årene. Dette vil gi en tilnærming til den deriverte. Det vi må gjøre er altså å regne ut endringen i andel mellom to år og så dividere dette på antall år</p>
+<div class="math notranslate nohighlight">
+\[\frac{\text{andel år i+1}-\text{andel år i}}{i+1-i}\]</div>
+<p>Nevneren blir i dette tilfellet bare 1. Vi implementerer framgangsmåten med ei løkke og tegner grafen til den deriverte med begge framgangsmåtene. Det siste året er det ikke mulig å regne ut en tilnærming for den deriverte i siden vi da hadde trengt data for året etter. Når vi tegner grafen må vi ta hensyn til det ved å bruke [:-1] bak lista. Det betyr at vi skal ta med alle utenom den siste verdien.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">derivert_data</span> <span class="o">=</span> <span class="p">[]</span>             <span class="c1"># Lager ei tom liste å lagre de deriverte i</span>
+
+<span class="k">def</span> <span class="nf">derivert</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="mf">1E-8</span><span class="p">):</span>          <span class="c1"># Numerisk derivert av f. Her har dx fått en standardverdi</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">dx</span>
+
+<span class="n">derivert_numerisk</span> <span class="o">=</span> <span class="n">derivert</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">xakse</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">aar</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">der_data</span> <span class="o">=</span> <span class="n">andel</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">andel</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>      <span class="c1"># Her skulle vi egentlig delt på (i+1-i), men det blir bare 1</span>
+    <span class="n">derivert_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">der_data</span><span class="p">)</span>
+
+    
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">aar</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">derivert_data</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xakse</span><span class="p">,</span> <span class="n">derivert_numerisk</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;År&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Endring i andel&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/02659cd8cbbab78734a715312774ce1d26a815ebd4dba61b59c84523dbf51d7f.png" src="../../_images/02659cd8cbbab78734a715312774ce1d26a815ebd4dba61b59c84523dbf51d7f.png" />
+</div>
+</div>
+<p>Vi ser at den blå grafen som viser gjennomsnittlig vekstfart år for år blir veldig hakkete. Det er fordi vi har få datapunkter med ganske stor avstand (et helt år). Den viser oss imidlertid en del viktig informasjon. Blant annet får den fram at med unntak av et par år rundt år 17 og 21, så er veksten positiv. Det vil si at det jevnt over er en stigning i andelen internettbrukere. Vi ser også at med unntak av enkeltår, så er trenden at veksten er størst i starten og så går veksten nedover mot null. Denne trenden ser vi bedre av den oransje kurva som viser den numerisk deriverte av den logistiske funksjonen. Denne mister imidlertid enkeltinformasjonen som at det er et par år med negativ vekst.</p>
+</section>
+<section id="eksempel-med-sprettball">
+<h2>Eksempel med sprettball<a class="headerlink" href="#eksempel-med-sprettball" title="Permalink to this heading">#</a></h2>
+<p>Vi ser på målinger av en sprettball som slippes fra 5 meters høyde i vakuum. Datasettet finner vi <a class="reference download internal" download="" href="../../_downloads/7c126907ea6c5c23125b6392c52c52ff/sprettball.csv"><span class="xref download myst">her</span></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;sprettball.csv&quot;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">)</span>
+
+<span class="c1"># Skriver ut øverste del av datasettet for å få litt oversikt. </span>
+<span class="c1"># Her må du vanligvis skrive print(data.head()) for å få det ut, men i en jupyter notebook som disse sidene</span>
+<span class="c1"># baserer seg på, så er ikke det nødvendig</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>tid</th>
+      <th>hoyde</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.00</td>
+      <td>5.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.01</td>
+      <td>4.999019</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.02</td>
+      <td>4.997057</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.03</td>
+      <td>4.994114</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.04</td>
+      <td>4.990190</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Vi ser at vi har en oversikt over tidspunkt og høyder. Det første vi vil gjøre er å plotte dataene for å få en oversikt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;tid&quot;</span><span class="p">])</span>
+<span class="n">hoyde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;hoyde&quot;</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tid</span><span class="p">,</span> <span class="n">hoyde</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tid (s)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Høyde (m)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/8587261315d87b49f13f3319fb15705012d120c3d7bd68fee350dafcded9c2da.png" src="../../_images/8587261315d87b49f13f3319fb15705012d120c3d7bd68fee350dafcded9c2da.png" />
+</div>
+</div>
+<p>Her er det ikke lett å se for seg noe funksjnsuttrykk som kan beskrive bevegelsen. Vi går derfor videre med å undersøke farten. Vi bruker da at fart er den deriverte av posisjonen som i dette tilfellet er høyden. Vi har ikke tilgang på noen funksjon for høyden, så vi finner gjennomsnittlig fart i hvert intervall og plotter denne.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tid</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">hoyde</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">hoyde</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">tid</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">tid</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tid</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">v</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/31e416861dfffdb4f143ee406fcb077f28f2247cf0f666de55fba19403c029e9.png" src="../../_images/31e416861dfffdb4f143ee406fcb077f28f2247cf0f666de55fba19403c029e9.png" />
+<img alt="../../_images/367005057d860a5a16c5909a5496fdd572464639fd06fa7be5f77087170f35ac.png" src="../../_images/367005057d860a5a16c5909a5496fdd572464639fd06fa7be5f77087170f35ac.png" />
+</div>
+</div>
+<p>Så ser vi på akselerasjonen på samme måte, men tar da utgangspunkt i farten. Siden ballen får en voldsom og plutselig akselerasjon akkurat i det den treffer bakken har vi vagt å innskrenke <span class="math notranslate nohighlight">\(y\)</span>-aksen mellom -9 og -11 slik at vi får tydelig fram akselerasjonen i selve falløyeblikket. Lista med gjennomsnittlige akselerasjoner blir et hakk kortere enn lista med hastigheter (av samme grunn som at lista med hastigheter ble et hakk kortere enn lista med posisjoner). Lista blir derfor <span class="math notranslate nohighlight">\(n-2\)</span> lang.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>           <span class="c1"># n er fortsatt lengden på lista med tider</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">tid</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">tid</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tid</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="eksempel-temperatur">
+<h2>Eksempel - temperatur<a class="headerlink" href="#eksempel-temperatur" title="Permalink to this heading">#</a></h2>
+<p>En kopp med kokende vann settes i et rom med temperatur på <span class="math notranslate nohighlight">\(T_0=20^{\circ}\)</span> C. Vi gjør målinger av temperaturen hvert halvminutt fram til temperaturen stabiliserer seg rundt romteperatur. Målingene finner vi i filen <a class="reference download internal" download="" href="../../_downloads/7c126907ea6c5c23125b6392c52c52ff/sprettball.csv"><span class="xref download myst">temperatur.csv</span></a>. Vi starter med å tegne inn målingene i et diagram. I tillegg bruker vi målepunktene for å tegne inn den gjennomsnittlige vekstfarten i hvert punkt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;temperatur.csv&quot;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">)</span>
+
+<span class="c1"># Skriver ut øverste del av datasettet for å få litt oversikt. </span>
+<span class="c1"># Her må du vanligvis skrive print(data.head()) for å få det ut, men i en jupyter notebook som disse sidene</span>
+<span class="c1"># baserer seg på, så er ikke det nødvendig</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="n">tid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;tid&quot;</span><span class="p">])</span>
+<span class="n">temperatur</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;temperatur&quot;</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tid</span><span class="p">,</span> <span class="n">hoyde</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tid (s)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Temperatur (grader Celsius)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tid</span><span class="p">)</span>
+<span class="n">dT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">dT</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">temperatur</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">temperatur</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">tid</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">tid</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tid</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">dT</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/ad17aa9ba142e1588777bc2f5f16772ef111f40e2e46507157cc6ad1cc7254a0.png" src="../../_images/ad17aa9ba142e1588777bc2f5f16772ef111f40e2e46507157cc6ad1cc7254a0.png" />
+<img alt="../../_images/ece5571b494fbf646da78f73cc30c9cb5a525573ec3007e6ceb812985d4b0d63.png" src="../../_images/ece5571b494fbf646da78f73cc30c9cb5a525573ec3007e6ceb812985d4b0d63.png" />
+</div>
+</div>
+<p>I fysikk har vi en sammenheng som kalles Newtons avkjølingslov. Den gir temperaturen <span class="math notranslate nohighlight">\(T(t)\)</span> til et objekt ved tiden <span class="math notranslate nohighlight">\(t\)</span> når den står i omvgivelser med temperaturen <span class="math notranslate nohighlight">\(T_0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[T'(t)=-k(T(t)-T_0)\]</div>
+<p>Det vil si at endringen i temperatur er proporsjonal med forskjellen mellom temperaturen og temperaturen til omgivelsene. Konstanten <span class="math notranslate nohighlight">\(k\)</span> sier noe om hvor mange grader temperaturen synker hvert minutt. Vi skal her undersøke denne temperaturutviklingen og finne en passende funksjon.</p>
 </section>
 </section>
 
@@ -485,6 +694,8 @@ max    25.000000  93.000000
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laste-inn-datasett">Laste inn datasett</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-med-sprettball">Eksempel med sprettball</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-temperatur">Eksempel - temperatur</a></li>
 </ul>
   </nav></div>
 
