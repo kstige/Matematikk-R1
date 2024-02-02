@@ -64,6 +64,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/vektorer/vektorer';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Søk" href="../../search.html" />
@@ -317,7 +319,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -333,6 +337,17 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hva-er-en-vektor">Hva er en vektor?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lengden-til-en-vektor">Lengden til en vektor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren-mellom-to-punkt">Vektoren mellom to punkt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektorer-i-geogebra">Vektorer i GeoGebra</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -344,6 +359,125 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="vektorer">
 <h1><span class="section-number">1. </span>Vektorer<a class="headerlink" href="#vektorer" title="Permalink to this heading">#</a></h1>
+<div class="utbytte dropdown admonition">
+<p class="admonition-title">Læringsutbytte</p>
+<p>I dette temaet arbeider vi med kompetansemålet:</p>
+<ul class="simple">
+<li><p>forstå begrepet vektor og regneregler for vektorer i planet, og bruke vektorer til å beregne ulike størrelser i planet</p></li>
+</ul>
+<p>Etter å ha arbeidet med temaet, skal du:</p>
+<ul class="simple">
+<li><p>vite hva vi mener med en vektor og en posisjonsvektor</p></li>
+<li><p>lese av koordinatene til en vektor i planet</p></li>
+<li><p>tegne vektorer i planet</p></li>
+<li><p>kunne finne lengden til en vektor</p></li>
+<li><p>kunne finne vektoren mellom to punkt</p></li>
+</ul>
+</div>
+<section id="hva-er-en-vektor">
+<h2>Hva er en vektor?<a class="headerlink" href="#hva-er-en-vektor" title="Permalink to this heading">#</a></h2>
+<p>I realfagene møter vi på mange størrelser der retningen er viktig. For eksempel er det vesentlig å se både på retning og tallstørrelse når vi skal undersøke vind. Til slike størrelser trenger vi noe som kalles vektorer.</p>
+<div class="def admonition">
+<p class="admonition-title">Vektor</p>
+<p>En vektor er en størrelse som har både måltall (talltørrelse) og retning.</p>
+<p>Navnet på en vektor skriver vi med en pil over navnet på denne måten <span class="math notranslate nohighlight">\(\vec{u}\)</span>, eller ved hjelp av start og sluttpunkt <span class="math notranslate nohighlight">\(\vec{AB}\)</span>. Selve vektoren oppgir vi ved å bruke koordinater med firkantparenteser rundt. Koordinatene er gitt ved antall enheter i x-retning og antall enheter i y-retning.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/vektorer.png"><img alt="../../_images/vektorer.png" src="../../_images/vektorer.png" style="width: 450.0px; height: 419.4px;" /></a>
+</figure>
+<p>Her ser vi vektoren <span class="math notranslate nohighlight">\(\vec{u}=[3, 4]\)</span> og <span class="math notranslate nohighlight">\(\overrightarrow{AB} = [3, 4]\)</span>. Vektorene er like selv om de har ulikt startpunkt. Generelt er to vektorer like dersom både x-koordinatene er like og y-koordinatene er like.</p>
+<p><span class="math notranslate nohighlight">\([x_1, y_1] = [x_2, y_2] \Leftrightarrow x_1 = x_2 \wedge y_1 = y_2\)</span></p>
+<p>Vektoren <span class="math notranslate nohighlight">\(\vec{u}\)</span> er tegnet fra origo. Da kaller vi den for <strong>posisjonsvektoren</strong> til punktet <span class="math notranslate nohighlight">\(P = (3, 4)\)</span> og skriver at <span class="math notranslate nohighlight">\(\vec{u}=\vec{OP}\)</span>.</p>
+</div>
+<p>Størrelser som temperatur og masse der kun tallstørrelsen er viktig kaller vi for <strong>skalarer</strong>.</p>
+<p>I R1 skal vi kun se på 2-dimensjonale vektorer, men det er ingenting i veien for å utvide vektorbegrepet til så mange dimensjoner vi trenger. Einstein sin relativitetsteori kan for eksempel beskrives ved hjelp av 4-dimensjonale vektorer (tre retninger i rommet + tid). Når vi arbeider i to dimensjoner er det praktisk å tegnet vektorene inn i et koordinatsystem slik vi gjorde i definisjonen over.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 1</p>
+<p>Finn koordinatene til vektorene i bildet under:</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/vektoreksempel1.png"><img alt="../../_images/vektoreksempel1.png" src="../../_images/vektoreksempel1.png" style="width: 450.0px; height: 341.4px;" /></a>
+</figure>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Vi ser på hvor langt hver av vektorene går i henholdsvis x- og y-retning.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/vektoreksempel1los.png"><img alt="../../_images/vektoreksempel1los.png" src="../../_images/vektoreksempel1los.png" style="width: 450.0px; height: 341.4px;" /></a>
+</figure>
+<p>Ser da at <span class="math notranslate nohighlight">\(\vec{u} = [5, 3]\)</span>, <span class="math notranslate nohighlight">\(\vec{v} = [-3, -4]\)</span> og <span class="math notranslate nohighlight">\(\vec{w}=[6,0]\)</span>.</p>
+<p>Legg spesielt merke til at <span class="math notranslate nohighlight">\(\vec{v}\)</span> har negative koordinater siden den går i negativ retning både langs x- og y-aksen.</p>
+</div>
+</div>
+</section>
+<section id="lengden-til-en-vektor">
+<h2>Lengden til en vektor<a class="headerlink" href="#lengden-til-en-vektor" title="Permalink to this heading">#</a></h2>
+<p>Måltallet eller tallstørrelsen til en vektor tilsvarer lengden til vektoren. Vi må derfor ha en metode for å finne lengden til vektorer. Lengden til en vektor kalles også absoluttverdien til vektoren.</p>
+<div class="def admonition">
+<p class="admonition-title">Lengden av en vektor</p>
+<p>Lengden eller absoluttverdien til en vektor finner vi ved hjelp av Pytagoras.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/absoluttverdi.png"><img alt="../../_images/absoluttverdi.png" src="../../_images/absoluttverdi.png" style="width: 450.0px; height: 302.25px;" /></a>
+</figure>
+<p><span class="math notranslate nohighlight">\(\begin{align}
+|\vec{u}|^2 &amp;= x^2 + y^2 \\
+|\vec{u}| &amp;= \sqrt{x^2+y^2}
+\end{align}\)</span></p>
+<p>Lengden av en vektor <span class="math notranslate nohighlight">\(\vec{u}=[x, y]\)</span> blir altså gitt ved</p>
+<p><span class="math notranslate nohighlight">\(|\vec{u}| = \sqrt{x^2+y^2}\)</span></p>
+</div>
+<div class="def admonition">
+<p class="admonition-title">Eksempel 2</p>
+<p>Finn lengden av vektorene i eksempel 1.
+Vektorene er <span class="math notranslate nohighlight">\(\vec{u} = [5, 3]\)</span>, <span class="math notranslate nohighlight">\(\vec{v} = [-3, -4]\)</span> og <span class="math notranslate nohighlight">\(\vec{w}=[6,0]\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p><span class="math notranslate nohighlight">\(|\vec{u}|=|[5, 3]| = \sqrt{5^2+3^2}=\sqrt{34}\)</span></p>
+<p><span class="math notranslate nohighlight">\(|\vec{v}|=|[-3, -4]| = \sqrt{(-3)^2+(-4)^2}=\sqrt{16}=4\)</span></p>
+<p><span class="math notranslate nohighlight">\(|\vec{w}|=|[6, 0]| = \sqrt{6^2+0^2}=\sqrt{36}=6\)</span></p>
+</div>
+</div>
+<div class="def admonition">
+<p class="admonition-title">Eksempel 3</p>
+<p>Avgjør hva <span class="math notranslate nohighlight">\(k\)</span> må være for at lengden av vektoren <span class="math notranslate nohighlight">\(\vec{u}=[6k, 4k]\)</span> skal bli <span class="math notranslate nohighlight">\(\sqrt{13}\)</span></p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Ulike vektorer kan være like lange, og for å være sikker på at vi ikke mister noen løsninger her, starter vi med Pytagoras sammenheng uten å ha tatt kvadratrota.</p>
+<p><span class="math notranslate nohighlight">\(|\vec{u}|^2=(6k)^2+(4k)^2 = 52k^2 = 13\)</span></p>
+<p>Løser likninga for <span class="math notranslate nohighlight">\(k\)</span> og får <span class="math notranslate nohighlight">\(k = \pm \sqrt{\frac{13}{52}}=\pm\sqrt{\frac{1}{4}}=\pm \frac{1}{2}\)</span>.</p>
+<p>Det er dermed to mulige løsninger: <span class="math notranslate nohighlight">\(\vec{u}_+=[3, 2]\)</span> og <span class="math notranslate nohighlight">\(\vec{u}_-=[-3, -2]\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="vektoren-mellom-to-punkt">
+<h2>Vektoren mellom to punkt<a class="headerlink" href="#vektoren-mellom-to-punkt" title="Permalink to this heading">#</a></h2>
+<p>Ved å studere vektoren i koordinatsystemet under, så ser vi at vi kan finne vektoren mellom to punkt ved å ta differansen mellom koordinatene til sluttpunktet og startpunktet.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/vektormellompunkt.png"><img alt="../../_images/vektormellompunkt.png" src="../../_images/vektormellompunkt.png" style="width: 450.0px; height: 302.25px;" /></a>
+</figure>
+<div class="def admonition">
+<p class="admonition-title">Vektor mellom to punkt</p>
+<p>Vektoren mellom to punkt <span class="math notranslate nohighlight">\(A=(x_1, y_1)\)</span> og <span class="math notranslate nohighlight">\(B=(x_2,y_2)\)</span> er gitt ved</p>
+<p><span class="math notranslate nohighlight">\(\overrightarrow{AB}=[x_2-x_1, y_2-y_1]\)</span></p>
+</div>
+</section>
+<section id="vektorer-i-geogebra">
+<h2>Vektorer i GeoGebra<a class="headerlink" href="#vektorer-i-geogebra" title="Permalink to this heading">#</a></h2>
+<p>I GeoGebra skriver vi inn vektorer på samme måte som vi skriver inn punkt. Eneste forskjellen er at vi får punkt om vi bruker stor bokstav i navnet, mens vi får vektor om vi bruker liten bokstav i navnet. Vi kan også bruke kommandoen <strong>Vektor(Punkt)</strong>. Alle vektorer i GeoGebra tegnes i utgangspunktet som posiosjonsvektorer fra origo. Om vi ønsker vektoren tegnet med et annet startpunkt, så bruker vi <strong>Vektor(Punkt, Punkt)</strong>.</p>
+<div class="eksempel admonition">
+<p class="admonition-title">Eksempel 4</p>
+<p>Tegn punktet <span class="math notranslate nohighlight">\(A = (3,4)\)</span> og vektoren <span class="math notranslate nohighlight">\(u=[3,4]\)</span>. Tegn også en vektor som er lik <span class="math notranslate nohighlight">\(\vec{u}\)</span>, men som starter i <span class="math notranslate nohighlight">\((3,1)\)</span>.</p>
+<div class="ekslos dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Vi skriver inn som vist her</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/vektorergeogebra2.png"><img alt="../../_images/vektorergeogebra2.png" src="../../_images/vektorergeogebra2.png" style="width: 296.40000000000003px; height: 168.4px;" /></a>
+</figure>
+<p>og får resultatet vist her</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/vektorergeogebra.png"><img alt="../../_images/vektorergeogebra.png" src="../../_images/vektorergeogebra.png" style="width: 450.0px; height: 323.7px;" /></a>
+</figure>
+<p>Merk at GeoGebra skriver vektorer med vanlige parenteser, mens vi bruker firkantparenteser. Det finnes ulike konvensjoner for notasjon og det finnes også forskjellige typer vektorer som vi ikke går inn på i R1.</p>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -404,6 +538,23 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hva-er-en-vektor">Hva er en vektor?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lengden-til-en-vektor">Lengden til en vektor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren-mellom-to-punkt">Vektoren mellom to punkt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektorer-i-geogebra">Vektorer i GeoGebra</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
